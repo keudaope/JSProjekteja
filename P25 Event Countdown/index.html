@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Countdown</title>
+    <!-- Link to external CSS file for styling -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Main heading -->
+      <h1>Event Countdown</h1>
+      <!-- Input field for the event name -->
+      <input
+        type="text"
+        id="event-name"
+        placeholder="Enter event name"
+        required
+      />
+      <!-- Input field for the event date -->
+      <input type="date" id="event-date" required />
+      <!-- Button to start the countdown -->
+      <button id="start-button">Start Countdown</button>
+      <!-- Div to display the countdown result -->
+      <div class="countdown" id="countdown"></div>
+    </div>
+    <!-- Link to external JavaScript file for functionality -->
+    <script src="app.js"></script>
+  </body>
+</html>

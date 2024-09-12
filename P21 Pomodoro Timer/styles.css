@@ -1,0 +1,82 @@
+/* Global reset for consistent margins, paddings, and box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Body styling: Flexbox layout to center content and apply a gradient
+background */
+body {
+  font-family: "Roboto", sans-serif; /* Modern font for clean typography */
+  background: linear-gradient(
+    135deg,
+    #74ebd5,
+    #acb6e5
+  ); /* Gradient
+background for visual appeal */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+/* Main container styling */
+.container {
+  background-color: #fff; /* White background for contrast */
+  padding: 30px; /* Padding for internal spacing */
+  border-radius: 15px; /* Rounded corners for modern look */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  text-align: center;
+  width: 350px; /* Fixed width for consistent layout */
+  max-width: 100%; /* Responsive for smaller screens */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+/* Zoom effect on hover */
+.container:hover {
+  transform: scale(1.05);
+}
+/* Heading styling */
+h1 {
+  font-size: 2.5em; /* Large heading for prominence */
+  margin-bottom: 20px; /* Space below the heading */
+  color: #2d3748; /* Dark color for better contrast */
+}
+/* Timer display styling */
+.timer {
+  font-size: 3em; /* Large font for the timer */
+  margin-bottom: 20px; /* Space below the timer */
+  color: #333; /* Dark text color for readability */
+}
+/* Button styling */
+button {
+  padding: 12px 20px; /* Padding inside button */
+  margin: 5px; /* Space between buttons */
+  background-color: #007bff; /* Blue background for the start button */
+  color: white; /* White text for contrast */
+  border: none;
+  border-radius: 8px; /* Rounded corners for modern design */
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth
+transitions */
+}
+/* Hover effect for buttons */
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+/* Pause button with unique color */
+button.pause {
+  background-color: #ffc107; /* Yellow background for pause */
+}
+/* Hover effect for pause button */
+button.pause:hover {
+  background-color: #e0a800; /* Darker yellow on hover */
+}
+/* Stop button with unique color */
+button.stop {
+  background-color: #dc3545; /* Red background for stop */
+}
+/* Hover effect for stop button */
+button.stop:hover {
+  background-color: #c82333; /* Darker red on hover */
+}
