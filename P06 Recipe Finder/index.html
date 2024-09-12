@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <!-- Sets the character encoding to UTF-8 to support international
+characters -->
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <!-- Ensures the webpage is responsive and scales properly on all devices -->
+ <title>Recipe Finder</title>
+ <!-- Link to the external CSS file -->
+ <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+ <!-- Main container that holds the entire app content -->
+ <div class="container">
+ <h1>Recipe Finder</h1>
+ <!-- Form to input ingredients and search for recipes -->
+ <form id="recipe-form" aria-label="Recipe Form">
+ <!-- Input field for entering ingredients, required to submit the
+form -->
+ <input type="text" id="ingredients" placeholder="Enter ingredients
+separated by commas" required aria-label="Ingredients input">
+ <!-- Submit button to search for recipes -->
+ <button type="submit" aria-label="Find Recipes">Find
+Recipes</button>
+ </form>
+ <!-- Section where the recipes will be displayed -->
+ <div class="recipes" id="recipes"></div>
+ </div>
+ <!-- Link to the external JavaScript file -->
+ <script src="app.js"></script>
+</body>
+</html>

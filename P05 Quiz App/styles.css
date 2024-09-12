@@ -1,0 +1,82 @@
+/* Styling for the entire page, ensuring a clean layout and centralized content
+*/
+body {
+    font-family: Arial, sans-serif; /* Uses a clean, readable font */
+    background: linear-gradient(135deg, rgb(116, 235, 213), rgb(172, 182, 229));
+    display: flex; /* Flexbox for centering content horizontally and vertically
+   */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    height: 100vh; /* Full height of the viewport */
+    margin: 0; /* Removes default margin */
+   }
+   /* Main container styling for the quiz */
+   .container {
+    background-color: white; /* White background for contrast against body */
+    padding: 20px; /* Adds spacing inside the container */
+    border-radius: 8px; /* Slightly rounded corners for modern look */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    width: 400px; /* Fixed width for content consistency */
+    text-align: center; /* Centers all text within the container */
+   }
+   /* Styling for the quiz title */
+   h1 {
+    margin-bottom: 20px; /* Adds space below the title */
+   }
+   /* Styling for the question text */
+   .question {
+    margin-bottom: 20px; /* Adds space between question and options */
+   }
+   /* Styling for the list of options */
+   .options {
+    list-style: none; /* Removes default bullet points from the list */
+    padding: 0; /* Removes padding around the list */
+    margin-bottom: 20px; /* Space between options and button */
+   }
+   /* Each individual option styling */
+   .options li {
+    background-color: #f4f4f4; /* Light gray background for options */
+    margin: 5px 0; /* Spacing between each option */
+    padding: 10px; /* Adds padding inside each option */
+    border: 1px solid #ddd; /* Subtle border to define the option area */
+    border-radius: 4px; /* Slight rounding of the corners */
+    cursor: pointer; /* Changes cursor to pointer to indicate it's clickable */
+    transition: background-color 0.3s ease; /* Smooth transition when hovered */
+   }
+   /* Hover effect for options */
+   .options li:hover {
+    background-color: #e4e4e4; /* Darker gray on hover for visual feedback */
+   }
+   /* Button styling for proceeding to the next question */
+   button {
+    padding: 10px 20px; /* Adds padding inside the button */
+    border: none; /* Removes default browser border */
+    background-color: #28a745; /* Green background indicating action */
+    color: white; /* White text for good contrast */
+    border-radius: 4px; /* Rounded corners for a smoother look */
+    cursor: pointer; /* Indicates clickable button */
+    transition: background-color 0.3s ease; /* Smooth background transition */
+   }
+   /* Button hover effect */
+   button:hover {
+    background-color: #218838; /* Darker green for hover state */
+   }
+   /* Hidden elements styling (e.g., Next button, result text, reset button) */
+   .hidden {
+    display: none; /* Initially hides elements */
+   }
+   /* Styling for the final result text */
+   .result {
+    font-weight: bold; /* Bold text to emphasize the score */
+    margin-top: 20px; /* Adds space above the result text */
+   }
+   /* Styling for the correct answer */
+   .correct {
+    background-color: #28a745; /* Green background for correct answer */
+    color: white; /* White text for visibility */
+   }
+   /* Styling for the incorrect answer */
+   .incorrect {
+    background-color: #dc3545; /* Red background for incorrect answer */
+    color: white; /* White text for contrast */
+   }

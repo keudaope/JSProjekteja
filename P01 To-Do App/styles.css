@@ -1,0 +1,105 @@
+/* styles.css */
+/* Set a modern gradient background and centralize the content */
+body {
+    font-family: Arial, sans-serif; /* Sets the global font style */
+    background: linear-gradient(135deg, #74ebd5, #acb6e5); /* A visually
+   appealing gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    margin: 0; /* Removes any default margin */
+   }
+   /* Styling for the main container, adding padding, shadow, and a modern feel */
+   .container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Depth effect using shadow */
+    width: 350px;
+    text-align: center;
+    transition: all 0.3s ease-in-out; /* Smooth transition on hover effects */
+   }
+   /* Add a slight zoom effect when the user hovers over the container */
+   .container:hover {
+    transform: scale(1.05); /* Scales the container slightly on hover */
+   }
+   /* Styling the input text field for task entry */
+   input[type="text"] {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow around input */
+    transition: border-color 0.3s ease-in-out;
+   }
+   /* When the input field is focused, the border color changes */
+   input[type="text"]:focus {
+    border-color: #28a745; /* Green border indicates focus */
+   }
+   /* Modern button styling */
+   button {
+    padding: 12px 24px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth background color
+   transition */
+   }
+   /* Button hover effect for a better user experience */
+button:hover {
+    background-color: #218838; /* Darker green on hover */
+   }
+   /* Styling for the task list, removing default list styles */
+   ul {
+    list-style: none; /* Removes bullet points */
+    padding: 0;
+    margin-top: 20px; /* Space above the list */
+   }
+   /* Styling for individual tasks, with a light shadow and padding */
+   li {
+    background: #ffffff;
+    margin: 10px 0;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.5s ease-in-out; /* Smooth transition for fade-in/fadeout effects */
+    opacity: 1; /* Fully visible by default */
+   }
+   /* When hovering over a task, we increase the shadow for a more interactive
+   effect */
+   li:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+   }
+   /* Completed tasks are crossed out and have a lighter color */
+   li.completed {
+    text-decoration: line-through;
+    color: #888;
+   }
+   /* Styling for the delete button within tasks */
+   li button {
+    background: none; /* No background for a cleaner look */
+    border: none;
+    color: #d9534f;
+    cursor: pointer;
+    transition: color 0.3s ease; /* Smooth color transition */
+   }
+   /* Delete button hover effect with a transition to white text */
+   li button:hover {
+    color: white; /* Changes to white on hover */
+    background-color: #d9534f; /* Adds background color for better visibility */
+    padding: 5px 10px;
+    border-radius: 4px; /* Adds a subtle border radius for the hover effect */
+   }
+   /* Fade-out class for smooth removal of tasks */
+li.fade-out {
+    opacity: 0; /* Fade-out effect */
+    transition: opacity 0.5s ease-in-out; /* Smooth fade-out transition */
+   }

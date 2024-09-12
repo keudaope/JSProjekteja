@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <!--
+ Specifies the character encoding for the document, ensuring compatibility
+with most characters.
+ -->
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <!--
+ Ensures the page is responsive by adjusting the width of the page to fit
+different devices.
+ -->
+ <title>Weather App</title>
+ <!--
+ Links to the external CSS file for styling the Weather App.
+ -->
+ <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+ <div class="container">
+ <!-- Main title of the Weather App -->
+ <h1>Weather App</h1>
+ <!--
+ Form for inputting the city name and submitting to fetch weather data.
+ aria-label: Provides a descriptive label for assistive technologies like
+screen readers.
+ -->
+ <form id="weather-form" aria-label="Weather Form">
+ <!--
+ Text input field where the user enters the city name.
+ required: Ensures the field is filled before submitting the form.
+ aria-label: Descriptive label for accessibility.
+ -->
+ <input type="text" id="city-input" placeholder="Enter city name"
+required aria-label="City name input">
+ <!--
+ Button for submitting the form to get the weather information.
+ aria-label: Descriptive label for accessibility.
+ -->
+ <button type="submit" aria-label="Get Weather">Get Weather</button>
+ </form>
+ <!--
+ Section where the weather data will be dynamically displayed after
+fetching it from the API.
+ aria-live: Ensures updates to this region are announced to assistive
+technologies like screen readers.
+ -->
+ <div class="weather-info" id="weather-info" aria-live="polite"></div>
+ </div>
+ <!-- Links to the external JavaScript file for handling the app's logic -->
+ <script src="app.js"></script>
+</body>
+</html>

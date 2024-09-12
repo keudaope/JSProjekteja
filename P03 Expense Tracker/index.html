@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <!-- Sets the document's character encoding to UTF-8, ensuring support for
+most characters. -->
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <!-- Ensures the page is responsive and adjusts to different devices by
+scaling the viewport width. -->
+ <title>Expense Tracker</title>
+ <!-- Linking to the external CSS file for styling -->
+ <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+ <!-- Main container for the entire expense tracker app -->
+ <div class="container">
+ <!-- Main heading for the app -->
+ <h1>Expense Tracker</h1>
+
+ <!-- Form for entering expense details -->
+ <form id="expense-form">
+ <!-- Input field for the name of the expense -->
+ <input type="text" id="expense-name" placeholder="Expense name"
+required>
+ <!-- Input field for the amount of the expense -->
+ <input type="number" id="expense-amount" placeholder="Amount"
+required>
+ <!-- Dropdown to select the category of the expense -->
+ <select id="expense-category" required>
+ <option value="" disabled selected>Select category</option>
+ <option value="Food">Food</option>
+ <option value="Transport">Transport</option>
+ <option value="Entertainment">Entertainment</option>
+ <option value="Other">Other</option>
+ </select>
+ <!-- Submit button to add the expense -->
+ <button type="submit">Add Expense</button>
+ </form>
+
+ <!-- Container where all added expenses will be displayed -->
+ <div class="expense-list" id="expense-list"></div>
+
+ <!-- Container for displaying the total of all expenses -->
+ <div class="summary" id="summary"></div>
+ </div>
+ <!-- Linking to the external JavaScript file for handling app functionality
+-->
+ <script src="app.js"></script>
+</body>
+</html>

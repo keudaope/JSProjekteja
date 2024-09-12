@@ -1,0 +1,85 @@
+/* General styles to reset default browser behavior */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+   }
+   /* Body styling for centering the calculator */
+   body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, rgb(116, 235, 213), rgb(172, 182, 229));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+   }
+   /* Main container for the calculator */
+   .container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+/* Display area styling */
+.display {
+ width: calc(100% - 24px);
+ padding: 10px;
+ margin-bottom: 10px;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+ font-size: 1.5em;
+ text-align: right; /* Align the text (numbers) to the right */
+ background-color: #f9f9f9;
+}
+/* Grid layout for calculator buttons */
+.buttons {
+ display: grid;
+ grid-template-columns: repeat(4, 1fr); /* Create a 4-column grid */
+ gap: 10px;
+}
+/* General button styling */
+button {
+ padding: 20px;
+ font-size: 1.2em;
+ border: none;
+ background-color: #f0f0f0;
+ cursor: pointer;
+ border-radius: 4px;
+ transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+/* Button hover effect */
+button:hover {
+ background-color: #ddd;
+}
+/* Operator buttons styling */
+.operator {
+ background-color: #28a745;
+ color: white;
+}
+/* Operator hover effect */
+.operator:hover {
+ background-color: #218838;
+}
+/* Equals button styling */
+.equal {
+ background-color: #007bff;
+ color: white;
+ grid-column: span 2; /* Span 2 columns for wider button */
+}
+/* Equals button hover effect */
+.equal:hover {
+ background-color: #0056b3;
+}
+/* Clear button styling */
+.clear {
+ background-color: #dc3545;
+ color: white;
+ grid-column: span 2; /* Span 2 columns for wider button */
+}
+/* Clear button hover effect */
+.clear:hover {
+ background-color: #c82333;
+}
