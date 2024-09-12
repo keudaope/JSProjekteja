@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMI Calculator</title>
+    <!-- Link to external CSS for styling -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Google Fonts for modern typography -->
+    <link
+      href="https://fonts.googleapis.com/css2?
+family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>BMI Calculator</h1>
+      <!-- Form for user inputs: height and weight -->
+      <form id="bmi-form">
+        <!-- Input for height (in centimeters) -->
+        <input type="number" id="height" placeholder="Height (cm)" required />
+        <!-- Input for weight (in kilograms) -->
+        <input type="number" id="weight" placeholder="Weight (kg)" required />
+        <!-- Submit button to calculate BMI -->
+        <button type="submit">Calculate BMI</button>
+      </form>
+      <!-- Div to display the BMI result and feedback -->
+      <div class="result" id="result"></div>
+    </div>
+    <!-- External JavaScript file for functionality -->
+    <script src="app.js"></script>
+  </body>
+</html>

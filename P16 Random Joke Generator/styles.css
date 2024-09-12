@@ -1,0 +1,89 @@
+/* Global reset for consistent margins, paddings, and box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensures padding and borders are included in
+element's width and height */
+}
+/* Body styling with updated gradient background */
+body {
+  font-family: "Arial", sans-serif; /* Modern, readable font */
+  background: linear-gradient(
+    135deg,
+    #74ebd5,
+    #acb6e5
+  ); /* Fresh gradient
+background for modern appearance */
+  display: flex; /* Flexbox layout to center content */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  height: 100vh; /* Full viewport height */
+  margin: 0; /* Remove default margin to avoid unwanted spacing */
+}
+/* Main container styling */
+.container {
+  background-color: #fff; /* Clean white background for contrast against
+gradient */
+  padding: 40px 30px; /* Comfortable padding around content */
+  border-radius: 12px; /* Rounded corners for a modern, soft look */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth,
+making the container appear lifted */
+  text-align: center; /* Center text alignment */
+  max-width: 400px; /* Maximum width for readability on large screens */
+  width: 100%; /* Full width within its parent container */
+  transition: transform 0.3s ease; /* Smooth hover effect for a dynamic user
+experience */
+}
+/* Hover effect for container */
+.container:hover {
+  transform: scale(
+    1.05
+  ); /* Slight zoom effect on hover, making the container
+feel interactive */
+}
+/* Main heading styling */
+h1 {
+  font-size: 2.5em; /* Larger font size to make the heading prominent */
+  color: #333; /* Dark color for strong contrast against white background */
+  margin-bottom: 20px; /* Space between the heading and the joke text */
+}
+/* Joke text styling */
+.joke {
+  font-size: 1.3em; /* Slightly larger text for better readability */
+  color: #555; /* Softer color for the joke to stand out from the heading */
+  margin-bottom: 30px; /* Space between the joke and the button */
+  min-height: 60px; /* Ensures consistent space for the joke, avoiding layout
+shifts when jokes are displayed */
+  font-style: italic; /* Italicized text for a playful style */
+  transition: color 0.3s ease; /* Smooth transition for dynamic color changes
+(error states) */
+}
+/* Button styling */
+button {
+  background-color: #007bff; /* Bright blue background for strong contrast */
+  color: white; /* White text to stand out against the blue background */
+  padding: 12px 30px; /* Large padding for a clickable, comfortable button */
+  border: none; /* No border for a clean, modern look */
+  border-radius: 8px; /* Rounded corners to match the container's style */
+  cursor: pointer; /* Pointer cursor to indicate interactivity */
+  font-size: 1em; /* Standard text size for readability */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth
+transition for hover and click states */
+}
+/* Hover effect for button */
+button:hover {
+  background-color: #0056b3; /* Darker blue when hovering for visual feedback
+*/
+  transform: translateY(
+    -3px
+  ); /* Button lifts slightly on hover for a tactile
+feel */
+}
+/* Button active state */
+button:active {
+  background-color: #004494; /* Even darker blue when the button is pressed */
+  transform: translateY(
+    1px
+  ); /* Button depresses slightly to mimic a press
+effect */
+}

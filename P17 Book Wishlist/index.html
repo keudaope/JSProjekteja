@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Wishlist</title>
+    <!-- Link to external CSS for styling -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Google Fonts for modern typography -->
+    <link
+      href="https://fonts.googleapis.com/css2?
+family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Book Wishlist</h1>
+      <!-- Form to add a new book with title, author, and description -->
+      <form id="book-form">
+        <input
+          type="text"
+          id="book-title"
+          placeholder="Enter book title"
+          required
+        />
+        <input
+          type="text"
+          id="book-author"
+          placeholder="Enter author's
+name"
+          required
+        />
+        <textarea
+          id="book-description"
+          placeholder="Enter book description"
+          rows="3"
+          required
+        ></textarea>
+        <button type="submit">Add Book</button>
+      </form>
+      <!-- Wishlist display area -->
+      <ul id="book-list" class="book-list"></ul>
+    </div>
+    <!-- External JS file for functionality -->
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+/* Global reset for consistent margins, paddings, and box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Body styling: Flexbox layout to center content and apply a gradient
+background */
+body {
+  font-family: "Roboto", sans-serif; /* Modern font from Google Fonts */
+  background: linear-gradient(
+    135deg,
+    #74ebd5,
+    #acb6e5
+  ); /* Attractive
+gradient background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+/* Main container styling */
+.container {
+  background-color: #fff; /* White background for the container */
+  padding: 30px; /* Padding for better spacing */
+  border-radius: 15px; /* Rounded corners for modern look */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+  text-align: center;
+  width: 400px; /* Fixed width for the container */
+  max-width: 100%; /* Responsive width */
+  transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+/* Zoom effect on hover */
+.container:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+}
+/* Heading styling */
+h1 {
+  font-size: 2.5em; /* Large font for the title */
+  margin-bottom: 20px; /* Space below the heading */
+  color: #2d3748; /* Darker color for contrast */
+}
+/* Styling for the question display */
+.question {
+  font-size: 1.4em; /* Larger font size for the question */
+  margin-bottom: 20px; /* Space below the question */
+  color: #333; /* Darker text color */
+}
+/* Flexbox layout for answers */
+.answers {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Space between answer buttons */
+}
+/* Answer button styling */
+.answers button {
+  padding: 12px;
+  border: none;
+  background-color: #007bff; /* Blue background for buttons */
+  color: white; /* White text for better contrast */
+  border-radius: 8px; /* Rounded corners for modern look */
+  cursor: pointer;
+  font-size: 1em; /* Clear and readable font size */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth
+transitions */
+}
+/* Hover effect for buttons */
+.answers button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+/* Button active state */
+.answers button:active {
+  background-color: #004494; /* Even darker blue when clicked */
+  transform: translateY(1px); /* Slight push-down effect */
+}
+/* Feedback message styling */
+.feedback {
+  margin-top: 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+/* Correct answer message */
+.feedback.correct {
+  color: green; /* Green for correct answers */
+}
+/* Incorrect answer message */
+.feedback.incorrect {
+  color: red; /* Red for incorrect answers */
+}
+/* Stats section for correct and incorrect counts */
+.stats {
+  margin-top: 20px;
+  font-size: 1em;
+  color: #2d3748;
+}

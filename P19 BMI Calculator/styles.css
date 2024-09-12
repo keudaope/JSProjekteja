@@ -1,0 +1,101 @@
+/* Global reset for consistent margins, paddings, and box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensures padding and border are included in the
+element’s total width and height */
+}
+/* Body styling: Flexbox layout to center content and apply a gradient
+background */
+body {
+  font-family: "Roboto", sans-serif; /* Modern font from Google Fonts for a
+clean and readable look */
+  background: linear-gradient(
+    135deg,
+    #74ebd5,
+    #acb6e5
+  ); /* Attractive
+gradient background to enhance the visual appeal */
+  display: flex; /* Flexbox layout for centering the container */
+  justify-content: center; /* Horizontally center the container */
+  align-items: center; /* Vertically center the container */
+  height: 100vh; /* Full viewport height for centering the content */
+  margin: 0; /* Remove default margin for a clean layout */
+}
+/* Main container styling for the BMI calculator */
+.container {
+  background-color: #fff; /* White background for contrast against the
+gradient */
+  padding: 30px; /* Padding around the content inside the container */
+  border-radius: 15px; /* Rounded corners for a modern, card-like appearance
+*/
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Shadow for depth, making the
+container stand out */
+  text-align: center; /* Center-align text inside the container */
+  width: 400px; /* Fixed width to control the size of the container */
+  max-width: 100%; /* Ensure container is responsive on smaller screens */
+  transition: transform 0.3s ease; /* Smooth transformation for hover effect
+*/
+}
+/* Slight zoom-in effect on hover */
+.container:hover {
+  transform: scale(1.05); /* Enlarge the container slightly when hovered */
+}
+/* Heading styling for the BMI Calculator title */
+h1 {
+  font-size: 2.5em; /* Large, prominent font size for the title */
+  margin-bottom: 20px; /* Space below the title to separate it from the form
+*/
+  color: #2d3748; /* Darker color for contrast and readability */
+}
+/* Form layout and styling for the input fields */
+form {
+  display: flex; /* Flexbox layout to stack form elements vertically */
+  flex-direction: column; /* Arrange input fields in a column */
+  gap: 10px; /* Add space between input fields and button */
+  margin-bottom: 20px; /* Space between the form and the result section */
+}
+/* Input field styling for height and weight */
+input[type="number"] {
+  padding: 12px; /* Internal padding for comfortable input */
+  border: 1px solid #ccc; /* Light border for the input fields */
+  border-radius: 8px; /* Rounded corners for modern design */
+  font-size: 1em; /* Standard font size for readability */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow to give depth
+to the inputs */
+  transition: border-color 0.3s ease; /* Smooth transition for focus state */
+}
+/* Focus effect to highlight active input field */
+input[type="number"]:focus {
+  border-color: #007bff; /* Blue border when the input field is focused */
+  outline: none; /* Remove default outline for a cleaner look */
+}
+/* Button styling for the "Calculate BMI" action */
+button {
+  padding: 12px 20px; /* Padding inside the button for better clickability */
+  border: none; /* Remove default border for a cleaner design */
+  background-color: #007bff; /* Blue background for the button */
+  color: white; /* White text for contrast against the blue background */
+  border-radius: 8px; /* Rounded corners for consistency with input fields */
+  cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+  font-size: 1em; /* Standard font size for legibility */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth
+transitions for hover and active states */
+}
+/* Hover effect for the button */
+button:hover {
+  background-color: #0056b3; /* Darker blue when hovered */
+  transform: translateY(-2px); /* Slight lift effect to enhance interactivity
+*/
+}
+/* Active state for the button when clicked */
+button:active {
+  background-color: #004494; /* Even darker blue when clicked */
+  transform: translateY(1px); /* Slight push-down effect for realism */
+}
+/* Styling for the result display */
+.result {
+  margin-top: 20px; /* Space above the result section */
+  font-size: 1.2em; /* Larger font size for readability */
+  font-weight: bold; /* Bold font to emphasize the result */
+}

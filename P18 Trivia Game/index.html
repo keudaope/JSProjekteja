@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trivia Game</title>
+    <!-- Link to external CSS for styling -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Google Fonts for modern typography -->
+    <link
+      href="https://fonts.googleapis.com/css2?
+family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Trivia Game</h1>
+      <!-- Live area for question -->
+      <div class="question" id="question" aria-live="polite">
+        Loading question...
+      </div>
+      <!-- Container for answer buttons -->
+      <div class="answers" id="answers"></div>
+      <!-- Display area for correct/incorrect messages -->
+      <div class="feedback" id="feedback"></div>
+      <!-- Display area for correct and incorrect count -->
+      <div class="stats">
+        <p>Correct: <span id="correct-count">0</span></p>
+        <p>Incorrect: <span id="incorrect-count">0</span></p>
+      </div>
+    </div>
+    <!-- External JavaScript file for functionality -->
+    <script src="app.js"></script>
+  </body>
+</html>
