@@ -1,0 +1,82 @@
+/* Global reset for consistent margins, paddings, and box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Body styling for the overall layout */
+body {
+  font-family: "Roboto", sans-serif; /* Clean, modern font */
+  background: linear-gradient(
+    135deg,
+    #74ebd5,
+    #acb6e5
+  ); /* Fresh gradient
+background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+/* Container styling for the main card */
+.container {
+  background-color: #fff; /* Clean white background */
+  padding: 40px 30px; /* Comfortable internal spacing */
+  border-radius: 15px; /* Smooth rounded corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  text-align: center;
+  width: 100%;
+  max-width: 400px; /* Max width for responsive design */
+}
+/* Styling for the heading */
+h1 {
+  font-size: 2.2em;
+  color: #333;
+  margin-bottom: 20px;
+}
+/* Input fields styling */
+input[type="number"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Soft shadow for a modern look
+*/
+  transition: border-color 0.3s ease; /* Smooth focus transition */
+}
+/* Focus effect for input fields */
+input[type="number"]:focus {
+  border-color: #007bff; /* Highlight border on focus */
+  outline: none; /* Remove default outline */
+}
+/* Button styling */
+button {
+  background-color: #007bff; /* Vibrant blue background */
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+/* Hover effect for button */
+button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+/* Active effect for button */
+button:active {
+  background-color: #004494;
+  transform: translateY(1px); /* Pressed effect */
+}
+/* Result display styling */
+.result {
+  margin-top: 20px;
+  font-size: 1.5em;
+  color: #2d3748;
+  min-height: 40px; /* Ensure stable layout even without result */
+}

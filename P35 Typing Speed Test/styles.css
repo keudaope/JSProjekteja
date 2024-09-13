@@ -1,0 +1,96 @@
+/* Global styles reset for consistency */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Body styling for overall layout */
+body {
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(
+    135deg,
+    #74ebd5,
+    #acb6e5
+  ); /* Modern gradient
+background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+/* Main container styling */
+.container {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 600px;
+  transition: transform 0.3s ease;
+}
+/* Add hover effect to give it a more dynamic look */
+.container:hover {
+  transform: scale(1.03);
+}
+/* Heading styling */
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #333;
+}
+/* Test text styling */
+.test-text {
+  margin-bottom: 20px;
+  font-size: 1.3em;
+  color: #2c3e50;
+  background-color: #f8f8f8;
+  padding: 15px;
+  border-radius: 8px;
+}
+/* Text area styling */
+textarea {
+  width: 100%;
+  height: 120px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1.1em;
+  resize: none;
+  outline: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.3s ease;
+}
+/* Focus effect for textarea */
+textarea:focus {
+  border-color: #007bff;
+}
+/* Button styling */
+button {
+  padding: 12px 25px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 15px;
+}
+/* Button hover effect */
+button:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);
+}
+/* Button disabled state */
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+/* Result display styling */
+.result {
+  margin-top: 20px;
+  font-size: 1.3em;
+  color: #2c3e50;
+  min-height: 50px;
+}

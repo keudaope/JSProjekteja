@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta tags for proper character encoding and responsive layout -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random User Generator</title>
+    <!-- Google Font for modern typography -->
+    <link
+      href="https://fonts.googleapis.com/css2?
+family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Main heading of the app -->
+      <h1>Random User Generator</h1>
+
+      <!-- Profile container to display user details -->
+      <div class="profile" id="profile">
+        <!-- Placeholder for user profile picture -->
+        <img
+          id="profile-picture"
+          src=""
+          alt="Profile Picture"
+          width="120"
+          height="120"
+        />
+        <!-- Placeholder for user name, email, and location -->
+        <p id="name" class="info"></p>
+        <p id="email" class="info"></p>
+        <p id="location" class="info"></p>
+      </div>
+
+      <!-- Button to trigger user generation -->
+      <button id="generate-button">Generate User</button>
+    </div>
+    <!-- Link to external JavaScript -->
+    <script src="app.js"></script>
+  </body>
+</html>
