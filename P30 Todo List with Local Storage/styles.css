@@ -1,0 +1,120 @@
+/* Global reset for consistent margins, paddings, and box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Styling the entire body of the page */
+body {
+  font-family: "Arial", sans-serif; /* Clean, modern font for readability */
+  background: linear-gradient(
+    135deg,
+    #74ebd5,
+    #acb6e5
+  ); /* Gradient
+background for aesthetic appeal */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full screen height */
+  margin: 0;
+}
+/* Styling the container that holds the todo list */
+.container {
+  background-color: #fff; /* White background for contrast */
+  padding: 30px 20px;
+  border-radius: 12px; /* Rounded corners for a smooth appearance */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  width: 400px;
+  transition: transform 0.3s ease; /* Smooth scale effect when hovered */
+}
+/* Hover effect for container */
+.container:hover {
+  transform: scale(
+    1.03
+  ); /* Slight zoom effect when hovering over the
+container */
+}
+/* Heading styling for the app title */
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px; /* Space between the title and input field */
+}
+/* Input field for task entry */
+input[type="text"] {
+  width: calc(100% - 22px); /* Full width minus padding */
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px; /* Rounded edges */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+  transition: border-color 0.3s ease; /* Smooth transition on focus */
+}
+/* Focus effect for input field */
+input[type="text"]:focus {
+  border-color: #007bff; /* Blue border when focused */
+  outline: none; /* Remove default outline */
+}
+/* Button for adding a new task */
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 8px; /* Rounded edges for the button */
+  cursor: pointer; /* Pointer cursor to indicate interactivity */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover
+and click effects */
+}
+/* Hover effect for button */
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+/* Unordered list containing tasks */
+ul {
+  list-style-type: none; /* Remove default bullet points */
+  padding: 0;
+}
+/* Individual list item for each task */
+li {
+  background-color: #f8f8f8;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px; /* Rounded edges for task items */
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Align text and buttons on the same line */
+  transition: background-color 0.3s ease; /* Smooth background transition */
+}
+/* Styling for completed tasks */
+li.completed {
+  text-decoration: line-through;
+  background-color: #d4edda; /* Light green for completed tasks */
+}
+/* Buttons for marking tasks as complete or deleting them */
+.complete-button,
+.delete-button {
+  border: none;
+  padding: 5px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  margin-left: 5px;
+}
+/* Green button for marking tasks as complete */
+.complete-button {
+  background-color: #28a745;
+}
+/* Red button for deleting tasks */
+.delete-button {
+  background-color: #dc3545;
+}
+/* Hover effects for task buttons */
+.complete-button:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+.delete-button:hover {
+  background-color: #c82333; /* Darker red on hover */
+}

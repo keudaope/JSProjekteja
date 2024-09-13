@@ -1,0 +1,106 @@
+/* Global reset for consistent margins, paddings, and box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Body styling for overall layout */
+body {
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(135deg, #74ebd5, #acb6e5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+/* Main container for the app */
+.container {
+  background-color: #fff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+/* Hover effect for the container */
+.container:hover {
+  transform: scale(1.05);
+}
+/* Main heading styling */
+h1 {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 20px;
+}
+/* Input field styling */
+input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  font-size: 1.1em;
+  margin-bottom: 20px;
+  transition: border-color 0.3s ease;
+}
+/* Focus effect for input */
+input[type="text"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+/* Button styling */
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1em;
+  width: 100%;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+/* Hover effect for button */
+button:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);
+}
+/* Button active state */
+button:active {
+  background-color: #004494;
+  transform: translateY(1px);
+}
+/* Forecast display styling */
+.forecast {
+  margin-top: 20px;
+  text-align: left;
+}
+/* Individual day forecast styling */
+.forecast-day {
+  background-color: #f8f8f8;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+/* Hover effect for forecast-day */
+.forecast-day:hover {
+  transform: scale(1.02);
+}
+/* Day heading styling */
+.forecast-day h2 {
+  margin: 0;
+  font-size: 1.3em;
+  color: #333;
+}
+/* Forecast details */
+.forecast-day p {
+  margin: 5px 0;
+  font-size: 1.1em;
+  color: #555;
+}
