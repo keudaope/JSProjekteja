@@ -65,3 +65,66 @@
 - **Mikä se on:** Painike-elementti, joka käynnistää lomakkeen lähetyksen, kun sitä klikataan.
 - **Tarkoitus:** Käyttäjä klikkaa tätä painiketta lähettääkseen lomakedatan, joka sitten validoidaan JavaScriptillä.
 - **Tärkeä yksityiskohta:** Painike on muotoiltu CSS:llä ja reagoi käyttäjän vuorovaikutukseen (esim. vaihtaa väriä hover-tilassa). Se myös estää lomakkeen oletuslähetyksen, jotta räätälöity validointi voidaan suorittaa.
+
+# CSS Selitys
+
+## 1. Body Styling (body):
+
+- **Mikä se on**: Body-valitsin tyylittelee verkkosivun pääasiallisen rakenteen.
+- **Keskeiset ominaisuudet**:
+  - **font-family:** Asettaa fontiksi Arialin, sans-serif-fontin, joka antaa siistin ja modernin ilmeen.
+  - **background-color:** Käyttää vaaleanharmaata (#f0f0f0) taustaa, joka luo pehmeän ja neutraalin pohjan lomakekontainerille.
+  - **display: flex; justify-content: center; align-items: center:** Keskittää lomakekontainerin sekä vaaka- että pystysuunnassa Flexboxin avulla, jolloin lomake näkyy aina näytön keskellä.
+  - **height:** Varmistaa, että body kattaa koko näytön korkeuden (100vh), jolloin lomake saadaan pystysuuntaisesti keskitettyä.
+  - **margin: 0:** Poistaa oletusmarginaalit bodyn ympäriltä, jotta vältetään ei-toivottu tila.
+
+## 2. Container Styling (.container):
+
+- **Mikä se on**: .container-luokka tyylittelee lomakekontainerin, johon kaikki lomake-elementit (syöttökentät, painikkeet) on sijoitettu.
+- **Keskeiset ominaisuudet**:
+  - **background**: Asettaa taustaväriksi valkoisen, jotta lomake erottuu vaaleanharmaasta body-taustasta.
+  - **padding**: Lisää 20px tilaa kontainerin sisään, jotta lomake-elementit eivät olisi liian ahtaasti.
+  - **border-radius**: Pyöristää kontainerin kulmat 8px:ä, antaen pehmeän ja modernin ilmeen.
+  - **box-shadow**: Lisää hienovaraisen varjon (0 0 10px rgba(0, 0, 0, 0.1)) kontainerin ympärille, luoden syvyysvaikutelman ja saaden sen visuaalisesti erottumaan taustasta.
+  - **width**: Asettaa lomakekontainerille kiinteän 300px leveyden, jotta se pysyy kompaktina ja keskitettynä.
+  - **text-align**: center: Keskittää kontainerin sisällön, mukaan lukien lomakekentät ja painike, varmistaen siistin asettelun.
+
+## 3. Heading Styling (h1):
+
+- **Mikä se on**: Tyylittelee lomakkeen pääotsikon, jossa lukee "Form Validator."
+- **Keskeiset ominaisuudet**:
+  - **margin-bottom**: Lisää 20px marginaalin otsikon alle luodakseen tilaa otsikon ja lomake-elementtien välille, varmistaen visuaalisen eron.
+
+## 4. Input Field Styling (input):
+
+- **Mikä se on**: Soveltaa tyylejä kaikkiin <input>-elementteihin (tekstikentät, sähköpostikentät, salasanakentät) lomakkeen sisällä.
+- **Keskeiset ominaisuudet**:
+  - **padding**: Lisää 10px täytettä syöttökenttien sisään, jotta käyttäjän kirjoittama teksti on selkeämmin luettavissa ja mukavammin sijoitettuna.
+  - **margin-bottom**: Lisää 10px tilaa jokaisen syöttökentän alle erottaakseen ne seuraavasta lomake-elementistä, parantaen luettavuutta ja asettelua.
+  - **width**: Käyttää calc(100% - 22px) varmistaakseen, että syöttökentät vievät koko kontainerin leveyden huomioiden täytteen ja reunat, jolloin ne eivät ylitä rajoja.
+  - **border**: Lisää hienovaraisen reunuksen (1px solid #ccc) määrittääkseen syöttökentät ilman, että ne ovat liian häiritseviä.
+  - **border-radius**: Pyöristää hieman syöttökenttien kulmia, luoden pehmeän ja modernin ilmeen, joka sopii kontainerin tyyliin.
+
+## 5. Button Styling (button):
+
+- **Mikä se on**: Tyylittelee lomakkeen lopussa olevan lähetä-painikkeen.
+- **Keskeiset ominaisuudet**:
+  - **padding**: Lisää 10px 20px täytettä, jotta painikkeesta tulee suurempi ja helpompi klikata.
+  - **border**: Poistaa oletuspainikkeen reunuksen siistimmän ulkoasun saavuttamiseksi.
+  - **background-color:** Asettaa painikkeen taustaväriksi kirkkaan sinisen (#007bff), jotta se erottuu visuaalisesti ja ilmaisee, että se on päätoimintopainike.
+  - **color**: Käyttää valkoista tekstiä (#fff) painikkeessa luoden korkean kontrastin sinisen taustan kanssa, varmistaen, että teksti on helposti luettavissa. -**border-radius**: Lisää 4px pyöristystä painikkeen kulmiin, sopien yhteen syöttökenttien ja kontainerin pyöristettyjen kulmien kanssa.
+  - **cursor: pointer**: Vaihtaa osoittimen osoittimeksi, kun käyttäjä vie hiiren painikkeen päälle, antaen visuaalisen vihjeen, että painike on klikattavissa.
+
+## 6. Button Hover Effect (button):
+
+- **Mikä se on**: Lisää hover-efektin painikkeelle, kun käyttäjä vie hiiren sen päälle.
+- **Keskeiset ominaisuudet**:
+  - **background-color**: Vaihtaa painikkeen taustavärin tummemmaksi siniseksi (#0056b3) hover-tilassa, antaen käyttäjälle palautteen siitä, että painike on interaktiivinen.
+
+## 7. Error Message Styling (.error):
+
+- **Mikä se on**: Tyylittelee virheilmoitukset, jotka ilmestyvät jokaisen syöttökentän alle, kun validointi epäonnistuu.
+- **Keskeiset ominaisuudet**:
+  - **color**: Asettaa virheilmoitusten tekstin väriksi punaisen, jotta ne erottuvat lomakkeen neutraaleista väreistä ja selvästi osoittavat, että jotain on vialla.
+  - **font-size**: Käyttää pienempää fonttikokoa (0.9em) virheilmoituksissa erottaakseen ne syöttökenttien nimilapuista ja pääsisällöstä.
+  - **margin-bottom**: Lisää tilaa jokaisen virheilmoituksen alle varmistaakseen, ettei se mene päällekkäin seuraavan syöttökentän kanssa.
