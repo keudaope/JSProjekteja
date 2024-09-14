@@ -226,7 +226,7 @@
   - **opacity: 0;**: Häivyttää tehtävän (muuttaa sen läpinäkyväksi), kun se poistetaan.
   - **transition: opacity 0.5s ease-in-out;**: Siirtyy sujuvasti läpinäkyvyyden muutoksessa 0.5 sekunnin aikana puhtaan häivytysefektin saavuttamiseksi.
 
-    # JavaScript Selitys
+# JavaScript Selitys
 
 ## 1. document.addEventListener('DOMContentLoaded', ...)
 
