@@ -4,37 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form Validator</title>
-    <!-- Link to external CSS file for styling -->
+    <!-- Linkki ulkoiseen CSS-tiedostoon tyylittelyä varten -->
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="container">
       <h1>Form Validator</h1>
       <form id="form">
-        <!-- Username input field with an error message placeholder -->
+        <!-- Käyttäjänimen syöttökenttä virheilmoituksen paikkamerkillä -->
         <input type="text" id="username" placeholder="Username" />
         <div class="error" id="username-error"></div>
-        <!-- Email input field with an error message placeholder -->
+        <!-- Sähköpostin syöttökenttä virheilmoituksen paikkamerkillä -->
         <input type="email" id="email" placeholder="Email" />
         <div class="error" id="email-error"></div>
-        <!-- Password input field with an error message placeholder -->
+        <!-- Salasanan syöttökenttä virheilmoituksen paikkamerkillä -->
         <input type="password" id="password" placeholder="Password" />
         <div class="error" id="password-error"></div>
-        <!-- Confirm Password input field with an error message placeholder
--->
+        <!-- Vahvista salasana -syöttökenttä virheilmoituksen paikkamerkillä -->
         <input
           type="password"
           id="confirm-password"
-          placeholder="Confirm
-Password"
+          placeholder="Confirm Password"
         />
         <div class="error" id="confirm-password-error"></div>
-        <!-- Submit button for form submission -->
+        <!-- Lähetä-painike lomakkeen lähettämistä varten -->
         <button type="submit">Submit</button>
       </form>
     </div>
 
-    <!-- Link to external JavaScript file for form validation logic -->
+    <!-- Linkki ulkoiseen JavaScript-tiedostoon lomakkeen validointilogiikkaa varten -->
     <script src="app.js"></script>
   </body>
 </html>

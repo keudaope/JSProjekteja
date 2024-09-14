@@ -1,62 +1,63 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Grabbing the form and all the input fields
+  // Haetaan lomake ja kaikki syöttökentät
   const form = document.getElementById("form");
   const username = document.getElementById("username");
   const email = document.getElementById("email");
   const password = document.getElementById("password");
   const confirmPassword = document.getElementById("confirm-password");
-  // Grabbing the divs where error messages will be displayed
+  // Haetaan div-elementit, joihin virheilmoitukset tulevat
   const usernameError = document.getElementById("username-error");
   const emailError = document.getElementById("email-error");
   const passwordError = document.getElementById("password-error");
   const confirmPasswordError = document.getElementById(
-    "confirm-password error"
+    "confirm-password-error"
   );
-  // Adding an event listener to the form's submit event
+  // Lisätään tapahtumankuuntelija lomakkeen lähettämistapahtumalle
   form.addEventListener("submit", (e) => {
-    e.preventDefault(); // Prevent the form from submitting the traditional way
-    validateInputs(); // Trigger the validation function
+    e.preventDefault(); // Estetään lomakkeen perinteinen lähetys
+    validateInputs(); // Kutsutaan validointifunktio
   });
-  // Function to validate all input fields
+  // Funktio kaikkien syöttökenttien validointiin
   function validateInputs() {
-    let isValid = true; // Initialize form validity as true
-    // Validate username: it should not be empty
+    let isValid = true; // Määritellään lomake aluksi validiksi
+    // Validointi: käyttäjänimi ei saa olla tyhjä
     if (username.value.trim() === "") {
-      usernameError.textContent = "Username is required"; // Display error message
-      isValid = false; // Mark form as invalid
+      usernameError.textContent = "Käyttäjänimi on pakollinen"; // Näytetään virheilmoitus
+      isValid = false; // Määritellään lomake virheelliseksi
     } else {
-      usernameError.textContent = ""; // Clear any previous error messages
+      usernameError.textContent = ""; // Tyhjennetään mahdolliset aiemmat virheilmoitukset
     }
-    // Validate email: must match a regular expression for valid email formats
+    // Validointi: sähköpostin pitää vastata oikeaa muotoa
     if (!validateEmail(email.value.trim())) {
-      emailError.textContent = "Invalid email"; // Display error message if email is invalid
-      isValid = false; // Mark form as invalid
+      emailError.textContent = "Virheellinen sähköpostiosoite"; // Näytetään virheilmoitus, jos sähköposti on virheellinen
+      isValid = false; // Määritellään lomake virheelliseksi
     } else {
-      emailError.textContent = ""; // Clear any previous error messages
+      emailError.textContent = ""; // Tyhjennetään mahdolliset aiemmat virheilmoitukset
     }
-    // Validate password: it must be at least 6 characters long
+    // Validointi: salasanan on oltava vähintään 6 merkkiä pitkä
     if (password.value.trim().length < 6) {
-      passwordError.textContent = "Password must be at least 6 characters"; // Show password error
-      isValid = false; // Mark form as invalid
+      passwordError.textContent =
+        "Salasanan on oltava vähintään 6 merkkiä pitkä"; // Näytetään virheilmoitus salasanasta
+      isValid = false; // Määritellään lomake virheelliseksi
     } else {
-      passwordError.textContent = ""; // Clear password error message if valid
+      passwordError.textContent = ""; // Tyhjennetään salasanan virheilmoitus, jos se on validi
     }
-    // Validate confirm password: it must match the password field
+    // Validointi: varmista salasana -kentän täytyy vastata salasanaa
     if (confirmPassword.value.trim() !== password.value.trim()) {
-      confirmPasswordError.textContent = "Passwords do not match"; // Show mismatch error
-      isValid = false; // Mark form as invalid
+      confirmPasswordError.textContent = "Salasanat eivät täsmää"; // Näytetään virheilmoitus, jos salasanat eivät täsmää
+      isValid = false; // Määritellään lomake virheelliseksi
     } else {
-      confirmPasswordError.textContent = ""; // Clear mismatch error if valid
+      confirmPasswordError.textContent = ""; // Tyhjennetään virheilmoitus, jos salasanat täsmäävät
     }
-    // If all fields are valid, show a success message
+    // Jos kaikki kentät ovat valideja, näytetään onnistumisviesti
     if (isValid) {
-      alert("Form submitted successfully!"); // Display success message if the form is valid
+      alert("Lomake lähetetty onnistuneesti!"); // Näytetään onnistumisviesti, jos lomake on validi
     }
   }
-  // Helper function to validate email format using a regular expression
+  // Apuohjelma sähköpostin validointiin säännöllisellä lausekkeella
   function validateEmail(email) {
-    // Regular expression to check if the email is in a valid format
+    // Säännöllinen lauseke tarkistamaan, onko sähköposti oikeassa muodossa
     const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    return re.test(email); // Returns true if the email is valid, otherwise false
+    return re.test(email); // Palauttaa true, jos sähköposti on validi, muuten false
   }
 });
