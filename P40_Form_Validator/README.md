@@ -128,3 +128,64 @@
   - **color**: Asettaa virheilmoitusten tekstin väriksi punaisen, jotta ne erottuvat lomakkeen neutraaleista väreistä ja selvästi osoittavat, että jotain on vialla.
   - **font-size**: Käyttää pienempää fonttikokoa (0.9em) virheilmoituksissa erottaakseen ne syöttökenttien nimilapuista ja pääsisällöstä.
   - **margin-bottom**: Lisää tilaa jokaisen virheilmoituksen alle varmistaakseen, ettei se mene päällekkäin seuraavan syöttökentän kanssa.
+
+# JavaScript selitys
+
+## 1. DOMContentLoaded Event Listener (document.addEventListener('DOMContentLoaded', () => {...})):
+
+- **Mikä se on**: Tämä on tapahtumankuuntelija, joka odottaa, että koko HTML-dokumentti ladataan ennen kuin JavaScriptiä suoritetaan takaisinsoittotoiminnon sisällä.
+- **Tarkoitus**: Se varmistaa, että JavaScript voi turvallisesti olla vuorovaikutuksessa DOM-elementtien (kuten lomakkeen ja syöttökenttien) kanssa, kun sivu on täysin latautunut.
+- **Tärkeä yksityiskohta**: Tämä on kriittinen, jotta vältetään virheitä, jotka johtuvat DOM-elementtien käyttämisestä ennen kuin ne ovat käytettävissä.
+
+## 2. Selecting DOM Elements (const form = document.getElementById('form'), etc.):
+
+- **Mikä se on**: Nämä rivit valitsevat eri DOM-elementtejä käyttämällä getElementById() lomakkeelle ja syöttökentille (esim. käyttäjänimi, sähköposti, salasana, salasanan vahvistus) sekä virheilmoitusten säiliöille (esim. käyttäjänimi-virhe, sähköposti-virhe, jne.).
+- **Tarkoitus**: Valitut elementit tallennetaan muuttujiksi, jotta niihin voidaan viitata ja niitä voidaan käsitellä skriptin aikana (esim. virheilmoitusten näyttämiseksi tai syötteiden tarkistamiseksi).
+- **Tärkeä yksityiskohta**: Näiden elementtien tallentaminen muuttujiksi helpottaa niiden viittaamista useita kertoja validointitoiminnoissa.
+
+## 3. Form Submission Event Listener (form.addEventListener('submit', (e) => {...})):
+
+- **Mikä se on**: Tämä tapahtumankuuntelija kuuntelee lomakkeen lähetyksen tapahtumaa ja suorittaa validateInputs()-toiminnon, kun lomake lähetetään.
+- **Tarkoitus**: Se estää lomakkeen oletuslähetyksen (e.preventDefault() avulla) käsittelemään validoinnin selaimen puolella ennen kuin mitään tietoja lähetetään palvelimelle. Näin lomake lähetetään vain, jos kaikki validoinnit onnistuvat.
+- **Tärkeä yksityiskohta**: Oletuslähetyksen estäminen mahdollistaa validointitarkistusten suorittamisen ja virheiden näyttämisen ilman sivun uudelleenlatausta.
+
+## 4. Validate Inputs Function (function validateInputs() {...}):
+
+- **Mikä se on**: Tämä funktio vastaa lomakkeen syöttökenttien (käyttäjänimi, sähköposti, salasana ja salasanan vahvistus) validoinnista.
+- **Vaiheet**:
+  - Tyhjentää aiemmat virheilmoitukset asettamalla kaikkien virheilmoituselementtien textContent tyhjäksi merkkijonoksi.
+  - Tarkistaa, täyttääkö jokainen syöttökenttä määritellyt validointisäännöt (esim. ei tyhjää käyttäjänimeä, oikea sähköpostimuoto, salasanan pituus ja yhteensopivat salasanat).
+  - Jos kenttä epäonnistuu validoinnissa, näytetään virheilmoitus ja isValid-lippu asetetaan epätodeksi.
+- **Tarkoitus**: Funktio varmistaa, että kaikki syötteet täyttävät määritellyt validointikriteerit ennen lomakkeen lähettämistä, ja näyttää sopivat virheilmoitukset, jos jokin validoinneista epäonnistuu.
+- **Tärkeä yksityiskohta**: Jos lomake on validi (isValid pysyy totena), näytetään onnistumisviesti (tai lomake voidaan lähettää). Muussa tapauksessa virheilmoitukset näytetään vastaavien syöttökenttien alla.
+
+## 5. Username Validation (if (username.value.trim() === '')):
+
+- **Mikä se on**: Tämä tarkistaa, onko käyttäjänimi-kenttä tyhjä sen jälkeen, kun johtavat tai perässä olevat välilyönnit on poistettu.
+- **Tarkoitus**: Varmistaa, että käyttäjä on syöttänyt käyttäjänimen, joka ei ole tyhjä.
+- **Tärkeä yksityiskohta**: Jos kenttä on tyhjä, näytetään virheilmoitus ("Käyttäjänimi on pakollinen") ja lomake merkitään virheelliseksi.
+
+## 6. Email Validation (validateEmail(email.value.trim())):
+
+- **Mikä se on**: Tämä käyttää apufunktiota (validateEmail()) tarkistamaan, onko sähköpostikentässä validi sähköpostiosoitemuoto.
+- **Tarkoitus**: Varmistaa, että sähköpostin syöte on oikeassa muodossa (esim. name@example.com).
+- **Tärkeä yksityiskohta**: Jos sähköposti ei vastaa odotettua muotoa, näytetään virheilmoitus ("Sähköposti ei ole kelvollinen").
+
+## 7. Password Validation (if (password.value.trim().length < 6)):
+
+- **Mikä se on**: Tämä tarkistaa, onko salasanan pituus alle 6 merkkiä.
+- **Tarkoitus**: Varmistaa, että salasana on tarpeeksi vahva asettamalla vähimmäispituusvaatimukseksi 6 merkkiä.
+- **Tärkeä yksityiskohta**: Jos salasana on liian lyhyt, näytetään virheilmoitus ("Salasanan on oltava vähintään 6 merkkiä pitkä").
+-
+
+## 8. Confirm Password Validation (if (confirmPassword.value.trim() !== password.value.trim())):
+
+- **Mikä se on**: Tämä tarkistaa, vastaavatko vahvista salasana -kentän arvo ja salasana-kentän arvo toisiaan.
+- **Tarkoitus**: Varmistaa, että käyttäjä on syöttänyt saman salasanan molempiin kenttiin virheiden välttämiseksi.
+- **Tärkeä yksityiskohta**: Jos salasanat eivät täsmää, näytetään virheilmoitus ("Salasanat eivät täsmää").
+
+## 9. Validate Email Helper Function (function validateEmail(email) {...}):
+
+- **Mikä se on**: Apufunktio, joka käyttää säännöllistä lauseketta sähköpostin muodon validointiin.
+- **Tarkoitus**: Tarkistaa, noudattaako syöte yleistä sähköpostiosoitteen muotoa (esim. name@example.com).
+- **Tärkeä yksityiskohta**: Säännöllinen lauseke varmistaa, että sähköposti sisältää kelvolliset merkit, "@"-symbolin ja verkkotunnuksen nimen.
