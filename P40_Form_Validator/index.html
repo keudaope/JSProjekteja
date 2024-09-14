@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validator</title>
+    <!-- Link to external CSS file for styling -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Form Validator</h1>
+      <form id="form">
+        <!-- Username input field with an error message placeholder -->
+        <input type="text" id="username" placeholder="Username" />
+        <div class="error" id="username-error"></div>
+        <!-- Email input field with an error message placeholder -->
+        <input type="email" id="email" placeholder="Email" />
+        <div class="error" id="email-error"></div>
+        <!-- Password input field with an error message placeholder -->
+        <input type="password" id="password" placeholder="Password" />
+        <div class="error" id="password-error"></div>
+        <!-- Confirm Password input field with an error message placeholder
+-->
+        <input
+          type="password"
+          id="confirm-password"
+          placeholder="Confirm
+Password"
+        />
+        <div class="error" id="confirm-password-error"></div>
+        <!-- Submit button for form submission -->
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <!-- Link to external JavaScript file for form validation logic -->
+    <script src="app.js"></script>
+  </body>
+</html>

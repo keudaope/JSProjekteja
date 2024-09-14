@@ -1,0 +1,43 @@
+/* Global body styles for layout */
+body {
+  font-family: "Arial", sans-serif; /* Clean, modern font */
+  background-color: #e3f2fd; /* Light blue background for a fresh look */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+/* Container styles for centering content */
+.container {
+  text-align: center;
+  padding: 20px;
+  background: #ffffff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for a modern
+card-like effect */
+  border-radius: 10px; /* Rounded corners for a smooth look */
+  max-width: 700px; /* Limiting the container width for larger screens */
+  width: 100%;
+}
+/* Canvas styles for drawing area */
+canvas {
+  border: 2px solid #007bff; /* Blue border for visibility */
+  background-color: #fff; /* White background for a clean drawing surface */
+  cursor: crosshair; /* Crosshair cursor to indicate drawing */
+  border-radius: 8px; /* Rounded corners for a modern look */
+}
+/* Button styles for clearing the canvas */
+button {
+  padding: 12px 24px; /* Larger padding for better clickability */
+  margin-top: 20px;
+  border: none;
+  background-color: #007bff; /* Vibrant blue background */
+  color: white;
+  border-radius: 8px; /* Smooth corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+/* Hover effect for the button */
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
