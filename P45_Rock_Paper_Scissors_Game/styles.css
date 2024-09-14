@@ -1,0 +1,66 @@
+/* Global body styling */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(
+    135deg,
+    #74ebd5,
+    #acb6e5
+  ); /* Modern gradient
+background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: #333;
+  transition: background-color 0.3s ease-in-out;
+}
+/* Main container styling */
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 12px; /* Smooth rounded corners */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  text-align: center;
+  width: 320px;
+  transition: transform 0.3s ease;
+}
+/* Zoom effect on hover */
+.container:hover {
+  transform: scale(1.05); /* Slight zoom effect for interactivity */
+}
+/* Title styling */
+h1 {
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  color: #2c3e50; /* Darker text color for contrast */
+}
+/* Choices button layout */
+.choices {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+/* Each choice button styling */
+.choice {
+  padding: 15px 25px;
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+  background-color: #fff;
+  font-size: 1.1em;
+  transition: background-color 0.3s, color 0.3s;
+}
+/* Hover effect for choices */
+.choice:hover {
+  background-color: #007bff;
+  color: white;
+}
+/* Result text styling */
+.result {
+  font-size: 1.4em;
+  margin-top: 20px;
+  color: #34495e;
+}

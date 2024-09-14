@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Poll</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Link to external CSS file -->
+  </head>
+  <body>
+    <div class="container">
+      <h1>Simple Poll</h1>
+      <!-- Poll question and options creation form -->
+      <div id="poll-section">
+        <input
+          type="text"
+          id="poll-question"
+          placeholder="Enter poll question"
+        />
+        <div id="poll-options">
+          <div class="poll-option">
+            <input type="text" class="option-input" placeholder="Option 1" />
+            <button class="remove-option">X</button>
+            <!-- Button to
+remove option -->
+          </div>
+          <div class="poll-option">
+            <input
+              type="text"
+              class="option-input"
+              placeholder="Option
+2"
+            />
+            <button class="remove-option">X</button>
+          </div>
+        </div>
+        <button id="add-option">Add Option</button>
+        <!-- Button to add more
+poll options -->
+        <button id="create-poll-button">Create Poll</button>
+        <!-- Button to
+create poll -->
+      </div>
+      <!-- Poll display section for voting -->
+      <div id="poll-display" style="display: none">
+        <h2 id="poll-question-display"></h2>
+        <!-- Display the poll question
+-->
+        <div id="poll-options-display"></div>
+        <!-- Display poll options with
+radio buttons -->
+        <button id="vote-button">Vote</button>
+        <!-- Button to submit vote -->
+      </div>
+      <!-- Section for displaying poll results -->
+      <div id="poll-results" style="display: none">
+        <h2>Poll Results</h2>
+        <div id="poll-results-display"></div>
+        <!-- Display poll results -->
+      </div>
+    </div>
+    <script src="app.js"></script>
+    <!-- Link to external JavaScript file -->
+  </body>
+</html>

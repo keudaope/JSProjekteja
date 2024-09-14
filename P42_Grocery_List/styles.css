@@ -1,0 +1,81 @@
+/* Styling for the entire body to center the app and apply a background gradient
+*/
+body {
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(
+    135deg,
+    #74ebd5,
+    #acb6e5
+  ); /* Nice gradient
+background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+/* Main container styling to make the list look modern and centered */
+.container {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+}
+/* Style for the title */
+h1 {
+  margin-bottom: 20px;
+}
+/* Input field styling */
+input[type="text"] {
+  padding: 10px;
+  margin-bottom: 10px;
+  width: calc(100% - 22px); /* Full width minus padding */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em; /* Make the text size a bit larger for readability */
+}
+/* Button styling */
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 1em; /* Make the button text more readable */
+}
+/* Hover effect on button for better interactivity */
+button:hover {
+  background-color: #0056b3;
+}
+/* Styling for the list items (grocery items) */
+ul {
+  list-style-type: none; /* Remove default bullets */
+  padding: 0;
+}
+/* Style each list item */
+li {
+  background: #f8f8f8;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* Delete button styling */
+.delete-button {
+  background-color: #dc3545;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+/* Hover effect on the delete button */
+.delete-button:hover {
+  background-color: #c82333;
+}

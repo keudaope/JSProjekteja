@@ -1,0 +1,61 @@
+/* General styling for the body */
+body {
+  font-family: Arial, sans-serif; /* Sets the font for the entire page */
+  background: linear-gradient(
+    135deg,
+    #74ebd5,
+    #acb6e5
+  ); /* Gradient
+background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ensures full height of the viewport is used */
+  margin: 0;
+}
+/* Container for the poll */
+.container {
+  background: white; /* White background for readability */
+  padding: 20px;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  width: 300px; /* Fixed width for consistency */
+  text-align: center; /* Center align text inside the container */
+}
+/* Heading styles */
+h1 {
+  margin-bottom: 20px; /* Spacing below the heading */
+}
+/* Input, button, and select styles */
+input,
+button {
+  padding: 10px;
+  margin-bottom: 10px;
+  width: calc(100% - 22px); /* Full width with some margin */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 4px; /* Rounded corners */
+}
+/* General button styles */
+button {
+  background-color: #007bff; /* Button background color */
+  color: white; /* Button text color */
+  cursor: pointer; /* Shows pointer on hover */
+  border: none;
+}
+/* Button hover effect */
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+/* Layout for poll options */
+.poll-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px; /* Spacing between options */
+}
+/* Styling for poll results display */
+.result {
+  background-color: #f8f8f8;
+  padding: 5px 10px;
+  border-radius: 4px; /* Rounded corners for result display */
+}

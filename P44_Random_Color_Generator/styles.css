@@ -1,0 +1,59 @@
+/* Apply global styling to ensure consistency across the app */
+body {
+  font-family: Arial, sans-serif; /* Simple and clean font for readability */
+  background: linear-gradient(
+    135deg,
+    #74ebd5,
+    #acb6e5
+  ); /* Attractive
+gradient background */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Full viewport height */
+  margin: 0;
+}
+/* Styling for the main app container */
+.container {
+  background: white;
+  padding: 20px;
+  border-radius: 8px; /* Rounded corners for a modern look */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  text-align: center;
+}
+/* Styling for the title */
+h1 {
+  margin-bottom: 20px;
+  font-size: 1.5em; /* Slightly larger font for emphasis */
+}
+/* Box where the generated color will be displayed */
+.color-display {
+  width: 150px; /* Larger box for better visibility */
+  height: 150px;
+  margin: 20px auto; /* Center the box horizontally */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #ffffff; /* Default color */
+}
+/* Styling for the generate button */
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff; /* Vibrant blue color */
+  color: white;
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor to indicate clickability */
+}
+/* Hover effect for the button */
+button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+/* Styling for the color code display (HEX and RGB) */
+.color-codes {
+  margin-top: 20px;
+}
+/* Each color code (HEX and RGB) displayed as a block for clarity */
+.color-codes span {
+  display: block;
+  margin-top: 5px;
+  font-size: 1.2em; /* Slightly larger font for easy readability */
+}

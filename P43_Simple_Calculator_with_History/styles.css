@@ -1,0 +1,60 @@
+/* Style for the entire body */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(
+    135deg,
+    #74ebd5,
+    #acb6e5
+  ); /* Gradient
+background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+/* Main container for the calculator */
+.container {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+}
+/* Style for the calculator buttons and display */
+.calculator {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+/* Style for buttons and display */
+.calculator button,
+.calculator input {
+  padding: 20px;
+  font-size: 1.2em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+/* Style for the input display */
+.calculator input {
+  grid-column: span 4; /* Makes the display span across all columns */
+  text-align: right;
+}
+/* History section */
+.history {
+  text-align: left;
+}
+/* Style for the history items */
+.history ul {
+  list-style-type: none;
+  padding: 0;
+}
+/* Style for individual history entries */
+.history li {
+  background: #f8f8f8;
+  margin-bottom: 5px;
+  padding: 5px;
+  border-radius: 4px;
+}
