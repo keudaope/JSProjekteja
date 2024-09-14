@@ -1,1 +1,1 @@
-# Nettisivu: https://keudaope.github.io/JSProjekteja/P01_To-Do_App/
+# Nettisivu: https://keudaope.github.io/JSProjekteja/P32_Tip_Splitter

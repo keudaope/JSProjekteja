@@ -1,1 +1,1 @@
-# Nettisivu: https://keudaope.github.io/JSProjekteja/P01_To-Do_App/
+# Nettisivu: https://keudaope.github.io/JSProjekteja/P29_Image_Slider
