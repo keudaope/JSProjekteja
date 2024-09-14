@@ -1,0 +1,63 @@
+/* Apply global styling to ensure a clean and modern appearance */
+body {
+  font-family: Arial, sans-serif; /* Readable, modern font */
+  background-color: #f0f0f0; /* Neutral background color */
+  display: flex;
+  justify-content: center; /* Horizontally center the content */
+  align-items: center; /* Vertically center the content */
+  height: 100vh; /* Full viewport height */
+  margin: 0;
+}
+/* Container that holds the entire app content */
+.container {
+  background: white; /* Clean white background for contrast */
+  padding: 20px;
+  border-radius: 8px; /* Rounded corners for a modern look */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  width: 300px; /* Fixed width for consistency */
+  text-align: center;
+}
+/* Styling for the title */
+h1 {
+  margin-bottom: 20px;
+}
+/* Styling for input fields */
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  padding: 10px;
+  margin-bottom: 10px;
+  width: calc(100% - 22px); /* Ensures inputs take up most of the container */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 4px; /* Rounded corners */
+}
+/* Styling for the "Generate Card" button */
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff; /* Primary blue color */
+  color: white;
+  border-radius: 4px; /* Rounded corners for a modern button */
+  cursor: pointer;
+}
+/* Hover effect for the button */
+button:hover {
+  background-color: #0056b3; /* Darker shade on hover for interactivity */
+}
+/* Styling for the generated business card */
+.business-card {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc; /* Border to define the card */
+  border-radius: 8px; /* Rounded corners */
+  text-align: left;
+  display: none; /* Initially hidden until the card is generated */
+}
+/* Styling for the business card name (larger, bold text) */
+.business-card h2 {
+  margin: 0;
+}
+/* General styling for text within the business card */
+.business-card p {
+  margin: 5px 0;
+}

@@ -1,105 +1,106 @@
 /* styles.css */
-/* Set a modern gradient background and centralize the content */
+/* Asetetaan moderni liukuvärjätty tausta ja keskitetään sisältö */
 body {
-    font-family: Arial, sans-serif; /* Sets the global font style */
-    background: linear-gradient(135deg, #74ebd5, #acb6e5); /* A visually
-   appealing gradient background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Full viewport height */
-    margin: 0; /* Removes any default margin */
-   }
-   /* Styling for the main container, adding padding, shadow, and a modern feel */
-   .container {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Depth effect using shadow */
-    width: 350px;
-    text-align: center;
-    transition: all 0.3s ease-in-out; /* Smooth transition on hover effects */
-   }
-   /* Add a slight zoom effect when the user hovers over the container */
-   .container:hover {
-    transform: scale(1.05); /* Scales the container slightly on hover */
-   }
-   /* Styling the input text field for task entry */
-   input[type="text"] {
-    flex: 1;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-right: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow around input */
-    transition: border-color 0.3s ease-in-out;
-   }
-   /* When the input field is focused, the border color changes */
-   input[type="text"]:focus {
-    border-color: #28a745; /* Green border indicates focus */
-   }
-   /* Modern button styling */
-   button {
-    padding: 12px 24px;
-    border: none;
-    background-color: #28a745;
-    color: white;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease; /* Smooth background color
-   transition */
-   }
-   /* Button hover effect for a better user experience */
+  font-family: Arial, sans-serif; /* Asettaa sivun yleisen fonttityylin */
+  background: linear-gradient(
+    135deg,
+    #74ebd5,
+    #acb6e5
+  ); /* Visuaalisesti miellyttävä liukuväritausta */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Koko näkymäkorkeus */
+  margin: 0; /* Poistaa oletusmarginaalit */
+}
+/* Pääkontainerin tyylit, lisätään täytettä, varjo ja moderni ulkoasu */
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Syvyysefekti varjolla */
+  width: 350px;
+  text-align: center;
+  transition: all 0.3s ease-in-out; /* Sujuva siirtymä hover-efekteille */
+}
+/* Lisätään pieni zoom-efekti, kun käyttäjä vie hiiren kontainerin päälle */
+.container:hover {
+  transform: scale(1.05); /* Suurentaa kontaineria hieman hover-tilassa */
+}
+/* Syöttökentän tyylit tehtävien kirjoittamista varten */
+input[type="text"] {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Kevyt varjo syötteen ympärillä */
+  transition: border-color 0.3s ease-in-out;
+}
+/* Kun syöttökenttä on aktiivinen, reunuksen väri muuttuu */
+input[type="text"]:focus {
+  border-color: #28a745; /* Vihreä reunus ilmaisee aktiivisuuden */
+}
+/* Modernin painikkeen tyylit */
+button {
+  padding: 12px 24px;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Sujuva taustavärin siirtymä */
+}
+/* Painikkeen hover-efekti paremman käyttökokemuksen takaamiseksi */
 button:hover {
-    background-color: #218838; /* Darker green on hover */
-   }
-   /* Styling for the task list, removing default list styles */
-   ul {
-    list-style: none; /* Removes bullet points */
-    padding: 0;
-    margin-top: 20px; /* Space above the list */
-   }
-   /* Styling for individual tasks, with a light shadow and padding */
-   li {
-    background: #ffffff;
-    margin: 10px 0;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: opacity 0.5s ease-in-out; /* Smooth transition for fade-in/fadeout effects */
-    opacity: 1; /* Fully visible by default */
-   }
-   /* When hovering over a task, we increase the shadow for a more interactive
-   effect */
-   li:hover {
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-   }
-   /* Completed tasks are crossed out and have a lighter color */
-   li.completed {
-    text-decoration: line-through;
-    color: #888;
-   }
-   /* Styling for the delete button within tasks */
-   li button {
-    background: none; /* No background for a cleaner look */
-    border: none;
-    color: #d9534f;
-    cursor: pointer;
-    transition: color 0.3s ease; /* Smooth color transition */
-   }
-   /* Delete button hover effect with a transition to white text */
-   li button:hover {
-    color: white; /* Changes to white on hover */
-    background-color: #d9534f; /* Adds background color for better visibility */
-    padding: 5px 10px;
-    border-radius: 4px; /* Adds a subtle border radius for the hover effect */
-   }
-   /* Fade-out class for smooth removal of tasks */
+  background-color: #218838; /* Tummempi vihreä hover-tilassa */
+}
+/* Tehtävälistan tyylit, poistetaan oletuslista-asetukset */
+ul {
+  list-style: none; /* Poistaa luettelomerkit */
+  padding: 0;
+  margin-top: 20px; /* Tilaa listan yläpuolelle */
+}
+/* Yksittäisten tehtävien tyylit, kevyt varjo ja täyte */
+li {
+  background: #ffffff;
+  margin: 10px 0;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.5s ease-in-out; /* Sujuva siirtymä häivytys-/näkyvyys-efekteille */
+  opacity: 1; /* Täysin näkyvä oletuksena */
+}
+/* Kun viet hiiren tehtävän päälle, varjo syvenee interaktiivisen vaikutelman saamiseksi */
+li:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+/* Valmiit tehtävät yliviivataan ja niillä on vaaleampi väri */
+li.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+/* Tehtävän sisällä olevan poistopainikkeen tyylit */
+li button {
+  background: none; /* Ei taustaa puhtaamman ilmeen saavuttamiseksi */
+  border: none;
+  color: #d9534f;
+  cursor: pointer;
+  transition: color 0.3s ease; /* Sujuva värimuutos */
+}
+/* Poistopainikkeen hover-efekti, jossa teksti vaihtuu valkoiseksi */
+li button:hover {
+  color: white; /* Teksti vaihtuu valkoiseksi hover-tilassa */
+  background-color: #d9534f; /* Taustaväri lisätään paremman näkyvyyden saavuttamiseksi */
+  padding: 5px 10px;
+  border-radius: 4px; /* Hover-tilassa lisätään hienovarainen pyöristys */
+}
+/* Häivytysluokka tehtävien sujuvaan poistamiseen */
 li.fade-out {
-    opacity: 0; /* Fade-out effect */
-    transition: opacity 0.5s ease-in-out; /* Smooth fade-out transition */
-   }
+  opacity: 0; /* Häivytysefekti */
+  transition: opacity 0.5s ease-in-out; /* Sujuva häivytyssiirtymä */
+}

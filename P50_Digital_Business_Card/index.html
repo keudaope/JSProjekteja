@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta information for character encoding and responsive design -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Business Card</title>
+    <!-- Link to the external CSS stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Main heading of the app -->
+      <h1>Digital Business Card</h1>
+
+      <!-- Input fields for user to enter details for the business card -->
+      <input type="text" id="name-input" placeholder="Name" />
+      <input type="text" id="title-input" placeholder="Title" />
+      <input type="email" id="email-input" placeholder="Email" />
+      <input type="tel" id="phone-input" placeholder="Phone" />
+      <!-- Button to trigger the generation of the business card -->
+      <button id="generate-card-button">Generate Card</button>
+      <!-- Section where the generated business card will be displayed -->
+      <div class="business-card" id="business-card">
+        <h2 id="card-name"></h2>
+        <p id="card-title"></p>
+        <p id="card-email"></p>
+        <p id="card-phone"></p>
+      </div>
+    </div>
+    <!-- JavaScript file for dynamic functionality -->
+    <script src="app.js"></script>
+  </body>
+</html>

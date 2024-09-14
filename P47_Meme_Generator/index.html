@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meme Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Meme Generator</h1>
+      <!-- Input field to upload an image -->
+      <input type="file" id="image-input" accept="image/*" />
+      <!-- Input fields for top and bottom text of the meme -->
+      <input type="text" id="top-text" placeholder="Top text" />
+      <input type="text" id="bottom-text" placeholder="Bottom text" />
+      <!-- Buttons to generate and download the meme -->
+      <div class="buttons">
+        <button id="generate-meme-button">Generate Meme</button>
+        <button id="download-meme-button" style="display: none">
+          Download Meme
+        </button>
+      </div>
+    </div>
+    <!-- Hidden canvas for rendering the meme -->
+    <canvas id="meme-canvas" style="display: none"></canvas>
+    <!-- Link to the JavaScript file -->
+    <script src="app.js"></script>
+  </body>
+</html>
