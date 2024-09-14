@@ -1,43 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
- <meta charset="UTF-8">
- <!-- Specifies the character encoding, ensuring proper display of characters
--->
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <!-- Ensures the page is responsive to different screen sizes -->
- <title>Quiz App</title>
- <!-- External CSS or internal styling would be linked here -->
- <link rel="stylesheet" href="styles.css">
-</head>
-<body>
- <!-- Main container for the entire quiz app -->
- <div class="container">
- <!-- Title of the Quiz App -->
- <h1>Quiz App</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Määrittää merkistökoodauksen, varmistaen merkkien oikean esittämisen -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Varmistaa, että sivu on responsiivinen eri näyttökokoihin -->
+    <title>Quiz App</title>
+    <!-- Ulkoisen CSS-tiedoston tai sisäisten tyylien linkitys -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Pääkontaineri koko visailusovellukselle -->
+    <div class="container">
+      <!-- Visailusovelluksen otsikko -->
+      <h1>Visailusovellus</h1>
 
- <!-- The quiz container will hold the question and options -->
- <div class="quiz-container" id="quiz-container">
- <!-- Question text will be dynamically inserted here -->
- <div class="question" id="question">Question will appear here</div>
+      <!-- Visailukontaineri sisältää kysymyksen ja vastausvaihtoehdot -->
+      <div class="quiz-container" id="quiz-container">
+        <!-- Kysymysteksti lisätään tähän dynaamisesti -->
+        <div class="question" id="question">Kysymys ilmestyy tähän</div>
 
- <!-- Options list for multiple choice answers -->
- <ul class="options" id="options">
- <!-- Options will be dynamically generated here by JavaScript -->
- </ul>
+        <!-- Vastausvaihtoehdot monivalintakysymyksiin -->
+        <ul class="options" id="options">
+          <!-- Vastausvaihtoehdot luodaan dynaamisesti JavaScriptin avulla -->
+        </ul>
 
- <!-- Button to proceed to the next question, initially hidden -->
- <button id="next-button" class="hidden">Next</button>
+        <!-- Painike siirtymään seuraavaan kysymykseen, aluksi piilotettu -->
+        <button id="next-button" class="hidden">Seuraava</button>
 
- <!-- Result section, hidden until the quiz is completed -->
- <div class="result hidden" id="result"></div>
+        <!-- Tulososio, piilotettu kunnes visailu on suoritettu -->
+        <div class="result hidden" id="result"></div>
 
- <!-- Reset button to restart the quiz, initially hidden -->
- <button id="reset-button" class="hidden">Reset Quiz</button>
- </div>
- </div>
+        <!-- Nollauspainike visailun uudelleenkäynnistämistä varten, aluksi piilotettu -->
+        <button id="reset-button" class="hidden">Aloita alusta</button>
+      </div>
+    </div>
 
- <!-- JavaScript file linked for quiz logic -->
- <script src="app.js"></script>
-</body>
+    <!-- JavaScript-tiedoston linkitys visailulogiiikkaa varten -->
+    <script src="app.js"></script>
+  </body>
 </html>

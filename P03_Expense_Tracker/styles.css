@@ -1,113 +1,116 @@
-/* RESET and GLOBAL STYLES */
+/* RESET ja GLOBAALIT TYYLIT */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* Ensures padding doesn't add extra width/height */
-    font-family: 'Arial', sans-serif; /* Default font for readability */
-   }
-   /* Styles for the body to ensure a centered, modern layout */
-   body {
-    font-family: 'Roboto', sans-serif; /* Modern font */
-    background: linear-gradient(135deg, #74ebd5, #ACB6E5); /* Attractive
-   gradient background */
-    display: flex; /* Flexbox to center content */
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Full viewport height */
-    margin: 0; /* Remove default margin */
-   }
-   /* Main container for the app */
-   .container {
-    background: white; /* White background for contrast */
-    padding: 30px; /* Increase padding for a more spacious feel */
-    border-radius: 12px; /* More rounded corners for a modern look */
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15); /* Stronger shadow for more
-   depth */
-    width: 400px; /* Increase width for a more open layout */
-    text-align: center; /* Center align text inside container */
-    transition: transform 0.3s ease; /* Smooth transition */
-   }
-   /* Main heading styles */
-   h1 {
-    margin-bottom: 20px; /* Space below the heading */
-    color: #333; /* Darker text for better contrast */
-    font-weight: 500; /* Slightly lighter font weight */
-   }
-   /* Styling for the form to make it clean and simple */
-   form {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center elements horizontally */
-   }
-   /* Input and select fields styling */
-input[type="text"], input[type="number"], select {
-    width: 100%; /* Full width */
-    padding: 12px; /* Increased padding for a modern feel */
-    margin-bottom: 15px; /* More space between inputs */
-    border: 1px solid #ccc; /* Light gray border */
-    border-radius: 6px; /* Slightly more rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-    transition: border-color 0.3s ease; /* Smooth transition on focus */
-   }
-   /* Input and select focus effect */
-   input[type="text"]:focus, input[type="number"]:focus, select:focus {
-    border-color: #28a745; /* Green border on focus for a cleaner look */
-   }
-   /* Button styles for adding an expense */
-   button {
-    padding: 12px 24px; /* Increased padding for a larger clickable area */
-    border: none; /* Remove default border */
-    background-color: #28a745; /* Green background for positive action */
-    color: white; /* White text for contrast */
-    border-radius: 6px; /* Rounded corners for a modern button */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover
-   transition */
-   }
-   /* Hover effect for the button */
-   button:hover {
-    background-color: #218838; /* Darker green for hover state */
-    transform: translateY(-2px); /* Slight lifting effect on hover */
-   }
-   /* Expense list container styles */
-   .expense-list {
-    margin-top: 20px; /* Space above the list */
-    text-align: left; /* Align text to the left */
-   }
-   /* Individual expense item styles */
-   .expense-item {
-    display: flex; /* Flexbox to layout the item and delete button */
-    justify-content: space-between; /* Spread out content */
-    align-items: center; /* Align content vertically */
-    padding: 15px; /* Padding inside the item */
-    background: #f4f4f4; /* Light background for contrast */
-    margin: 8px 0; /* Space between items */
-    border-radius: 6px; /* Rounded corners for consistency */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    opacity: 1; /* Default opacity for visibility */
-    transition: opacity 0.4s ease, transform 0.4s ease; /* Smooth fade and move
-   transition */
-   }
-   /* Fade-in effect when an item is added */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Varmistaa, että padding ei lisää elementin leveyttä/korkeutta */
+  font-family: "Arial", sans-serif; /* Oletusfontti luettavuuden takaamiseksi */
+}
+/* Tyylit body-elementille, keskitetty ja moderni asettelu */
+body {
+  font-family: "Roboto", sans-serif; /* Moderni fontti */
+  background: linear-gradient(
+    135deg,
+    #74ebd5,
+    #acb6e5
+  ); /* Visuaalisesti miellyttävä liukuväritausta */
+  display: flex; /* Flexbox sisällön keskittämiseen */
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Koko näkymäkorkeus */
+  margin: 0; /* Poistaa oletusmarginaalin */
+}
+/* Sovelluksen pääkontaineri */
+.container {
+  background: white; /* Valkoinen tausta kontrastiksi */
+  padding: 30px; /* Suurempi täyte ilmavan ilmeen luomiseksi */
+  border-radius: 12px; /* Pyöristetyt kulmat modernia ulkoasua varten */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15); /* Voimakkaampi varjo syvyysefektin aikaansaamiseksi */
+  width: 400px; /* Suurempi leveys avoimemman asettelun luomiseksi */
+  text-align: center; /* Tekstin keskittäminen kontainerissa */
+  transition: transform 0.3s ease; /* Sujuva siirtymä */
+}
+/* Pääotsikon tyylit */
+h1 {
+  margin-bottom: 20px; /* Välit otsikon alapuolelle */
+  color: #333; /* Tummempi teksti paremman kontrastin saavuttamiseksi */
+  font-weight: 500; /* Hieman kevyempi fonttipaino */
+}
+/* Lomakkeen tyylit, yksinkertainen ja siisti ilme */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Keskittää elementit vaakasuunnassa */
+}
+/* Syöttökenttien ja valintakenttien tyylit */
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%; /* Koko leveys */
+  padding: 12px; /* Lisää täytettä modernin ilmeen luomiseksi */
+  margin-bottom: 15px; /* Suurempi tila kenttien välille */
+  border: 1px solid #ccc; /* Vaalea harmaa reunus */
+  border-radius: 6px; /* Hieman pyöristetyt kulmat */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Kevyt varjo syvyyttä varten */
+  transition: border-color 0.3s ease; /* Sujuva siirtymä fokuksessa */
+}
+/* Syöttö- ja valintakenttien fokus-efekti */
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+  border-color: #28a745; /* Vihreä reunus fokuksessa siistin ilmeen saamiseksi */
+}
+/* Painikkeen tyylit kulun lisäämistä varten */
+button {
+  padding: 12px 24px; /* Suurempi täyte suuremman klikkausalueen luomiseksi */
+  border: none; /* Poistaa oletusreunuksen */
+  background-color: #28a745; /* Vihreä taustaväri positiiviselle toiminnolle */
+  color: white; /* Valkoinen teksti kontrastia varten */
+  border-radius: 6px; /* Pyöristetyt kulmat modernille painikkeelle */
+  cursor: pointer; /* Osoitin hover-tilassa */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Sujuva siirtymä hover-tilassa */
+}
+/* Hover-efekti painikkeelle */
+button:hover {
+  background-color: #218838; /* Tummempi vihreä hover-tilassa */
+  transform: translateY(-2px); /* Hieman nouseva efekti hover-tilassa */
+}
+/* Kululistan kontainerin tyylit */
+.expense-list {
+  margin-top: 20px; /* Tila listan yläpuolella */
+  text-align: left; /* Tekstin vasemmalle tasaus */
+}
+/* Yksittäisen kuluerän tyylit */
+.expense-item {
+  display: flex; /* Flexbox asettelemaan erä ja poistopainike */
+  justify-content: space-between; /* Levittää sisällön tasaisesti */
+  align-items: center; /* Kohdistaa sisällön pystysuunnassa */
+  padding: 15px; /* Täyte erän sisälle */
+  background: #f4f4f4; /* Vaalea tausta kontrastiksi */
+  margin: 8px 0; /* Tila erien välille */
+  border-radius: 6px; /* Pyöristetyt kulmat yhtenäisyyden säilyttämiseksi */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Hienovarainen varjo syvyyttä varten */
+  opacity: 1; /* Oletusläpinäkyvyys näkyvyyttä varten */
+  transition: opacity 0.4s ease, transform 0.4s ease; /* Sujuva häivytys- ja liikesiirtymä */
+}
+/* Sisäänfade-efekti, kun erä lisätään */
 .expense-item.added {
-    opacity: 0; /* Start invisible */
-    transform: translateY(-20px); /* Move up slightly */
-   }
-   /* Fade-in complete */
-   .expense-item.added.show {
-    opacity: 1; /* Fade in */
-    transform: translateY(0); /* Move back to original position */
-   }
-   /* Fade-out effect when an item is removed */
-   .expense-item.removing {
-    opacity: 0; /* Fade out */
-    transform: translateX(20px); /* Move out to the right */
-    transition: opacity 0.4s ease, transform 0.4s ease; /* Smooth fade-out and
-   move transition */
-   }
-   /* Summary section styles */
-   .summary {
-    margin-top: 20px; /* Space above the summary */
-    text-align: left; /* Align text to the left */
-    font-weight: 600; /* Make the total amount bold */
-   }
+  opacity: 0; /* Alkaa näkymättömänä */
+  transform: translateY(-20px); /* Siirtyy hieman ylöspäin */
+}
+/* Sisäänfade valmis */
+.expense-item.added.show {
+  opacity: 1; /* Fade in */
+  transform: translateY(0); /* Palaa alkuperäiseen sijaintiin */
+}
+/* Ulosfade-efekti, kun erä poistetaan */
+.expense-item.removing {
+  opacity: 0; /* Fade out */
+  transform: translateX(20px); /* Siirtyy oikealle */
+  transition: opacity 0.4s ease, transform 0.4s ease; /* Sujuva fade-out ja liikesiirtymä */
+}
+/* Yhteenveto-osan tyylit */
+.summary {
+  margin-top: 20px; /* Tila yhteenvedon yläpuolella */
+  text-align: left; /* Tekstin vasemmalle tasaus */
+  font-weight: 600; /* Yhteissumman lihavointi */
+}

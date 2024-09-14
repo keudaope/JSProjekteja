@@ -1,50 +1,50 @@
 // app.js
-// This ensures the JavaScript only runs once the DOM has fully loaded
-document.addEventListener('DOMContentLoaded', () => {
-    const todoForm = document.getElementById('todo-form'); // The form for new task entry
-    const todoInput = document.getElementById('todo-input'); // The text input field for new tasks
-    const todoList = document.getElementById('todo-list'); // The list where tasks will be displayed
-    // Handle form submission
-    todoForm.addEventListener('submit', (event) => {
-    event.preventDefault(); // Prevent the form from refreshing the page
-    const newTodoText = todoInput.value.trim(); // Get the entered task, removing any leading/trailing spaces
-    if (newTodoText !== '') {
-    addTodoItem(newTodoText); // If the input is valid, add the task
-    todoInput.value = ''; // Clear the input field after adding the task
-    todoInput.focus(); // Automatically focus the input field for easier task entry
+// Tämä varmistaa, että JavaScript suoritetaan vasta, kun DOM on täysin latautunut
+document.addEventListener("DOMContentLoaded", () => {
+  const todoForm = document.getElementById("todo-form"); // Lomake uusien tehtävien lisäämiseksi
+  const todoInput = document.getElementById("todo-input"); // Tekstikenttä uusille tehtäville
+  const todoList = document.getElementById("todo-list"); // Lista, johon tehtävät näytetään
+  // Käsitellään lomakkeen lähetys
+  todoForm.addEventListener("submit", (event) => {
+    event.preventDefault(); // Estää lomakkeen oletuslähetyksen, joka päivittäisi sivun
+    const newTodoText = todoInput.value.trim(); // Haetaan syötetty tehtävä, poistetaan ylimääräiset välilyönnit alusta ja lopusta
+    if (newTodoText !== "") {
+      addTodoItem(newTodoText); // Jos syöte on kelvollinen, lisätään tehtävä
+      todoInput.value = ""; // Tyhjennetään syöttökenttä tehtävän lisäämisen jälkeen
+      todoInput.focus(); // Automaattisesti fokusoidaan syöttökenttä, jotta tehtävien lisääminen on helpompaa
     }
+  });
+  /**
+   * Funktio uuden tehtävän lisäämiseen listaan.
+   * @param {string} text - Uuden tehtävän teksti.
+   */
+  function addTodoItem(text) {
+    // Luodaan uusi <li>-elementti edustamaan tehtävää
+    const li = document.createElement("li");
+    li.textContent = text; // Asetetaan tehtävän teksti
+    // Luodaan painike tehtävän poistamiseksi
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Poista"; // Poistopainikkeen teksti
+    // Lisätään tapahtumankuuntelija poistamaan tehtävä, kun poistopainiketta klikataan
+    deleteButton.addEventListener("click", () => {
+      // Lisätään häivytysefekti ennen tehtävän poistamista
+      li.classList.add("fade-out");
+      // Poistetaan tehtävä DOM:sta häivytysefektin jälkeen (0,5 sekunnin viive)
+      setTimeout(() => todoList.removeChild(li), 500);
     });
-    /**
-    * Function to add a new task to the list.
-    * @param {string} text - The text of the new task.
-    */
-    function addTodoItem(text) {
-    // Create a new <li> element to represent the task
-    const li = document.createElement('li');
-    li.textContent = text; // Set the text of the task
-    // Create a button to delete the task
-    const deleteButton = document.createElement('button');
-    deleteButton.textContent = 'Delete'; // Text for the delete button
-    // Add an event listener to remove the task when the delete button is clicked
-    deleteButton.addEventListener('click', () => {
-    // Add fade-out effect before removing the task
-    li.classList.add('fade-out');
-    // Remove the task from the DOM after the fade-out effect (0.5s delay)
-    setTimeout(() => todoList.removeChild(li), 500);
+    // Lisätään tapahtumankuuntelija tehtävän merkitsemiseksi valmiiksi, kun sitä klikataan
+    li.addEventListener("click", () => {
+      li.classList.toggle("completed"); // Vaihdetaan 'completed'-luokka merkitsemään/poistamaan merkintä valmiista tehtävistä
     });
-   // Add event listener to toggle the 'completed' status when the task is clicked
-li.addEventListener('click', () => {
-li.classList.toggle('completed'); // Toggles the 'completed' class to mark/unmark tasks
-});
-// Append the delete button to the task
-li.appendChild(deleteButton);
-// Initially set opacity to 0 for fade-in effect
-li.style.opacity = 0;
-// Append the new task to the list
-todoList.appendChild(li);
-// Fade-in effect after slight delay
-setTimeout(() => {
-li.style.opacity = 1; // Task fades in
-}, 10); // Delay for smooth fade-in
-}
+    // Liitetään poistopainike tehtävään
+    li.appendChild(deleteButton);
+    // Asetetaan aluksi läpinäkyvyys nollaksi häivytysefektiä varten
+    li.style.opacity = 0;
+    // Lisätään uusi tehtävä listaan
+    todoList.appendChild(li);
+    // Häivytysefekti lyhyen viiveen jälkeen
+    setTimeout(() => {
+      li.style.opacity = 1; // Tehtävä häivyttyy näkyviin
+    }, 10); // Viive sujuvaa häivytystä varten
+  }
 });

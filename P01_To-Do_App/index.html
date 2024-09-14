@@ -1,42 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
- <meta charset="UTF-8">
- <!--
- Sets the document's character encoding to UTF-8, ensuring support for most
-characters.
- -->
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <!--
- Ensures the page is responsive and adjusts to different devices by scaling
-the viewport width.
- -->
- <title>To-Do List App</title>
- <!-- Linking to the external stylesheet to maintain separation of concerns
--->
- <link rel="stylesheet" href="styles.css">
-</head>
-<body>
- <div class="container">
- <!-- Main page title for user context -->
- <h1>To-Do List</h1>
- <!--
- Form where the user adds new tasks. It uses the 'submit' event to handle
-task submission.
- -->
- <form id="todo-form" aria-label="To-Do Form">
- <!-- Text input field for writing new tasks -->
- <input type="text" id="todo-input" placeholder="Add a new task"
-required aria-label="New task input">
- <!-- Button to submit the new task -->
- <button type="submit" aria-label="Add task button">Add</button>
- </form>
- <!-- Unordered list to display the tasks, which will be populated
-dynamically -->
- <ul id="todo-list" aria-label="To-Do List"></ul>
- </div>
- <!-- Linking to the external JavaScript file that contains the app's logic
--->
- <script src="app.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Asettaa dokumentin merkistökoodauksen UTF-8:ksi, varmistaen useimpien
+merkkien tuen. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Varmistaa, että sivu on responsiivinen ja mukautuu eri laitteisiin skaalamalla
+näkymän leveyden. -->
+    <title>To-Do List App</title>
+    <!-- Linkitetään ulkoinen tyylitiedosto, jotta rakenteen ja ulkoasun erottaminen
+säilyy. -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Pääsivun otsikko käyttäjän kontekstia varten -->
+      <h1>To-Do List</h1>
+      <!-- Lomake, jossa käyttäjä lisää uusia tehtäviä. Käyttää 'submit'-tapahtumaa tehtävän
+lähetyksen käsittelyyn. -->
+      <form id="todo-form" aria-label="To-Do Form">
+        <!-- Tekstikenttä uusien tehtävien kirjoittamiseen -->
+        <input
+          type="text"
+          id="todo-input"
+          placeholder="Lisää uusi tehtävä"
+          required
+          aria-label="Uuden tehtävän syöttö"
+        />
+        <!-- Painike uuden tehtävän lähettämiseen -->
+        <button type="submit" aria-label="Lisää tehtävä -painike">Lisää</button>
+      </form>
+      <!-- Järjestämätön lista tehtävien näyttämiseen, joka täytetään
+dynaamisesti -->
+      <ul id="todo-list" aria-label="Tehtävälista"></ul>
+    </div>
+    <!-- Linkitetään ulkoinen JavaScript-tiedosto, joka sisältää sovelluksen logiikan -->
+    <script src="app.js"></script>
+  </body>
 </html>

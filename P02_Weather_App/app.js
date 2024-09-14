@@ -1,90 +1,87 @@
-// Wait for the DOM to fully load before running the script
+// Odotetaan, että DOM latautuu kokonaan ennen skriptin suorittamista
 document.addEventListener("DOMContentLoaded", () => {
-  // Select the form element used for inputting the city name
+  // Valitaan lomake-elementti, jota käytetään kaupungin nimen syöttämiseen
   const weatherForm = document.getElementById("weather-form");
 
-  // Select the input field where users will type the city name
+  // Valitaan syöttökenttä, johon käyttäjä kirjoittaa kaupungin nimen
   const cityInput = document.getElementById("city-input");
 
-  // Select the div where the fetched weather information will be displayed
+  // Valitaan div, jossa haetut säätiedot näytetään
   const weatherInfo = document.getElementById("weather-info");
-  // Define the API key for OpenWeatherMap (replace 'your_api_key_here' with your actual API key)
+  // Määritellään OpenWeatherMap API-avaimen (korvaa 'your_api_key_here' oikealla API-avaimellasi)
   const apiKey = "be2d23aa0e1b4ab382b53831241309";
 
-  // Base URL for the weather API to which the city name will be appended
+  // Sään API:n perus-URL, johon kaupungin nimi liitetään
   const apiBaseUrl = "http://api.weatherapi.com/v1/current.json";
   /**
-    * Fetches weather data from the OpenWeatherMap API for the provided city.
-    * @param {string} city - The name of the city for which the weather data is
-   requested.
-    */
+   * Hakee säätietoja OpenWeatherMap API:sta annetulle kaupungille.
+   * @param {string} city - Kaupungin nimi, jolle säätiedot pyydetään.
+   */
   function fetchWeather(city) {
-    // Build the complete API URL using the city name, API key, and metric units for temperature
+    // Rakennetaan täydellinen API-URL käyttäen kaupungin nimeä, API-avainta ja lämpötilan metrijärjestelmää
     const apiUrl = `${apiBaseUrl}?key=${apiKey}&q=${city}`;
-    // Use the Fetch API to make a GET request to the weather API
+    // Käytetään Fetch API:ta tekemään GET-pyyntö säätietojen API:lle
     fetch(apiUrl)
       .then((response) => {
-        // Check if the response from the API is successful (status code 200-299)
+        // Tarkistetaan, onko API:n vastaus onnistunut (tilakoodi 200-299)
         if (!response.ok) {
-          // If the city is not found or there's an error, throw an error message
-          throw new Error("City not found");
+          // Jos kaupunkia ei löydy tai tapahtuu virhe, heitetään virheilmoitus
+          throw new Error("Kaupunkia ei löytynyt");
         }
-        // Convert the response into JSON format
+        // Muutetaan vastaus JSON-muotoon
         return response.json();
       })
       .then((data) => {
-        // If the data is successfully fetched, display it using the displayWeather function
+        // Jos tiedot haetaan onnistuneesti, näytetään ne displayWeather-funktion avulla
         displayWeather(data);
       })
       .catch((error) => {
-        // If an error occurs (e.g., city not found), display an error message in the weatherInfo div
-        weatherInfo.innerHTML = `<p>Error: ${error.message}</p>`;
-        // Make the error message visible by adding the 'visible' class
+        // Jos tapahtuu virhe (esim. kaupunkia ei löydy), näytetään virheilmoitus weatherInfo-divissä
+        weatherInfo.innerHTML = `<p>Virhe: ${error.message}</p>`;
+        // Tehdään virheilmoitus näkyväksi lisäämällä 'visible'-luokka
         weatherInfo.classList.add("visible");
       });
   }
   /**
-    * Displays the fetched weather data in the weather info section of the
-   page.
-    * @param {object} data - The weather data returned by the API.
-    */
+   * Näyttää haetut säätiedot sivun weather info -osiossa.
+   * @param {object} data - API:n palauttamat säätiedot.
+   */
   async function displayWeather(data) {
-    //Clear any previous weather information before displaying new data
+    // Tyhjennetään mahdolliset aiemmat säätiedot ennen uusien tietojen näyttämistä
     weatherInfo.innerHTML = "";
-    // Extract key information from the API response (city name, temperature, weather description, etc.)
+    // Haetaan tärkeät tiedot API:n vastauksesta (kaupungin nimi, lämpötila, säätila jne.)
     const cityName = data.location.name;
     const temperature = data.current.temp_c;
     const condition = data.current.condition.text;
     const latitude = data.location.lat;
     const longitude = data.location.lon;
-    // Construct HTML to display the weather information dynamically
+    // Rakennetaan HTML, jolla säätiedot näytetään dynaamisesti
     weatherInfo.innerHTML = `
-    <p><strong>City:</strong> ${cityName}</p>
-    <p><strong>Temperature:</strong> ${temperature}°C</p>
-    <p><strong>Condition:</strong> ${condition}</p>
-    <p><strong>Latitude:</strong> ${latitude}</p>
-    <p><strong>Longitude:</strong> ${longitude}</p>
+    <p><strong>Kaupunki:</strong> ${cityName}</p>
+    <p><strong>Lämpötila:</strong> ${temperature}°C</p>
+    <p><strong>Säätila:</strong> ${condition}</p>
+    <p><strong>Leveysaste:</strong> ${latitude}</p>
+    <p><strong>Pituusaste:</strong> ${longitude}</p>
     `;
-    // Make the weather information visible with a fade-in effect by adding the 'visible' class
+    // Tehdään säätiedot näkyviksi fade-in-efektillä lisäämällä 'visible'-luokka
     weatherInfo.classList.add("visible");
   }
   /**
-    * Handles the form submission to get the weather data for the entered city.
-    * @param {Event} event - The submit event triggered when the form is
-   submitted.
-    */
+   * Käsittelee lomakkeen lähetyksen ja hakee säätiedot syötetylle kaupungille.
+   * @param {Event} event - Submit-tapahtuma, joka laukeaa, kun lomake lähetetään.
+   */
   weatherForm.addEventListener("submit", (event) => {
-    // Prevent the default form submission, which would reload the page
+    // Estetään lomakkeen oletuslähetys, joka lataisi sivun uudelleen
     event.preventDefault();
-    // Get the value entered in the city input field and remove any extra spaces
+    // Haetaan syöttökenttään kirjoitettu kaupungin nimi ja poistetaan ylimääräiset välilyönnit
     const city = cityInput.value.trim();
-    // If the user has entered a city name, proceed to fetch the weather data
+    // Jos käyttäjä on syöttänyt kaupungin nimen, jatketaan säätietojen hakemista
     if (city) {
       fetchWeather(city);
     } else {
-      // If no city is entered, display a message asking the user to enter a city name
-      weatherInfo.innerHTML = "<p>Please enter a city name</p>";
-      // Make the message visible by adding the 'visible' class
+      // Jos kaupunkia ei ole syötetty, näytetään viesti, jossa pyydetään syöttämään kaupungin nimi
+      weatherInfo.innerHTML = "<p>Syötä kaupungin nimi</p>";
+      // Tehdään viesti näkyväksi lisäämällä 'visible'-luokka
       weatherInfo.classList.add("visible");
     }
   });

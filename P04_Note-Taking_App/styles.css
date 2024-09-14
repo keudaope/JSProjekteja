@@ -1,128 +1,128 @@
-/* Styles for the entire body to set background and center content */
+/* Tyylit koko bodylle, tausta ja sisällön keskittäminen */
 body {
-    font-family: 'Roboto', sans-serif; /* Modern font for a clean look */
-    background: linear-gradient(135deg, #74ebd5, #ACB6E5); /* Gradient
-   background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Full viewport height for centering */
-    margin: 0; /* Remove default margin */
-   }
-   /* Main container for the app */
-   .container {
-    background: white;
-    padding: 30px;
-    border-radius: 12px; /* Soft corners for a modern feel */
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    width: 400px;
-    text-align: center; /* Center-align text */
-    transition: all 0.3s ease; /* Smooth transition for future hover effects */
-   }
-   /* Main heading style */
-   h1 {
-    margin-bottom: 20px;
-    color: #333; /* Darker text color for contrast */
-   }
-   /* Form layout for adding notes */
-   form {
-    display: flex;
-    flex-direction: column; /* Vertical alignment */
-    align-items: center;
-   }
-   /* Input field for new notes */
-   input[type="text"] {
-    width: 100%; /* Full width input */
-    padding: 12px;
-    border: 1px solid #ccc; /* Light border */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
-    transition: border-color 0.3s ease; /* Smooth transition on focus */
-   }
-   /* Change border color when input is focused */
-   input[type="text"]:focus {
-    border-color: #28a745; /* Green border on focus */
-   }
-   /* Button for adding new notes */
-   button {
-    padding: 12px 24px;
-    border: none;
-    background-color: #28a745; /* Green background for positive action */
-    color: white;
-    border-radius: 6px; /* Rounded corners */
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth
-   transition on hover */
-   }
-   .submit{
-   margin-top: 20px;
-   }
-   /* Hover effect for buttons */
-   button:hover {
-    background-color: #218838; /* Darker green on hover */
-    transform: translateY(-2px); /* Slight lift on hover */
-   }
-   /* Note list container styling */
-   .note-list {
-    margin-top: 20px;
-    text-align: left; /* Left-align the note text */
-   }
-   /* Styling for each individual note */
-   .note-item {
-    display: flex;
-    justify-content: space-between; /* Separate text and buttons */
-    align-items: center;
-    padding: 15px;
-    background: #f4f4f4; /* Light gray background for note */
-    margin: 8px 0; /* Space between notes */
-    border-radius: 6px; /* Rounded corners */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Light shadow */
-    opacity: 1; /* Fully visible by default */
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Smooth
-   transition for fade-in and fade-out */
-   }
-   /* Initial state for note during fade-in */
-   .note-item.adding {
-    opacity: 0; /* Initially invisible */
-    transform: translateY(-20px); /* Start slightly above */
-   }
-   /* Final state for note after fade-in */
-   .note-item.adding.show {
-    opacity: 1;
-    transform: translateY(0); /* Slides into place */
-    margin-bottom: 24px;
-   }
-   /* State for note during fade-out */
-   .note-item.removing {
-    opacity: 0;
-    transform: translateX(20px); /* Moves to the side while fading */
-   }
-   /* Input field within a note item */
-   .note-item input {
-    flex: 1; /* Takes up remaining space */
-    margin-right: 10px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-   }
-   /* Buttons inside each note item */
-   .note-item button {
-    background: none; /* No background for simplicity */
-    border: none;
-    cursor: pointer;
-    color: #d9534f; /* Red color for delete button */
-    transition: color 0.3s ease; /* Smooth color transition */
-   }
-   /* Hover effect for delete button */
-   .note-item button:hover {
-    color: #c9302c; /* Darker red on hover */
-   }
-/* Edit button inside each note */
+  font-family: "Roboto", sans-serif; /* Moderni fontti selkeää ulkoasua varten */
+  background: linear-gradient(
+    135deg,
+    #74ebd5,
+    #acb6e5
+  ); /* Liukuvärjätty tausta */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Koko näkymäkorkeus sisällön keskittämiseksi */
+  margin: 0; /* Poistaa oletusmarginaalin */
+}
+/* Sovelluksen pääkontaineri */
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 12px; /* Pyöristetyt kulmat modernin ilmeen luomiseksi */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); /* Hienovarainen varjo syvyyden luomiseksi */
+  width: 400px;
+  text-align: center; /* Tekstin keskittäminen */
+  transition: all 0.3s ease; /* Sujuva siirtymä tulevia hover-efektejä varten */
+}
+/* Pääotsikon tyyli */
+h1 {
+  margin-bottom: 20px;
+  color: #333; /* Tummempi tekstiväri kontrastin luomiseksi */
+}
+/* Lomakkeen asettelu muistiinpanojen lisäämistä varten */
+form {
+  display: flex;
+  flex-direction: column; /* Pystysuuntainen asettelu */
+  align-items: center;
+}
+/* Syöttökenttä uusille muistiinpanoille */
+input[type="text"] {
+  width: 100%; /* Koko leveys */
+  padding: 12px;
+  border: 1px solid #ccc; /* Vaalea reunus */
+  border-radius: 8px; /* Pyöristetyt kulmat */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Kevyt varjo syvyyden luomiseksi */
+  transition: border-color 0.3s ease; /* Sujuva siirtymä fokuksessa */
+}
+/* Reunuksen värin muuttaminen, kun syöttökenttä on aktiivinen */
+input[type="text"]:focus {
+  border-color: #28a745; /* Vihreä reunus fokuksessa */
+}
+/* Painike uusien muistiinpanojen lisäämistä varten */
+button {
+  padding: 12px 24px;
+  border: none;
+  background-color: #28a745; /* Vihreä taustaväri positiivista toimintoa varten */
+  color: white;
+  border-radius: 6px; /* Pyöristetyt kulmat */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Sujuva siirtymä hover-tilassa */
+}
+.submit {
+  margin-top: 20px;
+}
+/* Hover-efekti painikkeille */
+button:hover {
+  background-color: #218838; /* Tummempi vihreä hover-tilassa */
+  transform: translateY(-2px); /* Kevyt kohoaminen hover-tilassa */
+}
+/* Muistiinpanolistan kontainerin tyylit */
+.note-list {
+  margin-top: 20px;
+  text-align: left; /* Muistiinpanojen vasemmalle tasaus */
+}
+/* Yksittäisten muistiinpanojen tyylit */
+.note-item {
+  display: flex;
+  justify-content: space-between; /* Erottaa tekstin ja painikkeet */
+  align-items: center;
+  padding: 15px;
+  background: #f4f4f4; /* Vaalea harmaa tausta muistiinpanoille */
+  margin: 8px 0; /* Tila muistiinpanojen välillä */
+  border-radius: 6px; /* Pyöristetyt kulmat */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Kevyt varjo */
+  opacity: 1; /* Oletuksena täysin näkyvä */
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Sujuva siirtymä fade-in ja fade-out -efekteille */
+}
+/* Muistiinpanon alkutila sisäänfade-efektiä varten */
+.note-item.adding {
+  opacity: 0; /* Aluksi näkymätön */
+  transform: translateY(-20px); /* Alkaa hieman ylempänä */
+}
+/* Muistiinpanon lopullinen tila fade-in-efektin jälkeen */
+.note-item.adding.show {
+  opacity: 1;
+  transform: translateY(0); /* Liukuu paikoilleen */
+  margin-bottom: 24px;
+}
+/* Muistiinpanon tila fade-out-efektin aikana */
+.note-item.removing {
+  opacity: 0;
+  transform: translateX(20px); /* Liukuu sivulle haipuessaan */
+}
+/* Syöttökenttä muistiinpanon sisällä */
+.note-item input {
+  flex: 1; /* Täyttää jäljellä olevan tilan */
+  margin-right: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+/* Painikkeet jokaisen muistiinpanon sisällä */
+.note-item button {
+  background: none; /* Ei taustaa yksinkertaista ilmettä varten */
+  border: none;
+  cursor: pointer;
+  color: #d9534f; /* Punainen väri poistopainikkeelle */
+  transition: color 0.3s ease; /* Sujuva värin siirtymä */
+}
+/* Hover-efekti poistopainikkeelle */
+.note-item button:hover {
+  color: #c9302c; /* Tummempi punainen hover-tilassa */
+}
+/* Muokkauspainike jokaisen muistiinpanon sisällä */
 .note-item .edit {
-    color: #5bc0de; /* Blue color for edit button */
-   }
-   /* Hover effect for edit button */
-   .note-item .edit:hover {
-    color: #31b0d5; /* Darker blue on hover */
-   }
-         
+  color: #5bc0de; /* Sininen väri muokkauspainikkeelle */
+}
+/* Hover-efekti muokkauspainikkeelle */
+.note-item .edit:hover {
+  color: #31b0d5; /* Tummempi sininen hover-tilassa */
+}

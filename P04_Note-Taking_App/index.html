@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
- <meta charset="UTF-8">
- <!-- Character encoding set to UTF-8 to support a wide range of characters
--->
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <!-- Ensures the app is responsive and adapts to different screen sizes -->
- <title>Note-Taking App</title>
- <!-- Link to external CSS file for styles -->
- <link rel="stylesheet" href="styles.css">
-</head>
-<body>
- <div class="container">
- <!-- Main heading for the app -->
- <h1>Note-Taking App</h1>
- <!-- Form for adding new notes -->
- <form id="note-form">
- <!-- Input field for entering note text -->
- <input type="text" id="note-input" placeholder="Enter a new note"
-required>
- <!-- Button to submit the form and add the note -->
- <button class="submit" type="submit">Add Note</button>
- </form>
- <!-- Container for dynamically displaying the list of notes -->
- <div class="note-list" id="note-list"></div>
- </div>
- <!-- Link to external JavaScript file for functionality -->
- <script src="app.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Merkistökoodaus asetettu UTF-8:ksi tukemaan laajaa valikoimaa merkkejä -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Varmistaa, että sovellus on responsiivinen ja mukautuu eri näyttökokoihin -->
+    <title>Muistiinpanosovellus</title>
+    <!-- Linkki ulkoiseen CSS-tiedostoon tyylittelyä varten -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Sovelluksen pääotsikko -->
+      <h1>Muistiinpanosovellus</h1>
+      <!-- Lomake uusien muistiinpanojen lisäämistä varten -->
+      <form id="note-form">
+        <!-- Syöttökenttä muistiinpanotekstin kirjoittamista varten -->
+        <input
+          type="text"
+          id="note-input"
+          placeholder="Kirjoita uusi muistiinpano"
+          required
+        />
+        <!-- Painike lomakkeen lähettämiseen ja muistiinpanon lisäämiseen -->
+        <button class="submit" type="submit">Lisää muistiinpano</button>
+      </form>
+      <!-- Kontaineri muistiinpanojen dynaamista näyttämistä varten -->
+      <div class="note-list" id="note-list"></div>
+    </div>
+    <!-- Linkki ulkoiseen JavaScript-tiedostoon toiminnallisuutta varten -->
+    <script src="app.js"></script>
+  </body>
 </html>

@@ -1,100 +1,103 @@
 /* styles.css */
-/* Set a modern gradient background and centralize the content */
+/* Asetetaan moderni liukuvärjätty tausta ja keskitetään sisältö */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #74ebd5, #acb6e5); /* A visually
-   appealing gradient background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Full viewport height */
-    margin: 0; /* Remove default body margin */
-   }
-   /* Main container for the Weather App */
-   .container {
-    background: white; /* White background for contrast against the gradient */
-    padding: 30px; /* Comfortable padding around the content */
-    border-radius: 15px; /* Rounded corners for a modern look */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Depth effect using shadow */
-    width: 350px;
-    text-align: center; /* Centers text inside the container */
-    animation: fadeIn 1s ease-in-out; /* Smooth fade-in animation */
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
-   }
-   /* Add slight zoom effect when hovering over the container */
-   .container:hover {
-    transform: scale(1.02); /* Slight zoom-in on hover */
-   }
-   /* Styling for the main heading */
-   h1 {
-    font-size: 2em; /* Larger, more readable heading */
-    margin-bottom: 20px; /* Space between the heading and the form */
-    color: #333; /* Darker text for better contrast */
-   }
-   /* Style for the form containing input and button */
-   form {
-    display: flex;
-    flex-direction: column; /* Align form elements vertically */
-    align-items: center; /* Center the form elements horizontally */
-    margin-bottom: 20px; /* Space between the form and weather info */
-   }
-   /* Input field styling for city name */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(
+    135deg,
+    #74ebd5,
+    #acb6e5
+  ); /* Visuaalisesti miellyttävä liukuväritausta */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Koko näkymäkorkeus */
+  margin: 0; /* Poistaa oletusmarginaalit body-elementistä */
+}
+/* Pääkontaineri Weather Appille */
+.container {
+  background: white; /* Valkoinen tausta kontrastiksi liukuväriä vastaan */
+  padding: 30px; /* Mukava täyte sisällön ympärillä */
+  border-radius: 15px; /* Pyöristetyt kulmat modernia ilmettä varten */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Syvyysefekti varjolla */
+  width: 350px;
+  text-align: center; /* Tekstin keskittäminen kontainerissa */
+  animation: fadeIn 1s ease-in-out; /* Sujuva sisäänfadausanimaatio */
+  transition: all 0.3s ease; /* Sujuva siirtymä hover-efekteille */
+}
+/* Pieni zoom-efekti, kun hiiri viedään kontainerin päälle */
+.container:hover {
+  transform: scale(1.02); /* Pieni zoomaus hover-tilassa */
+}
+/* Pääotsikon tyylit */
+h1 {
+  font-size: 2em; /* Suurempi ja paremmin luettava otsikko */
+  margin-bottom: 20px; /* Välit otsikon ja lomakkeen välillä */
+  color: #333; /* Tummempi teksti paremman kontrastin saavuttamiseksi */
+}
+/* Lomakkeen tyylit, sisältäen syöttökentän ja painikkeen */
+form {
+  display: flex;
+  flex-direction: column; /* Lomakkeen elementtien pystysuuntainen asettelu */
+  align-items: center; /* Lomakkeen elementtien keskittäminen vaakasuunnassa */
+  margin-bottom: 20px; /* Välit lomakkeen ja säätietojen välillä */
+}
+/* Syöttökentän tyylit kaupungin nimelle */
 input[type="text"] {
-    width: 100%; /* Full width to match the container */
-    padding: 12px;
-    border: 1px solid #ccc; /* Subtle border */
-    border-radius: 6px; /* Slightly rounded corners */
-    margin-bottom: 15px; /* Space between input and button */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
-    transition: border-color 0.3s ease;
-   }
-   /* Highlight input field when focused */
-   input[type="text"]:focus {
-    border-color: #28a745; /* Green border on focus for feedback */
-    outline: none; /* Removes default outline */
-   }
-   /* Button styling for the "Get Weather" action */
-   button {
-    width: 100%; /* Full width to match the input field */
-    padding: 12px 24px;
-    border: none;
-    background-color: #28a745; /* Green background for positive action */
-    color: white; /* White text for contrast */
-    border-radius: 6px; /* Rounded corners for the button */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Shadow for a floating effect
-   */
-   }
-   /* Button hover effect for better user feedback */
-   button:hover {
-    background-color: #218838; /* Darker green on hover */
-   }
-   /* Section to display the fetched weather data */
-   .weather-info {
-    margin-top: 20px;
-    font-size: 1.1em; /* Slightly larger text for readability */
-    color: #333; /* Dark text for contrast */
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.3s ease-in-out; /* Smooth fade-in effect */
-   }
-   /* Make weather info visible when data is available */
-   .weather-info.visible {
-    opacity: 1; /* Becomes visible with fade-in effect */
-   }
-   /* Styling for individual pieces of weather data */
-   .weather-info p {
-    margin: 5px 0; /* Space between weather info paragraphs */
-   }
-   /* Keyframes for the fade-in animation */
+  width: 100%; /* Koko leveys vastaamaan kontaineria */
+  padding: 12px;
+  border: 1px solid #ccc; /* Hienovarainen reunus */
+  border-radius: 6px; /* Hieman pyöristetyt kulmat */
+  margin-bottom: 15px; /* Välit syöttökentän ja painikkeen välillä */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Kevyt varjo syvyyttä varten */
+  transition: border-color 0.3s ease;
+}
+/* Korostetaan syöttökenttä, kun se on aktiivinen */
+input[type="text"]:focus {
+  border-color: #28a745; /* Vihreä reunus fokuksen aikana palautteen antamiseksi */
+  outline: none; /* Poistaa oletusreunuksen */
+}
+/* Painikkeen tyylit "Hae sää" -toimintoa varten */
+button {
+  width: 100%; /* Koko leveys vastaamaan syöttökenttää */
+  padding: 12px 24px;
+  border: none;
+  background-color: #28a745; /* Vihreä taustaväri positiivista toimintoa varten */
+  color: white; /* Valkoinen teksti kontrastin luomiseksi */
+  border-radius: 6px; /* Painikkeen pyöristetyt kulmat */
+  cursor: pointer; /* Osoitin vaihdetaan osoittimeksi hover-tilassa */
+  transition: background-color 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Varjo luo leijumisen vaikutelman */
+}
+/* Painikkeen hover-efekti käyttäjäkokemuksen parantamiseksi */
+button:hover {
+  background-color: #218838; /* Tummempi vihreä hover-tilassa */
+}
+/* Osa, jossa haetut säätiedot näytetään */
+.weather-info {
+  margin-top: 20px;
+  font-size: 1.1em; /* Hieman suurempi teksti luettavuuden parantamiseksi */
+  color: #333; /* Tumma teksti kontrastin luomiseksi */
+  opacity: 0; /* Aluksi piilotettu */
+  transition: opacity 0.3s ease-in-out; /* Sujuva fade-in-efekti */
+}
+/* Tehdään säätiedot näkyviksi, kun tietoja on saatavilla */
+.weather-info.visible {
+  opacity: 1; /* Tietojen näkyminen fade-in-efektillä */
+}
+/* Yksittäisten säätietojen kappaleiden tyylit */
+.weather-info p {
+  margin: 5px 0; /* Välit säätietojen kappaleiden välillä */
+}
+/* Keyframe-animaatio sisäänfadausta varten */
 @keyframes fadeIn {
-    from {
+  from {
     opacity: 0;
-    transform: translateY(20px); /* Moves the container up on fade-in */
-    }
-    to {
+    transform: translateY(
+      20px
+    ); /* Kontaineri liikkuu ylös sisäänfadausta varten */
+  }
+  to {
     opacity: 1;
-    transform: translateY(0); /* Final position */
-    }
-   }
-   
+    transform: translateY(0); /* Lopullinen sijainti */
+  }
+}

@@ -1,54 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
- <meta charset="UTF-8">
- <!--
- Specifies the character encoding for the document, ensuring compatibility
-with most characters.
+  <head>
+    <meta charset="UTF-8" />
+    <!--
+ Määrittää dokumentin merkistökoodauksen, varmistaen yhteensopivuuden
+useimpien merkkien kanssa.
  -->
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <!--
- Ensures the page is responsive by adjusting the width of the page to fit
-different devices.
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+ Varmistaa, että sivu on responsiivinen, mukauttamalla sivun leveyden eri laitteisiin.
  -->
- <title>Weather App</title>
- <!--
- Links to the external CSS file for styling the Weather App.
+    <title>Weather App</title>
+    <!--
+ Linkittää ulkoiseen CSS-tiedostoon, joka vastaa Weather Appin tyylittelystä.
  -->
- <link rel="stylesheet" href="styles.css">
-</head>
-<body>
- <div class="container">
- <!-- Main title of the Weather App -->
- <h1>Weather App</h1>
- <!--
- Form for inputting the city name and submitting to fetch weather data.
- aria-label: Provides a descriptive label for assistive technologies like
-screen readers.
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Weather Appin pääotsikko -->
+      <h1>Weather App</h1>
+      <!--
+ Lomake kaupungin nimen syöttämistä ja sään tietojen hakemista varten.
+ aria-label: Antaa kuvailevan selitteen avustavia teknologioita, kuten
+ruudunlukijoita, varten.
  -->
- <form id="weather-form" aria-label="Weather Form">
- <!--
- Text input field where the user enters the city name.
- required: Ensures the field is filled before submitting the form.
- aria-label: Descriptive label for accessibility.
+      <form id="weather-form" aria-label="Säälomake">
+        <!--
+ Tekstikenttä, johon käyttäjä syöttää kaupungin nimen.
+ required: Varmistaa, että kenttä on täytetty ennen lomakkeen lähettämistä.
+ aria-label: Kuvaileva selite saavutettavuuden parantamiseksi.
  -->
- <input type="text" id="city-input" placeholder="Enter city name"
-required aria-label="City name input">
- <!--
- Button for submitting the form to get the weather information.
- aria-label: Descriptive label for accessibility.
+        <input
+          type="text"
+          id="city-input"
+          placeholder="Syötä kaupungin nimi"
+          required
+          aria-label="Kaupungin nimen syöttökenttä"
+        />
+        <!--
+ Painike lomakkeen lähettämistä ja sään tietojen hakemista varten.
+ aria-label: Kuvaileva selite saavutettavuuden parantamiseksi.
  -->
- <button type="submit" aria-label="Get Weather">Get Weather</button>
- </form>
- <!--
- Section where the weather data will be dynamically displayed after
-fetching it from the API.
- aria-live: Ensures updates to this region are announced to assistive
-technologies like screen readers.
+        <button type="submit" aria-label="Hae sää">Hae sää</button>
+      </form>
+      <!--
+ Osa, jossa säätiedot näytetään dynaamisesti API:sta haun jälkeen.
+ aria-live: Varmistaa, että tämän alueen päivitykset ilmoitetaan avustaville
+teknologioille, kuten ruudunlukijoille.
  -->
- <div class="weather-info" id="weather-info" aria-live="polite"></div>
- </div>
- <!-- Links to the external JavaScript file for handling the app's logic -->
- <script src="app.js"></script>
-</body>
+      <div class="weather-info" id="weather-info" aria-live="polite"></div>
+    </div>
+    <!-- Linkittää ulkoiseen JavaScript-tiedostoon, joka käsittelee sovelluksen logiikan -->
+    <script src="app.js"></script>
+  </body>
 </html>

@@ -1,59 +1,58 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const expenseForm = document.getElementById('expense-form'); // Form for adding expenses
-    const expenseName = document.getElementById('expense-name'); // Input field  for the name of the expense
-    const expenseAmount = document.getElementById('expense-amount'); // Input  field for the amount of the expense
-    const expenseCategory = document.getElementById('expense-category'); // Dropdown for selecting the category of the expense
-    const expenseList = document.getElementById('expense-list'); // Container to  display added expenses
-    const summary = document.getElementById('summary'); // Container for  displaying the total expenses
-    let expenses = []; // Array to store the list of expenses
-    // Event listener for form submission
-    expenseForm.addEventListener('submit', (event) => {
-    event.preventDefault(); // Prevent form submission from refreshing the page
-    const name = expenseName.value.trim(); // Get the name of the expense
-    const amount = parseFloat(expenseAmount.value); // Get the amount and  convert it to a number
-    const category = expenseCategory.value; // Get the selected category
-    // Only proceed if the fields are valid
-    if (name !== '' && !isNaN(amount) && category !== '') {
-    const expense = { name, amount, category }; // Create an expense object
-    expenses.push(expense); // Add the new expense to the array
-    addExpenseItem(expense); // Call function to add the expense to the list
-    updateSummary(); // Update the total expenses
-    expenseForm.reset(); // Reset the form after adding an expense
+document.addEventListener("DOMContentLoaded", () => {
+  const expenseForm = document.getElementById("expense-form"); // Lomake kulujen lisäämistä varten
+  const expenseName = document.getElementById("expense-name"); // Syöttökenttä kulun nimelle
+  const expenseAmount = document.getElementById("expense-amount"); // Syöttökenttä kulun summalle
+  const expenseCategory = document.getElementById("expense-category"); // Pudotusvalikko kulun kategorian valitsemista varten
+  const expenseList = document.getElementById("expense-list"); // Kontaineri lisättyjen kulujen näyttämiseen
+  const summary = document.getElementById("summary"); // Kontaineri kaikkien kulujen yhteenvedon näyttämiseen
+  let expenses = []; // Taulukko kulujen tallentamista varten
+  // Tapahtumankuuntelija lomakkeen lähettämistä varten
+  expenseForm.addEventListener("submit", (event) => {
+    event.preventDefault(); // Estetään lomakkeen lähetys, joka päivittäisi sivun
+    const name = expenseName.value.trim(); // Haetaan kulun nimi
+    const amount = parseFloat(expenseAmount.value); // Haetaan summa ja muunnetaan se numeroksi
+    const category = expenseCategory.value; // Haetaan valittu kategoria
+    // Jatketaan vain, jos kentät ovat kelvollisia
+    if (name !== "" && !isNaN(amount) && category !== "") {
+      const expense = { name, amount, category }; // Luodaan kulutietue
+      expenses.push(expense); // Lisätään uusi kulu taulukkoon
+      addExpenseItem(expense); // Kutsutaan funktiota kulun lisäämiseksi listaan
+      updateSummary(); // Päivitetään kulujen yhteissumma
+      expenseForm.reset(); // Nollataan lomake kulun lisäämisen jälkeen
     }
-    });
-    // Function to add a new expense to the list with fade-in effect
-    function addExpenseItem(expense) {
-    const div = document.createElement('div'); // Create a div for the  expense item
-    div.className = 'expense-item added'; // Add class for styling with  initial fade-in
-    // Assign an index to each expense div for easier reference during deletion
-const index = expenses.indexOf(expense);
-div.innerHTML = `
-<span>${expense.name} - $${expense.amount.toFixed(2)} ($
-{expense.category})</span>
-<button onclick="removeExpense(${index})">Delete</button>
-`; // Create the expense item with delete button
-div.setAttribute('data-index', index); // Assign a custom attribute to track the index of each item
-expenseList.appendChild(div); // Add the expense item to the list
-// Delay to trigger the fade-in effect
-setTimeout(() => {
-div.classList.add('show'); // Add 'show' class to trigger fade-in effect
-}, 10); // Short delay to ensure the transition applies
-}
-// Function to update the total expenses in the summary section
-function updateSummary() {
-const total = expenses.reduce((sum, expense) => sum + expense.amount,
-0); // Calculate the total amount
-summary.innerHTML = `<p>Total: $${total.toFixed(2)}</p>`; // Display the total
-}
-// Function to remove an expense from the list with fade-out effect
-window.removeExpense = function(index) {
-const expenseItem = expenseList.querySelector(`[data-index="$
-{index}"]`); // Get the specific item using the data-index attribute
-expenseItem.classList.add('removing'); // Add class to trigger fade-out effect
-setTimeout(() => {
-expenses.splice(index, 1); // Remove the expense from the array
-expenseList.removeChild(expenseItem); // Remove the expense from the DOM
-updateSummary(); // Update the total expenses
-}, 400); // Delay to allow the fade-out transition to complete
-};
+  });
+  // Funktio uuden kulun lisäämiseksi listaan fade-in-efektillä
+  function addExpenseItem(expense) {
+    const div = document.createElement("div"); // Luodaan div-elementti kulutietueelle
+    div.className = "expense-item added"; // Lisätään luokka tyylittelyä ja alkufade-in-efektiä varten
+    // Annetaan jokaiselle kululle indeksi, jotta poistaminen on helpompaa
+    const index = expenses.indexOf(expense);
+    div.innerHTML = `
+    <span>${expense.name} - $${expense.amount.toFixed(2)} (${
+      expense.category
+    })</span>
+    <button onclick="removeExpense(${index})">Poista</button>
+    `; // Luodaan kuluerä poistopainikkeen kanssa
+    div.setAttribute("data-index", index); // Annetaan mukautettu attribuutti jokaisen erän indeksin seuraamiseksi
+    expenseList.appendChild(div); // Lisätään kuluerä listaan
+    // Viive fade-in-efektin käynnistämiseksi
+    setTimeout(() => {
+      div.classList.add("show"); // Lisätään 'show'-luokka käynnistämään fade-in-efekti
+    }, 10); // Lyhyt viive, jotta siirtymä ehtii aktivoitua
+  }
+  // Funktio kulujen yhteenvedon päivittämiseksi
+  function updateSummary() {
+    const total = expenses.reduce((sum, expense) => sum + expense.amount, 0); // Lasketaan kulujen yhteissumma
+    summary.innerHTML = `<p>Yhteensä: $${total.toFixed(2)}</p>`; // Näytetään yhteissumma
+  }
+  // Funktio kulun poistamiseksi listasta fade-out-efektillä
+  window.removeExpense = function (index) {
+    const expenseItem = expenseList.querySelector(`[data-index="${index}"]`); // Haetaan tietty kuluerä data-index-attribuutin avulla
+    expenseItem.classList.add("removing"); // Lisätään luokka käynnistämään fade-out-efekti
+    setTimeout(() => {
+      expenses.splice(index, 1); // Poistetaan kulu taulukosta
+      expenseList.removeChild(expenseItem); // Poistetaan kulu DOMista
+      updateSummary(); // Päivitetään kulujen yhteissumma
+    }, 400); // Viive, jotta fade-out-siirtymä ehtii suorittua
+  };
 });
