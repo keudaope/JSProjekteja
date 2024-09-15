@@ -1,7 +1,5 @@
 # Nettisivu: https://keudaope.github.io/JSProjekteja/P02_Weather_App
 
-<![endif]-->
-
 # HTML Selitys
 
 ## 1. &lt;!DOCTYPE html>
