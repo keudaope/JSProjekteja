@@ -40,7 +40,7 @@
 38. [P38 Sticky Notes](https://keudaope.github.io/JSProjekteja/P38_Sticky_Notes/)
 39. [P39 Temperature Converter](https://keudaope.github.io/JSProjekteja/P39_Temperature_Converter/)
 40. [P40 Form Validator](https://keudaope.github.io/JSProjekteja/P40_Form_Validator/)
-41. [P41 Simple Poll](https://keudaope.github.io/JSProjekteja/P41_Simple_Poll_/)
+41. [P41 Simple Poll](https://keudaope.github.io/JSProjekteja/P41_Simple_Poll/)
 42. [P42 Grocery List](https://keudaope.github.io/JSProjekteja/P42_Grocery_List/)
 43. [P43 Simple Calculator with History](https://keudaope.github.io/JSProjekteja/P43_Simple_Calculator_with_History/)
 44. [P44 Random Color Generator](https://keudaope.github.io/JSProjekteja/P44_Random_Color_Generator/)
