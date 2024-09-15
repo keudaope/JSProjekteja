@@ -9,31 +9,24 @@ Sääsovellus on käytännöllinen projekti, joka näyttää ajankohtaiset sää
 ## 1. &lt;!DOCTYPE html>
 
 - **Mitä se on**: Tämä deklarointi on jokaisen HTML-dokumentin ensimmäinen rivi.
-
 - **Tarkoitus**: Se kertoo selaimelle, että dokumentissa käytetään HTML5:sta, HTML:n uusinta versiota.
-
 - **Tärkeys**: Se varmistaa, että selain tulkitsee HTML-koodin nykyaikaisten standardien mukaisesti, mikä auttaa välttämään yhteensopivuusongelmia.
 
 ## 2. &lt;html lang="en">
 
 - **Mitä se on**: &lt;html> -elementti on koko HTML-dokumentin juurielementti.
-
 - **lang="en"**: Tämä attribuutti määrittää dokumentin kielen, tässä tapauksessa englannin.
-
 - **Tärkeys**: Tämä on hyödyllistä hakukoneille ja saavutettavuustyökaluille, kuten ruudunlukuohjelmille, koska se auttaa niitä ymmärtämään sisällön kielen.
 
 ## 3. &lt;head>
 
 - **Mitä se on**: &lt;head> -elementti sisältää metadataa ja linkkejä ulkoisiin resursseihin, kuten tyylitiedostoihin ja skripteihin.
-
 - **Tarkoitus**: Se tarjoaa tietoja dokumentista selaimelle, hakukoneille ja muille työkaluille.
 
 ## 4. &lt;meta charset="UTF-8">
 
 - **Mitä se on**: Tämä rivi asettaa dokumentin merkistökoodauksen UTF-8.
-
 - **Tarkoitus**: UTF-8 on yleinen merkistö, joka tukee suurinta osaa eri kielten merkeistä, mukaan lukien erikoismerkit ja ei-latinalaiset merkit.
-
 - **Tärkeys**: Ilman oikeaa merkistökoodausta jotkut merkit eivät välttämättä näy oikein, erityisesti ei-latinalaiset merkit.
 
 ## 5. &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
