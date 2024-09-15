@@ -1,5 +1,9 @@
 # Nettisivu: https://keudaope.github.io/JSProjekteja/P02_Weather_App
 
+# Johdanto
+
+Sääsovellus on käytännöllinen projekti, joka näyttää ajankohtaiset säätiedot käyttämällä APIa. Tämä sovellus antaa käyttäjien syöttää kaupungin nimen ja hakea sen sijainnin nykyiset säätiedot. Se auttaa aloittelijoita oppimaan, kuinka työskennellä APIen kanssa, käsitellä asynkronisia pyyntöjä ja manipuloida DOMia dynaamisen sisällön näyttämiseksi.
+
 # HTML Selitys
 
 ## 1. &lt;!DOCTYPE html>
