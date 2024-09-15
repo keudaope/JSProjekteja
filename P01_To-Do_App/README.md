@@ -1,6 +1,6 @@
 # Nettisivu: https://keudaope.github.io/JSProjekteja/P01_To-Do_App/
 
-## Johdanto
+# Johdanto
 
 Tehtävälista-sovellus on yksinkertainen mutta tehokas työkalu tehtävien hallintaan ja järjestyksessä pysymiseen. Tämä sovellus mahdollistaa käyttäjien lisätä, poistaa ja merkitä tehtäviä suoritetuiksi. Se on täydellinen projekti aloittelijoille oppia JavaScriptin, HTMLn ja CSS:n perusteet, sillä se kattaa keskeisiä käsitteitä, kuten tapahtumien käsittelyn, DOM-manipulaation ja tyylittelyn.
 
