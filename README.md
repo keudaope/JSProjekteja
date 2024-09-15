@@ -10,3 +10,8 @@
 8. [P08 Count Down Timer](https://keudaope.github.io/JSProjekteja/P08_Count-Down_Timer/)
 9. [P09 Flashcard App](https://keudaope.github.io/JSProjekteja/P09_Flashcard_App/)
 10. [P10 Currency Converter](https://keudaope.github.io/JSProjekteja/P10_Currency_Converter/)
+11. [P11 Digital Clock](https://keudaope.github.io/JSProjekteja/P11_Digital_Clock/)
+12. [P12 Tip Calculator](https://keudaope.github.io/JSProjekteja/P12_Tip_Calculator/)
+13. [P13 Chat App](https://keudaope.github.io/JSProjekteja/P13_Chat_App)
+14. [P14 Color Picker](https://keudaope.github.io/JSProjekteja/P14_Color_Picker/)
+15. [P01 Memory Game](https://keudaope.github.io/JSProjekteja/PA15_Memory_Game/)
