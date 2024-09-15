@@ -1,81 +1,81 @@
 /* Reset default margin and padding for a consistent layout */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-   }
-   /* Set a modern font and full-screen layout with gradient */
-   body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #74ebd5, #acb6e5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    color: #333;
-   }
-   /* Container for the color picker app */
-   .container {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 15px; /* Soft, rounded corners */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
-    text-align: center;
-    transition: transform 0.3s ease; /* Smooth transition for hover effect */
-    width: 350px; /* Fixed width for better layout */
-   }
-   /* Zoom-in effect on hover to make the app feel interactive */
-   .container:hover {
-    transform: scale(1.05);
-   }
-   /* Main heading */
-   h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #2d3748; /* Dark color for contrast */
-   }
-   /* Styling the color input field */
-   input[type="color"] {
-    width: 100%;
-    height: 50px;
-    border: none;
-    cursor: pointer;
-    margin-bottom: 20px;
-    border-radius: 8px; /* Rounded corners for consistency */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
-    transition: box-shadow 0.3s ease; /* Smooth shadow transition */
-   }
-   /* Add a slight glow effect when the color picker is hovered */
-   input[type="color"]:hover {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-   }
-   /* Display for the color code */
-   .color-code {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-    font-weight: 500;
-    color: #2d3748;
-   }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Set a modern font and full-screen layout with gradient */
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #74ebd5, #acb6e5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #333;
+}
+/* Container for the color picker app */
+.container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 15px; /* Soft, rounded corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
+  text-align: center;
+  transition: transform 0.3s ease; /* Smooth transition for hover effect */
+  width: 350px; /* Fixed width for better layout */
+}
+/* Zoom-in effect on hover to make the app feel interactive */
+.container:hover {
+  transform: scale(1.05);
+}
+/* Main heading */
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #2d3748; /* Dark color for contrast */
+}
+/* Styling the color input field */
+input[type="color"] {
+  width: 100%;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+  border-radius: 8px; /* Rounded corners for consistency */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  transition: box-shadow 0.3s ease; /* Smooth shadow transition */
+}
+/* Add a slight glow effect when the color picker is hovered */
+input[type="color"]:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+/* Display for the color code */
+.color-code {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  font-weight: 500;
+  color: #2d3748;
+}
 /* Button styling */
 button {
-    padding: 12px 24px;
-    background-color: #28a745; /* Green background for call-to-action button */
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1.1em;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth
+  padding: 12px 24px;
+  background-color: #28a745; /* Green background for call-to-action button */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth
    transitions */
-   }
-   /* Hover effect for button */
-   button:hover {
-    background-color: #218838; /* Darker green on hover */
-    transform: translateY(-3px); /* Lift effect on hover */
-   }
-   /* Responsive design: Make container smaller on mobile devices */
-   @media (max-width: 400px) {
-    .container {
+}
+/* Hover effect for button */
+button:hover {
+  background-color: #218838; /* Darker green on hover */
+  transform: translateY(-3px); /* Lift effect on hover */
+}
+/* Responsive design: Make container smaller on mobile devices */
+@media (max-width: 400px) {
+  .container {
     width: 90%;
-    }
-   }   
+  }
+}
