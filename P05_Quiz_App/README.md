@@ -222,3 +222,98 @@
 - **Tärkeimmät ominaisuudet**:
   - **background-color: #dc3545**: Asettaa taustavärin punaiseksi, joka on yleisesti liitetty virheisiin tai väärään toimintaan.
   - **color: white**: Muuttaa tekstin värin valkoiseksi paremman näkyvyyden saavuttamiseksi punaista taustaa vasten.
+
+# JavaScript Selitys
+
+## 1. **document.addEventListener('DOMContentLoaded', () => { ... })**
+
+- **Mitä se on**: Tämä koodi lisää tapahtumakuuntelijan, joka odottaa koko verkkosivun (DOM) latautumista ennen JavaScript-koodin suorittamista.
+- **Tarkoitus**: Varmistaa, että kaikki HTML-elementit ovat täysin ladattuja ennen kuin JavaScript yrittää vuorovaikuttaa niiden kanssa. Ilman tätä skripti voisi yrittää käsitellä elementtejä, joita ei ole vielä luotu, mikä johtaisi virheisiin.
+- **Tärkeä yksityiskohta**: DOMContentLoaded-tapahtuma laukeaa, kun selain on ladannut ja käsitellyt HTML-dokumentin, mutta ennen kuin ulkoiset resurssit, kuten kuvat, ovat latautuneet. Tämä on turvallisempi tapa aloittaa JavaScriptin suorittaminen kuin suoraan skriptin kohdalla.
+
+## 2. **const questions = [...];**
+
+- **Mitä se on**: Tämä luo taulukon objekteja, jotka edustavat tietovisakysymyksiä. Jokainen objekti sisältää kysymyksen (merkkijono), vaihtoehdot (taulukko) ja oikean vastauksen (merkkijono).
+- **Tarkoitus**: Tietovisakysymykset, vastausvaihtoehdot ja oikeat vastaukset tallennetaan yhteen paikkaan, jotta niitä voidaan helposti käyttää ja käsitellä tietovisan aikana.
+- **Tärkeä yksityiskohta**: Taulukot ovat hyödyllisiä tietojen, kuten kysymysten, vastausvaihtoehtojen ja oikean vastauksen, tallentamiseen järjestettynä.
+
+## 3. **let currentQuestionIndex = 0;**
+
+- **Mitä se on**: Tämä alustaa muuttujan seuraamaan tietovisan nykyisen kysymyksen indeksiä.
+- **Tarkoitus**: Pitää kirjaa siitä, missä kysymyksessä käyttäjä on, jotta tietovisa voi siirtyä seuraavaan kysymykseen tai näyttää tuloksen, kun kaikki kysymykset on vastattu.
+- **Tärkeä yksityiskohta**: Indeksi alkaa 0:sta, mikä tarkoittaa, että se osoittaa taulukon ensimmäistä kysymystä. Se kasvaa jokaisen kysymyksen jälkeen.
+
+## 4. **let score = 0;**
+
+- **Mitä se on**: Tämä muuttuja pitää kirjaa käyttäjän pisteistä.
+- **Tarkoitus**: Tallentaa käyttäjän antamien oikeiden vastausten lukumäärän. Aina kun käyttäjä valitsee oikean vastauksen, pisteitä lisätään.
+- **Tärkeä yksityiskohta**: Tämä pistemäärä näytetään käyttäjälle tietovisan lopussa, jolloin hän näkee, kuinka monta kysymystä hän vastasi oikein.
+
+## 5. **const questionElement = document.getElementById('question');**
+
+- **Mitä se on**: Tämä valitsee HTML-elementin, johon nykyinen kysymys näkyy käyttämällä id="question".
+- **Tarkoitus**: Tarvitsemme viitteen tähän elementtiin, jotta JavaScript voi dynaamisesti lisätä kysymyksen tekstin tietovisan edetessä.
+- **Tärkeä yksityiskohta**: getElementById()-metodi mahdollistaa tiettyjen HTML-elementtien päivittämisen niiden id-tunnisteen avulla.
+
+## 6. **const optionsElement = document.getElementById('options');**
+
+- **Mitä se on**: Tämä valitsee järjestämättömän listan (<ul>), johon vastausvaihtoehdot generoidaan dynaamisesti.
+- **Tarkoitus**: Tarvitsemme viitteen tähän listaan, jotta voimme täyttää sen vastausvaihtoehdoilla jokaista kysymystä varten. JavaScript luo jokaiselle vaihtoehdolle listaelementit (<li>).
+- **Tärkeä yksityiskohta**: Vaihtoehdot generoidaan jokaista kysymystä varten, ja niiden asettelua ja käyttäytymistä (esim. klikkaustapahtumia) hallitaan tässä kohdassa.
+
+## 7. **const nextButton = document.getElementById('next-button');**
+
+- **Mitä se on**: Tämä valitsee "Seuraava"-painikkeen elementin.
+- **Tarkoitus**: Tämä painike antaa käyttäjän siirtyä seuraavaan kysymykseen, kun hän on valinnut vaihtoehdon. Aluksi se on piilotettu ja tulee näkyviin vasta, kun käyttäjä on tehnyt valinnan.
+- **Tärkeä yksityiskohta**: nextButton-elementtiä ohjaa JavaScript ja se tulee näkyviin vain oikeissa kohdissa, estäen käyttäjää ohittamasta kysymyksiä ilman vastausta.
+
+## 8. **const resultElement = document.getElementById('result');**
+
+- **Mitä se on**: Tämä valitsee HTML-elementin, jossa näytetään tietovisan lopullinen tulos.
+- **Tarkoitus**: Tietovisan lopussa tämä elementti näyttää käyttäjän kokonaispistemäärän. Aluksi se on piilotettu ja näkyy vasta, kun tietovisa on suoritettu loppuun.
+- **Tärkeä yksityiskohta**: resultElement-elementtiä ohjaa JavaScript ja se näytetään vain tietovisan lopussa, jolloin käyttäjä näkee henkilökohtaisen tuloksensa.
+
+## 9. **const resetButton = document.getElementById('reset-button');**
+
+- **Mitä se on**: Tämä valitsee "Aloita alusta" -painikkeen elementin.
+- **Tarkoitus**: Tämä painike antaa käyttäjän aloittaa tietovisan alusta, kun se on suoritettu. Kuten "Seuraava"-painike, se on aluksi piilotettu ja tulee näkyviin vasta tietovisan lopussa.
+- **Tärkeä yksityiskohta**: resetButton-painike on linkitetty funktioon, joka palauttaa tietovisan alkuperäiseen tilaan, mahdollistaen tietovisan uudelleen suorittamisen.
+
+## 10. **function loadQuestion() { ... }**
+
+- **Mitä se on**: Funktio, joka lataa ja näyttää nykyisen kysymyksen ja sen vastausvaihtoehdot.
+- **Tarkoitus**: Tämä funktio vastaa DOMin päivittämisestä nykyisellä kysymyksellä ja luo klikkauskelpoisia vastausvaihtoehtoja käyttäjän valittavaksi. Se myös piilottaa tai nollaa muut elementit tarvittaessa (esim. piilottaa "Seuraava"-painikkeen).
+- **Tärkeä yksityiskohta**: Funktio käy läpi vaihtoehdot nykyistä kysymystä varten ja luo jokaiselle uuden listaelementin. Se myös varmistaa, että aiemmat vaihtoehdot poistetaan, kun uusi kysymys ladataan.
+
+## 11. **function selectOption(selectedOption, correctAnswer) { ... }**
+
+- **Mitä se on**: Funktio, joka käsittelee, mitä tapahtuu, kun käyttäjä valitsee vastausvaihtoehdon.
+- **Tarkoitus**: Tämä funktio tarkistaa, onko käyttäjän valitsema vaihtoehto oikein ja antaa välitöntä palautetta korostamalla oikeat ja väärät vastaukset. Se myös estää lisäklikkaukset estääkseen useiden vastausten valinnan.
+- **Tärkeät ominaisuudet**:
+  - **Klikkausten estäminen**: Kun vaihtoehto on valittu, kaikki vaihtoehdot muuttuvat klikkaamattomiksi, estäen käyttäjää vaihtamasta vastaustaan.
+  - **Oikea/Väärä palaute**: Oikea vastaus korostetaan vihreällä ja väärät vastaukset punaisella.
+  - **Pistepäivitys**: Jos valittu vastaus on oikein, pisteitä lisätään.
+
+## 12. **nextButton.addEventListener('click', () => { ... })**
+
+- **Mitä se on**: Tapahtumakuuntelija, joka on kiinnitetty "Seuraava"-painikkeeseen.
+- **Tarkoitus**: Kun käyttäjä klikkaa "Seuraava"-painiketta, tämä tapahtumakuuntelija siirtää tietovisan seuraavaan kysymykseen. Se joko lataa seuraavan kysymyksen tai, jos se on viimeinen kysymys, näyttää lopullisen tuloksen.
+- **Tärkeä yksityiskohta**: Funktio tarkistaa, onko lisää kysymyksiä. Jos on, se kutsuu loadQuestion()-funktiota. Jos ei, se kutsuu showResult()-funktiota näyttääkseen tuloksen.
+
+## 13. **function showResult() { ... }**
+
+- **Mitä se on**: Funktio, joka näyttää käyttäjän lopullisen pistemäärän tietovisan päätyttyä.
+- **Tarkoitus**: Tämä funktio päivittää DOMin näyttämään käyttäjän pistemäärän ja piilottaa tietovisan käyttöliittymän. Se myös näyttää "Aloita alusta" -painikkeen, jolloin käyttäjä voi aloittaa tietovisan uudelleen.
+- **Tärkeä yksityiskohta**: Pisteet lasketaan oikein vastattujen kysymysten määrän perusteella, ja käyttäjälle näytetään henkilökohtainen viesti.
+
+## 14. **resetButton.addEventListener('click', () => { ... })**
+
+- **Mitä se on**: Tapahtumakuuntelija, joka on kiinnitetty "Aloita alusta" -painikkeeseen.
+- **Tarkoitus**: Tämä mahdollistaa käyttäjän aloittaa tietovisan alusta sen suorittamisen jälkeen. Tietovisan tila palautetaan (mukaan lukien pisteet ja kysymyksen indeksi) ja ensimmäinen kysymys ladataan uudelleen.
+- **Tärkeä yksityiskohta**: Funktio palauttaa pisteet ja kysymysindeksin arvoon 0, piilottaa tuloksen ja lataa ensimmäisen kysymyksen uudelleen, mikä mahdollistaa tietovisan aloittamisen alusta.
+
+## 15. **loadQuestion();**
+
+- **Mitä se on**: Kutsu loadQuestion()-funktiolle, kun sivu ladataan ensimmäisen kerran.
+- **Tarkoitus**: Tämä varmistaa, että ensimmäinen kysymys näytetään heti, kun sivu on ladattu, alustaen tietovisan ja valmistellen käyttöliittymän käyttäjän vuorovaikutukseen.
+- **Tärkeä yksityiskohta**: Tämä on tietovisan lähtöpiste, varmistaen, että käyttäjälle näytetään ensimmäinen kysymys heti sivun latauduttua.
