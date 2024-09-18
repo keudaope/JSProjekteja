@@ -1,5 +1,9 @@
 # Nettisivu: https://keudaope.github.io/JSProjekteja/P05_Quiz_App
 
+# Johdanto
+
+Quiz-sovellus on interaktiivinen sovellus, joka tarjoaa käyttäjille monivalintakysymyksiä. Tämä projekti auttaa aloittelijoita harjoittelemaan JavaScriptin, HTML:n ja CSS:n käyttöä samalla, kun he oppivat käsittelemään tapahtumia, manipuloimaan DOMia ja hallitsemaan sovelluksen tilaa. Käyttäjät voivat valita vastauksia ja saada palautetta suorituksestaan.
+
 # HTML Selitys
 
 ## 1. &lt;!DOCTYPE html>
