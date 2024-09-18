@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const weatherInfo = document.getElementById("weather-info");
   // Määritellään OpenWeatherMap API-avaimen (korvaa 'your_api_key_here' oikealla API-avaimellasi)
   const apiKey = "be2d23aa0e1b4ab382b53831241309";
-
+  // const apiKey = "6ddc93fbc7d0c4a2941a17cf6dbbba37";
   // Sään API:n perus-URL, johon kaupungin nimi liitetään
   const apiBaseUrl = "http://api.weatherapi.com/v1/current.json";
   /**
