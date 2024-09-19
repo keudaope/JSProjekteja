@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Annetaan jokaiselle kululle indeksi, jotta poistaminen on helpompaa
     const index = expenses.indexOf(expense);
     div.innerHTML = `
-    <span>${expense.name} - $${expense.amount.toFixed(2)} (${
+    <span>${expense.name} - ${expense.amount.toFixed(2)} € (${
       expense.category
     })</span>
     <button onclick="removeExpense(${index})">Poista</button>
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Funktio kulujen yhteenvedon päivittämiseksi
   function updateSummary() {
     const total = expenses.reduce((sum, expense) => sum + expense.amount, 0); // Lasketaan kulujen yhteissumma
-    summary.innerHTML = `<p>Yhteensä: $${total.toFixed(2)}</p>`; // Näytetään yhteissumma
+    summary.innerHTML = `<p>Yhteensä: ${total.toFixed(2)} €</p>`; // Näytetään yhteissumma
   }
   // Funktio kulun poistamiseksi listasta fade-out-efektillä
   window.removeExpense = function (index) {
