@@ -1,14 +1,13 @@
 const WebSocket = require('ws');
 const server = new WebSocket.Server({ port: 8080 });
 server.on('connection', (ws) => {
- // When a new message is received, broadcast it to all connected clients
+ // Kun uusi viesti vastaanotetaan, lähetä se kaikille yhteydessä oleville asiakkaille
  ws.on('message', (message) => {
  server.clients.forEach((client) => {
  if (client.readyState === WebSocket.OPEN) {
- client.send(message); // Send the message to all connected
-clients
+ client.send(message); // Lähetä viesti kaikille yhteydessä oleville asiakkaille
  }
  });
  });
 });
-console.log('WebSocket server is running on ws://localhost:8080');
+console.log('WebSocket-palvelin toimii osoitteessa ws://localhost:8080');

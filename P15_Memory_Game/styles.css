@@ -1,87 +1,82 @@
-/* Global reset to ensure consistent margins, paddings, and box-sizing */
+/* Globaalit nollaukset, jotta marginaalit, täytteet ja laatikon koko ovat yhtenäisiä */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
    }
-   /* Body styling: Flexbox layout to center the game vertically and horizontally
-   */
+/* Kehon tyyli: Flexbox-asettelu pelin keskittämiseksi sekä pystysuunnassa että vaakasuunnassa */
    body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #74ebd5, #acb6e5); /* Modern gradient
-   background */
+    background: linear-gradient(135deg, #74ebd5, #acb6e5); /* Moderni gradienttitausta */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full viewport height */
+    height: 100vh; /* Koko näkymän korkeus */
    }
-   /* Main container styling for the game */
+/* Pääsäiliön tyyli pelille */
    .container {
-    background-color: #fff; /* Clean white background */
-    padding: 20px; /* Padding around the content */
-    border-radius: 15px; /* Rounded corners for a card-like look */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-    text-align: center; /* Center the content */
-    width: 400px; /* Fixed width for the container */
-    max-width: 100%; /* Ensure it doesn't exceed the screen size */
-    transition: transform 0.3s ease; /* Smooth transform effect for hover */
+    background-color: #fff; /* Puhdas valkoinen tausta */
+    padding: 20px; /* Sisäiset täytteet sisällön ympärille */
+    border-radius: 15px; /* Pyöristetyt kulmat korttimaiselle ulkoasulle */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Varjo tuomaan syvyyttä */
+    text-align: center; /* Sisällön keskitys */
+    width: 400px; /* Kiinteä leveys säiliölle */
+    max-width: 100%; /* Varmista, ettei ylitä näytön kokoa */
+    transition: transform 0.3s ease; /* Sulava muunnostehoste hoverille */
    }
-   /* Zoom-in effect when hovering over the container */
+/* Zoomaus hoverissa, jotta säiliöstä tulee interaktiivinen */
    .container:hover {
-    transform: scale(1.05); /* Slight zoom to make it interactive */
+    transform: scale(1.05); /* Hieman suurentaminen interaktiivisuuden lisäämiseksi */
    }
-   /* Styling for the main heading */
+/* Pääotsikon tyyli */
    h1 {
-    font-size: 2.5em; /* Large font size for the title */
-    margin-bottom: 20px; /* Space below the title */
-    color: #2d3748; /* Dark color for contrast */
+    font-size: 2.5em; /* Iso fonttikoko otsikolle */
+    margin-bottom: 20px; /* Tilaa otsikon alapuolelle */
+    color: #2d3748; /* Tumma väri kontrastin vuoksi */
    }
-   /* Game board styling: grid layout with cards in 4 columns */
+/* Pelilaudan tyyli: ruudukkoasettelu, jossa kortit 4 sarakkeessa */
    .game-board {
     display: grid;
-    grid-template-columns: repeat(4, 90px); /* 4 columns with fixed card width
-   */
-    grid-gap: 10px; /* Space between cards */
-    justify-content: center; /* Center the game board */
+    grid-template-columns: repeat(4, 90px); /* 4 saraketta, joissa kiinteä kortin leveys */
+    grid-gap: 10px; /* Välit korttien välillä */
+    justify-content: center; /* Keskitä pelilauta */
    }
-   /* Card styling */
+/* Korttien tyyli */
    .card {
-    width: 90px; /* Card width */
-    height: 90px; /* Card height */
-    background-color: #007bff; /* Initial blue background */
-    color: white; /* White text color */
-    display: flex; /* Flexbox for centering text */
-    justify-content: center; /* Center text horizontally */
-    align-items: center; /* Center text vertically */
-    font-size: 1.8em; /* Slightly smaller font size */
-    border-radius: 10px; /* Rounded corners */
-    cursor: pointer; /* Change cursor to pointer to indicate clickability */
-    user-select: none; /* Prevent text selection */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth
-   transitions */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    width: 90px; /* Kortin leveys */
+    height: 90px; /* Kortin korkeus */
+    background-color: #007bff; /* Alkuperäinen sininen tausta */
+    color: white; /* Valkoinen tekstiväri */
+    display: flex; /* Flexbox tekstin keskittämiseksi */
+    justify-content: center; /* Keskitä teksti vaakasuunnassa */
+    align-items: center; /* Keskitä teksti pystysuunnassa */
+    font-size: 1.8em; /* Hieman pienempi fonttikoko */
+    border-radius: 10px; /* Pyöristetyt kulmat */
+    cursor: pointer; /* Muuta kursori osoittamaan klikkausmahdollisuutta */
+    user-select: none; /* Estä tekstin valitseminen */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Sulavat siirtymät */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Kevyt varjo tuomaan syvyyttä */
    }
-   /* Styling for flipped cards */
+/* Käännettyjen korttien tyyli */
    .card.flipped {
-    background-color: #fff; /* White background when flipped */
-    color: #007bff; /* Blue text when flipped */
-    cursor: default; /* No pointer cursor when flipped */
+    background-color: #fff; /* Valkoinen tausta, kun kortti on käännetty */
+    color: #007bff; /* Sininen teksti käännettynä */
+    cursor: default; /* Ei osoittimen kursoria, kun kortti on käännetty */
    }
-   /* Styling for matched cards */
+/* Yhdistettyjen korttien tyyli */
    .card.matched {
-    background-color: #28a745; /* Green background for matched cards */
-    color: white; /* White text for matched cards */
-    cursor: default; /* Disable clicking for matched cards */
+    background-color: #28a745; /* Vihreä tausta yhdistetyille korteille */
+    color: white; /* Valkoinen teksti yhdistetyille korteille */
+    cursor: default; /* Poista klikkausmahdollisuus yhdistetyille korteille */
    }
-   /* Add hover effect to cards for a slight lift */
+/* Lisää hover-tehoste kortteihin pienellä kohotuksella */
    .card:hover {
-    transform: translateY(-5px); /* Move the card slightly up on hover */
+    transform: translateY(-5px); /* Siirrä korttia hieman ylöspäin hoverilla */
    }
-   /* Responsive design: adjust card size and board layout for smaller screens */
+/* Responsiivinen muotoilu: säädä korttien koko ja pelilaudan asettelu pienemmille näytöille */
    @media (max-width: 500px) {
     .game-board {
-    grid-template-columns: repeat(4, 80px); /* Smaller card size on mobile
-   */
+    grid-template-columns: repeat(4, 80px); /* Pienemmät kortit mobiilissa */
     }
     .card {
     width: 80px;

@@ -2,32 +2,28 @@
 <html lang="en">
 <head>
  <meta charset="UTF-8">
- <!-- Sets the character encoding to UTF-8 to support international
-characters -->
+ <!-- Asettaa merkistöksi UTF-8 tukemaan kansainvälisiä merkkejä -->
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <!-- Ensures the webpage is responsive and scales properly on all devices -->
- <title>Recipe Finder</title>
- <!-- Link to the external CSS file -->
+ <!-- Varmistaa, että verkkosivu on responsiivinen ja skaalautuu oikein kaikilla laitteilla -->
+ <title>Reseptin Etsijä</title>
+ <!-- Linkki ulkoiseen CSS-tiedostoon -->
  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
- <!-- Main container that holds the entire app content -->
+ <!-- Pääkontaineri, joka sisältää koko sovelluksen sisällön -->
  <div class="container">
- <h1>Recipe Finder</h1>
- <!-- Form to input ingredients and search for recipes -->
- <form id="recipe-form" aria-label="Recipe Form">
- <!-- Input field for entering ingredients, required to submit the
-form -->
- <input type="text" id="ingredients" placeholder="Enter ingredients
-separated by commas" required aria-label="Ingredients input">
- <!-- Submit button to search for recipes -->
- <button type="submit" aria-label="Find Recipes">Find
-Recipes</button>
+ <h1>Reseptin Etsijä</h1>
+ <!-- Lomake ainesosien syöttämiseen ja reseptien etsimiseen -->
+ <form id="recipe-form" aria-label="Reseptilomake">
+ <!-- Syötekenttä ainesosien syöttämistä varten, pakollinen lomakkeen lähettämiseen -->
+ <input type="text" id="ingredients" placeholder="Syötä ainesosat pilkuilla eroteltuna" required aria-label="Ainesosien syöttö">
+ <!-- Lähetä-painike reseptien hakemiseksi -->
+ <button type="submit" aria-label="Etsi reseptejä">Etsi reseptejä</button>
  </form>
- <!-- Section where the recipes will be displayed -->
+ <!-- Osio, jossa reseptit näytetään -->
  <div class="recipes" id="recipes"></div>
  </div>
- <!-- Link to the external JavaScript file -->
+ <!-- Linkki ulkoiseen JavaScript-tiedostoon -->
  <script src="app.js"></script>
 </body>
 </html>

@@ -4,31 +4,27 @@
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>Countdown Timer</title>
- <!-- Link to external CSS for styling -->
+ <!-- Linkki ulkoiseen CSS-tyylitiedostoon -->
  <link rel="stylesheet" href="styles.css">
- <!-- Google Fonts for modern typography -->
- <link href="https://fonts.googleapis.com/css2?
-family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+ <!-- Google Fonts nykyaikaista typografiaa varten -->
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
     <h1>Countdown Timer</h1>
-    <!-- Form to input the time for the countdown -->
+    <!-- Lomake ajastimen ajan syöttämistä varten -->
     <form id="timer-form" aria-label="Countdown Timer Form">
-    <!-- Input for minutes with min value of 0 -->
-    <input type="number" id="minutes" placeholder="Minutes" min="0"
-   required aria-label="Enter minutes">
-    <!-- Input for seconds with range from 0 to 59 -->
-    <input type="number" id="seconds" placeholder="Seconds" min="0"
-   max="59" required aria-label="Enter seconds">
-    <!-- Button to start the countdown timer -->
-    <button type="submit" aria-label="Start Countdown">Start
-   Timer</button>
+    <!-- Minuuttien syöttökenttä, jossa minimiarvo on 0 -->
+    <input type="number" id="minutes" placeholder="Minutes" min="0" required aria-label="Enter minutes">
+    <!-- Sekuntien syöttökenttä, jossa arvot 0-59 -->
+    <input type="number" id="seconds" placeholder="Seconds" min="0" max="59" required aria-label="Enter seconds">
+    <!-- Nappi ajastimen käynnistämiseen -->
+    <button type="submit" aria-label="Start Countdown">Start Timer</button>
     </form>
-    <!-- Display area for the countdown timer -->
+    <!-- Ajastimen näyttöalue -->
     <div class="timer" id="timer" aria-live="polite">00:00</div>
     </div>
-    <!-- Link to external JavaScript file -->
+    <!-- Linkki ulkoiseen JavaScript-tiedostoon -->
     <script src="app.js"></script>
-   </body>
-   </html>
+</body>
+</html>

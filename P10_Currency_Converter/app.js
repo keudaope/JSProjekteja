@@ -1,83 +1,83 @@
-// Wait for the DOM to fully load before executing the script to ensure all elements are available
+// Odota, että DOM latautuu kokonaan ennen kuin suoritat skriptin, jotta kaikki elementit ovat käytettävissä
 document.addEventListener('DOMContentLoaded', () => {
- // Select key elements from the DOM that will be used in the script
- const converterForm = document.getElementById('converter-form'); // The form used for submitting the currency conversion
- const amountInput = document.getElementById('amount'); // The input field for the amount to convert
- const fromCurrencySelect = document.getElementById('from-currency'); //Dropdown for selecting the base currency
- const toCurrencySelect = document.getElementById('to-currency'); // Dropdown for selecting the target currency
- const resultDiv = document.getElementById('result'); // The div where the conversion result will be displayed
- // Define the API URL to fetch exchange rate data, using USD as the default base currency
- const apiURL = 'https://api.exchangerate-api.com/v4/latest/USD';
- /**
- * Fetch currency data from the API when the page loads
- * This fetch request gets the latest exchange rates using USD as the base.
- * The data includes the rates for converting from USD to other currencies,
-which will be used to populate the dropdowns.
- */
- fetch(apiURL)
- .then(response => response.json()) // Parse the JSON response from the API
- .then(data => {
- // Extract the list of currencies from the API response
- const currencies = Object.keys(data.rates); // `data.rates` contains exchange rates for each currency
-
- // Dynamically populate both the "From" and "To" currency dropdowns
- currencies.forEach(currency => {
- // Create a new option element for the "From" currency dropdown
- const optionFrom = document.createElement('option');
- optionFrom.value = currency; // Set the option's value to the currency code (e.g., USD, EUR)
- optionFrom.textContent = currency; // Display the currency code as the option text
- fromCurrencySelect.appendChild(optionFrom); // Add the option to the "From" currency dropdown
- // Create a new option element for the "To" currency dropdown
- const optionTo = document.createElement('option');
- optionTo.value = currency; // Set the option's value to the currency code
- optionTo.textContent = currency; // Display the currency code as the option text
- toCurrencySelect.appendChild(optionTo); // Add the option to the "To" currency dropdown
- });
- })
- .catch(error => {
- // Handle any errors that occur during the fetch request (e.g., network issues, API failure)
- console.error('Error fetching currency data:', error); // Log the error to the console for debugging
- resultDiv.textContent = 'Failed to load currency data.'; // Inform the user that the currency data could not be loaded
- });
- /**
- * Handle the form submission to perform the currency conversion.
- * When the user submits the form, this event listener prevents the default
-form behavior (page reload)
- * and instead triggers the currency conversion using the selected inputs.
- */
- converterForm.addEventListener('submit', (event) => {
- event.preventDefault(); // Prevent the form from submitting in the traditional way (which would reload the page)
- // Retrieve the amount entered by the user and convert it to a float (decimal number)
- const amount = parseFloat(amountInput.value);
- // Get the selected base currency (the currency to convert from)
- const fromCurrency = fromCurrencySelect.value;
- // Get the selected target currency (the currency to convert to)
- const toCurrency = toCurrencySelect.value;
- // Validate user input: Ensure that the amount is a valid number and that both currencies have been selected
- if (isNaN(amount) || !fromCurrency || !toCurrency) {
- resultDiv.textContent = 'Please enter a valid amount and select currencies.'; // Display an error message to the user
- return; // Stop further execution if the input is invalid
- }
- /**
- * Fetch the exchange rates for the selected "from" currency.
- * The API URL is dynamically built using the selected "from" currency.
- * For example, if the user selects "EUR", the API will fetch conversion
-rates with EUR as the base currency.
- */
-fetch(`https://api.exchangerate-api.com/v4/latest/${fromCurrency}`)
-.then(response => response.json()) // Parse the JSON response from the API
-.then(data => {
-// Get the conversion rate for the selected "to" currency from the API data
-const conversionRate = data.rates[toCurrency]; // `data.rates` contains the exchange rates for all currencies
-// Calculate the converted amount by multiplying the user input (amount) by the conversion rate
-const convertedAmount = (amount * conversionRate).toFixed(2); // Round to 2 decimal places for currency formatting
-// Update the result div with the formatted conversion result
-resultDiv.textContent = `${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`;
-})
-.catch(error => {
-// Handle any errors that occur during the fetch request (e.g., network issues, API failure)
-console.error('Error fetching conversion data:', error); // Log the error to the console for debugging
-resultDiv.textContent = 'Failed to convert currency.'; // Display an error message to the user
-});
-});
-});
+    // Valitse avainelementit DOM:sta, joita käytetään skriptissä
+    const converterForm = document.getElementById('converter-form'); // Lomake valuuttamuunnoksen lähettämistä varten
+    const amountInput = document.getElementById('amount'); // Syötekenttä muunnettavalle summalle
+    const fromCurrencySelect = document.getElementById('from-currency'); // Valikko lähtövaluutan valitsemiseen
+    const toCurrencySelect = document.getElementById('to-currency'); // Valikko kohdevaluutan valitsemiseen
+    const resultDiv = document.getElementById('result'); // Div, jossa näytetään muuntotulos
+    // Määritä API-URL, josta haetaan valuuttakurssit, käyttäen USD:ta oletusvaluuttana
+    const apiURL = 'https://api.exchangerate-api.com/v4/latest/USD';
+    /**
+    * Hae valuuttatiedot API:sta, kun sivu latautuu.
+    * Tämä fetch-pyyntö hakee uusimmat valuuttakurssit käyttäen USD:ta perusvaluuttana.
+    * Tiedot sisältävät kurssit USD:sta muihin valuuttoihin, joita käytetään
+   pudotusvalikoiden täyttämiseen.
+    */
+    fetch(apiURL)
+    .then(response => response.json()) // Muunna API:n JSON-vastaus
+    .then(data => {
+    // Ota lista valuutoista API-vastauksesta
+    const currencies = Object.keys(data.rates); // `data.rates` sisältää valuuttakurssit jokaiselle valuutalle
+   
+    // Täytä dynaamisesti sekä "Lähtö"- että "Kohde"-valuuttavalikot
+    currencies.forEach(currency => {
+    // Luo uusi vaihtoehto "Lähtö"-valuuttavalikkoon
+    const optionFrom = document.createElement('option');
+    optionFrom.value = currency; // Aseta vaihtoehdon arvoksi valuuttakoodi (esim. USD, EUR)
+    optionFrom.textContent = currency; // Näytä valuuttakoodi vaihtoehdon tekstinä
+    fromCurrencySelect.appendChild(optionFrom); // Lisää vaihtoehto "Lähtö"-valuuttavalikkoon
+    // Luo uusi vaihtoehto "Kohde"-valuuttavalikkoon
+    const optionTo = document.createElement('option');
+    optionTo.value = currency; // Aseta vaihtoehdon arvoksi valuuttakoodi
+    optionTo.textContent = currency; // Näytä valuuttakoodi vaihtoehdon tekstinä
+    toCurrencySelect.appendChild(optionTo); // Lisää vaihtoehto "Kohde"-valuuttavalikkoon
+    });
+    })
+    .catch(error => {
+    // Käsittele virheitä, jotka tapahtuvat fetch-pyynnön aikana (esim. verkkoyhteysongelmat, API-virheet)
+    console.error('Virhe valuuttatietojen haussa:', error); // Kirjaa virhe konsoliin virheenkorjausta varten
+    resultDiv.textContent = 'Valuuttatietojen lataaminen epäonnistui.'; // Ilmoita käyttäjälle, että valuuttatietoja ei saatu ladattua
+    });
+    /**
+    * Käsittele lomakkeen lähetys valuuttamuunnoksen suorittamiseksi.
+    * Kun käyttäjä lähettää lomakkeen, tämä tapahtumankuuntelija estää oletusarvoisen
+   lomakkeen toiminnan (sivun päivityksen)
+    * ja sen sijaan suorittaa valuuttamuunnoksen valittujen syötteiden avulla.
+    */
+    converterForm.addEventListener('submit', (event) => {
+    event.preventDefault(); // Estä lomakkeen perinteinen lähettäminen (joka päivittäisi sivun)
+    // Hae käyttäjän syöttämä summa ja muunna se desimaaliluvuksi
+    const amount = parseFloat(amountInput.value);
+    // Hae valittu lähtövaluutta (valuutta, josta muunnetaan)
+    const fromCurrency = fromCurrencySelect.value;
+    // Hae valittu kohdevaluutta (valuutta, johon muunnetaan)
+    const toCurrency = toCurrencySelect.value;
+    // Varmista käyttäjän syötteiden oikeellisuus: varmista, että summa on kelvollinen ja että molemmat valuutat on valittu
+    if (isNaN(amount) || !fromCurrency || !toCurrency) {
+    resultDiv.textContent = 'Anna kelvollinen summa ja valitse valuutat.'; // Näytä virheilmoitus käyttäjälle
+    return; // Lopeta suoritus, jos syöte on virheellinen
+    }
+    /**
+    * Hae valuuttakurssit valitulle "lähtö" valuutalle.
+    * API-URL rakennetaan dynaamisesti valitun "lähtö"-valuutan avulla.
+    * Esimerkiksi, jos käyttäjä valitsee "EUR", API hakee muuntokurssit käyttäen EUR:ta perusvaluuttana.
+    */
+   fetch(`https://api.exchangerate-api.com/v4/latest/${fromCurrency}`)
+   .then(response => response.json()) // Muunna API:n JSON-vastaus
+   .then(data => {
+   // Hae muuntokurssi valitulle "kohde" valuutalle API:n tiedoista
+   const conversionRate = data.rates[toCurrency]; // `data.rates` sisältää kurssit kaikille valuutoille
+   // Laske muunnettu summa kertomalla käyttäjän syöttämä summa muuntokurssilla
+   const convertedAmount = (amount * conversionRate).toFixed(2); // Pyöristä 2 desimaaliin valuutan esittämistä varten
+   // Päivitä tulosdivi muotoillulla muuntotuloksella
+   resultDiv.textContent = `${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`;
+   })
+   .catch(error => {
+   // Käsittele virheitä, jotka tapahtuvat fetch-pyynnön aikana (esim. verkkoyhteysongelmat, API-virheet)
+   console.error('Virhe muuntotietojen haussa:', error); // Kirjaa virhe konsoliin virheenkorjausta varten
+   resultDiv.textContent = 'Valuutan muuntaminen epäonnistui.'; // Näytä virheilmoitus käyttäjälle
+   });
+   });
+   });
+   

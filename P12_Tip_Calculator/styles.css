@@ -1,63 +1,60 @@
-/* Global reset for consistent margins, paddings, and box-sizing */
+/* Yleinen nollaus yhdenmukaisten marginaalien, reunusten ja laatikkokoon asettamiseksi */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
    }
-   /* Body styling: center content and apply a gradient background */
+/* Kehon tyylittely: keskittää sisällön ja lisää liukuväripohjan */
    body {
-    font-family: 'Roboto', sans-serif; /* Modern, clean font from Google Fonts
-   */
-    background: linear-gradient(135deg, #74ebd5, #acb6e5); /* Stylish gradient
-   background */
+    font-family: 'Roboto', sans-serif; /* Moderni, selkeä fontti Google Fontseista */
+    background: linear-gradient(135deg, #74ebd5, #acb6e5); /* Tyylikäs liukuväripohja */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    color: #333; /* Dark color for text */
+    color: #333; /* Tumma väri tekstille */
    }
-   /* Main container for the Tip Calculator */
+/* Pääsäiliö tippilaskimelle */
    .calculator-container {
-    background-color: #fff; /* White background for the container */
+    background-color: #fff; /* Valkoinen tausta säiliölle */
     padding: 30px;
-    border-radius: 12px; /* Rounded corners for modern look */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    border-radius: 12px; /* Pyöristetyt kulmat modernille ulkonäölle */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Pehmeä varjo syvyyden luomiseksi */
     text-align: center;
     max-width: 400px;
     width: 100%;
-    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+    transition: transform 0.3s ease; /* Sileä siirtymä hover-efektille */
    }
-   /* Zoom-in effect when hovering over the container */
+/* Zoomaus-efekti, kun osoitin liikkuu säiliön päälle */
    .calculator-container:hover {
-    transform: scale(1.05); /* Subtle zoom effect */
+    transform: scale(1.05); /* Hieno zoom-efekti */
    }
-   /* Heading styling */
+/* Otsikon tyylittely */
    h1 {
     font-size: 2.2em;
     margin-bottom: 20px;
-    color: #2d3748; /* Darker color for better contrast */
+    color: #2d3748; /* Tummempi väri paremman kontrastin saavuttamiseksi */
    }
-   /* Styling for input fields and dropdown */
+/* Syötekenttien ja pudotusvalikon tyylittely */
    input[type="number"], select {
-    width: 100%; /* Full width for better alignment */
+    width: 100%; /* Täysi leveys paremman tasaamisen vuoksi */
     padding: 12px;
     margin-bottom: 15px;
-    border: 1px solid #ccc; /* Light gray border */
-    border-radius: 8px; /* Rounded corners */
+    border: 1px solid #ccc; /* Vaaleanharmaa reunus */
+    border-radius: 8px; /* Pyöristetyt kulmat */
     font-size: 1.1em;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for input fields
-   */
-    transition: border-color 0.3s ease; /* Smooth transition for border */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Hieno varjo syötekentille */
+    transition: border-color 0.3s ease; /* Sileä siirtymä reunukselle */
    }
-   /* Change border color when focused */
+/* Reunuksen värin muuttaminen, kun kohde on aktiivinen */
    input[type="number"]:focus, select:focus {
-    border-color: #28a745; /* Green border on focus */
-    outline: none; /* Remove default outline */
+    border-color: #28a745; /* Vihreä reunus, kun syöte on aktiivinen */
+    outline: none; /* Poistaa oletusreunuksen */
    }
-   /* Button styling for submission */
+/* Painikkeen tyylittely lomakkeen lähettämistä varten */
    button {
     padding: 12px 25px;
-    background-color: #28a745; /* Green background for action button */
+    background-color: #28a745; /* Vihreä tausta toimintopainikkeelle */
     color: white;
     border: none;
     border-radius: 8px;
@@ -65,21 +62,20 @@
     font-size: 1.1em;
     transition: background-color 0.3s ease, transform 0.2s ease;
    }
-   /* Hover effect for button */
+/* Hover-efekti painikkeelle */
    button:hover {
-    background-color: #218838; /* Darker green on hover */
-    transform: translateY(-2px); /* Slight lift effect */
+    background-color: #218838; /* Tummempi vihreä hover-tilassa */
+    transform: translateY(-2px); /* Hieno nostovaikutus hover-tilassa */
    }
-   /* Result display area */
+/* Tuloksen näyttöalue */
    .result {
     margin-top: 20px;
     font-size: 1.4em;
     font-weight: bold;
-    color: #2d3748; /* Dark color for visibility */
-    animation: fadeIn 0.8s ease-out forwards; /* Smooth fade-in animation for
-   result */
+    color: #2d3748; /* Tumma väri näkyvyyden parantamiseksi */
+    animation: fadeIn 0.8s ease-out forwards; /* Pehmeä fade-in-animaatio tulokselle */
    }
-   /* Fade-in animation for smoother result appearance */
+/* Fade-in-animaatio sujuvampaa tuloksen näyttämistä varten */
    @keyframes fadeIn {
     from {
     opacity: 0;

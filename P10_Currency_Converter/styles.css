@@ -1,45 +1,42 @@
-/* Resetting default margins, paddings, and box-sizing for consistency */
+/* Nollataan oletusmarginaalit, täytteet ja box-sizing johdonmukaisuuden vuoksi */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
    }
-   /* Body styling for centering content with Flexbox and applying a gradient
-   background */
+/* Kehon (body) muotoilu sisällön keskittämiseksi Flexboxilla ja gradientin taustalle */
    body {
-    font-family: 'Poppins', sans-serif; /* Clean, modern font */
-    background: linear-gradient(135deg, #74ebd5, #acb6e5); /* Eye-catching
-   gradient */
+    font-family: 'Poppins', sans-serif; /* Selkeä, moderni fontti */
+    background: linear-gradient(135deg, #74ebd5, #acb6e5); /* Näyttävä gradientti */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
    }
-   /* Main container styling */
+/* Pääsäiliön (container) muotoilu */
    .container {
     background-color: white;
     padding: 40px;
-    border-radius: 15px; /* Softer, modern look with rounded corners */
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Deeper shadow for a lifted
-   effect */
+    border-radius: 15px; /* Pehmeämpi, moderni ulkonäkö pyöristetyillä kulmilla */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Syvempi varjo kohotetulle vaikutelmalle */
     text-align: center;
     max-width: 400px;
     width: 100%;
-    transition: transform 0.3s ease; /* Smooth hover effect */
+    transition: transform 0.3s ease; /* Pehmeä hover-efekti */
    }
-   /* Slight zoom-in effect when hovering over the container */
+/* Hieman zoomattu efekti, kun säiliötä leijutetaan */
    .container:hover {
     transform: scale(1.05);
    }
-   /* Styling for the main heading */
+/* Pääotsikon muotoilu */
    h1 {
     font-size: 2em;
     color: #333;
     margin-bottom: 20px;
    }
-/* Styling for the input fields and select dropdowns */
-input[type="number"], select {
+/* Syöttökenttien ja valikkojen muotoilu */
+   input[type="number"], select {
     width: 100%;
     padding: 15px;
     margin-bottom: 15px;
@@ -48,15 +45,14 @@ input[type="number"], select {
     font-size: 1em;
     background-color: #f9f9f9;
     transition: border-color 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow for input
-   fields */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Kevyt varjo syöttökentille */
    }
-   /* Focus state for inputs */
+/* Syöttökenttien ja valikkojen tarkennustila */
    input[type="number"]:focus, select:focus {
-    border-color: #28a745; /* Green border when focused */
+    border-color: #28a745; /* Vihreä reuna, kun kenttä on valittuna */
     outline: none;
    }
-   /* Button styling for convert action */
+/* Muuntopainikkeen muotoilu */
    button {
     padding: 12px 25px;
     background-color: #28a745;
@@ -67,14 +63,13 @@ input[type="number"], select {
     font-size: 1.1em;
     transition: background-color 0.3s ease, transform 0.2s ease;
    }
-   /* Hover effect for button */
+/* Hover-efekti painikkeelle */
    button:hover {
     background-color: #218838;
-    transform: translateY(-3px); /* Slight lift effect on hover */
-    box-shadow: 0 6px 15px rgba(40, 167, 69, 0.4); /* Stronger shadow on hover
-   */
+    transform: translateY(-3px); /* Kevyt nostovaikutelma hover-tilassa */
+    box-shadow: 0 6px 15px rgba(40, 167, 69, 0.4); /* Vahvempi varjo hover-tilassa */
    }
-   /* Styling for the result display area */
+/* Muuntotuloksen näyttöalueen muotoilu */
    .result {
     margin-top: 25px;
     font-size: 1.3em;
@@ -82,7 +77,7 @@ input[type="number"], select {
     font-weight: bold;
     animation: fadeIn 1s ease-out forwards;
    }
-   /* Fade-in animation for result display */
+/* Fade-in animaatio tuloksen näyttöön */
    @keyframes fadeIn {
     from {
         opacity: 0;

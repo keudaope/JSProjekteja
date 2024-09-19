@@ -1,37 +1,35 @@
-// Wait until the DOM is fully loaded before executing the script
+// Odota, että DOM on ladattu kokonaan ennen kuin suoritat skriptin
 document.addEventListener('DOMContentLoaded', () => {
-    // Select the color picker input, color code display, and copy button    elements
+    // Valitaan värinvalitsin, värikoodin näyttö ja kopiointipainikkeen elementit
     const colorPicker = document.getElementById('color-picker');
     const colorCode = document.getElementById('color-code');
     const copyButton = document.getElementById('copy-button');
     /**
-    * Update the displayed color code when a new color is selected
-    * The color picker returns a hexadecimal value, which is displayed in the
-   colorCode element.
+    * Päivitä näytettävä värikoodi, kun uusi väri on valittu
+    * Värinvalitsin palauttaa heksadesimaaliarvon, joka näytetään colorCode-elementissä.
     */
     colorPicker.addEventListener('input', () => {
-    // Update the color code display with the selected color
+    // Päivitä värikoodin näyttö valitulla värillä
     colorCode.textContent = colorPicker.value;
     });
     /**
-    * Copy the current color code to the clipboard when the copy button is
-   clicked
-    * Uses the Clipboard API to copy text to the user's clipboard.
+    * Kopioi nykyinen värikoodi leikepöydälle, kun kopiointipainiketta painetaan
+    * Käyttää Clipboard APIa kopioidakseen tekstiä käyttäjän leikepöydälle.
     */
    copyButton.addEventListener('click', () => {
-    // Copy the displayed color code to the clipboard
+    // Kopioi näytettävä värikoodi leikepöydälle
     navigator.clipboard.writeText(colorCode.textContent)
     .then(() => {
-    // Indicate success by changing the button text
-    copyButton.textContent = 'Copied!';
-    // Reset the button text after 2 seconds
+    // Ilmaise onnistuminen muuttamalla painikkeen tekstiä
+    copyButton.textContent = 'Kopioitu!';
+    // Palauta painikkeen teksti 2 sekunnin kuluttua
     setTimeout(() => {
-    copyButton.textContent = 'Copy Color';
+    copyButton.textContent = 'Kopioi väri';
     }, 2000);
     })
     .catch(err => {
-    // Log any errors that occur during the copy operation
-    console.error('Failed to copy text: ', err);
+    // Kirjaa mahdolliset virheet kopioinnin aikana
+    console.error('Tekstin kopiointi epäonnistui: ', err);
     });
     });
    });

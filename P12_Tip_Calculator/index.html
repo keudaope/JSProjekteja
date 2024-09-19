@@ -4,37 +4,34 @@
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>Modern Tip Calculator</title>
- <!-- Link to external CSS for better styling -->
+ <!-- Linkki ulkoiseen CSS-tiedostoon paremman tyylin saavuttamiseksi -->
  <link rel="stylesheet" href="styles.css">
- <!-- Google Font for modern typography -->
- <link href="https://fonts.googleapis.com/css2?
-family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+ <!-- Google Font modernia typografiaa varten -->
+ <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
  <div class="calculator-container">
- <!-- Main heading for the Tip Calculator -->
+ <!-- Pääotsikko tippilaskimelle -->
  <h1>Tip Calculator</h1>
- <!-- Form for entering bill amount and selecting tip percentage -->
+ <!-- Lomake laskun summan syöttämistä ja tipin prosenttiosuuden valintaa varten -->
  <form id="tip-form">
- <!-- Input for bill amount -->
- <input type="number" id="bill-amount" placeholder="Enter Bill
-Amount" required>
- <!-- Dropdown to select tip percentage -->
+ <!-- Kenttä laskun summan syöttämiseksi -->
+ <input type="number" id="bill-amount" placeholder="Syötä laskun summa" required>
+ <!-- Pudotusvalikko tipin prosenttiosuuden valitsemista varten -->
  <select id="tip-percentage" required>
- <option value="" disabled selected>Select Tip
-Percentage</option>
+ <option value="" disabled selected>Valitse tipin prosenttiosuus</option>
  <option value="10">10%</option>
  <option value="15">15%</option>
  <option value="20">20%</option>
  <option value="25">25%</option>
  </select>
- <!-- Button to submit the form and calculate the tip -->
- <button type="submit">Calculate Tip</button>
+ <!-- Painike lomakkeen lähettämiseen ja tipin laskemiseen -->
+ <button type="submit">Laske tippi</button>
  </form>
- <!-- Div to display the calculated tip result -->
+ <!-- Alue lasketun tipin tuloksen näyttämistä varten -->
  <div class="result" id="result"></div>
  </div>
- <!-- Link to external JavaScript file -->
+ <!-- Linkki ulkoiseen JavaScript-tiedostoon -->
  <script src="app.js"></script>
 </body>
 </html>

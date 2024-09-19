@@ -1,35 +1,35 @@
-// Wait until the DOM is fully loaded before running the script
+// Odotetaan, että DOM on täysin ladattu ennen kuin suoritetaan skripti
 document.addEventListener('DOMContentLoaded', () => {
-    // WebSocket connection to the server
+    // WebSocket-yhteys palvelimeen
     const ws = new WebSocket('ws://localhost:8080');
-    // Get references to DOM elements
+    // Haetaan viitteet DOM-elementteihin
     const messagesDiv = document.getElementById('messages');
     const messageForm = document.getElementById('message-form');
     const messageInput = document.getElementById('message-input');
+    
     /**
-    * Handle incoming WebSocket messages
-    * This function appends new messages to the message display area
+    * Käsitellään saapuvat WebSocket-viestit
+    * Tämä funktio lisää uudet viestit viestin näyttöalueelle
     */
     ws.onmessage = (event) => {
-    // Create a new div element for each incoming message
+    // Luodaan uusi div-elementti jokaiselle saapuvalle viestille
     const message = document.createElement('div');
-    message.textContent = event.data; // Display the message data
-    messagesDiv.appendChild(message); // Add the message to the messages container
-    // Scroll the messages container to the bottom so the latest message is visible
+    message.textContent = event.data; // Näytetään viestin sisältö
+    messagesDiv.appendChild(message); // Lisätään viesti viestikonttiin
+    // Vieritetään viestikontti alas, jotta uusin viesti on näkyvissä
     messagesDiv.scrollTop = messagesDiv.scrollHeight;
     };
+    
     /**
-    * Handle form submission
-    * This function sends the user's message via WebSocket and clears the input
-   field
+    * Lomakkeen lähetyksen käsittely
+    * Tämä funktio lähettää käyttäjän viestin WebSocketin kautta ja tyhjentää syötekentän
     */
-   messageForm.addEventListener('submit', (event) => {
-    event.preventDefault(); // Prevent the form from reloading the page
-    // Check if the input field has a value before sending
+    messageForm.addEventListener('submit', (event) => {
+    event.preventDefault(); // Estetään sivun uudelleenlataus lomakkeen lähettämisen yhteydessä
+    // Tarkistetaan, että syötekentässä on arvo ennen lähettämistä
     if (messageInput.value.trim()) {
-    ws.send(messageInput.value); // Send the message via WebSocket
-    messageInput.value = ''; // Clear the input field after sending
+    ws.send(messageInput.value); // Lähetetään viesti WebSocketin kautta
+    messageInput.value = ''; // Tyhjennetään syötekenttä lähettämisen jälkeen
     }
     });
-   });
-   
+});

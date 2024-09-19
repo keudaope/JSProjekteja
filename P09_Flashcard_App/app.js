@@ -1,67 +1,67 @@
-// Wait for the DOM to be fully loaded before executing JavaScript
+// Odotetaan, että DOM on kokonaan ladattu ennen kuin JavaScript suoritetaan
 document.addEventListener('DOMContentLoaded', () => {
-    // Get references to the form, input fields, flashcard display, and buttons
+    // Haetaan viittaukset lomakkeeseen, syötekenttiin, flashcard-näyttöön ja painikkeisiin
     const flashcardForm = document.getElementById('flashcard-form');
     const questionInput = document.getElementById('question');
     const answerInput = document.getElementById('answer');
     const flashcard = document.getElementById('flashcard');
     const prevButton = document.getElementById('prev');
     const nextButton = document.getElementById('next');
-    // Initialize an array to hold flashcards, loading from localStorage if available
+    // Alustetaan taulukko flashcardeja varten, ladataan localStoragesta jos saatavilla
     let flashcards = JSON.parse(localStorage.getItem('flashcards')) || [];
-    let currentIndex = 0; // Keeps track of the current flashcard index
-    let showAnswer = false; // Controls whether the answer is shown or not
-    // Event listener for adding a new flashcard
+    let currentIndex = 0; // Seuraa nykyisen flashcardin indeksiä
+    let showAnswer = false; // Määrittää, näytetäänkö vastaus vai ei
+    // Tapahtumankuuntelija uuden flashcardin lisäämiseksi
     flashcardForm.addEventListener('submit', (event) => {
-    event.preventDefault(); // Prevent form submission from refreshing the page
-    // Get trimmed values from input fields
+    event.preventDefault(); // Estetään lomakkeen lähetys, joka uudelleenlataisi sivun
+    // Haetaan syötteiden arvot ja poistetaan ylimääräiset välilyönnit
     const question = questionInput.value.trim();
     const answer = answerInput.value.trim();
-    // Only proceed if both question and answer are provided
+    // Jatketaan vain, jos sekä kysymys että vastaus on annettu
     if (question && answer) {
-    // Add the new flashcard to the array and update localStorage
+    // Lisätään uusi flashcard taulukkoon ja päivitetään localStorage
     flashcards.push({ question, answer });
     localStorage.setItem('flashcards', JSON.stringify(flashcards));
-    // Clear input fields after submission
+    // Tyhjennetään syötekentät lähetyksen jälkeen
     questionInput.value = '';
     answerInput.value = '';
-    // Display the new flashcard
-    currentIndex = flashcards.length - 1; // Set index to the latest flashcard
+    // Näytetään uusi flashcard
+    currentIndex = flashcards.length - 1; // Asetetaan indeksi uusimpaan flashcardiin
     displayFlashcard();
     }
     });
-    // Event listener for toggling between question and answer
+    // Tapahtumankuuntelija kysymyksen ja vastauksen välillä vaihtamiseksi
     flashcard.addEventListener('click', () => {
-    showAnswer = !showAnswer; // Toggle between showing question and answer
+    showAnswer = !showAnswer; // Vaihdetaan kysymyksen ja vastauksen välillä
     displayFlashcard();
     });
-    // Event listener for navigating to the previous flashcard
+    // Tapahtumankuuntelija edelliseen flashcardiin siirtymiseksi
     prevButton.addEventListener('click', () => {
     if (currentIndex > 0) {
-    currentIndex--; // Move to the previous flashcard
-    showAnswer = false; // Reset to showing the question
+    currentIndex--; // Siirrytään edelliseen flashcardiin
+    showAnswer = false; // Palautetaan näyttämään kysymys
     displayFlashcard();
     }
     });
-    // Event listener for navigating to the next flashcard
+    // Tapahtumankuuntelija seuraavaan flashcardiin siirtymiseksi
     nextButton.addEventListener('click', () => {
         if (currentIndex < flashcards.length - 1) {
-            currentIndex++; // Move to the next flashcard
-            showAnswer = false; // Reset to showing the question
+            currentIndex++; // Siirrytään seuraavaan flashcardiin
+            showAnswer = false; // Palautetaan näyttämään kysymys
             displayFlashcard();
             }
             });
-            // Function to display the current flashcard
+            // Funktio nykyisen flashcardin näyttämiseksi
             function displayFlashcard() {
             if (flashcards.length > 0) {
             const currentFlashcard = flashcards[currentIndex];
-            // Show the question or answer based on the toggle
+            // Näytetään kysymys tai vastaus riippuen valinnasta
             flashcard.textContent = showAnswer ? currentFlashcard.answer :
            currentFlashcard.question;
             } else {
-            flashcard.textContent = 'No flashcards available. Add a new flashcard.'; // Default message if no flashcards exist
+            flashcard.textContent = 'Ei flashcardeja saatavilla. Lisää uusi flashcard.'; // Oletusviesti, jos flashcardeja ei ole
             }
             }
-            // Display the first flashcard on page load
+            // Näytetään ensimmäinen flashcard, kun sivu ladataan
             displayFlashcard();
-           });   
+           });

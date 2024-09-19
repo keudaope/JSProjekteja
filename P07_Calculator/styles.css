@@ -1,85 +1,97 @@
-/* General styles to reset default browser behavior */
+/* Yleiset tyylit, joilla nollataan selaimen oletuskäyttäytyminen */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-   }
-   /* Body styling for centering the calculator */
-   body {
+}
+
+/* Kehon (body) tyylit laskimen keskittämiseksi */
+body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, rgb(116, 235, 213), rgb(172, 182, 229));
+    background: linear-gradient(135deg, rgb(116, 235, 213), rgb(172, 182, 229)); /* Taustan gradientti */
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    justify-content: center; /* Keskittää sisällön vaakasuunnassa */
+    align-items: center; /* Keskittää sisällön pystysuunnassa */
+    height: 100vh; /* Koko ikkunan korkeus */
     margin: 0;
-   }
-   /* Main container for the calculator */
-   .container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    text-align: center;
 }
-/* Display area styling */
+
+/* Laskimen pääkontaineri */
+.container {
+    background-color: white; /* Valkoinen taustaväri laskimelle */
+    padding: 20px; /* Sisäinen marginaali */
+    border-radius: 8px; /* Pyöristetyt kulmat */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Hieno varjostus laskimelle */
+    width: 300px; /* Kiinteä leveys */
+    text-align: center; /* Keskittää tekstin kontainerin sisällä */
+}
+
+/* Näyttöalueen tyylit */
 .display {
- width: calc(100% - 24px);
- padding: 10px;
- margin-bottom: 10px;
- border: 1px solid #ccc;
- border-radius: 4px;
- font-size: 1.5em;
- text-align: right; /* Align the text (numbers) to the right */
- background-color: #f9f9f9;
+    width: calc(100% - 24px); /* Leveys ottaa huomioon kontainerin sisäiset marginaalit */
+    padding: 10px;
+    margin-bottom: 10px; /* Väli näyttöalueen ja painikkeiden välillä */
+    border: 1px solid #ccc; /* Hieno reunus */
+    border-radius: 4px; /* Pyöristetyt kulmat */
+    font-size: 1.5em; /* Suurempi fonttikoko */
+    text-align: right; /* Oikeuttaa numerot näytöllä */
+    background-color: #f9f9f9; /* Vaalea taustaväri */
 }
-/* Grid layout for calculator buttons */
+
+/* Laskimen painikkeiden ruudukkoasettelu */
 .buttons {
- display: grid;
- grid-template-columns: repeat(4, 1fr); /* Create a 4-column grid */
- gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Luo 4-sarakkeisen ruudukon */
+    gap: 10px; /* Väli painikkeiden välillä */
 }
-/* General button styling */
+
+/* Yleiset painiketyylit */
 button {
- padding: 20px;
- font-size: 1.2em;
- border: none;
- background-color: #f0f0f0;
- cursor: pointer;
- border-radius: 4px;
- transition: background-color 0.3s ease; /* Smooth hover transition */
+    padding: 20px;
+    font-size: 1.2em; /* Suurempi fonttikoko painikkeille */
+    border: none; /* Poistaa oletusreunukset */
+    background-color: #f0f0f0; /* Vaalea taustaväri */
+    cursor: pointer; /* Vaihtaa osoittimen sormeksi, kun painike on aktiivinen */
+    border-radius: 4px; /* Pyöristetyt kulmat */
+    transition: background-color 0.3s ease; /* Hieno siirtymä hover-tilassa */
 }
-/* Button hover effect */
+
+/* Hover-tila painikkeille */
 button:hover {
- background-color: #ddd;
+    background-color: #ddd; /* Tummempi väri, kun painiketta leijutetaan */
 }
-/* Operator buttons styling */
+
+/* Operaattoripainikkeiden tyylit */
 .operator {
- background-color: #28a745;
- color: white;
+    background-color: #28a745; /* Vihreä väri operaattoreille */
+    color: white; /* Valkoinen teksti */
 }
-/* Operator hover effect */
+
+/* Operaattoripainikkeiden hover-tila */
 .operator:hover {
- background-color: #218838;
+    background-color: #218838; /* Tummempi vihreä hover-tilassa */
 }
-/* Equals button styling */
+
+/* Yhtäsuuruusmerkkipainikkeen tyylit */
 .equal {
- background-color: #007bff;
- color: white;
- grid-column: span 2; /* Span 2 columns for wider button */
+    background-color: #007bff; /* Sininen taustaväri */
+    color: white; /* Valkoinen teksti */
+    grid-column: span 2; /* Yhtäsuuruusmerkki vie kaksi saraketta */
 }
-/* Equals button hover effect */
+
+/* Yhtäsuuruusmerkkipainikkeen hover-tila */
 .equal:hover {
- background-color: #0056b3;
+    background-color: #0056b3; /* Tummempi sininen hover-tilassa */
 }
-/* Clear button styling */
+
+/* Nollauspainikkeen (clear) tyylit */
 .clear {
- background-color: #dc3545;
- color: white;
- grid-column: span 2; /* Span 2 columns for wider button */
+    background-color: #dc3545; /* Punainen taustaväri */
+    color: white; /* Valkoinen teksti */
+    grid-column: span 2; /* Nollauspainike vie kaksi saraketta */
 }
-/* Clear button hover effect */
+
+/* Nollauspainikkeen hover-tila */
 .clear:hover {
- background-color: #c82333;
+    background-color: #c82333; /* Tummempi punainen hover-tilassa */
 }

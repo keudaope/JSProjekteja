@@ -1,97 +1,97 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Select the display element where the numbers and result will be shown
+    // Valitaan näyttöelementti, jossa numerot ja tulos näytetään
     const display = document.getElementById('display');
-    // Select all the calculator buttons
+    // Valitaan kaikki laskimen painikkeet
     const buttons = document.querySelectorAll('button');
    
-    // Variables to hold the current and previous operands and the operator
+    // Muuttujat nykyisen ja edellisen operandin sekä operaattorin tallentamiseen
     let currentOperand = '';
     let previousOperand = '';
     let operator = null;
-    // Loop through each button and add a click event listener
+    // Käydään läpi jokainen painike ja lisätään klikkaustapahtuman kuuntelija
     buttons.forEach(button => {
     button.addEventListener('click', () => {
-    // Handle number buttons
+    // Käsitellään numeropainikkeet
     if (button.hasAttribute('data-number')) {
     appendNumber(button.getAttribute('data-number'));
     }
-    // Handle operator buttons
+    // Käsitellään operaattoripainikkeet
     else if (button.hasAttribute('data-operator')) {
     chooseOperator(button.getAttribute('data-operator'));
     }
-    // Handle equals button
+    // Käsitellään yhtäsuuruus-painike
     else if (button.id === 'equal') {
     compute();
     }
-    // Handle clear button
+    // Käsitellään tyhjennyspainike
     else if (button.id === 'clear') {
     clear();
     }
-    // Update the display after each action
+    // Päivitetään näyttö jokaisen toiminnon jälkeen
     updateDisplay();
-});
-});
-// Function to append a number to the current operand
-function appendNumber(number) {
-// Prevent appending multiple zeroes at the start
-if (number === '0' && currentOperand === '0') return;
-// Append the new number to the current operand
-currentOperand = currentOperand.toString() + number.toString();
-}
-// Function to handle operator selection
-function chooseOperator(selectedOperator) {
-// Do nothing if no number has been entered
-if (currentOperand === '') return;
-// Compute if there's a previous number and operator
-if (previousOperand !== '') {
-compute();
-}
-// Set the chosen operator and prepare for the next number
-operator = selectedOperator;
-previousOperand = currentOperand;
-currentOperand = '';
-}
-// Function to perform the calculation
-function compute() {
-let computation;
-const prev = parseFloat(previousOperand);
-const current = parseFloat(currentOperand);
-// Do nothing if either operand is invalid
-if (isNaN(prev) || isNaN(current)) return;
+    });
+    });
+    // Funktio, joka lisää numeron nykyiseen operandiin
+    function appendNumber(number) {
+    // Estetään moninkertaisten nollien lisääminen alussa
+    if (number === '0' && currentOperand === '0') return;
+    // Lisätään uusi numero nykyiseen operandiin
+    currentOperand = currentOperand.toString() + number.toString();
+    }
+    // Funktio operaattorin valintaa varten
+    function chooseOperator(selectedOperator) {
+    // Ei tehdä mitään, jos numeroa ei ole syötetty
+    if (currentOperand === '') return;
+    // Suoritetaan laskutoimitus, jos on olemassa aiempi numero ja operaattori
+    if (previousOperand !== '') {
+    compute();
+    }
+    // Asetetaan valittu operaattori ja valmistaudutaan seuraavaan numeroon
+    operator = selectedOperator;
+    previousOperand = currentOperand;
+    currentOperand = '';
+    }
+    // Funktio laskutoimituksen suorittamiseksi
+    function compute() {
+    let computation;
+    const prev = parseFloat(previousOperand);
+    const current = parseFloat(currentOperand);
+    // Ei tehdä mitään, jos kumpikaan operandi ei ole kelvollinen
+    if (isNaN(prev) || isNaN(current)) return;
 
-// Perform the calculation based on the chosen operator
-switch (operator) {
-case '+':
-computation = prev + current;
-break;
-case '-':
-computation = prev - current;
-break;
-case '*':
-computation = prev * current;
-break;
-case '/':
-computation = prev / current;
-break;
-default:
-return;
-}
-// Update the current operand with the result and reset other values
-currentOperand = computation;
-operator = null;
-previousOperand = '';
-}
-// Function to clear the calculator
-function clear() {
-currentOperand = '';
-previousOperand = '';
-operator = null;
-}
-// Function to update the display with the current operand
-function updateDisplay() {
-// If currentOperand is empty, display '0', otherwise display the current number
-display.textContent = currentOperand || '0';
-}
-// Clear the calculator when the app starts
-clear();
+    // Suoritetaan laskutoimitus valitun operaattorin perusteella
+    switch (operator) {
+    case '+':
+    computation = prev + current;
+    break;
+    case '-':
+    computation = prev - current;
+    break;
+    case '*':
+    computation = prev * current;
+    break;
+    case '/':
+    computation = prev / current;
+    break;
+    default:
+    return;
+    }
+    // Päivitetään nykyinen operandi tuloksella ja nollataan muut arvot
+    currentOperand = computation;
+    operator = null;
+    previousOperand = '';
+    }
+    // Funktio laskimen tyhjentämiseksi
+    function clear() {
+    currentOperand = '';
+    previousOperand = '';
+    operator = null;
+    }
+    // Funktio, joka päivittää näytön nykyisellä operandilla
+    function updateDisplay() {
+    // Jos currentOperand on tyhjä, näytetään '0', muuten näytetään nykyinen numero
+    display.textContent = currentOperand || '0';
+    }
+    // Tyhjennetään laskin sovelluksen käynnistyessä
+    clear();
 });
