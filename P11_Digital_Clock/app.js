@@ -1,29 +1,29 @@
-// Wait until the DOM is fully loaded before running the script
-document.addEventListener('DOMContentLoaded', () => {
-    // Select the clock element from the DOM
-    const clockElement = document.getElementById('clock');
-    /**
-    * Function to update the time on the digital clock.
-    * This function retrieves the current time, formats it, and displays it in
-   HH:MM:SS format.
-    */
-    function updateClock() {
-    // Get the current time
+// Odota, että DOM latautuu kokonaan ennen kuin suoritat skriptin
+document.addEventListener("DOMContentLoaded", () => {
+  // Valitaan kelloelementti DOM:sta
+  const clockElement = document.getElementById("clock");
+  /**
+   * Funktio, joka päivittää ajan digitaalisessa kellossa.
+   * Tämä funktio hakee nykyisen ajan, muotoilee sen ja näyttää sen
+   * HH:MM:SS-muodossa.
+   */
+  function updateClock() {
+    // Hae nykyinen aika
     const now = new Date();
-    // Extract hours, minutes, and seconds, and pad them with leading zeros if necessary
-    const hours = now.getHours().toString().padStart(2, '0');
-    const minutes = now.getMinutes().toString().padStart(2, '0');
-    const seconds = now.getSeconds().toString().padStart(2, '0');
-    // Update the text content of the clock element to display the current    time
+    // Poimitaan tunnit, minuutit ja sekunnit, ja lisätään johtavat nollat tarvittaessa
+    const hours = now.getHours().toString().padStart(2, "0");
+    const minutes = now.getMinutes().toString().padStart(2, "0");
+    const seconds = now.getSeconds().toString().padStart(2, "0");
+    // Päivitetään kelloelementin tekstisisältö näyttämään nykyinen aika
     clockElement.textContent = `${hours}:${minutes}:${seconds}`;
-    }
-    /**
-    * Set an interval to update the clock every second.
-    * This ensures that the clock remains accurate and displays real-time
-   changes.
-    */
-    setInterval(updateClock, 1000); // Update the clock every 1000 milliseconds (1 second)
-   
-    // Call the updateClock function immediately to display the time on page load 
-    updateClock();
+  }
+  /**
+   * Asetetaan intervalli, joka päivittää kellon joka sekunti.
+   * Tämä varmistaa, että kello pysyy tarkkana ja näyttää reaaliaikaiset
+   * muutokset.
+   */
+  setInterval(updateClock, 1000); // Päivittää kellon joka 1000 millisekunti (1 sekunti)
+
+  // Kutsutaan updateClock-funktio välittömästi, jotta aika näkyy sivulla latauksen jälkeen
+  updateClock();
 });

@@ -1,6 +1,6 @@
-// Wait for the DOM to be fully loaded before running the script
+// Odota, kunnes DOM on täysin ladattu ennen kuin suoritat skriptin
 document.addEventListener("DOMContentLoaded", () => {
-  // Array of card values (2 of each to create pairs)
+  // Korttien arvot (kaksi kutakin arvoa parien muodostamiseksi)
   const cardsArray = [
     "A",
     "A",
@@ -19,91 +19,96 @@ document.addEventListener("DOMContentLoaded", () => {
     "H",
     "H",
   ];
-  // Shuffle the card values to randomize the board
+  // Sekoita korttien arvot satunnaista pelilautaa varten
   let shuffledCards = shuffleArray(cardsArray);
-  // Track the first and second card being flipped
+  // Seuraa ensimmäistä ja toista käännettävää korttia
   let firstCard = null;
   let secondCard = null;
-  let lockBoard = false; // Prevent multiple flips while cards are being checked
-  // Select the game board element from the DOM
+  let lockBoard = false; // Estä useat käännöt kortteja tarkistettaessa
+  // Valitse pelilauta elementti DOM:sta
   const gameBoard = document.getElementById("game-board");
+
   /**
-    * Function to create the game board by generating the card elements
-   dynamically
-    */
+   * Funktio pelilaudan luomiseen, korttielementtien dynaaminen generointi
+   */
   function createBoard() {
     shuffledCards.forEach((cardValue) => {
-      const card = document.createElement("div"); // Create a new div for each card
-      card.classList.add("card"); // Add the "card" class for styling
-      card.dataset.value = cardValue; // Store the card's value as a data attribute
-      card.addEventListener("click", flipCard); // Attach the click event listener to flip the card
-      gameBoard.appendChild(card); // Append the card to the game board
+      const card = document.createElement("div"); // Luo uusi div jokaiselle kortille
+      card.classList.add("card"); // Lisää "card" luokka tyylittelyä varten
+      card.dataset.value = cardValue; // Tallenna kortin arvo data-attribuutiksi
+      card.addEventListener("click", flipCard); // Liitä kortin kääntöön click-tapahtuma
+      gameBoard.appendChild(card); // Lisää kortti pelilaudalle
     });
   }
+
   /**
-   * Function to handle the card flip
-   * This checks if it's the first or second card being flipped
+   * Funktio kortin kääntämiseen
+   * Tämä tarkistaa, onko kyseessä ensimmäinen vai toinen kortti, joka käännetään
    */
   function flipCard() {
-    if (lockBoard || this === firstCard) return; // Prevent flipping if board is locked or the same card is clicked twice
-    this.classList.add("flipped"); // Add the flipped class to show the card
-    this.textContent = this.dataset.value; // Display the card's value
-    // Check if this is the first card being flipped
+    if (lockBoard || this === firstCard) return; // Estä kääntö, jos lauta on lukittu tai sama kortti käännetään kahdesti
+    this.classList.add("flipped"); // Lisää flipped-luokka, jotta kortti näkyy käännettynä
+    this.textContent = this.dataset.value; // Näytä kortin arvo
+    // Tarkista, onko tämä ensimmäinen kortti, joka käännetään
     if (!firstCard) {
-      firstCard = this; // Set the first card
+      firstCard = this; // Aseta ensimmäinen kortti
       return;
     }
-    // This is the second card being flipped
+    // Tämä on toinen kortti, joka käännetään
     secondCard = this;
-    checkForMatch(); // Check if the two cards match
+    checkForMatch(); // Tarkista, vastaavatko kaksi korttia toisiaan
   }
+
   /**
-   * Function to check if two cards match
+   * Funktio korttien vastaavuuden tarkistamiseen
    */
   function checkForMatch() {
     if (firstCard.dataset.value === secondCard.dataset.value) {
-      disableCards(); // Disable the cards if they match
+      disableCards(); // Poista korttien käytöstä, jos ne vastaavat
     } else {
-      unflipCards(); // Unflip the cards if they don't match
+      unflipCards(); // Käännä kortit takaisin, jos ne eivät vastaa
     }
   }
+
   /**
-   * Function to disable the matched cards
+   * Funktio vastaavien korttien poistamiseen käytöstä
    */
   function disableCards() {
-    firstCard.classList.add("matched"); // Mark the first card as matched
-    secondCard.classList.add("matched"); // Mark the second card as matched
-    resetBoard(); // Reset the board for the next round
+    firstCard.classList.add("matched"); // Merkitse ensimmäinen kortti vastaavaksi
+    secondCard.classList.add("matched"); // Merkitse toinen kortti vastaavaksi
+    resetBoard(); // Nollaa pelilauta seuraavaa kierrosta varten
   }
+
   /**
-        * Function to unflip the cards if they don't match
-        * A small delay is added to allow the user to see the cards before they are
-       flipped back
-        */
+   * Funktio korttien takaisin kääntämiseen, jos ne eivät vastaa
+   * Pieni viive lisätään, jotta käyttäjä ehtii nähdä kortit ennen kääntämistä
+   */
   function unflipCards() {
-    lockBoard = true; // Lock the board to prevent more flips
+    lockBoard = true; // Lukitse pelilauta estämään useampia käännöksiä
     setTimeout(() => {
-      firstCard.classList.remove("flipped"); // Remove flipped class from first card
-      secondCard.classList.remove("flipped"); // Remove flipped class from second card
-      firstCard.textContent = ""; // Hide the value of the first card
-      secondCard.textContent = ""; // Hide the value of the second card
-      resetBoard(); // Reset the board for the next round
-    }, 1000); // 1 second delay before flipping back
+      firstCard.classList.remove("flipped"); // Poista flipped-luokka ensimmäisestä kortista
+      secondCard.classList.remove("flipped"); // Poista flipped-luokka toisesta kortista
+      firstCard.textContent = ""; // Piilota ensimmäisen kortin arvo
+      secondCard.textContent = ""; // Piilota toisen kortin arvo
+      resetBoard(); // Nollaa pelilauta seuraavaa kierrosta varten
+    }, 1000); // 1 sekunnin viive ennen takaisin kääntämistä
   }
+
   /**
-   * Function to reset the board state after each round
-   * This clears the first and second card and unlocks the board
+   * Funktio pelilaudan nollaamiseen jokaisen kierroksen jälkeen
+   * Tämä tyhjentää ensimmäisen ja toisen kortin ja avaa laudan uudelleen
    */
   function resetBoard() {
-    [firstCard, secondCard, lockBoard] = [null, null, false]; // Reset the game state
+    [firstCard, secondCard, lockBoard] = [null, null, false]; // Nollaa pelitila
   }
+
   /**
-   * Function to shuffle the cards using the Fisher-Yates algorithm
+   * Funktio korttien sekoittamiseen käyttäen Fisher-Yates-algoritmia
    */
   function shuffleArray(array) {
     let currentIndex = array.length,
       randomIndex;
-    // Shuffle the array in place
+    // Sekoita taulukko paikan päällä
     while (currentIndex !== 0) {
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex--;
@@ -112,8 +117,9 @@ document.addEventListener("DOMContentLoaded", () => {
         array[currentIndex],
       ];
     }
-    return array; // Return the shuffled array
+    return array; // Palauta sekoitettu taulukko
   }
-  // Create the game board when the page is loaded
+
+  // Luo pelilauta, kun sivu on ladattu
   createBoard();
 });

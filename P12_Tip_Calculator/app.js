@@ -1,28 +1,33 @@
-// Wait for the DOM to be fully loaded before executing the script
-document.addEventListener('DOMContentLoaded', () => {
-    // Get references to the form, input fields, and result display
-    const tipForm = document.getElementById('tip-form');
-    const billAmountInput = document.getElementById('bill-amount');
-    const tipPercentageSelect = document.getElementById('tip-percentage');
-    const resultDiv = document.getElementById('result');
-    /**
-    * Event listener for the form submission
-    * This function prevents the default form submission behavior and
-   calculates the tip
-    */
-    tipForm.addEventListener('submit', (event) => {
-    event.preventDefault(); // Prevent form submission from refreshing the page
-    // Retrieve the bill amount and tip percentage from the input fields
-    const billAmount = parseFloat(billAmountInput.value); // Convert bill amount to a floating-point number
-    const tipPercentage = parseFloat(tipPercentageSelect.value); // Convert tip percentage to a floating-point number
-    // Validate the input: Ensure that both bill amount and tip percentage are valid numbers
- if (isNaN(billAmount) || isNaN(tipPercentage)) {
- resultDiv.textContent = 'Please enter a valid bill amount and select a tip percentage.'; // Error message
- return; // Exit the function if the input is invalid
- }
- // Calculate the tip amount and round it to two decimal places
- const tipAmount = (billAmount * (tipPercentage / 100)).toFixed(2);
- // Display the result in the result div
- resultDiv.textContent = `Tip Amount: $${tipAmount}`;
- });
+// Odotetaan, että DOM latautuu kokonaan ennen skriptin suorittamista
+document.addEventListener("DOMContentLoaded", () => {
+  // Haetaan viitteet lomakkeeseen, syötekenttiin ja tulosnäyttöön
+  const tipForm = document.getElementById("tip-form");
+  const billAmountInput = document.getElementById("bill-amount");
+  const tipPercentageSelect = document.getElementById("tip-percentage");
+  const resultDiv = document.getElementById("result");
+
+  /**
+   * Tapahtumakuuntelija lomakkeen lähetykselle
+   * Tämä funktio estää lomakkeen oletusarvoisen lähetyksen ja
+   * laskee juomarahan
+   */
+  tipForm.addEventListener("submit", (event) => {
+    event.preventDefault(); // Estetään lomakkeen lähetys, joka päivittäisi sivun
+    // Haetaan laskun summa ja tipin prosenttiosuus syötekentistä
+    const billAmount = parseFloat(billAmountInput.value); // Muutetaan laskun summa liukuluvuksi
+    const tipPercentage = parseFloat(tipPercentageSelect.value); // Muutetaan tipin prosenttiosuus liukuluvuksi
+
+    // Tarkistetaan syötteet: Varmistetaan, että sekä laskun summa että tipin prosentti ovat kelvollisia lukuja
+    if (isNaN(billAmount) || isNaN(tipPercentage)) {
+      resultDiv.textContent =
+        "Syötä kelvollinen laskun summa ja valitse tipin prosenttiosuus."; // Virheilmoitus
+      return; // Lopetetaan toiminto, jos syöte on virheellinen
+    }
+
+    // Lasketaan juomarahan määrä ja pyöristetään se kahden desimaalin tarkkuuteen
+    const tipAmount = (billAmount * (tipPercentage / 100)).toFixed(2);
+
+    // Näytetään tulos tulosalueella
+    resultDiv.textContent = `Juomarahan määrä: $${tipAmount}`;
+  });
 });

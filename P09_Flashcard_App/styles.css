@@ -1,112 +1,114 @@
-/* Global reset for consistent margins, paddings, and box-sizing */
+/* Globaali nollaus yhtenäisten marginaalien, täytteiden ja box-sizing-asetusten varmistamiseksi */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-   }
-   /* Body styling: center content with flexbox and apply gradient background */
-   body {
-    font-family: 'Poppins', sans-serif; /* Modern font for clean look */
-    background: linear-gradient(135deg, #74ebd5, #acb6e5); /* Stylish background
-   */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    padding: 20px;
-   }
-   /* Main container for the flashcards app */
-   .container {
-    background-color: white;
-    padding: 30px;
-    border-radius: 12px; /* Rounded corners for modern look */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
-    max-width: 500px;
-    text-align: center;
-    transition: transform 0.3s ease; /* Smooth transitions */
-   }
-   /* Zoom-in effect when hovering over the container */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* Kehon tyylittely: sisällön keskitys flexboxilla ja taustaksi gradientti */
+body {
+  font-family: "Poppins", sans-serif; /* Moderni fontti siistiin ulkoasuun */
+  background: linear-gradient(
+    135deg,
+    #74ebd5,
+    #acb6e5
+  ); /* Tyylikäs taustakuva */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+/* Flashcards-sovelluksen pääkontti */
+.container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px; /* Pyöristetyt kulmat moderniin ulkoasuun */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Pehmeä varjo tuomaan syvyyttä */
+  max-width: 500px;
+  text-align: center;
+  transition: transform 0.3s ease; /* Sileät siirtymät */
+}
+/* Zoomaus-efekti, kun hiiri liikkuu säiliön päälle */
 .container:hover {
-    transform: scale(1.03);
-   }
-   /* Heading styling */
-   h1 {
-    font-size: 2.5em;
-    color: #333;
-    margin-bottom: 20px;
-   }
-   /* Form styling for input fields and button */
-   form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px; /* Add space between inputs */
-    margin-bottom: 20px;
-   }
-   /* Input fields styling */
-   input[type="text"] {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 6px; /* Rounded corners */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for input fields
-   */
-    font-size: 1em;
-    transition: border-color 0.3s ease;
-   }
-   /* Focus effect on input fields */
-   input[type="text"]:focus {
-    border-color: #28a745; /* Green border on focus */
-    outline: none; /* Remove default outline */
-   }
-   /* Button styling for adding flashcards */
-   button {
-    padding: 12px;
-    background-color: #28a745; /* Green background for action button */
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-   }
-   /* Hover effect for button */
-   button:hover {
-    background-color: #218838;
-    transform: translateY(-2px); /* Slight lift effect */
-   }
-   /* Flashcard display area */
-   .flashcard {
-    background-color: #f8f9fa;
-    padding: 30px;
-    border-radius: 10px;
-    font-size: 1.5em;
-    color: #333;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
-    cursor: pointer;
-    transition: transform 0.3s ease;
-   }
-   /* Hover effect for flashcard */
-   .flashcard:hover {
-    transform: scale(1.05); /* Slight zoom effect */
-   }
-   /* Navigation buttons container */
-   .navigation {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-   }
-   /* Navigation buttons styling */
-   .navigation button {
-    background-color: #007bff; /* Blue background for navigation */
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s ease;
-   }
-   /* Hover effect for navigation buttons */
-   .navigation button:hover {
-    background-color: #0056b3;
-   }      
+  transform: scale(1.03);
+}
+/* Otsikon tyylittely */
+h1 {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 20px;
+}
+/* Lomakkeen tyylittely syötekentille ja painikkeelle */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Lisää tilaa syötekenttien väliin */
+  margin-bottom: 20px;
+}
+/* Syötekenttien tyylittely */
+input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px; /* Pyöristetyt kulmat */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Kevyt varjo syötekentille */
+  font-size: 1em;
+  transition: border-color 0.3s ease;
+}
+/* Syötekenttien fokustila */
+input[type="text"]:focus {
+  border-color: #28a745; /* Vihreä reunaviiva fokuksessa */
+  outline: none; /* Poista oletusreunaviiva */
+}
+/* Painikkeen tyylittely flashcardien lisäämiseen */
+button {
+  padding: 12px;
+  background-color: #28a745; /* Vihreä taustaväri toiminto-painikkeelle */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+/* Hover-efekti painikkeelle */
+button:hover {
+  background-color: #218838;
+  transform: translateY(-2px); /* Kevyt nosto-efekti */
+}
+/* Flashcard-näyttöalue */
+.flashcard {
+  background-color: #f8f9fa;
+  padding: 30px;
+  border-radius: 10px;
+  font-size: 1.5em;
+  color: #333;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Kevyt varjo syvyyden luomiseksi */
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+/* Hover-efekti flashcardille */
+.flashcard:hover {
+  transform: scale(1.05); /* Kevyt zoomaus-efekti */
+}
+/* Navigointipainikkeiden säiliö */
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+/* Navigointipainikkeiden tyylittely */
+.navigation button {
+  background-color: #007bff; /* Sininen taustaväri navigointipainikkeille */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+/* Hover-efekti navigointipainikkeille */
+.navigation button:hover {
+  background-color: #0056b3;
+}

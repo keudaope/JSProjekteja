@@ -1,34 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Countdown Timer</title>
- <!-- Link to external CSS for styling -->
- <link rel="stylesheet" href="styles.css">
- <!-- Google Fonts for modern typography -->
- <link href="https://fonts.googleapis.com/css2?
-family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Asettaa merkistökoodauksen UTF-8:ksi kansainvälisiä merkkejä varten -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Varmistaa, että verkkosivu on responsiivinen ja skaalautuu oikein kaikilla laitteilla -->
+    <title>Countdown Timer</title>
+    <!-- Linkki ulkoiseen CSS-tiedostoon tyylittelyä varten -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Google Fonts modernia typografiaa varten -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="container">
-    <h1>Countdown Timer</h1>
-    <!-- Form to input the time for the countdown -->
-    <form id="timer-form" aria-label="Countdown Timer Form">
-    <!-- Input for minutes with min value of 0 -->
-    <input type="number" id="minutes" placeholder="Minutes" min="0"
-   required aria-label="Enter minutes">
-    <!-- Input for seconds with range from 0 to 59 -->
-    <input type="number" id="seconds" placeholder="Seconds" min="0"
-   max="59" required aria-label="Enter seconds">
-    <!-- Button to start the countdown timer -->
-    <button type="submit" aria-label="Start Countdown">Start
-   Timer</button>
-    </form>
-    <!-- Display area for the countdown timer -->
-    <div class="timer" id="timer" aria-live="polite">00:00</div>
+      <h1>Countdown Timer</h1>
+      <!-- Lomake, jolla annetaan ajastimelle aika -->
+      <form id="timer-form" aria-label="Ajastinlomake">
+        <!-- Minuuttien syötekenttä, jossa minimiarvo on 0 -->
+        <input
+          type="number"
+          id="minutes"
+          placeholder="Minuutit"
+          min="0"
+          required
+          aria-label="Syötä minuutit"
+        />
+        <!-- Sekuntien syötekenttä, jossa arvoalue on 0-59 -->
+        <input
+          type="number"
+          id="seconds"
+          placeholder="Sekunnit"
+          min="0"
+          max="59"
+          required
+          aria-label="Syötä sekunnit"
+        />
+        <!-- Painike ajastimen käynnistämiseksi -->
+        <button type="submit" aria-label="Käynnistä ajastin">
+          Käynnistä Ajastin
+        </button>
+      </form>
+      <!-- Alue ajastimen näytölle -->
+      <div class="timer" id="timer" aria-live="polite">00:00</div>
     </div>
-    <!-- Link to external JavaScript file -->
+    <!-- Linkki ulkoiseen JavaScript-tiedostoon -->
     <script src="app.js"></script>
-   </body>
-   </html>
+  </body>
+</html>

@@ -1,47 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Currency Converter</title>
- <!-- Link to external CSS for styling -->
- <link rel="stylesheet" href="styles.css">
- <!-- Google Fonts for modern typography -->
- <link href="https://fonts.googleapis.com/css2?
-family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-</head>
-<body>
- <div class="container">
- <!-- Main heading for the Currency Converter App -->
- <h1>Currency Converter</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currency Converter</title>
+    <!-- Link to external CSS for styling -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Google Fonts for modern typography -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Main heading for the Currency Converter App -->
+      <h1>Currency Converter</h1>
 
- <!-- Form for entering amount and selecting currencies -->
- <form id="converter-form" aria-label="Currency Converter Form">
- <!-- Input for entering the amount to convert -->
- <input type="number" id="amount" placeholder="Enter amount" min="0"
-step="0.01" required aria-label="Amount to convert">
+      <!-- Form for entering amount and selecting currencies -->
+      <form id="converter-form" aria-label="Currency Converter Form">
+        <!-- Input for entering the amount to convert -->
+        <input
+          type="number"
+          id="amount"
+          placeholder="Enter amount"
+          min="0"
+          step="0.01"
+          required
+          aria-label="Amount to convert"
+        />
 
- <!-- Select dropdown for choosing the currency to convert from -->
- <select id="from-currency" required aria-label="Convert from">
- <option value="" disabled selected>Select base currency</option>
- <!-- Options will be dynamically populated by JavaScript -->
- </select>
+        <!-- Select dropdown for choosing the currency to convert from -->
+        <select id="from-currency" required aria-label="Convert from">
+          <option value="" disabled selected>Select base currency</option>
+          <!-- Options will be dynamically populated by JavaScript -->
+        </select>
 
- <!-- Select dropdown for choosing the currency to convert to -->
- <select id="to-currency" required aria-label="Convert to">
- <option value="" disabled selected>Select target
-currency</option>
- <!-- Options will be dynamically populated by JavaScript -->
- </select>
+        <!-- Select dropdown for choosing the currency to convert to -->
+        <select id="to-currency" required aria-label="Convert to">
+          <option value="" disabled selected>Select target currency</option>
+          <!-- Options will be dynamically populated by JavaScript -->
+        </select>
 
- <!-- Button to submit the form and convert the currency -->
- <button type="submit" aria-label="Convert currency">Convert</button>
- </form>
+        <!-- Button to submit the form and convert the currency -->
+        <button type="submit" aria-label="Convert currency">Convert</button>
+      </form>
 
- <!-- Result display area for the converted amount -->
- <div class="result" id="result" aria-live="polite"></div>
- </div>
-  <!-- Link to external JavaScript file -->
-  <script src="app.js"></script>
-</body>
+      <!-- Result display area for the converted amount -->
+      <div class="result" id="result" aria-live="polite"></div>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="app.js"></script>
+  </body>
 </html>

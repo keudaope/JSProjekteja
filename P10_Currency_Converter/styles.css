@@ -1,95 +1,96 @@
-/* Resetting default margins, paddings, and box-sizing for consistency */
+/* Nollataan oletusmarginaalit, pehmusteet ja box-sizing johdonmukaisuuden varmistamiseksi */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-   }
-   /* Body styling for centering content with Flexbox and applying a gradient
-   background */
-   body {
-    font-family: 'Poppins', sans-serif; /* Clean, modern font */
-    background: linear-gradient(135deg, #74ebd5, #acb6e5); /* Eye-catching
-   gradient */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-   }
-   /* Main container styling */
-   .container {
-    background-color: white;
-    padding: 40px;
-    border-radius: 15px; /* Softer, modern look with rounded corners */
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Deeper shadow for a lifted
-   effect */
-    text-align: center;
-    max-width: 400px;
-    width: 100%;
-    transition: transform 0.3s ease; /* Smooth hover effect */
-   }
-   /* Slight zoom-in effect when hovering over the container */
-   .container:hover {
-    transform: scale(1.05);
-   }
-   /* Styling for the main heading */
-   h1 {
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 20px;
-   }
-/* Styling for the input fields and select dropdowns */
-input[type="number"], select {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 15px;
-    border: 2px solid #ccc;
-    border-radius: 8px;
-    font-size: 1em;
-    background-color: #f9f9f9;
-    transition: border-color 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow for input
-   fields */
-   }
-   /* Focus state for inputs */
-   input[type="number"]:focus, select:focus {
-    border-color: #28a745; /* Green border when focused */
-    outline: none;
-   }
-   /* Button styling for convert action */
-   button {
-    padding: 12px 25px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1.1em;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-   }
-   /* Hover effect for button */
-   button:hover {
-    background-color: #218838;
-    transform: translateY(-3px); /* Slight lift effect on hover */
-    box-shadow: 0 6px 15px rgba(40, 167, 69, 0.4); /* Stronger shadow on hover
-   */
-   }
-   /* Styling for the result display area */
-   .result {
-    margin-top: 25px;
-    font-size: 1.3em;
-    color: #333;
-    font-weight: bold;
-    animation: fadeIn 1s ease-out forwards;
-   }
-   /* Fade-in animation for result display */
-   @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-        }
-        to {
-        opacity: 1;
-        transform: translateY(0);
-        }
-       }   
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* Rungon (body) tyylit: keskitetään sisältö Flexboxilla ja lisätään gradienttitausta */
+body {
+  font-family: "Poppins", sans-serif; /* Siisti, moderni fontti */
+  background: linear-gradient(
+    135deg,
+    #74ebd5,
+    #acb6e5
+  ); /* Näyttävä gradienttitausta */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+/* Pääkontainerin tyylit */
+.container {
+  background-color: white;
+  padding: 40px;
+  border-radius: 15px; /* Pehmeämpi, moderni ilme pyöristetyillä reunoilla */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Syvempi varjo kohotetun vaikutelman luomiseksi */
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  transition: transform 0.3s ease; /* Sulava hover-efekti */
+}
+/* Kevyt zoomaustehoste, kun viet hiiren kontainerin päälle */
+.container:hover {
+  transform: scale(1.05);
+}
+/* Pääotsikon tyylit */
+h1 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+}
+/* Syöttökenttien ja valikkovalintojen tyylit */
+input[type="number"],
+select {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Hienovarainen varjo syöttökentille */
+}
+/* Syöttökenttien fokustila */
+input[type="number"]:focus,
+select:focus {
+  border-color: #28a745; /* Vihreä reuna, kun kenttä on fokusoituna */
+  outline: none;
+}
+/* Muunnospainikkeen tyylit */
+button {
+  padding: 12px 25px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+/* Painikkeen hover-efekti */
+button:hover {
+  background-color: #218838;
+  transform: translateY(-3px); /* Kevyt nostotehoste hoverissa */
+  box-shadow: 0 6px 15px rgba(40, 167, 69, 0.4); /* Voimakkaampi varjo hoverissa */
+}
+/* Tulosnäytön tyylit */
+.result {
+  margin-top: 25px;
+  font-size: 1.3em;
+  color: #333;
+  font-weight: bold;
+  animation: fadeIn 1s ease-out forwards;
+}
+/* Fade-in-animaatio tulosnäytölle */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

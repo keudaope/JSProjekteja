@@ -1,92 +1,104 @@
-/* Global reset for consistent margins, paddings, and box-sizing */
+/* Globaali nollaus yhtenäisten marginaalien, täytteiden ja laatikon koon määrittämiseksi */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-   }
-   /* Body styling: center content and apply a gradient background */
-   body {
-    font-family: 'Roboto', sans-serif; /* Modern, clean font from Google Fonts
-   */
-    background: linear-gradient(135deg, #74ebd5, #acb6e5); /* Stylish gradient
-   background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    color: #333; /* Dark color for text */
-   }
-   /* Main container for the Tip Calculator */
-   .calculator-container {
-    background-color: #fff; /* White background for the container */
-    padding: 30px;
-    border-radius: 12px; /* Rounded corners for modern look */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-    text-align: center;
-    max-width: 400px;
-    width: 100%;
-    transition: transform 0.3s ease; /* Smooth transition for hover effect */
-   }
-   /* Zoom-in effect when hovering over the container */
-   .calculator-container:hover {
-    transform: scale(1.05); /* Subtle zoom effect */
-   }
-   /* Heading styling */
-   h1 {
-    font-size: 2.2em;
-    margin-bottom: 20px;
-    color: #2d3748; /* Darker color for better contrast */
-   }
-   /* Styling for input fields and dropdown */
-   input[type="number"], select {
-    width: 100%; /* Full width for better alignment */
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc; /* Light gray border */
-    border-radius: 8px; /* Rounded corners */
-    font-size: 1.1em;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for input fields
-   */
-    transition: border-color 0.3s ease; /* Smooth transition for border */
-   }
-   /* Change border color when focused */
-   input[type="number"]:focus, select:focus {
-    border-color: #28a745; /* Green border on focus */
-    outline: none; /* Remove default outline */
-   }
-   /* Button styling for submission */
-   button {
-    padding: 12px 25px;
-    background-color: #28a745; /* Green background for action button */
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1.1em;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-   }
-   /* Hover effect for button */
-   button:hover {
-    background-color: #218838; /* Darker green on hover */
-    transform: translateY(-2px); /* Slight lift effect */
-   }
-   /* Result display area */
-   .result {
-    margin-top: 20px;
-    font-size: 1.4em;
-    font-weight: bold;
-    color: #2d3748; /* Dark color for visibility */
-    animation: fadeIn 0.8s ease-out forwards; /* Smooth fade-in animation for
-   result */
-   }
-   /* Fade-in animation for smoother result appearance */
-   @keyframes fadeIn {
-    from {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body-tyylit: keskittää sisällön ja käyttää liukuvärjättyä taustaa */
+body {
+  font-family: "Roboto", sans-serif; /* Moderni, siisti fontti Google Fontsista */
+  background: linear-gradient(
+    135deg,
+    #74ebd5,
+    #acb6e5
+  ); /* Tyylikäs liukuväritausta */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #333; /* Tumma teksti */
+}
+
+/* Juomarahalaskimen pääkontaineri */
+.calculator-container {
+  background-color: #fff; /* Valkoinen tausta kontainerille */
+  padding: 30px;
+  border-radius: 12px; /* Pyöristetyt kulmat moderniin ilmeeseen */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Pehmeä varjo syvyyttä varten */
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  transition: transform 0.3s ease; /* Sulava siirtymä hover-efektiä varten */
+}
+
+/* Zoom-efekti, kun hiiri viedään kontainerin päälle */
+.calculator-container:hover {
+  transform: scale(1.05); /* Hieno zoom-efekti */
+}
+
+/* Otsikon tyylit */
+h1 {
+  font-size: 2.2em;
+  margin-bottom: 20px;
+  color: #2d3748; /* Tummempi väri paremman kontrastin vuoksi */
+}
+
+/* Syötekenttien ja pudotusvalikon tyylit */
+input[type="number"],
+select {
+  width: 100%; /* Täysileveys parempaan kohdistukseen */
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc; /* Vaaleanharmaa reuna */
+  border-radius: 8px; /* Pyöristetyt kulmat */
+  font-size: 1.1em;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Hieno varjo syötekentissä */
+  transition: border-color 0.3s ease; /* Sulava reunan värin siirtymä */
+}
+
+/* Muuta reunan väriä, kun kenttä on aktiivinen */
+input[type="number"]:focus,
+select:focus {
+  border-color: #28a745; /* Vihreä reuna, kun kenttä on aktiivinen */
+  outline: none; /* Poista oletuskehys */
+}
+
+/* Lähetyspainikkeen tyylit */
+button {
+  padding: 12px 25px;
+  background-color: #28a745; /* Vihreä tausta toimintopainikkeelle */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover-efekti painikkeelle */
+button:hover {
+  background-color: #218838; /* Tummempi vihreä hover-tilassa */
+  transform: translateY(-2px); /* Hieno nostovaikutus hover-tilassa */
+}
+
+/* Tulosalueen tyylit */
+.result {
+  margin-top: 20px;
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #2d3748; /* Tumma väri näkyvyyden vuoksi */
+  animation: fadeIn 0.8s ease-out forwards; /* Sulava fade-in-animaatio tulokselle */
+}
+
+/* Fade-in-animaatio sujuvampaa tuloksen ilmestymistä varten */
+@keyframes fadeIn {
+  from {
     opacity: 0;
     transform: translateY(-10px);
-    }
-    to {
+  }
+  to {
     opacity: 1;
     transform: translateY(0);
-    }
-   }
+  }
+}

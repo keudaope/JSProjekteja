@@ -1,134 +1,129 @@
-/* Reset margins and padding for all elements */
+/* Nollataan kaikkien elementtien marginaalit ja täytteet */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-   }
-   /* Styling the body to use Flexbox and center the content */
-   body {
-    font-family: 'Poppins', sans-serif; /* Modern, clean font */
-    background: linear-gradient(135deg, #74ebd5, #acb6e5); /* Gradient
-   background for a visually appealing look */
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Align items at the top of the page */
-    height: 100vh;
-    overflow-y: auto; /* Enable vertical scrolling if content exceeds the
-   viewport */
-    margin: 0;
-    padding: 20px; /* Add padding around the edges to prevent content from
-   sticking to the screen edges */
-   }
-   /* Styling the main container */
-   .container {
-    background-color: white; /* White background for contrast */
-    padding: 30px;
-    border-radius: 15px; /* Rounded corners for a modern look */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-    width: 100%;
-    max-width: 500px; /* Set a maximum width for the container */
-    text-align: center; /* Center-align the text inside */
-    animation: fadeIn 1s ease-in-out; /* Fade-in effect for smooth appearance */
-    margin-top: 20px;
-    margin-bottom: 20px; /* Add margin at the bottom to allow better scrolling
-   */
-   }
-   /* Styling the heading */
-   h1 {
-    font-size: 2em; /* Larger font size for the main title */
-    margin-bottom: 20px; /* Space below the heading */
-    color: #333; /* Darker color for better contrast */
-   }
-   /* Styling the form and input field */
-   form {
-    display: flex;
-    flex-direction: column; /* Stack form elements vertically */
-    align-items: center; /* Center the form elements */
-    margin-bottom: 20px; /* Space between the form and the recipe list */
-   }
-   /* Styling the input field */
-   input[type="text"] {
-    width: 100%; /* Input takes up the full width of its parent */
-    padding: 12px;
-    margin-bottom: 15px; /* Space between input and button */
-    border: 1px solid #ccc; /* Light gray border */
-    border-radius: 6px; /* Rounded corners for consistency */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Light shadow for better visual
-   depth */
-    transition: border-color 0.3s ease; /* Smooth transition when focused */
-   }
-   /* Input focus state styling */
-   input[type="text"]:focus {
-    border-color: #28a745; /* Green border when the input is focused */
-    outline: none; /* Remove default outline */
-   }
-   /* Styling the button */
-   button {
-    width: 100%; /* Button width matches the input width */
-    padding: 12px 24px;
-    border: none; /* Remove default border */
-    background-color: #28a745; /* Green background for a positive action */
-    color: white; /* White text for contrast */
-    border-radius: 6px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s ease; /* Smooth transition for hover
-   effects */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Add shadow to make the button
-   stand out */
-   }
-   /* Button hover effect */
-   button:hover {
-    background-color: #218838; /* Darker green when hovered */
-   }
-   /* Recipe container */
-   .recipes {
-    margin-top: 20px;
-    text-align: left; /* Align text to the left for better readability */
-   }
-   /* Styling for individual recipe cards */
-   .recipe {
-    background-color: #fff;
-    margin: 10px 0;
-    padding: 15px; /* Padding inside the recipe card */
-    border: 1px solid #ddd; /* Light border around each recipe */
-    border-radius: 10px; /* Rounded corners for a modern look */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover
-   effect */
-   }
-   /* Hover effect on recipe cards */
-   .recipe:hover {
-    transform: translateY(-5px); /* Slight lift on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
-   }
-   /* Styling the recipe title */
-   .recipe h3 {
-    margin: 0 0 10px;
-    color: #333;
-    font-size: 1.2em; /* Slightly larger font for recipe titles */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-/* Recipe image styling */
+/* Tyylitellään body Flexboxilla ja keskitetään sisältö */
+body {
+  font-family: "Poppins", sans-serif; /* Moderni, selkeä fontti */
+  background: linear-gradient(
+    135deg,
+    #74ebd5,
+    #acb6e5
+  ); /* Gradienttitausta, joka näyttää visuaalisesti houkuttelevalta */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Kohdistetaan sisällöt sivun yläreunaan */
+  height: 100vh;
+  overflow-y: auto; /* Salli pystysuuntainen vieritys, jos sisältö ylittää näkymäalueen */
+  margin: 0;
+  padding: 20px; /* Lisätään täytettä reunoille, jotta sisältö ei ole kiinni näytön reunoissa */
+}
+/* Tyylitellään pääsäilö */
+.container {
+  background-color: white; /* Valkoinen tausta kontrastia varten */
+  padding: 30px;
+  border-radius: 15px; /* Pyöristetyt kulmat modernia ulkoasua varten */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Varjo luo syvyyttä */
+  width: 100%;
+  max-width: 500px; /* Säilön maksimileveys */
+  text-align: center; /* Keskitetään teksti sisällä */
+  animation: fadeIn 1s ease-in-out; /* Pehmeä fade-in-efekti näkyviin tulemista varten */
+  margin-top: 20px;
+  margin-bottom: 20px; /* Lisää marginaalia pohjaan, jotta vieritys on sujuvampaa */
+}
+/* Tyylitellään otsikko */
+h1 {
+  font-size: 2em; /* Isompi fonttikoko pääotsikolle */
+  margin-bottom: 20px; /* Tilaa otsikon alapuolelle */
+  color: #333; /* Tummempi väri paremman kontrastin saavuttamiseksi */
+}
+/* Lomakkeen ja syötekentän tyylittely */
+form {
+  display: flex;
+  flex-direction: column; /* Lomakkeen elementit pinotaan pystysuunnassa */
+  align-items: center; /* Keskitetään lomakkeen elementit */
+  margin-bottom: 20px; /* Tilaa lomakkeen ja reseptilistan välille */
+}
+/* Syötekentän tyylittely */
+input[type="text"] {
+  width: 100%; /* Syötekenttä täyttää koko vanhemman säilön leveyden */
+  padding: 12px;
+  margin-bottom: 15px; /* Tilaa syötekentän ja painikkeen väliin */
+  border: 1px solid #ccc; /* Vaaleanharmaa reuna */
+  border-radius: 6px; /* Pyöristetyt kulmat yhtenäisyyden vuoksi */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Kevyt varjo visuaalista syvyyttä varten */
+  transition: border-color 0.3s ease; /* Pehmeä siirtymä, kun kenttä on aktiivinen */
+}
+/* Syötekentän aktiivinen tila */
+input[type="text"]:focus {
+  border-color: #28a745; /* Vihreä reuna, kun kenttä on aktiivinen */
+  outline: none; /* Poistetaan oletuksellinen outline */
+}
+/* Painikkeen tyylittely */
+button {
+  width: 100%; /* Painikkeen leveys vastaa syötekentän leveyttä */
+  padding: 12px 24px;
+  border: none; /* Poistetaan oletusreuna */
+  background-color: #28a745; /* Vihreä tausta positiiviselle toiminnalle */
+  color: white; /* Valkoinen teksti kontrastia varten */
+  border-radius: 6px; /* Pyöristetyt kulmat */
+  cursor: pointer; /* Muutetaan hiiren osoitin osoittimeksi hover-tilassa */
+  transition: background-color 0.3s ease; /* Pehmeä siirtymä hover-efekteihin */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Lisätään varjo, jotta painike erottuu paremmin */
+}
+/* Hover-efekti painikkeelle */
+button:hover {
+  background-color: #218838; /* Tummempi vihreä hover-tilassa */
+}
+/* Reseptisäilön tyylittely */
+.recipes {
+  margin-top: 20px;
+  text-align: left; /* Teksti vasemmalle kohdistettuna paremman luettavuuden vuoksi */
+}
+/* Yksittäisten reseptikorttien tyylittely */
+.recipe {
+  background-color: #fff;
+  margin: 10px 0;
+  padding: 15px; /* Täytettä reseptikortin sisällä */
+  border: 1px solid #ddd; /* Kevyt reuna jokaisen reseptin ympärille */
+  border-radius: 10px; /* Pyöristetyt kulmat modernia ulkoasua varten */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Kevyt varjo syvyyden vuoksi */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Pehmeä hover-efekti */
+}
+/* Hover-efekti reseptikorteille */
+.recipe:hover {
+  transform: translateY(-5px); /* Hieman nostoa hover-tilassa */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Syvempi varjo hover-tilassa */
+}
+/* Reseptin otsikon tyylittely */
+.recipe h3 {
+  margin: 0 0 10px;
+  color: #333;
+  font-size: 1.2em; /* Hieman suurempi fontti reseptien otsikoille */
+}
+/* Reseptin kuvan tyylittely */
 .recipe img {
- width: 100%; /* Image takes full width of the container */
- border-radius: 10px; /* Match the rounded corners of the card */
- transition: transform 0.3s ease; /* Smooth zoom effect on hover */
+  width: 100%; /* Kuva täyttää säilön koko leveyden */
+  border-radius: 10px; /* Pyöristetyt kulmat kortin kanssa yhteneviksi */
+  transition: transform 0.3s ease; /* Pehmeä zoom-efekti hover-tilassa */
 }
-/* Zoom effect on recipe images when hovered */
+/* Zoom-efekti reseptikuville hover-tilassa */
 .recipe img:hover {
- transform: scale(1.05); /* Slight zoom-in on hover */
+  transform: scale(1.05); /* Hieman zoomia hover-tilassa */
 }
-/* Styling for the recipe text (e.g., summary) */
+/* Reseptitekstin (esim. tiivistelmä) tyylittely */
 .recipe p {
- margin: 5px 0; /* Space between paragraphs */
- color: #555; /* Lighter color for secondary text */
+  margin: 5px 0; /* Tilaa kappaleiden välillä */
+  color: #555; /* Vaaleampi väri toissijaiselle tekstille */
 }
-/* Fade-in animation */
+/* Fade-in animaatio */
 @keyframes fadeIn {
- from {
- opacity: 0;
- }
- to {
- opacity: 1;
- }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-   

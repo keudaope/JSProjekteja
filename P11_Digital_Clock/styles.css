@@ -1,40 +1,42 @@
-/* Resetting default margins, paddings, and box-sizing for consistency */
+/* Nollataan oletusmarginaalit, -täytteet ja box-sizing johdonmukaisuutta varten */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-   }
-   /* Body styling to center content with Flexbox and apply a gradient background
-   */
-   body {
-    font-family: 'Orbitron', sans-serif; /* Futuristic font from Google Fonts */
-    background: radial-gradient(circle, #000000, #434343); /* Modern, sleek
-   gradient background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    color: #ffffff; /* White color for text for strong contrast */
-   }
-   /* Clock container styling */
-   .clock-container {
-    background-color: #222; /* Dark background for the clock */
-    padding: 40px;
-    border-radius: 15px; /* Smooth, rounded corners */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7); /* Shadow for depth */
-    text-align: center;
-    max-width: 500px;
-    width: 100%;
-    transition: transform 0.3s ease; /* Smooth transition for hover effect */
-   }
-   /* Slight zoom effect on hover */
-   .clock-container:hover {
-    transform: scale(1.05); /* Subtle zoom-in effect */
-   }
-   /* Clock display styling */
-   .clock {
-    font-size: 4rem; /* Larger size for better readability */
-    letter-spacing: 5px; /* Spacing between characters for a sleek look */
-    color: #0f0; /* Neon green text color for a digital clock effect */
-    text-shadow: 0 0 20px rgba(0, 255, 0, 0.5); /* Neon glow effect */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* Kehon (body) tyylit: Sisällön keskittäminen Flexboxilla ja gradienttitaustan käyttö */
+body {
+  font-family: "Orbitron", sans-serif; /* Futuristinen fontti Google Fontsista */
+  background: radial-gradient(
+    circle,
+    #000000,
+    #434343
+  ); /* Moderni, tyylikäs gradienttitausta */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #ffffff; /* Valkoinen teksti voimakasta kontrastia varten */
+}
+/* Kellon säiliön tyylit */
+.clock-container {
+  background-color: #222; /* Tumma tausta kellolle */
+  padding: 40px;
+  border-radius: 15px; /* Pehmeät, pyöristetyt kulmat */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7); /* Varjo syvyyttä varten */
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  transition: transform 0.3s ease; /* Sulava siirtymä hover-efektiä varten */
+}
+/* Hienovarainen zoom-efekti hoverilla */
+.clock-container:hover {
+  transform: scale(1.05); /* Kevyt zoom-efekti */
+}
+/* Kellonäytön tyylit */
+.clock {
+  font-size: 4rem; /* Suurempi koko paremman luettavuuden takaamiseksi */
+  letter-spacing: 5px; /* Kirjainväli tyylikkään ilmeen luomiseksi */
+  color: #0f0; /* Neonvihreä tekstiväri digitaalisen kellon vaikutelmaa varten */
+  text-shadow: 0 0 20px rgba(0, 255, 0, 0.5); /* Neonhohtoinen efekti */
 }

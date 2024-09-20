@@ -1,89 +1,100 @@
-/* Global reset for consistent margins, paddings, and box-sizing */
+/* Globaali nollaus johdonmukaisille marginaaleille, täytteille ja laatikon kokomääritykselle */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-   }
-   /* Body styling to center content and apply a gradient background */
-   body {
-    font-family: 'Roboto', sans-serif; /* Clean, modern font from Google Fonts
-   */
-    background: linear-gradient(135deg, #74ebd5, #acb6e5); /* Visually appealing
-   gradient background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    color: #333; /* Dark text color for contrast */
-   }
-   /* Chat container with card-like design */
-   .chat-container {
-    background-color: #fff; /* Clean white background */
-    padding: 30px;
-    border-radius: 15px; /* Smooth, rounded corners */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-    width: 400px;
-    max-width: 100%;
-    text-align: center;
-    transition: transform 0.3s ease; /* Smooth transition for hover effect */
-   }
-   /* Zoom-in effect on hover */
-   .chat-container:hover {
-    transform: scale(1.05);
-   }
-   /* Heading styling */
-   h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #2d3748; /* Darker color for better contrast */
-   }
-   /* Message display area */
-   #messages {
-    border: 1px solid #ccc;
-    background-color: #f9f9f9; /* Light background for message area */
-    padding: 15px;
-    height: 200px;
-    overflow-y: auto; /* Allow vertical scrolling when messages overflow */
-    margin-bottom: 20px;
-    border-radius: 8px; /* Rounded corners for message area */
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
-   }
-   /* Form layout for message input and button */
-   #message-form {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-   }
-   /* Message input field styling */
-   #message-input {
-    flex: 1;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1em;
-    margin-right: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    transition: border-color 0.3s ease; /* Smooth transition for focused input
-   */
-   }
-   /* Change border color on focus */
-   #message-input:focus {
-    border-color: #28a745; /* Green border on focus */
-    outline: none; /* Remove default outline */
-    /* Button styling */
-   }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Kehon tyyli: keskitetään sisältö ja lisätään liukuväritausta */
+body {
+  font-family: "Roboto", sans-serif; /* Siisti, moderni fontti Google Fontsista */
+  background: linear-gradient(
+    135deg,
+    #74ebd5,
+    #acb6e5
+  ); /* Visuaalisesti houkutteleva liukuvärjätty tausta */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #333; /* Tumma tekstiväri kontrastia varten */
+}
+
+/* Keskustelulaatikko, jossa korttimainen muotoilu */
+.chat-container {
+  background-color: #fff; /* Siisti valkoinen tausta */
+  padding: 30px;
+  border-radius: 15px; /* Pehmeät, pyöristetyt kulmat */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Pehmeä varjo syvyyttä varten */
+  width: 400px;
+  max-width: 100%;
+  text-align: center;
+  transition: transform 0.3s ease; /* Sulava siirtymä hover-efektiä varten */
+}
+
+/* Zoomaus-efekti hover-tilassa */
+.chat-container:hover {
+  transform: scale(1.05);
+}
+
+/* Otsikon muotoilu */
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #2d3748; /* Tummempi väri paremman kontrastin vuoksi */
+}
+
+/* Viestien näyttöalue */
+#messages {
+  border: 1px solid #ccc;
+  background-color: #f9f9f9; /* Vaalea tausta viestialueelle */
+  padding: 15px;
+  height: 200px;
+  overflow-y: auto; /* Salli pystysuuntainen vieritys, kun viestit ylittävät alueen */
+  margin-bottom: 20px;
+  border-radius: 8px; /* Pyöristetyt kulmat viestialueelle */
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1); /* Hento sisäinen varjo */
+}
+
+/* Lomakkeen asettelu viestikenttää ja nappia varten */
+#message-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Viestikentän syöttökentän muotoilu */
+#message-input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+  margin-right: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Hento varjo */
+  transition: border-color 0.3s ease; /* Sulava siirtymä keskittyneelle syötteelle */
+}
+
+/* Muuta reunuksen väriä, kun syöttökenttä on keskittynyt */
+#message-input:focus {
+  border-color: #28a745; /* Vihreä reunus keskittyneenä */
+  outline: none; /* Poista oletusarvoinen kehys */
+}
+
+/* Nappien muotoilu */
 button {
-    padding: 12px 20px;
-    background-color: #28a745; /* Green background for action button */
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-   }
-   /* Hover effect for button */
-   button:hover {
-    background-color: #218838; /* Darker green on hover */
-    transform: translateY(-2px); /* Slight lift effect */
-   }
+  padding: 12px 20px;
+  background-color: #28a745; /* Vihreä tausta toimintanapille */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover-efekti napille */
+button:hover {
+  background-color: #218838; /* Tummempi vihreä hover-tilassa */
+  transform: translateY(-2px); /* Hieman nouseva efekti hover-tilassa */
+}

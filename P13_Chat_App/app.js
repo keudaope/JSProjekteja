@@ -1,16 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const ws = new WebSocket("ws://localhost:8080"); // WebSocket connection
+  const ws = new WebSocket("ws://localhost:8080"); // WebSocket-yhteys
   const messagesDiv = document.getElementById("messages");
   const messageForm = document.getElementById("message-form");
   const messageInput = document.getElementById("message-input");
 
-  // Handle incoming WebSocket messages
+  // Käsittele saapuvat WebSocket-viestit
   ws.onmessage = (event) => {
     let messageText;
 
-    // Check if the message is a Blob and convert it to text if necessary
+    // Tarkista, onko viesti Blob ja muuta se tekstiksi tarvittaessa
     if (event.data instanceof Blob) {
-      // If it's a Blob, read the content as text
+      // Jos viesti on Blob, lue sisältö tekstinä
       const reader = new FileReader();
       reader.onload = function () {
         messageText = reader.result;
@@ -18,13 +18,13 @@ document.addEventListener("DOMContentLoaded", () => {
       };
       reader.readAsText(event.data);
     } else {
-      // Otherwise, treat it as a string message
+      // Muussa tapauksessa käsittele viesti merkkijonona
       messageText = event.data;
       appendMessage(messageText);
     }
   };
 
-  // Helper function to append the message to the chat
+  // Apufunktio viestin lisäämiseksi chattiin
   function appendMessage(messageText) {
     const message = document.createElement("div");
     message.classList.add("message");
@@ -33,13 +33,13 @@ document.addEventListener("DOMContentLoaded", () => {
     messagesDiv.scrollTop = messagesDiv.scrollHeight;
   }
 
-  // Handle form submission
+  // Lomakkeen lähetyksen käsittely
   messageForm.addEventListener("submit", (event) => {
-    event.preventDefault(); // Prevent page reload
+    event.preventDefault(); // Estä sivun uudelleenlataus
 
     if (messageInput.value.trim()) {
-      ws.send(String(messageInput.value)); // Send the message as a string via WebSocket
-      messageInput.value = ""; // Clear the input field after sending
+      ws.send(String(messageInput.value)); // Lähetä viesti merkkijonona WebSocketin kautta
+      messageInput.value = ""; // Tyhjennä syötekenttä viestin lähettämisen jälkeen
     }
   });
 });
