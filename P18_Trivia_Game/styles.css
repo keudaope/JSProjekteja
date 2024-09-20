@@ -1,95 +1,92 @@
-/* Global reset for consistent margins, paddings, and box-sizing */
+/* Globaalit asetukset marginaaleille, täytteille ja laatikon koon laskennalle */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-/* Body styling: Flexbox layout to center content and apply a gradient
-background */
+/* Bodyn tyylit: Flexbox-asettelu sisällön keskittämiseksi ja liukuväri taustaksi */
 body {
-  font-family: "Roboto", sans-serif; /* Modern font from Google Fonts */
+  font-family: "Roboto", sans-serif; /* Moderni fontti Google Fontsista */
   background: linear-gradient(
     135deg,
     #74ebd5,
     #acb6e5
-  ); /* Attractive
-gradient background */
+  ); /* Näyttävä liukuväritausta */
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
 }
-/* Main container styling */
+/* Pääsäiliön tyylit */
 .container {
-  background-color: #fff; /* White background for the container */
-  padding: 30px; /* Padding for better spacing */
-  border-radius: 15px; /* Rounded corners for modern look */
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+  background-color: #fff; /* Valkoinen tausta säiliölle */
+  padding: 30px; /* Täytteet paremman tilan vuoksi */
+  border-radius: 15px; /* Pyöristetyt kulmat moderniin ilmeeseen */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Pehmeä varjo syvyyden luomiseksi */
   text-align: center;
-  width: 400px; /* Fixed width for the container */
-  max-width: 100%; /* Responsive width */
-  transition: transform 0.3s ease; /* Smooth transition for hover effect */
+  width: 400px; /* Säiliön kiinteä leveys */
+  max-width: 100%; /* Responsiivinen leveys */
+  transition: transform 0.3s ease; /* Sulava siirtymä hover-efektiin */
 }
-/* Zoom effect on hover */
+/* Zoom-efekti hover-tilassa */
 .container:hover {
-  transform: scale(1.05); /* Slight zoom effect */
+  transform: scale(1.05); /* Lievä zoom-efekti */
 }
-/* Heading styling */
+/* Otsikon tyylit */
 h1 {
-  font-size: 2.5em; /* Large font for the title */
-  margin-bottom: 20px; /* Space below the heading */
-  color: #2d3748; /* Darker color for contrast */
+  font-size: 2.5em; /* Iso fontti otsikkoa varten */
+  margin-bottom: 20px; /* Välit otsikon alapuolella */
+  color: #2d3748; /* Tummempi väri kontrastia varten */
 }
-/* Styling for the question display */
+/* Kysymysalueen tyylit */
 .question {
-  font-size: 1.4em; /* Larger font size for the question */
-  margin-bottom: 20px; /* Space below the question */
-  color: #333; /* Darker text color */
+  font-size: 1.4em; /* Isompi fontti kysymykselle */
+  margin-bottom: 20px; /* Välit kysymyksen alapuolella */
+  color: #333; /* Tummempi tekstiväri */
 }
-/* Flexbox layout for answers */
+/* Flexbox-asettelu vastauksille */
 .answers {
   display: flex;
   flex-direction: column;
-  gap: 10px; /* Space between answer buttons */
+  gap: 10px; /* Välit vastauspainikkeiden välillä */
 }
-/* Answer button styling */
+/* Vastauspainikkeiden tyylit */
 .answers button {
   padding: 12px;
   border: none;
-  background-color: #007bff; /* Blue background for buttons */
-  color: white; /* White text for better contrast */
-  border-radius: 8px; /* Rounded corners for modern look */
+  background-color: #007bff; /* Sininen tausta painikkeille */
+  color: white; /* Valkoinen teksti paremman kontrastin vuoksi */
+  border-radius: 8px; /* Pyöristetyt kulmat moderniin ilmeeseen */
   cursor: pointer;
-  font-size: 1em; /* Clear and readable font size */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth
-transitions */
+  font-size: 1em; /* Selkeä ja luettava fonttikoko */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Sulavat siirtymät */
 }
-/* Hover effect for buttons */
+/* Hover-efekti painikkeille */
 .answers button:hover {
-  background-color: #0056b3; /* Darker blue on hover */
-  transform: translateY(-2px); /* Slight lift effect */
+  background-color: #0056b3; /* Tummempi sininen hover-tilassa */
+  transform: translateY(-2px); /* Lievä kohoaminen hover-tilassa */
 }
-/* Button active state */
+/* Painikkeen aktiivinen tila */
 .answers button:active {
-  background-color: #004494; /* Even darker blue when clicked */
-  transform: translateY(1px); /* Slight push-down effect */
+  background-color: #004494; /* Vielä tummempi sininen, kun painiketta klikataan */
+  transform: translateY(1px); /* Lievä alas painaminen aktiivisessa tilassa */
 }
-/* Feedback message styling */
+/* Palauteviestin tyylit */
 .feedback {
   margin-top: 20px;
   font-size: 1.2em;
   font-weight: bold;
 }
-/* Correct answer message */
+/* Oikean vastauksen viesti */
 .feedback.correct {
-  color: green; /* Green for correct answers */
+  color: green; /* Vihreä oikeille vastauksille */
 }
-/* Incorrect answer message */
+/* Väärän vastauksen viesti */
 .feedback.incorrect {
-  color: red; /* Red for incorrect answers */
+  color: red; /* Punainen väärille vastauksille */
 }
-/* Stats section for correct and incorrect counts */
+/* Statistiikkaosio oikeiden ja väärien vastausten määrälle */
 .stats {
   margin-top: 20px;
   font-size: 1em;

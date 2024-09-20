@@ -1,87 +1,85 @@
-/* Global reset for consistent margins, paddings, and box-sizing */
+/* Globaali resetti yhtenäisten marginaalien, täytteiden ja laatikkokoon varmistamiseksi */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-/* Body styling for overall layout */
+/* Bodyn tyylittely: Flexbox-käyttö layoutin keskittämiseksi ja gradienttitaustan asettamiseksi */
 body {
-  font-family: "Roboto", sans-serif; /* Modern, clean font */
+  font-family: "Roboto", sans-serif; /* Moderni, selkeä fontti */
   background: linear-gradient(
     135deg,
     #74ebd5,
     #acb6e5
-  ); /* Fresh gradient
-background */
+  ); /* Raikas gradienttitausta */
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
 }
-/* Main container for the app */
+/* Sovelluksen pääkontti */
 .container {
-  background-color: #fff; /* Clean white background */
-  padding: 40px 30px; /* Comfortable internal spacing */
-  border-radius: 20px; /* Rounded corners for a modern look */
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  background-color: #fff; /* Puhdas valkoinen tausta */
+  padding: 40px 30px; /* Miellyttävä sisäinen täyte */
+  border-radius: 20px; /* Pyöristetyt kulmat moderniin tyyliin */
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1); /* Hienovarainen varjo syvyyden luomiseksi */
   text-align: center;
-  max-width: 400px; /* Max width for responsiveness */
+  max-width: 400px; /* Maksimileveys responsiivisuuden vuoksi */
   width: 100%;
-  transition: transform 0.3s ease; /* Smooth hover effect */
+  transition: transform 0.3s ease; /* Sulava hover-efekti */
 }
-/* Zoom effect on hover */
+/* Zoom-efekti hoverilla */
 .container:hover {
-  transform: scale(1.03); /* Slight zoom effect for interactivity */
+  transform: scale(1.03); /* Kevyt zoom-efekti interaktiivisuuden luomiseksi */
 }
-/* Heading styling */
+/* Otsikon tyylit */
 h1 {
-  font-size: 2.5em; /* Larger text for prominence */
-  color: #2c3e50; /* Darker color for contrast */
+  font-size: 2.5em; /* Isompi fontti korostukseen */
+  color: #2c3e50; /* Tummempi väri kontrastin parantamiseksi */
   margin-bottom: 20px;
 }
-/* Input field styling */
+/* Syötekentän tyylit */
 input[type="date"] {
   width: 100%;
-  padding: 15px; /* Comfortable internal padding */
-  border: 1px solid #ccc; /* Light border */
-  border-radius: 8px; /* Smooth corners */
+  padding: 15px; /* Miellyttävä sisäinen täyte */
+  border: 1px solid #ccc; /* Kevyt reunus */
+  border-radius: 8px; /* Pyöristetyt kulmat */
   margin-bottom: 20px;
   font-size: 1em;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Soft shadow for depth */
-  transition: border-color 0.3s ease; /* Smooth focus effect */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Hienovarainen varjo syvyyden luomiseksi */
+  transition: border-color 0.3s ease; /* Sulava fokus-efekti */
 }
-/* Focus effect on input */
+/* Fokus-efekti syötekentässä */
 input[type="date"]:focus {
-  border-color: #007bff; /* Change border color on focus */
-  outline: none; /* Remove default outline */
+  border-color: #007bff; /* Vaihda reunuksen väri fokusoinnin yhteydessä */
+  outline: none; /* Poista oletusarvoinen outline */
 }
-/* Button styling */
+/* Painikkeen tyylit */
 button {
-  background-color: #007bff; /* Vibrant blue background */
+  background-color: #007bff; /* Kirkas sininen taustaväri */
   color: white;
   border: none;
-  padding: 12px 30px; /* Larger padding for better clickability */
+  padding: 12px 30px; /* Isompi täyte paremman klikattavuuden vuoksi */
   border-radius: 8px;
   cursor: pointer;
   font-size: 1em;
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover
-effects */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Sulavat hover-efektit */
 }
-/* Hover effect for button */
+/* Hover-efekti painikkeelle */
 button:hover {
-  background-color: #0056b3; /* Darker blue on hover */
-  transform: translateY(-3px); /* Slight lift effect */
+  background-color: #0056b3; /* Tummempi sininen hoverilla */
+  transform: translateY(-3px); /* Kevyt nosto hoverilla */
 }
-/* Button active effect */
+/* Painikkeen aktiivinen tila */
 button:active {
-  background-color: #004494; /* Even darker blue when pressed */
-  transform: translateY(1px); /* Button pressed effect */
+  background-color: #004494; /* Vielä tummempi sininen painettaessa */
+  transform: translateY(1px); /* Painalluksen animointi */
 }
-/* Result display styling */
+/* Tuloksen näyttötyylit */
 .result {
   margin-top: 20px;
-  font-size: 1.5em; /* Larger text for the result */
-  color: #2d3748; /* Darker color for clarity */
-  min-height: 50px; /* Ensure a stable layout for results */
+  font-size: 1.5em; /* Isompi teksti tuloksen näyttämiseksi */
+  color: #2d3748; /* Tummempi väri selkeyden parantamiseksi */
+  min-height: 50px; /* Varmistaa vakaan layoutin tuloksia varten */
 }

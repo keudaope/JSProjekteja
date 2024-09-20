@@ -1,89 +1,81 @@
-/* Global reset for consistent margins, paddings, and box-sizing */
+/* Globaali nollaus, jotta marginaalit, täytteet ja box-sizing ovat yhdenmukaisia */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Ensures padding and borders are included in
-element's width and height */
+  box-sizing: border-box; /* Varmistaa, että täytteet ja reunat sisältyvät
+elementin leveyteen ja korkeuteen */
 }
-/* Body styling with updated gradient background */
+/* Body-tyylittely päivitetyllä liukuvärjättyllä taustalla */
 body {
-  font-family: "Arial", sans-serif; /* Modern, readable font */
+  font-family: "Arial", sans-serif; /* Moderni, luettava fontti */
   background: linear-gradient(
     135deg,
     #74ebd5,
     #acb6e5
-  ); /* Fresh gradient
-background for modern appearance */
-  display: flex; /* Flexbox layout to center content */
-  justify-content: center; /* Horizontally center content */
-  align-items: center; /* Vertically center content */
-  height: 100vh; /* Full viewport height */
-  margin: 0; /* Remove default margin to avoid unwanted spacing */
+  ); /* Raikas liukuvärjätty
+tausta moderniin ulkoasuun */
+  display: flex; /* Flexbox-asettelu sisällön keskittämiseen */
+  justify-content: center; /* Keskittää sisällön vaakasuunnassa */
+  align-items: center; /* Keskittää sisällön pystysuunnassa */
+  height: 100vh; /* Koko näkymäkorkeus */
+  margin: 0; /* Poistaa oletusmarginaalin ei-toivotun tilan välttämiseksi */
 }
-/* Main container styling */
+/* Pääkontainerin tyylittely */
 .container {
-  background-color: #fff; /* Clean white background for contrast against
-gradient */
-  padding: 40px 30px; /* Comfortable padding around content */
-  border-radius: 12px; /* Rounded corners for a modern, soft look */
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth,
-making the container appear lifted */
-  text-align: center; /* Center text alignment */
-  max-width: 400px; /* Maximum width for readability on large screens */
-  width: 100%; /* Full width within its parent container */
-  transition: transform 0.3s ease; /* Smooth hover effect for a dynamic user
-experience */
+  background-color: #fff; /* Puhdas valkoinen tausta kontrastiksi liukuvärjätyn taustan kanssa */
+  padding: 40px 30px; /* Mukava täyte sisällön ympärille */
+  border-radius: 12px; /* Pyöristetyt kulmat moderniin, pehmeään ulkoasuun */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Hieno varjo syvyyden tuomiseksi,
+jolloin kontaineri näyttää kohoavan */
+  text-align: center; /* Tekstin keskitys */
+  max-width: 400px; /* Maksimileveys luettavuuden takaamiseksi suurilla näytöillä */
+  width: 100%; /* Täysi leveys suhteessa sen ylätasoon */
+  transition: transform 0.3s ease; /* Pehmeä hover-efekti dynaamisempaa käyttäjäkokemusta varten */
 }
-/* Hover effect for container */
+/* Hover-efekti kontainerille */
 .container:hover {
   transform: scale(
     1.05
-  ); /* Slight zoom effect on hover, making the container
-feel interactive */
+  ); /* Hieman suurennettu efekti hoverilla, jotta kontaineri tuntuu interaktiiviselta */
 }
-/* Main heading styling */
+/* Pääotsikon tyylittely */
 h1 {
-  font-size: 2.5em; /* Larger font size to make the heading prominent */
-  color: #333; /* Dark color for strong contrast against white background */
-  margin-bottom: 20px; /* Space between the heading and the joke text */
+  font-size: 2.5em; /* Suurempi fonttikoko, jotta otsikko on korostettu */
+  color: #333; /* Tumma väri vahvaan kontrastiin valkoista taustaa vasten */
+  margin-bottom: 20px; /* Väli otsikon ja vitsitekstin välillä */
 }
-/* Joke text styling */
+/* Vitsitekstin tyylittely */
 .joke {
-  font-size: 1.3em; /* Slightly larger text for better readability */
-  color: #555; /* Softer color for the joke to stand out from the heading */
-  margin-bottom: 30px; /* Space between the joke and the button */
-  min-height: 60px; /* Ensures consistent space for the joke, avoiding layout
-shifts when jokes are displayed */
-  font-style: italic; /* Italicized text for a playful style */
-  transition: color 0.3s ease; /* Smooth transition for dynamic color changes
-(error states) */
+  font-size: 1.3em; /* Hieman isompi teksti paremman luettavuuden takaamiseksi */
+  color: #555; /* Pehmeämpi väri, jotta vitsi erottuu otsikosta */
+  margin-bottom: 30px; /* Väli vitsin ja painikkeen välillä */
+  min-height: 60px; /* Varmistaa tasaisen tilan vitsille, estää asettelun muutokset, kun vitsi näytetään */
+  font-style: italic; /* Kursivoitu teksti leikkisään tyyliin */
+  transition: color 0.3s ease; /* Pehmeä värinvaihto dynaamisissa tiloissa (esim. virhetilat) */
 }
-/* Button styling */
+/* Painikkeen tyylittely */
 button {
-  background-color: #007bff; /* Bright blue background for strong contrast */
-  color: white; /* White text to stand out against the blue background */
-  padding: 12px 30px; /* Large padding for a clickable, comfortable button */
-  border: none; /* No border for a clean, modern look */
-  border-radius: 8px; /* Rounded corners to match the container's style */
-  cursor: pointer; /* Pointer cursor to indicate interactivity */
-  font-size: 1em; /* Standard text size for readability */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth
-transition for hover and click states */
+  background-color: #007bff; /* Kirkas sininen tausta vahvaan kontrastiin */
+  color: white; /* Valkoinen teksti erottuu sinisestä taustasta */
+  padding: 12px 30px; /* Suuri täyte painikkeessa paremman klikattavuuden ja mukavuuden takaamiseksi */
+  border: none; /* Ei reunaviivoja, jotta ulkoasu on moderni ja puhdas */
+  border-radius: 8px; /* Pyöristetyt kulmat, jotka vastaavat kontainerin tyyliä */
+  cursor: pointer; /* Hiiren osoitin muuttuu osoittimeksi osoittamaan interaktiivisuutta */
+  font-size: 1em; /* Standardikokoinen teksti luettavuuden takaamiseksi */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Pehmeä
+siirtymä hover- ja klikkaustiloihin */
 }
-/* Hover effect for button */
+/* Hover-efekti painikkeelle */
 button:hover {
-  background-color: #0056b3; /* Darker blue when hovering for visual feedback
-*/
+  background-color: #0056b3; /* Tummempi sininen hover-tilassa visuaalisen palautteen antamiseksi */
   transform: translateY(
     -3px
-  ); /* Button lifts slightly on hover for a tactile
-feel */
+  ); /* Painike nousee hieman hoverilla, tuoden painikkeeseen tunnistettavuutta */
 }
-/* Button active state */
+/* Aktiivinen tila painikkeelle */
 button:active {
-  background-color: #004494; /* Even darker blue when the button is pressed */
+  background-color: #004494; /* Vielä tummempi sininen painikkeen ollessa painettuna */
   transform: translateY(
     1px
-  ); /* Button depresses slightly to mimic a press
-effect */
+  ); /* Painike painuu hieman alas simuloiden painallusvaikutusta */
 }

@@ -1,38 +1,38 @@
-// Wait until the DOM is fully loaded before running the script
+// Odota, kunnes DOM on kokonaan ladattu ennen skriptin suorittamista
 document.addEventListener("DOMContentLoaded", () => {
-  // Select DOM elements
-  const inputText = document.getElementById("input-text"); // Input field for user text
-  const checkButton = document.getElementById("check-button"); // Button to check for palindrome
-  const resultDiv = document.getElementById("result"); // Div to display the result
-  // Event listener for the button click
+  // Valitaan DOM-elementit
+  const inputText = document.getElementById("input-text"); // Tekstikenttä käyttäjän syötteelle
+  const checkButton = document.getElementById("check-button"); // Painike, jolla tarkistetaan, onko syöte palindromi
+  const resultDiv = document.getElementById("result"); // Div-elementti tuloksen näyttämiseen
+  // Tapahtumankuuntelija painikkeen painallusta varten
   checkButton.addEventListener("click", () => {
-    const text = inputText.value.trim(); // Get input text and remove extra spaces
-    // Validate if input is empty
+    const text = inputText.value.trim(); // Haetaan syöte ja poistetaan ylimääräiset välilyönnit
+    // Tarkistetaan, onko syöte tyhjä
     if (text === "") {
-      resultDiv.textContent = " Please enter some text."; // Display an error message if no input
-      return; // Exit function if input is empty
+      resultDiv.textContent = " Anna tekstiä."; // Näytetään virheilmoitus, jos syötettä ei ole annettu
+      return; // Lopetetaan toiminto, jos syöte on tyhjä
     }
-    // Check if the input is a palindrome
+    // Tarkistetaan, onko syöte palindromi
     const isPalindrome = checkPalindrome(text);
 
-    // Display the result with appropriate message
+    // Näytetään tulos oikealla viestillä
     if (isPalindrome) {
-      resultDiv.innerHTML = ` "${text}" is a palindrome.`;
+      resultDiv.innerHTML = ` "${text}" on palindromi.`;
     } else {
-      resultDiv.innerHTML = ` "${text}" is not a palindrome.`;
+      resultDiv.innerHTML = ` "${text}" ei ole palindromi.`;
     }
   });
   /**
-   * Function to check if a string is a palindrome
-   * @param {string} str - The input string to check
-   * @returns {boolean} - True if the input is a palindrome, false otherwise
+   * Funktio tarkistaa, onko merkkijono palindromi
+   * @param {string} str - Syötemerkkijono, jota tarkistetaan
+   * @returns {boolean} - Palauttaa true, jos syöte on palindromi, muuten false
    */
   function checkPalindrome(str) {
-    // Clean the string: remove non-alphanumeric characters and convert to lowercase
+    // Puhdistetaan merkkijono: poistetaan muut kuin aakkosnumeeriset merkit ja muutetaan pieniksi kirjaimiksi
     const cleanedStr = str.replace(/[^A-Za-z0-9]/g, "").toLowerCase();
-    // Reverse the cleaned string
+    // Käännetään puhdistettu merkkijono
     const reversedStr = cleanedStr.split("").reverse().join("");
-    // Compare the cleaned string with the reversed version
+    // Verrataan puhdistettua merkkijonoa käännettyyn versioon
     return cleanedStr === reversedStr;
   }
 });

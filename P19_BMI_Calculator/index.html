@@ -3,32 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BMI Calculator</title>
-    <!-- Link to external CSS for styling -->
+    <title>BMI-laskuri</title>
+    <!-- Linkki ulkoiseen CSS-tiedostoon muotoilua varten -->
     <link rel="stylesheet" href="styles.css" />
-    <!-- Google Fonts for modern typography -->
+    <!-- Google Fonts nykyaikaiseen typografiaan -->
     <link
-      href="https://fonts.googleapis.com/css2?
-family=Roboto:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
     <div class="container">
-      <h1>BMI Calculator</h1>
-      <!-- Form for user inputs: height and weight -->
+      <h1>BMI-laskuri</h1>
+      <!-- Lomake käyttäjän syötteille: pituus ja paino -->
       <form id="bmi-form">
-        <!-- Input for height (in centimeters) -->
-        <input type="number" id="height" placeholder="Height (cm)" required />
-        <!-- Input for weight (in kilograms) -->
-        <input type="number" id="weight" placeholder="Weight (kg)" required />
-        <!-- Submit button to calculate BMI -->
-        <button type="submit">Calculate BMI</button>
+        <!-- Syöte pituudelle (senttimetreinä) -->
+        <input type="number" id="height" placeholder="Pituus (cm)" required />
+        <!-- Syöte painolle (kilogrammoina) -->
+        <input type="number" id="weight" placeholder="Paino (kg)" required />
+        <!-- Lähetä-painike BMI:n laskemiseksi -->
+        <button type="submit">Laske BMI</button>
       </form>
-      <!-- Div to display the BMI result and feedback -->
+      <!-- Div BMI-tuloksen ja palautteen näyttämiseksi -->
       <div class="result" id="result"></div>
     </div>
-    <!-- External JavaScript file for functionality -->
+    <!-- Ulkoinen JavaScript-tiedosto toiminnallisuutta varten -->
     <script src="app.js"></script>
   </body>
 </html>

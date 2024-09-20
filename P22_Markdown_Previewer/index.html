@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Markdown Previewer</title>
-    <!-- Link to external CSS for markdown styling -->
+    <!-- Linkki ulkoiseen CSS:ään markdown-tyylittelyä varten -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/githubmarkdown-css/5.1.0/github-markdown.min.css"
     />
-    <!-- Link to custom CSS for additional styling -->
+    <!-- Linkki omaan CSS-tiedostoon lisätyylittelyjä varten -->
     <link rel="stylesheet" href="styles.css" />
-    <!-- Google Font for modern typography -->
+    <!-- Google Font modernia typografiaa varten -->
     <link
       href="https://fonts.googleapis.com/css2?
 family=Roboto:wght@400;500&display=swap"
@@ -20,16 +20,19 @@ family=Roboto:wght@400;500&display=swap"
   </head>
   <body>
     <div class="container">
-      <!-- Main Heading -->
+      <!-- Pääotsikko -->
       <h1>Markdown Previewer</h1>
-      <!-- Text area for user input -->
-      <textarea id="editor" placeholder="Enter Markdown text..."></textarea>
-      <!-- Div to display the parsed markdown -->
+      <!-- Tekstialue käyttäjän syötteelle -->
+      <textarea
+        id="editor"
+        placeholder="Kirjoita Markdown-tekstiä..."
+      ></textarea>
+      <!-- Div markdownin tulkitsemiseen ja näyttämiseen -->
       <div class="preview markdown-body" id="preview"></div>
     </div>
-    <!-- Link to the Marked.js library for parsing markdown -->
+    <!-- Linkki Marked.js-kirjastoon markdownin tulkintaa varten -->
     <script src="https://cdn.jsdelivr.net/npm/marked@4.3.0/marked.min.js"></script>
-    <!-- Link to external JavaScript for the previewer functionality -->
+    <!-- Linkki ulkoiseen JavaScript-tiedostoon esikatselutoimintoa varten -->
     <script src="app.js"></script>
   </body>
 </html>

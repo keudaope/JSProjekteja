@@ -1,15 +1,18 @@
-// Wait for the DOM to fully load before running the script
+// Odota, että DOM latautuu kokonaan ennen kuin suoritat skriptin
 document.addEventListener("DOMContentLoaded", () => {
-  // Select DOM elements for interaction
-  const editor = document.getElementById("editor"); // Textarea for markdown input
-  const preview = document.getElementById("preview"); // Div to display the rendered markdown
-  // Function to update the preview area with parsed markdown
+  // Valitse DOM-elementit vuorovaikutukseen
+  const editor = document.getElementById("editor"); // Tekstialue Markdown-syötteelle
+  const preview = document.getElementById("preview"); // Div-elementti, johon renderöity Markdown näytetään
+
+  // Funktio, joka päivittää esikatselualueen käsitellyllä Markdownilla
   function updatePreview() {
-    const markdownText = editor.value; // Get the user's input from the textarea
-    preview.innerHTML = marked.parse(markdownText); // Parse markdown and update the preview
+    const markdownText = editor.value; // Hae käyttäjän syöte tekstialueelta
+    preview.innerHTML = marked.parse(markdownText); // Käsittele Markdown ja päivitä esikatselu
   }
-  // Event listener to update the preview whenever the user types
+
+  // Tapahtumankuuntelija, joka päivittää esikatselun aina, kun käyttäjä kirjoittaa
   editor.addEventListener("input", updatePreview);
-  // Initial preview update to ensure content is parsed when the page loads
+
+  // Alustava esikatselupäivitys varmistamaan, että sisältö käsitellään sivun latauksen yhteydessä
   updatePreview();
 });

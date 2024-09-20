@@ -1,12 +1,12 @@
-// Wait for the DOM to fully load before executing the script
+// Odota, että DOM latautuu kokonaan ennen kuin suoritat skriptin
 document.addEventListener("DOMContentLoaded", () => {
-  // Select DOM elements for interaction
-  const quoteElement = document.getElementById("quote"); // Element to display the quote
-  const authorElement = document.getElementById("author"); // Element to display the author
-  const quoteButton = document.getElementById("quote-button"); // Button to fetch a new quote
-  // Add event listener to the button to fetch a quote on click
+  // Valitse DOM-elementit vuorovaikutusta varten
+  const quoteElement = document.getElementById("quote"); // Elementti, jossa lainaus näytetään
+  const authorElement = document.getElementById("author"); // Elementti, jossa tekijän nimi näytetään
+  const quoteButton = document.getElementById("quote-button"); // Painike uuden lainauksen hakemiseen
+  // Lisää tapahtumankuuntelija painikkeelle, jotta lainaus haetaan klikkauksella
   quoteButton.addEventListener("click", fetchQuote);
-  // Function to fetch a random quote from the API
+  // Funktio, joka hakee satunnaisen lainauksen API:sta
   async function fetchQuote() {
     const url =
       "https://the-personal-quotes.p.rapidapi.com/quotes/tags/happiness";
@@ -21,9 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       const response = await fetch(url, options);
       const result = await response.json().then((data) => {
-        //     // Update the DOM with the new quote and author
-        quoteElement.textContent = `"${data[0].quote}"`; // Set quote text;
-        authorElement.textContent = `- ${data[0].author}`; // Set author text;
+        // Päivitä DOM uudella lainauksella ja tekijän nimellä
+        quoteElement.textContent = `"${data[0].quote}"`; // Aseta lainauksen teksti
+        authorElement.textContent = `- ${data[0].author}`; // Aseta tekijän nimi
         quoteElement.style.color = "#2c3e50";
       });
       console.log(result);
@@ -31,6 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error(error);
     }
   }
-  // Fetch an initial quote when the page loads
+  // Hae alkuperäinen lainaus, kun sivu latautuu
   fetchQuote();
 });

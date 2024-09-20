@@ -1,25 +1,25 @@
-// Wait for the DOM to fully load before executing the script
+// Odota, että DOM latautuu kokonaan ennen kuin suoritat skriptin
 document.addEventListener("DOMContentLoaded", () => {
-  // Select DOM elements
-  const jokeElement = document.getElementById("joke"); // Div where the joke will be displayed
-  const jokeButton = document.getElementById("joke-button"); // Button that triggers the joke fetching
-  // Add event listener to the button for click event
-  jokeButton.addEventListener("click", fetchJoke); // When the button is clicked, call fetchJoke function
-  // Function to fetch a random joke from the API
+  // Valitse DOM-elementit
+  const jokeElement = document.getElementById("joke"); // Div, johon vitsi näytetään
+  const jokeButton = document.getElementById("joke-button"); // Nappi, joka laukaisee vitsin hakemisen
+  // Lisää tapahtumankuuntelija napille klikkaustapahtumaa varten
+  jokeButton.addEventListener("click", fetchJoke); // Kun nappia klikataan, kutsutaan fetchJoke-funktiota
+  // Funktio hakee satunnaisen vitsin API:sta
   function fetchJoke() {
-    // Fetch a random joke from the public joke API
+    // Hae satunnainen vitsi julkisesta vitsi-API:sta
     fetch("https://official-joke-api.appspot.com/random_joke")
-      .then((response) => response.json()) // Parse the response into JSON format
+      .then((response) => response.json()) // Muunna vastaus JSON-muotoon
       .then((data) => {
-        // Update the joke element with the fetched joke (setup and punchline)
+        // Päivitä vitsi-elementti haetulla vitsillä (alku ja lopetus)
         jokeElement.textContent = `${data.setup} - ${data.punchline}`;
-        jokeElement.style.color = "#333"; // Reset text color to default after successfully fetching a joke
+        jokeElement.style.color = "#333"; // Palauta tekstin väri normaaliksi onnistuneen haun jälkeen
       })
       .catch((error) => {
-        // If an error occurs (e.g., network issue), display an error message
-        jokeElement.textContent = "Oops! Something went wrong.";
-        jokeElement.style.color = "#e74c3c"; // Change text color to red for error state
-        console.error("Error fetching joke:", error); // Log the error to the console for debugging
+        // Jos tapahtuu virhe (esim. verkkovirhe), näytä virheilmoitus
+        jokeElement.textContent = "Hups! Jotain meni pieleen.";
+        jokeElement.style.color = "#e74c3c"; // Vaihda tekstin väri punaiseksi virhetilassa
+        console.error("Virhe vitsin haussa:", error); // Tulosta virhe konsoliin vianetsintää varten
       });
   }
 });
