@@ -1,12 +1,11 @@
-/* Apply a modern and clean font style */
+/* Käytä modernia ja selkeää fonttityyliä */
 body {
   font-family: "Arial", sans-serif;
   background: linear-gradient(
     135deg,
     #74ebd5,
     #acb6e5
-  ); /* Attractive
-gradient background */
+  ); /* Houkutteleva gradienttitausta */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,33 +14,32 @@ gradient background */
   margin: 0;
   padding: 20px;
 }
-/* Style the container with rounded corners and a shadow for depth */
+/* Tyylittele kontti pyöristetyillä kulmilla ja varjolla syvyyttä varten */
 .container {
   background: white;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Enhanced shadow for a more
-prominent look */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Korostettu varjo näkyvämmän ulkoasun saavuttamiseksi */
   text-align: center;
-  width: 350px; /* Slightly larger width for a better layout */
+  width: 350px; /* Hieman suurempi leveys paremman asettelun vuoksi */
 }
-/* Style for the heading */
+/* Otsikon tyyli */
 h1 {
   font-size: 1.8em;
   margin-bottom: 20px;
   color: #333;
 }
-/* Style the input fields */
+/* Syötekenttien tyyli */
 input[type="file"],
 input[type="text"] {
   width: 100%;
   padding: 12px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
-  border-radius: 6px; /* Rounded input fields for modern look */
+  border-radius: 6px; /* Pyöristetyt syötekentät modernia ulkoasua varten */
   box-sizing: border-box;
 }
-/* Style for buttons and layout */
+/* Painikkeiden tyyli ja asettelu */
 .buttons {
   display: flex;
   justify-content: space-between;
@@ -58,11 +56,11 @@ button {
 button:hover {
   background-color: #0056b3;
 }
-/* Style for the meme canvas */
+/* Meemikankaan tyyli */
 canvas {
   margin-top: 20px;
   border: 2px solid #ccc;
   border-radius: 8px;
   display: block;
-  width: 100%; /* Responsive canvas width */
+  width: 100%; /* Responsiivinen kankaan leveys */
 }

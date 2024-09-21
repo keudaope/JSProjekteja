@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Get references to DOM elements
+  // Haetaan viittaukset DOM-elementteihin
   const nameInput = document.getElementById("name-input");
   const titleInput = document.getElementById("title-input");
   const emailInput = document.getElementById("email-input");
@@ -10,24 +10,28 @@ document.addEventListener("DOMContentLoaded", () => {
   const cardTitle = document.getElementById("card-title");
   const cardEmail = document.getElementById("card-email");
   const cardPhone = document.getElementById("card-phone");
-  // Event listener for the "Generate Card" button
+
+  // Tapahtumankuuntelija "Luo käyntikortti" -painikkeelle
   generateCardButton.addEventListener("click", () => {
-    // Trim input values to remove any unnecessary spaces
+    // Trimmataan syötteen arvot ylimääräisten välilyöntien poistamiseksi
     const name = nameInput.value.trim();
     const title = titleInput.value.trim();
     const email = emailInput.value.trim();
     const phone = phoneInput.value.trim();
-    // Validate that all fields are filled
+
+    // Varmistetaan, että kaikki kentät on täytetty
     if (name === "" || title === "" || email === "" || phone === "") {
-      alert("Please fill in all fields."); // Alert user if fields are empty;
-      return; // Stop execution if fields are not filled
+      alert("Täytä kaikki kentät."); // Näytetään varoitus, jos kentät ovat tyhjiä
+      return; // Lopetetaan suoritus, jos kenttiä ei ole täytetty
     }
-    // Update the business card with the input values
+
+    // Päivitetään käyntikortin tiedot syötteen arvoilla
     cardName.textContent = name;
     cardTitle.textContent = title;
     cardEmail.textContent = email;
     cardPhone.textContent = phone;
-    // Display the business card
+
+    // Näytetään käyntikortti
     businessCard.style.display = "block";
   });
 });

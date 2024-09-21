@@ -9,22 +9,22 @@
   <body>
     <div class="container">
       <h1>Meme Generator</h1>
-      <!-- Input field to upload an image -->
+      <!-- Syötekenttä kuvan lataamista varten -->
       <input type="file" id="image-input" accept="image/*" />
-      <!-- Input fields for top and bottom text of the meme -->
-      <input type="text" id="top-text" placeholder="Top text" />
-      <input type="text" id="bottom-text" placeholder="Bottom text" />
-      <!-- Buttons to generate and download the meme -->
+      <!-- Syötekentät meemin ylä- ja alatekstille -->
+      <input type="text" id="top-text" placeholder="Yläteksti" />
+      <input type="text" id="bottom-text" placeholder="Alateksti" />
+      <!-- Painikkeet meemin luomiseen ja lataamiseen -->
       <div class="buttons">
-        <button id="generate-meme-button">Generate Meme</button>
+        <button id="generate-meme-button">Luo Meemi</button>
         <button id="download-meme-button" style="display: none">
-          Download Meme
+          Lataa Meemi
         </button>
       </div>
     </div>
-    <!-- Hidden canvas for rendering the meme -->
+    <!-- Piilotettu canvas meemin piirtämistä varten -->
     <canvas id="meme-canvas" style="display: none"></canvas>
-    <!-- Link to the JavaScript file -->
+    <!-- Linkki JavaScript-tiedostoon -->
     <script src="app.js"></script>
   </body>
 </html>
