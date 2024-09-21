@@ -1,20 +1,18 @@
-// Wait for the DOM to be fully loaded
+// Odota, että DOM latautuu kokonaan
 document.addEventListener("DOMContentLoaded", () => {
-  // Select the body and button elements
+  // Valitse body- ja button-elementit
   const body = document.body;
   const toggleButton = document.getElementById("toggle-button");
-  // Add event listener to toggle between light and dark mode
+  // Lisää tapahtumankuuntelija vaihtaaksesi valotilan ja pimeän tilan välillä
   toggleButton.addEventListener("click", () => {
-    // Toggle between dark-mode and light-mode classes
+    // Vaihda pimeän tilan ja valoisan tilan luokkien välillä
     body.classList.toggle("dark-mode");
     body.classList.toggle("light-mode");
-    // Update button text based on the active mode
+    // Päivitä napin teksti aktiivisen tilan perusteella
     if (body.classList.contains("dark-mode")) {
-      toggleButton.textContent = "Switch to Light Mode"; // Dark mode
-      active;
+      toggleButton.textContent = "Vaihda valoiseen tilaan"; // Pimeä tila aktiivinen
     } else {
-      toggleButton.textContent = "Switch to Dark Mode"; // Light mode
-      active;
+      toggleButton.textContent = "Vaihda pimeään tilaan"; // Valoisa tila aktiivinen
     }
   });
 });

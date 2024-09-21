@@ -1,110 +1,109 @@
-/* Reset for consistent margins, paddings, and box-sizing across elements */
+/* Resetti yhtenäisille marginaaleille, täytöille ja box-sizing-asetuksille kaikissa elementeissä */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-/* Body styling for overall layout */
+/* Tyylitys keholle yleiseen asetteluun */
 body {
-  font-family: "Poppins", sans-serif; /* Modern, clean typography */
+  font-family: "Poppins", sans-serif; /* Moderni, selkeä typografia */
   background: linear-gradient(
     135deg,
     #74ebd5,
     #acb6e5
-  ); /* Fresh gradient
-background */
+  ); /* Raikas gradientti
+tausta */
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
 }
-/* Main container for the app */
+/* Pääkontainerin tyylitys sovellukselle */
 .container {
-  background-color: #fff; /* Clean white background */
-  padding: 40px; /* Comfortable padding inside the container */
-  border-radius: 12px; /* Rounded corners for a modern look */
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  background-color: #fff; /* Puhdas valkoinen tausta */
+  padding: 40px; /* Mukava sisäinen täyttö kontainerille */
+  border-radius: 12px; /* Pyöristetyt kulmat modernia ilmettä varten */
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1); /* Hieno varjo syvyyden lisäämiseksi */
   text-align: center;
   width: 100%;
-  max-width: 400px; /* Max width to keep layout responsive */
+  max-width: 400px; /* Maksimileveys responsiivisen suunnittelun säilyttämiseksi */
 }
-/* Heading styling */
+/* Otsikon tyylitys */
 h1 {
-  font-size: 2.5em; /* Larger text for prominence */
-  color: #2c3e50; /* Darker color for contrast */
+  font-size: 2.5em; /* Suurempi tekstikoko korostusta varten */
+  color: #2c3e50; /* Tummempi väri kontrastia varten */
   margin-bottom: 20px;
 }
-/* Paragraph styling for description */
+/* Kappaleen tyylitys kuvaukseen */
 p {
-  font-size: 1.2em; /* Readable text size */
-  color: #555; /* Softer color for secondary text */
+  font-size: 1.2em; /* Luettava tekstikoko */
+  color: #555; /* Pehmeämpi väri toissijaiselle tekstille */
   margin-bottom: 30px;
 }
-/* Dropdown (select) styling */
+/* Pudotusvalikon (select) tyylitys */
 select {
   width: 100%;
-  padding: 12px; /* Comfortable padding for better user experience */
-  border-radius: 8px; /* Smooth corners */
-  border: 1px solid #ccc; /* Light border */
+  padding: 12px; /* Mukava täyttö paremman käyttökokemuksen takaamiseksi */
+  border-radius: 8px; /* Sileät kulmat */
+  border: 1px solid #ccc; /* Kevyt reunaviiva */
   margin-bottom: 20px;
   font-size: 1em;
   text-align: center;
-  background-color: #f9f9f9; /* Light background for dropdown */
+  background-color: #f9f9f9; /* Vaalea tausta pudotusvalikolle */
   cursor: pointer;
-  transition: border-color 0.3s ease; /* Smooth focus effect */
+  transition: border-color 0.3s ease; /* Sileä fokus-efekti */
 }
-/* Focus effect for dropdown */
+/* Fokusefekti pudotusvalikolle */
 select:focus {
-  border-color: #007bff; /* Blue border on focus */
-  outline: none; /* Remove default focus outline */
+  border-color: #007bff; /* Sininen reunaviiva fokuksessa */
+  outline: none; /* Poista oletusarvoinen fokusviiva */
 }
-/* Button styling */
+/* Painikkeen tyylitys */
 button {
-  background-color: #007bff; /* Vibrant blue background */
-  color: white; /* White text for contrast */
+  background-color: #007bff; /* Kirkas sininen tausta */
+  color: white; /* Valkoinen teksti kontrastin vuoksi */
   border: none;
-  padding: 12px 30px; /* Ample padding for better clickability */
-  border-radius: 8px; /* Smooth corners */
+  padding: 12px 30px; /* Riittävä täyttö paremman klikattavuuden takaamiseksi */
+  border-radius: 8px; /* Sileät kulmat */
   cursor: pointer;
   font-size: 1em;
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover
-and active effects */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Sileät hover- ja aktiiviset efektit */
 }
-/* Hover effect for button */
+/* Hover-efekti painikkeelle */
 button:hover {
-  background-color: #0056b3; /* Darker blue on hover */
-  transform: translateY(-2px); /* Slight lift effect */
+  background-color: #0056b3; /* Tummempi sininen hover-tilassa */
+  transform: translateY(-2px); /* Kevyt nostoeffekti */
 }
-/* Button active state (when clicked) */
+/* Painikkeen aktiivinen tila (kun painetaan) */
 button:active {
-  background-color: #004494; /* Even darker blue when pressed */
-  transform: translateY(1px); /* Button pressed effect */
+  background-color: #004494; /* Vielä tummempi sininen painettuna */
+  transform: translateY(1px); /* Painettu efekti */
 }
-/* Mood log area styling */
+/* Mielialalokin alueen tyylitys */
 .mood-log {
   margin-top: 30px;
   text-align: left;
-  font-size: 1.2em; /* Larger font size for readability */
+  font-size: 1.2em; /* Suurempi tekstikoko luettavuuden parantamiseksi */
   color: #333;
 }
-/* Styling for each mood entry in the log */
+/* Tyylitys jokaiselle mielialamerkinnälle lokissa */
 .mood-entry {
-  background-color: #f8f8f8; /* Light background for contrast */
-  padding: 10px; /* Padding for spacing */
-  margin-bottom: 10px; /* Space between entries */
-  border-radius: 8px; /* Rounded corners */
-  border: 1px solid #ccc; /* Light border for definition */
+  background-color: #f8f8f8; /* Vaalea tausta kontrastiksi */
+  padding: 10px; /* Täyttö tilan lisäämiseksi */
+  margin-bottom: 10px; /* Väli merkintöjen välillä */
+  border-radius: 8px; /* Pyöristetyt kulmat */
+  border: 1px solid #ccc; /* Kevyt reunaviiva korostukseen */
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-/* Date styling within each mood entry */
+/* Päivämäärän tyylitys jokaisessa mielialamerkinnässä */
 .mood-date {
-  font-weight: 600; /* Bold text for emphasis */
-  color: #2c3e50; /* Darker color for clarity */
+  font-weight: 600; /* Lihavoitu teksti korostusta varten */
+  color: #2c3e50; /* Tummempi väri selkeyden takaamiseksi */
 }
-/* Mood emoji and label styling */
+/* Mielialaemojin ja otsikon tyylitys */
 .mood-emoji {
-  font-size: 1.5em; /* Larger size for emphasis on emoji */
+  font-size: 1.5em; /* Suurempi koko korostamaan emojia */
 }

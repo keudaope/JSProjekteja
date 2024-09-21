@@ -1,31 +1,30 @@
-// Wait for the DOM to fully load before running the script
+// Odota, että DOM latautuu kokonaan ennen kuin suoritat skriptin
 document.addEventListener("DOMContentLoaded", () => {
-  // Select DOM elements for profile display and button
-  const profilePicture = document.getElementById("profile-picture"); // Profile picture element
-  const nameElement = document.getElementById("name"); // Element for displaying name
-  const emailElement = document.getElementById("email"); // Element for displaying email
-  const locationElement = document.getElementById("location"); // Element for displaying location
-  const generateButton = document.getElementById("generate-button"); // Button to trigger user generation
-  // Add click event listener to the "Generate User" button
+  // Valitse DOM-elementit profiilin näyttämistä ja painiketta varten
+  const profilePicture = document.getElementById("profile-picture"); // Profiilikuvan elementti
+  const nameElement = document.getElementById("name"); // Elementti nimen näyttämistä varten
+  const emailElement = document.getElementById("email"); // Elementti sähköpostin näyttämistä varten
+  const locationElement = document.getElementById("location"); // Elementti sijainnin näyttämistä varten
+  const generateButton = document.getElementById("generate-button"); // Painike käyttäjän generointiin
+  // Lisää klikkaustapahtuman kuuntelija "Luo käyttäjä" -painikkeelle
   generateButton.addEventListener("click", generateUser);
-  // Function to fetch and display a random user
+  // Funktio, joka hakee ja näyttää satunnaisen käyttäjän
   function generateUser() {
-    // Fetch random user data from the API
+    // Hae satunnaisen käyttäjän tiedot API:sta
     fetch("https://randomuser.me/api/")
-      .then((response) => response.json()) // Parse the JSON response
+      .then((response) => response.json()) // Parsitaan JSON-vastaus
       .then((data) => {
-        const user = data.results[0]; // Get the first user from the response
-        // Update the profile picture, name, email, and location with the fetched data
-        profilePicture.src = user.picture.large; // Set profile picture
-        nameElement.textContent = `${user.name.first} ${user.name.last}
-`; // Set full name
-        emailElement.textContent = user.email; // Set email
-        locationElement.textContent = `${user.location.city}, ${user.location.country}`; // Set location
+        const user = data.results[0]; // Haetaan ensimmäinen käyttäjä vastauksesta
+        // Päivitetään profiilikuva, nimi, sähköposti ja sijainti haetuilla tiedoilla
+        profilePicture.src = user.picture.large; // Aseta profiilikuva
+        nameElement.textContent = `${user.name.first} ${user.name.last}`; // Aseta koko nimi
+        emailElement.textContent = user.email; // Aseta sähköposti
+        locationElement.textContent = `${user.location.city}, ${user.location.country}`; // Aseta sijainti
       })
       .catch((error) => {
-        console.error("Error fetching user data:", error); // Log any errors
+        console.error("Virhe käyttäjätietojen haussa:", error); // Kirjataan mahdolliset virheet
       });
   }
-  // Automatically generate an initial user when the page loads
+  // Luo automaattisesti ensimmäinen käyttäjä, kun sivu latautuu
   generateUser();
 });

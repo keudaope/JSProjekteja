@@ -1,66 +1,69 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // DOM elements for interaction
-  const moodSelect = document.getElementById("mood-select"); // Dropdown to select mood
-  const submitButton = document.getElementById("submit-button"); // Button to track mood
-  const moodLog = document.getElementById("mood-log"); // Area to display the mood log
-  // Array to store mood entries (retrieved from localStorage if available)
+  // DOM-elementit vuorovaikutusta varten
+  const moodSelect = document.getElementById("mood-select"); // Pudotusvalikko mielialan valintaan
+  const submitButton = document.getElementById("submit-button"); // Painike mielialan tallentamiseen
+  const moodLog = document.getElementById("mood-log"); // Alue mielialapäiväkirjan näyttämiseen
+  // Taulukko mielialamerkintöjen tallentamiseen (haetaan localStoragesta, jos saatavilla)
   let moodEntries = JSON.parse(localStorage.getItem("moodEntries")) || [];
-  // Function to display the mood log
+
+  // Funktio mielialapäiväkirjan näyttämiseen
   function displayMoodLog() {
-    // Clear the mood log before rendering entries
+    // Tyhjennetään mielialapäiväkirja ennen uusien merkintöjen renderöintiä
     moodLog.innerHTML = "";
     moodEntries.forEach((entry) => {
-      // Create a div for each mood entry
+      // Luodaan div jokaiselle mielialamerkinnälle
       const moodEntryDiv = document.createElement("div");
       moodEntryDiv.classList.add("mood-entry");
-      // Create span for the mood's date
+      // Luodaan span päivämäärälle
       const dateSpan = document.createElement("span");
       dateSpan.classList.add("mood-date");
       dateSpan.textContent = entry.date;
-      // Create span for the mood's emoji and text
+      // Luodaan span mielialan emojille ja tekstille
       const moodSpan = document.createElement("span");
       moodSpan.classList.add("mood-emoji");
       moodSpan.textContent = `${entry.emoji} ${entry.mood}`;
-      // Append date and mood to the entry div
+      // Liitetään päivämäärä ja mieliala merkintädiveen
       moodEntryDiv.appendChild(dateSpan);
       moodEntryDiv.appendChild(moodSpan);
-      // Append the entry div to the mood log
+      // Liitetään merkintädivi mielialapäiväkirjaan
       moodLog.appendChild(moodEntryDiv);
     });
   }
-  // Function to track a new mood
+
+  // Funktio uuden mielialan tallentamiseen
   function trackMood() {
-    // Get selected mood
+    // Haetaan valittu mieliala
     const selectedMood = moodSelect.value;
-    // Emoji dictionary to match mood to emoji
+    // Emojisanakirja, joka yhdistää mielialan emojin kanssa
     const emojiDictionary = {
-      happy: " ",
-      sad: " ",
-      excited: " ",
-      tired: " ",
-      angry: " ",
-      neutral: " ",
+      happy: "😊",
+      sad: "😢",
+      excited: "😄",
+      tired: "😴",
+      angry: "😠",
+      neutral: "😐",
     };
-    // Only proceed if a mood was selected
+    // Jatketaan vain, jos mieliala on valittu
     if (selectedMood) {
-      // Get the current date in a readable format
+      // Haetaan nykyinen päivämäärä luettavassa muodossa
       const currentDate = new Date().toLocaleDateString();
-      // Create a new mood entry object
+      // Luodaan uusi mielialamerkintä-objekti
       const newMoodEntry = {
         mood: selectedMood,
         emoji: emojiDictionary[selectedMood],
         date: currentDate,
       };
-      // Add the new entry to the moodEntries array
+      // Lisätään uusi merkintä moodEntries-taulukkoon
       moodEntries.push(newMoodEntry);
-      // Save updated mood entries to localStorage
+      // Tallennetaan päivitetyt mielialamerkinnät localStorageen
       localStorage.setItem("moodEntries", JSON.stringify(moodEntries));
-      // Refresh the mood log
+      // Päivitetään mielialapäiväkirja
       displayMoodLog();
     }
   }
-  // Event listener for the "Track Mood" button
+
+  // Tapahtumankuuntelija "Track Mood" -painikkeelle
   submitButton.addEventListener("click", trackMood);
-  // Display the mood log on page load
+  // Näytetään mielialapäiväkirja sivun latautuessa
   displayMoodLog();
 });
