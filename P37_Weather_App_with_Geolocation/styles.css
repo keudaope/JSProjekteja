@@ -1,12 +1,11 @@
-/* Global body styling */
+/* Yleinen tyylitys body-elementille */
 body {
   font-family: Arial, sans-serif;
   background: linear-gradient(
     135deg,
     #74ebd5,
     #acb6e5
-  ); /* Modern gradient
-background */
+  ); /* Moderni liukuvärjätty tausta */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,30 +14,30 @@ background */
   color: #333;
   transition: background-color 0.3s ease-in-out;
 }
-/* Main container for the app */
+/* Sovelluksen pääkontainerin tyylit */
 .container {
   background: white;
   padding: 20px 30px;
-  border-radius: 12px; /* Smooth rounded corners */
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-radius: 12px; /* Pyöristetyt kulmat */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Hieno varjostus syvyyden luomiseksi */
   text-align: center;
   width: 320px;
   transition: transform 0.3s ease;
 }
-/* Zoom effect on hover */
+/* Zoom-efekti hover-tilassa */
 .container:hover {
-  transform: scale(1.05); /* Slight zoom effect for interactivity */
+  transform: scale(1.05); /* Kevyt zoom-efekti vuorovaikutukselle */
 }
-/* Title styling */
+/* Otsikon tyylit */
 h1 {
   margin-bottom: 20px;
   font-size: 1.8em;
-  color: #2c3e50; /* Darker text color for contrast */
+  color: #2c3e50; /* Tummempi tekstiväri kontrastia varten */
 }
-/* Button styling */
+/* Painikkeen tyylit */
 button {
   padding: 12px 25px;
-  background-color: #007bff; /* Primary blue button color */
+  background-color: #007bff; /* Pääpainikkeen sininen väri */
   color: white;
   border: none;
   border-radius: 8px;
@@ -46,19 +45,19 @@ button {
   font-size: 1em;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-/* Hover effect for the button */
+/* Hover-efekti painikkeelle */
 button:hover {
-  background-color: #0056b3; /* Darker blue on hover */
-  transform: translateY(-2px); /* Slight lift effect */
+  background-color: #0056b3; /* Tummempi sininen hover-tilassa */
+  transform: translateY(-2px); /* Kevyt nostatus hover-tilassa */
 }
-/* Weather info display */
+/* Sääinformaation tyylit */
 .weather-info {
   margin-top: 20px;
   font-size: 1.2em;
-  color: #34495e; /* Soft, dark color for weather information */
-  min-height: 100px; /* Ensures a stable layout for the weather content */
+  color: #34495e; /* Pehmeä tummempi väri säätiedolle */
+  min-height: 100px; /* Vakaa asettelu säätiedolle */
 }
-/* Style for displaying weather city name */
+/* Tyylit kaupungin nimen näyttämiseen */
 .weather-info h2 {
   margin: 10px 0;
   font-size: 1.5em;

@@ -1,37 +1,37 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Get references to DOM elements
+  // Hae viittauksia DOM-elementteihin
   const canvas = document.getElementById("drawing-canvas");
-  const ctx = canvas.getContext("2d"); // Get the 2D drawing context
+  const ctx = canvas.getContext("2d"); // Hanki 2D-piirtokonteksti
   const clearButton = document.getElementById("clear-button");
-  // Initialize drawing state
+  // Alusta piirustuksen tila
   let drawing = false;
-  // Add event listeners for mouse interactions
-  canvas.addEventListener("mousedown", startDrawing); // When the user presses the mouse button
-  canvas.addEventListener("mousemove", draw); // When the user moves the mouse while drawing
-  canvas.addEventListener("mouseup", stopDrawing); // When the user releases the mouse button
-  canvas.addEventListener("mouseout", stopDrawing); // If the user moves the mouse out of the canvas
-  clearButton.addEventListener("click", clearCanvas); // When the user clicks the "Clear Canvas" button
-  // Function to start drawing
+  // Lisää tapahtumankuuntelijat hiiren vuorovaikutuksille
+  canvas.addEventListener("mousedown", startDrawing); // Kun käyttäjä painaa hiiren painiketta
+  canvas.addEventListener("mousemove", draw); // Kun käyttäjä liikuttaa hiirtä piirtäessään
+  canvas.addEventListener("mouseup", stopDrawing); // Kun käyttäjä vapauttaa hiiren painikkeen
+  canvas.addEventListener("mouseout", stopDrawing); // Jos käyttäjä vie hiiren pois kankaalta
+  clearButton.addEventListener("click", clearCanvas); // Kun käyttäjä napsauttaa "Tyhjennä kangas" -painiketta
+  // Funktio piirtämisen aloittamiseksi
   function startDrawing(e) {
-    drawing = true; // Set the drawing flag to true
-    ctx.beginPath(); // Begin a new path for drawing
-    ctx.moveTo(e.offsetX, e.offsetY); // Move the drawing cursor to the mouse position
+    drawing = true; // Aseta piirustustila todeksi
+    ctx.beginPath(); // Aloita uusi polku piirtämistä varten
+    ctx.moveTo(e.offsetX, e.offsetY); // Siirrä piirtokursori hiiren sijaintiin
   }
-  // Function to handle drawing on the canvas
+  // Funktio piirtämisen käsittelyyn kankaalle
   function draw(e) {
-    if (!drawing) return; // If the user is not drawing, exit the function
-    ctx.lineTo(e.offsetX, e.offsetY); // Draw a line to the current mouse position
-    ctx.strokeStyle = "#007bff"; // Set the color of the drawing line
-    ctx.lineWidth = 2; // Set the width of the drawing line
-    ctx.stroke(); // Actually draw the line on the canvas
+    if (!drawing) return; // Jos käyttäjä ei piirrä, poistu funktiosta
+    ctx.lineTo(e.offsetX, e.offsetY); // Piirrä viiva nykyiseen hiiren sijaintiin
+    ctx.strokeStyle = "#007bff"; // Aseta piirtoviivan väri
+    ctx.lineWidth = 2; // Aseta piirtoviivan leveys
+    ctx.stroke(); // Piirrä viiva kankaalle
   }
-  // Function to stop drawing
+  // Funktio piirtämisen lopettamiseksi
   function stopDrawing() {
-    drawing = false; // Set the drawing flag to false
-    ctx.closePath(); // Close the current path
+    drawing = false; // Aseta piirustustila epätodeksi
+    ctx.closePath(); // Sulje nykyinen polku
   }
-  // Function to clear the canvas
+  // Funktio kankaan tyhjentämiseksi
   function clearCanvas() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the entire canvas;
+    ctx.clearRect(0, 0, canvas.width, canvas.height); // Tyhjennä koko kangas
   }
 });

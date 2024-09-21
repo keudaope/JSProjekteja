@@ -1,83 +1,83 @@
-// Wait until the DOM is fully loaded before running the script
+// Odota, että DOM on kokonaan ladattu ennen kuin suoritat skriptin
 document.addEventListener("DOMContentLoaded", () => {
-  // Get the button to add a new note and the container where notes will be displayed
+  // Hae painike uuden muistiinpanon lisäämiseksi ja kontti, jossa muistiinpanot näytetään
   const addNoteButton = document.getElementById("add-note-button");
   const notesContainer = document.getElementById("notes-container");
-  // Fetch existing notes from localStorage, or start with an empty array if none exist
+  // Hae olemassa olevat muistiinpanot localStoragesta tai aloita tyhjällä taulukolla, jos niitä ei ole
   let notes = JSON.parse(localStorage.getItem("notes")) || [];
-  // Function to render all notes by looping through the notes array
+  // Funktio, joka renderöi kaikki muistiinpanot käymällä läpi notes-taulukon
   function renderNotes() {
-    // Clear the notes container to avoid duplications
+    // Tyhjennä muistiinpanojen kontti kaksoiskappaleiden välttämiseksi
     notesContainer.innerHTML = "";
-    // Loop through each note and create a new note element
+    // Käy jokainen muistiinpano läpi ja luo uusi muistiinpanoelementti
     notes.forEach((note) => {
       createNoteElement(note.id, note.content);
     });
   }
-  // Function to create a new note element, with unique id and content
+  // Funktio luo uuden muistiinpanoelementin, jolla on ainutlaatuinen id ja sisältö
   function createNoteElement(id, content = "") {
-    // Create the note div
+    // Luo muistiinpanon div
     const noteElement = document.createElement("div");
     noteElement.classList.add("note");
-    // Set the innerHTML of the note with a textarea for content and a delete button
+    // Aseta muistiinpanon sisällöksi textarea kenttä ja poistonappi
     noteElement.innerHTML = `
- <textarea>${content}</textarea>
- <button class="delete-note">X</button>
- `;
-    // Select the textarea and the delete button within the note
+      <textarea>${content}</textarea>
+      <button class="delete-note">X</button>
+    `;
+    // Valitse textarea ja poistonappi muistiinpanosta
     const textarea = noteElement.querySelector("textarea");
     const deleteButton = noteElement.querySelector(".delete-note");
-    // When the textarea is edited, update the note's content
+    // Kun textarea:ta muokataan, päivitä muistiinpanon sisältö
     textarea.addEventListener("input", () => {
       updateNoteContent(id, textarea.value);
     });
-    // When the delete button is clicked, remove the note
+    // Kun poistonappia painetaan, poista muistiinpano
     deleteButton.addEventListener("click", () => {
       deleteNote(id);
     });
-    // Append the new note element to the container
+    // Lisää uusi muistiinpanoelementti konttiin
     notesContainer.appendChild(noteElement);
   }
-  // Function to add a new note to the notes array
+  // Funktio uuden muistiinpanon lisäämiseksi notes-taulukkoon
   function addNote() {
-    // Create a new note object with a unique id and empty content
+    // Luo uusi muistiinpano-objekti ainutlaatuisella id:llä ja tyhjällä sisällöllä
     const note = {
-      id: Date.now(), // Use the current timestamp as a unique id
+      id: Date.now(), // Käytä nykyistä aikaleimaa ainutlaatuisena id:nä
       content: "",
     };
-    // Add the new note to the array
+    // Lisää uusi muistiinpano taulukkoon
     notes.push(note);
-    // Save the updated notes array to localStorage
+    // Tallenna päivitetty notes-taulukko localStorageen
     saveNotes();
-    // Render the new note on the screen
+    // Renderöi uusi muistiinpano näytölle
     createNoteElement(note.id, note.content);
   }
-  // Function to update the content of an existing note
+  // Funktio päivittää olemassa olevan muistiinpanon sisältöä
   function updateNoteContent(id, content) {
-    // Find the note with the given id in the array
+    // Etsi muistiinpano, jolla on annettu id taulukosta
     const note = notes.find((note) => note.id === id);
     if (note) {
-      // Update the content of the found note
+      // Päivitä löydetyn muistiinpanon sisältö
       note.content = content;
-      // Save the updated notes array to localStorage
+      // Tallenna päivitetty notes-taulukko localStorageen
       saveNotes();
     }
   }
-  // Function to delete a note based on its id
+  // Funktio poistaa muistiinpanon id:n perusteella
   function deleteNote(id) {
-    // Filter out the note to be deleted from the notes array
+    // Suodata pois poistettava muistiinpano notes-taulukosta
     notes = notes.filter((note) => note.id !== id);
-    // Save the updated notes array to localStorage
+    // Tallenna päivitetty notes-taulukko localStorageen
     saveNotes();
-    // Re-render all notes to reflect the deletion
+    // Renderöi kaikki muistiinpanot uudelleen poiston heijastamiseksi
     renderNotes();
   }
-  // Function to save the notes array to localStorage
+  // Funktio tallentaa notes-taulukon localStorageen
   function saveNotes() {
     localStorage.setItem("notes", JSON.stringify(notes));
   }
-  // Add a new note when the 'Add Note' button is clicked
+  // Lisää uusi muistiinpano, kun 'Add Note' -painiketta painetaan
   addNoteButton.addEventListener("click", addNote);
-  // On page load, render any existing notes from localStorage
+  // Sivun latautuessa renderöi kaikki olemassa olevat muistiinpanot localStoragesta
   renderNotes();
 });

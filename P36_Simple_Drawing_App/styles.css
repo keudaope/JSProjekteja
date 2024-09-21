@@ -1,43 +1,42 @@
-/* Global body styles for layout */
+/* Yleiset kehon tyylit asettelua varten */
 body {
-  font-family: "Arial", sans-serif; /* Clean, modern font */
-  background-color: #e3f2fd; /* Light blue background for a fresh look */
+  font-family: "Arial", sans-serif; /* Selkeä, moderni fontti */
+  background-color: #e3f2fd; /* Vaaleansininen tausta raikkaan ilmeen luomiseksi */
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
 }
-/* Container styles for centering content */
+/* Kontti keskittää sisällön */
 .container {
   text-align: center;
   padding: 20px;
   background: #ffffff;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for a modern
-card-like effect */
-  border-radius: 10px; /* Rounded corners for a smooth look */
-  max-width: 700px; /* Limiting the container width for larger screens */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Pehmeä varjo modernin korttimaisen efektin luomiseksi */
+  border-radius: 10px; /* Pyöristetyt kulmat pehmeää ulkoasua varten */
+  max-width: 700px; /* Säiliön leveys rajoitettu suuremmille näytöille */
   width: 100%;
 }
-/* Canvas styles for drawing area */
+/* Kankaan tyylit piirtämisalueelle */
 canvas {
-  border: 2px solid #007bff; /* Blue border for visibility */
-  background-color: #fff; /* White background for a clean drawing surface */
-  cursor: crosshair; /* Crosshair cursor to indicate drawing */
-  border-radius: 8px; /* Rounded corners for a modern look */
+  border: 2px solid #007bff; /* Sininen reuna näkyvyyden parantamiseksi */
+  background-color: #fff; /* Valkoinen tausta puhdasta piirtoalustaa varten */
+  cursor: crosshair; /* Ristikkäiskursori osoittamaan piirtämistä */
+  border-radius: 8px; /* Pyöristetyt kulmat modernin ilmeen luomiseksi */
 }
-/* Button styles for clearing the canvas */
+/* Painikkeen tyylit kankaan tyhjentämiseen */
 button {
-  padding: 12px 24px; /* Larger padding for better clickability */
+  padding: 12px 24px; /* Suurempi pehmustus parempaa klikattavuutta varten */
   margin-top: 20px;
   border: none;
-  background-color: #007bff; /* Vibrant blue background */
+  background-color: #007bff; /* Elävä sininen tausta */
   color: white;
-  border-radius: 8px; /* Smooth corners */
+  border-radius: 8px; /* Pehmeät kulmat */
   cursor: pointer;
-  transition: background-color 0.3s ease; /* Smooth hover effect */
+  transition: background-color 0.3s ease; /* Sulava hover-efekti */
 }
-/* Hover effect for the button */
+/* Hover-efekti painikkeelle */
 button:hover {
-  background-color: #0056b3; /* Darker blue on hover */
+  background-color: #0056b3; /* Tummempi sininen hover-tilassa */
 }

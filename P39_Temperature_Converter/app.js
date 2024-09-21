@@ -1,28 +1,28 @@
-// Execute the script after the DOM is fully loaded
+// Suorita skripti vasta kun DOM on täysin ladattu
 document.addEventListener("DOMContentLoaded", () => {
-  // Get DOM elements for temperature input, dropdowns, button, and result div
+  // Haetaan DOM-elementit lämpötilan syötettä, alasvetovalikoita, painiketta ja tulosdiviä varten
   const temperatureInput = document.getElementById("temperature-input");
   const fromUnit = document.getElementById("from-unit");
   const toUnit = document.getElementById("to-unit");
   const convertButton = document.getElementById("convert-button");
   const resultDiv = document.getElementById("result");
-  // Add event listener to the "Convert" button
+  // Lisätään tapahtumankuuntelija "Muunna" -painikkeelle
   convertButton.addEventListener("click", convertTemperature);
-  // Function to handle temperature conversion logic
+  // Funktio lämpötilan muunnoksen käsittelemiseksi
   function convertTemperature() {
-    // Get and parse the input values
+    // Haetaan ja jäsennetään syötetyt arvot
     const temperature = parseFloat(temperatureInput.value);
     const from = fromUnit.value;
     const to = toUnit.value;
-    // Check for invalid input (e.g., non-numeric values)
+    // Tarkistetaan, onko syöte virheellinen (esim. ei-numeerinen arvo)
     if (isNaN(temperature)) {
-      resultDiv.textContent = "Please enter a valid temperature.";
-      return; // Exit the function if the input is invalid
+      resultDiv.textContent = "Anna kelvollinen lämpötila.";
+      return; // Lopetetaan funktio, jos syöte on virheellinen
     }
     let convertedTemperature;
-    // Handle conversions between units based on user selections
+    // Käsitellään muunnokset yksiköiden välillä käyttäjän valintojen perusteella
     if (from === to) {
-      // No conversion needed if both units are the same
+      // Ei tarvitse muuntaa, jos yksiköt ovat samat
       convertedTemperature = temperature;
     } else if (from === "Celsius") {
       if (to === "Fahrenheit") {
@@ -43,8 +43,8 @@ document.addEventListener("DOMContentLoaded", () => {
         convertedTemperature = ((temperature - 273.15) * 9) / 5 + 32;
       }
     }
-    // Display the converted temperature with two decimal points
-    resultDiv.textContent = `Converted Temperature: ${convertedTemperature.toFixed(
+    // Näytetään muunnettu lämpötila kahden desimaalin tarkkuudella
+    resultDiv.textContent = `Muunnettu lämpötila: ${convertedTemperature.toFixed(
       2
     )} ${to}`;
   }

@@ -1,45 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Meta information for encoding and responsive layout -->
+    <!-- Meta-tiedot koodausta ja responsiivista asettelua varten -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Temperature Converter</title>
-    <!-- Link to external CSS for styling -->
+    <title>Lämpötilan Muunnin</title>
+    <!-- Linkki ulkoiseen CSS-tiedostoon tyylittelyä varten -->
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- Main container for the temperature converter -->
+    <!-- Pääkontti lämpötilan muunninta varten -->
     <div class="container">
-      <!-- Page heading -->
-      <h1>Temperature Converter</h1>
-      <!-- Input field for entering the temperature to be converted -->
+      <!-- Sivun otsikko -->
+      <h1>Lämpötilan Muunnin</h1>
+      <!-- Syötekenttä muunnettavan lämpötilan syöttämiseksi -->
       <input
         type="number"
         id="temperature-input"
-        placeholder="Enter
-temperature"
+        placeholder="Syötä lämpötila"
         step="0.1"
       />
-
-      <!-- Dropdown for selecting the unit to convert from -->
+      <!-- Pudotusvalikko lähtöyksikön valitsemiseksi -->
       <select id="from-unit">
         <option value="Celsius">Celsius</option>
         <option value="Fahrenheit">Fahrenheit</option>
         <option value="Kelvin">Kelvin</option>
       </select>
-      <!-- Dropdown for selecting the unit to convert to -->
+      <!-- Pudotusvalikko kohdeyksikön valitsemiseksi -->
       <select id="to-unit">
         <option value="Celsius">Celsius</option>
         <option value="Fahrenheit">Fahrenheit</option>
         <option value="Kelvin">Kelvin</option>
       </select>
-      <!-- Button to trigger the conversion -->
-      <button id="convert-button">Convert</button>
-      <!-- Div for displaying the conversion result -->
+      <!-- Painike muunnoksen suorittamiseksi -->
+      <button id="convert-button">Muunna</button>
+      <!-- Div muunnettujen tulosten näyttämistä varten -->
       <div class="result" id="result"></div>
     </div>
-    <!-- Linking external JavaScript file for functionality -->
+    <!-- Linkki ulkoiseen JavaScript-tiedostoon toiminnallisuutta varten -->
     <script src="app.js"></script>
   </body>
 </html>
