@@ -1,38 +1,38 @@
-// Wait for the DOM to fully load before executing the script
+// Odota, että DOM latautuu kokonaan ennen kuin suoritat skriptin
 document.addEventListener("DOMContentLoaded", () => {
-  // Select DOM elements for interaction
-  const lengthInput = document.getElementById("length"); // Number input for password length
-  const uppercaseCheckbox = document.getElementById("uppercase"); // Checkbox for including uppercase letters
-  const numbersCheckbox = document.getElementById("numbers"); // Checkbox for including numbers
-  const symbolsCheckbox = document.getElementById("symbols"); // Checkbox for including symbols
-  const generateButton = document.getElementById("generate-button"); // Button to generate password
-  const resultDiv = document.getElementById("result"); // Div to display the generated password
-  // Add event listener to the button for click event
+  // Valitaan DOM-elementit vuorovaikutusta varten
+  const lengthInput = document.getElementById("length"); // Numero-syöte salasanan pituudelle
+  const uppercaseCheckbox = document.getElementById("uppercase"); // Valintaruutu isojen kirjainten mukaan ottamiseksi
+  const numbersCheckbox = document.getElementById("numbers"); // Valintaruutu numeroiden mukaan ottamiseksi
+  const symbolsCheckbox = document.getElementById("symbols"); // Valintaruutu symbolien mukaan ottamiseksi
+  const generateButton = document.getElementById("generate-button"); // Painike salasanan luomiseen
+  const resultDiv = document.getElementById("result"); // Div salasanan näyttämiseksi
+  // Lisää tapahtumankuuntelija painikkeelle klikkaustapahtumaa varten
   generateButton.addEventListener("click", generatePassword);
-  // Function to generate the password
+  // Funktio salasanan luomiseksi
   function generatePassword() {
-    // Get the length and options for the password
+    // Haetaan pituus ja asetukset salasanalle
     const length = parseInt(lengthInput.value);
     const includeUppercase = uppercaseCheckbox.checked;
     const includeNumbers = numbersCheckbox.checked;
     const includeSymbols = symbolsCheckbox.checked;
-    // Character sets for different types of characters
+    // Merkkisarjat eri tyyppisille merkeille
     const lowerCaseChars = "abcdefghijklmnopqrstuvwxyz";
     const upperCaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const numberChars = "0123456789";
     const symbolChars = "!@#$%^&*()_+~`|}{[]:;?><,./-=";
-    // Initialize the character set with lowercase letters by default
+    // Alustetaan merkkisarja pienillä kirjaimilla oletuksena
     let charSet = lowerCaseChars;
-    if (includeUppercase) charSet += upperCaseChars; // Include uppercase if selected
-    if (includeNumbers) charSet += numberChars; // Include numbers if selected
-    if (includeSymbols) charSet += symbolChars; // Include symbols if selected
-    // Generate the password by randomly selecting characters from the character set
+    if (includeUppercase) charSet += upperCaseChars; // Sisällytä isot kirjaimet, jos valittu
+    if (includeNumbers) charSet += numberChars; // Sisällytä numerot, jos valittu
+    if (includeSymbols) charSet += symbolChars; // Sisällytä symbolit, jos valittu
+    // Luodaan salasana valitsemalla satunnaisia merkkejä merkkisarjasta
     let password = "";
     for (let i = 0; i < length; i++) {
       const randomIndex = Math.floor(Math.random() * charSet.length);
       password += charSet[randomIndex];
     }
-    // Display the generated password in the result div
-    resultDiv.innerHTML = "Generated Password: <br />" + password;
+    // Näytetään luotu salasana tulos-divissä
+    resultDiv.innerHTML = "Luotu salasana: <br />" + password;
   }
 });

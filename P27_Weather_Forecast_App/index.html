@@ -3,22 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather Forecast App</title>
-    <!-- Link to external CSS for styling -->
+    <title>Sääennustesovellus</title>
+    <!-- Linkki ulkoiseen CSS-tiedostoon tyylitystä varten -->
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="container">
-      <!-- Main heading -->
-      <h1>Weather Forecast App</h1>
-      <!-- Input field for city name -->
-      <input type="text" id="city" placeholder="Enter city name" required />
-      <!-- Button to trigger forecast retrieval -->
-      <button id="get-forecast">Get Forecast</button>
-      <!-- Div to display the weather forecast -->
+      <!-- Pääotsikko -->
+      <h1>Sääennustesovellus</h1>
+      <!-- Syötekenttä kaupungin nimelle -->
+      <input
+        type="text"
+        id="city"
+        placeholder="Syötä kaupungin nimi"
+        required
+      />
+      <!-- Painike ennusteen hakemiseen -->
+      <button id="get-forecast">Hae sääennuste</button>
+      <!-- Div, johon sääennuste näytetään -->
       <div class="forecast" id="forecast"></div>
     </div>
-    <!-- Link to external JavaScript for functionality -->
+    <!-- Linkki ulkoiseen JavaScript-tiedostoon toiminnallisuutta varten -->
     <script src="app.js"></script>
   </body>
 </html>
