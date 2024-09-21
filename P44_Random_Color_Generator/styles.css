@@ -1,59 +1,59 @@
-/* Apply global styling to ensure consistency across the app */
+/* Käytä yleistä tyylittelyä varmistaaksesi yhtenäisyyden koko sovelluksessa */
 body {
-  font-family: Arial, sans-serif; /* Simple and clean font for readability */
+  font-family: Arial, sans-serif; /* Yksinkertainen ja selkeä fontti luettavuuden takaamiseksi */
   background: linear-gradient(
     135deg,
     #74ebd5,
     #acb6e5
-  ); /* Attractive
-gradient background */
+  ); /* Houkutteleva
+gradient-tausta */
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  height: 100vh; /* Full viewport height */
+  justify-content: center; /* Keskitetään vaakasuunnassa */
+  align-items: center; /* Keskitetään pystysuunnassa */
+  height: 100vh; /* Käytetään koko selainikkunan korkeutta */
   margin: 0;
 }
-/* Styling for the main app container */
+/* Sovelluksen pääsäiliön tyylittely */
 .container {
   background: white;
   padding: 20px;
-  border-radius: 8px; /* Rounded corners for a modern look */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-radius: 8px; /* Pyöristetyt kulmat modernin ilmeen saavuttamiseksi */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Hento varjo syvyyden tuomiseksi */
   text-align: center;
 }
-/* Styling for the title */
+/* Otsikon tyylittely */
 h1 {
   margin-bottom: 20px;
-  font-size: 1.5em; /* Slightly larger font for emphasis */
+  font-size: 1.5em; /* Hieman suurempi fonttikoko korostuksen vuoksi */
 }
-/* Box where the generated color will be displayed */
+/* Laatikko, jossa luotu väri näytetään */
 .color-display {
-  width: 150px; /* Larger box for better visibility */
+  width: 150px; /* Suurempi laatikko paremman näkyvyyden takaamiseksi */
   height: 150px;
-  margin: 20px auto; /* Center the box horizontally */
-  border-radius: 8px; /* Rounded corners */
-  background-color: #ffffff; /* Default color */
+  margin: 20px auto; /* Keskitetään laatikko vaakasuunnassa */
+  border-radius: 8px; /* Pyöristetyt kulmat */
+  background-color: #ffffff; /* Oletusväri */
 }
-/* Styling for the generate button */
+/* Luo-painikkeen tyylittely */
 button {
   padding: 10px 20px;
   border: none;
-  background-color: #007bff; /* Vibrant blue color */
+  background-color: #007bff; /* Kirkkaan sininen väri */
   color: white;
-  border-radius: 4px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor to indicate clickability */
+  border-radius: 4px; /* Pyöristetyt kulmat */
+  cursor: pointer; /* Osoittimen vaihtaminen, kun hiiri on painikkeen päällä */
 }
-/* Hover effect for the button */
+/* Painikkeen hover-efekti */
 button:hover {
-  background-color: #0056b3; /* Darker shade on hover */
+  background-color: #0056b3; /* Tummempi sävy hover-tilassa */
 }
-/* Styling for the color code display (HEX and RGB) */
+/* Väritietojen (HEX ja RGB) näyttämisen tyylittely */
 .color-codes {
   margin-top: 20px;
 }
-/* Each color code (HEX and RGB) displayed as a block for clarity */
+/* Jokainen väritieto (HEX ja RGB) näytetään omassa rivissään selkeyden vuoksi */
 .color-codes span {
   display: block;
   margin-top: 5px;
-  font-size: 1.2em; /* Slightly larger font for easy readability */
+  font-size: 1.2em; /* Hieman suurempi fontti paremman luettavuuden takaamiseksi */
 }

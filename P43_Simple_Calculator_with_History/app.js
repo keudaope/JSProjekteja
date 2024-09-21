@@ -1,62 +1,62 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const display = document.getElementById("display"); // The calculator display
-  const historyUl = document.getElementById("history"); // The list to show calculation history
-  let currentInput = ""; // Holds the current input for calculation
+  const display = document.getElementById("display"); // Laskimen näyttö
+  const historyUl = document.getElementById("history"); // Lista laskutoimitusten historiaa varten
+  let currentInput = ""; // Tallentaa nykyisen syötteen laskua varten
   let history = JSON.parse(localStorage.getItem("calculatorHistory")) || [];
-  // Load history from localStorage
-  // Save history to localStorage
+  // Lataa historia localStoragesta
+  // Tallenna historia localStorageen
   function saveHistory() {
     localStorage.setItem("calculatorHistory", JSON.stringify(history));
   }
-  // Render history to the UI
+  // Piirrä historia käyttöliittymään
   function renderHistory() {
-    historyUl.innerHTML = ""; // Clear previous history
+    historyUl.innerHTML = ""; // Tyhjennä aikaisempi historia
     history.forEach((item) => {
       const li = document.createElement("li");
-      li.textContent = item; // Display each history item
+      li.textContent = item; // Näytä jokainen historian merkintä
       historyUl.appendChild(li);
     });
   }
-  // Append number to the display
+  // Lisää numero näyttöön
   function appendNumber(number) {
-    currentInput += number; // Add number to the current input
-    display.value = currentInput; // Update the display
+    currentInput += number; // Lisää numero nykyiseen syötteeseen
+    display.value = currentInput; // Päivitä näyttö
   }
-  // Append operator to the display
+  // Lisää operaattori näyttöön
   function appendOperator(operator) {
-    if (currentInput === "" && operator !== "-") return; // Prevent adding operator if input is empty
-    currentInput += ` ${operator} `; // Add operator with spaces
-    display.value = currentInput; // Update the display
+    if (currentInput === "" && operator !== "-") return; // Estä operaattorin lisääminen, jos syöte on tyhjä
+    currentInput += ` ${operator} `; // Lisää operaattori väleillä
+    display.value = currentInput; // Päivitä näyttö
   }
-  // Append decimal dot
+  // Lisää desimaalipiste
   function appendDot() {
-    if (currentInput.includes(".")) return; // Prevent multiple dots
-    currentInput += "."; // Add dot to input
-    display.value = currentInput; // Update the display
+    if (currentInput.includes(".")) return; // Estä useiden pisteiden lisääminen
+    currentInput += "."; // Lisää piste syötteeseen
+    display.value = currentInput; // Päivitä näyttö
   }
-  // Clear the display
+  // Tyhjennä näyttö
   function clearDisplay() {
-    currentInput = ""; // Reset current input
-    display.value = currentInput; // Clear the display
+    currentInput = ""; // Nollaa nykyinen syöte
+    display.value = currentInput; // Tyhjennä näyttö
   }
-  // Perform calculation
+  // Suorita laskutoimitus
   function calculate() {
     try {
-      const result = eval(currentInput); // Evaluate the expression
-      history.push(`${currentInput} = ${result}`); // Add to history
-      if (history.length > 10) history.shift(); // Keep last 10 history items
-      currentInput = result.toString(); // Update the current input with the result
-      display.value = currentInput; // Show result on the display
-      saveHistory(); // Save the history
-      renderHistory(); // Update history display
+      const result = eval(currentInput); // Arvioi lauseke
+      history.push(`${currentInput} = ${result}`); // Lisää historiaan
+      if (history.length > 10) history.shift(); // Säilytä vain viimeiset 10 historiatietoa
+      currentInput = result.toString(); // Päivitä nykyinen syöte tuloksella
+      display.value = currentInput; // Näytä tulos näytössä
+      saveHistory(); // Tallenna historia
+      renderHistory(); // Päivitä historian näyttö
     } catch {
-      display.value = "Error"; // Show error if calculation fails
-      currentInput = ""; // Reset input
+      display.value = "Virhe"; // Näytä virheilmoitus, jos laskutoimitus epäonnistuu
+      currentInput = ""; // Nollaa syöte
     }
   }
-  // Render the saved history when the page loads
+  // Piirrä tallennettu historia, kun sivu latautuu
   renderHistory();
-  // Event delegation for buttons
+  // Tapahtumien delegointi painikkeille
   document.querySelectorAll(".calculator button").forEach((button) => {
     button.addEventListener("click", (e) => {
       const value = e.target.getAttribute("data-value");
@@ -69,8 +69,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-  // Clear button event
+  // Tyhjennysnapin tapahtuma
   document.getElementById("clear").addEventListener("click", clearDisplay);
-  // Equals button event for calculation
+  // Yhtä kuin -napin tapahtuma laskutoimitukselle
   document.getElementById("equals").addEventListener("click", calculate);
 });

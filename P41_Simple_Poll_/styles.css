@@ -1,61 +1,56 @@
-/* General styling for the body */
+/* Yleinen tyylittely keholle */
 body {
-  font-family: Arial, sans-serif; /* Sets the font for the entire page */
-  background: linear-gradient(
-    135deg,
-    #74ebd5,
-    #acb6e5
-  ); /* Gradient
-background */
+  font-family: Arial, sans-serif; /* Asettaa fontin koko sivulle */
+  background: linear-gradient(135deg, #74ebd5, #acb6e5); /* Gradient-tausta */
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Ensures full height of the viewport is used */
+  height: 100vh; /* Varmistaa, että näkymän koko korkeus käytetään */
   margin: 0;
 }
-/* Container for the poll */
+/* Kyselyn sisältävä kontti */
 .container {
-  background: white; /* White background for readability */
+  background: white; /* Valkoinen tausta luettavuuden vuoksi */
   padding: 20px;
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  width: 300px; /* Fixed width for consistency */
-  text-align: center; /* Center align text inside the container */
+  border-radius: 8px; /* Pyöristetyt kulmat */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Hienovarainen varjo syvyyden luomiseksi */
+  width: 300px; /* Kiinteä leveys yhtenäisyyden vuoksi */
+  text-align: center; /* Keskittää tekstin kontin sisällä */
 }
-/* Heading styles */
+/* Otsikoiden tyylit */
 h1 {
-  margin-bottom: 20px; /* Spacing below the heading */
+  margin-bottom: 20px; /* Väli otsikon ja seuraavan elementin välillä */
 }
-/* Input, button, and select styles */
+/* Syöte-, nappi- ja valintaelementtien tyylit */
 input,
 button {
   padding: 10px;
   margin-bottom: 10px;
-  width: calc(100% - 22px); /* Full width with some margin */
-  border: 1px solid #ccc; /* Light border */
-  border-radius: 4px; /* Rounded corners */
+  width: calc(100% - 22px); /* Täysi leveys pienellä marginaalilla */
+  border: 1px solid #ccc; /* Kevyt reunus */
+  border-radius: 4px; /* Pyöristetyt kulmat */
 }
-/* General button styles */
+/* Yleinen napin tyyli */
 button {
-  background-color: #007bff; /* Button background color */
-  color: white; /* Button text color */
-  cursor: pointer; /* Shows pointer on hover */
+  background-color: #007bff; /* Napin taustaväri */
+  color: white; /* Napin tekstin väri */
+  cursor: pointer; /* Näyttää osoittimen hoverilla */
   border: none;
 }
-/* Button hover effect */
+/* Napin hover-efekti */
 button:hover {
-  background-color: #0056b3; /* Darker blue on hover */
+  background-color: #0056b3; /* Tummempi sininen hoverilla */
 }
-/* Layout for poll options */
+/* Kyselyvaihtoehtojen asettelu */
 .poll-option {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px; /* Spacing between options */
+  margin-bottom: 10px; /* Väli vaihtoehtojen välillä */
 }
-/* Styling for poll results display */
+/* Kyselyn tulosten näyttämisen tyylit */
 .result {
   background-color: #f8f8f8;
   padding: 5px 10px;
-  border-radius: 4px; /* Rounded corners for result display */
+  border-radius: 4px; /* Pyöristetyt kulmat tuloksen näyttämiseen */
 }

@@ -4,21 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Grocery List</title>
-    <!-- Link to external CSS file -->
+    <!-- Linkki ulkoiseen CSS-tiedostoon -->
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- Main container for the grocery list -->
+    <!-- Päätason säilö ostoslistalle -->
     <div class="container">
       <h1>Grocery List</h1>
-      <!-- Input field for entering new grocery items -->
-      <input type="text" id="item-input" placeholder="Add a new item... " 🥕 />
-      <!-- Button to add the item to the list -->
-      <button id="add-item-button">Add Item</button>
-      <!-- Unordered list to display grocery items -->
+      <!-- Syötekenttä uuden ostoslistan kohteen lisäämistä varten -->
+      <input
+        type="text"
+        id="item-input"
+        placeholder="Lisää uusi kohde... "
+        🥕
+      />
+      <!-- Painike, jolla lisätään kohde listaan -->
+      <button id="add-item-button">Lisää kohde</button>
+      <!-- Järjestämätön lista ostoslistan kohteiden näyttämiseen -->
       <ul id="item-list"></ul>
     </div>
-    <!-- Link to external JavaScript file -->
+    <!-- Linkki ulkoiseen JavaScript-tiedostoon -->
     <script src="app.js"></script>
   </body>
 </html>

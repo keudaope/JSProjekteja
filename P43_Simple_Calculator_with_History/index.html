@@ -3,18 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simple Calculator with History</title>
-    <!-- Link to external CSS file for styling -->
+    <title>Yksinkertainen laskin, jossa on historia</title>
+    <!-- Linkki ulkoiseen CSS-tiedostoon tyylittelyä varten -->
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- Main container for the calculator app -->
+    <!-- Laskinsovelluksen pääkontaineri -->
     <div class="container">
-      <h1>Calculator</h1>
-      <!-- Calculator display and buttons -->
+      <h1>Laskin</h1>
+      <!-- Laskimen näyttö ja painikkeet -->
       <div class="calculator">
         <input type="text" id="display" disabled />
-        <!-- Numeric and operator buttons -->
+        <!-- Numero- ja operaattoripainikkeet -->
         <button data-value="7">7</button>
         <button data-value="8">8</button>
         <button data-value="9">9</button>
@@ -33,13 +33,13 @@
         <button data-value="+">+</button>
         <button id="equals" style="grid-column: span 4">=</button>
       </div>
-      <!-- Section for the calculation history -->
+      <!-- Laskutoimitusten historian osio -->
       <div class="history">
-        <h2>History</h2>
+        <h2>Historia</h2>
         <ul id="history"></ul>
       </div>
     </div>
-    <!-- Link to external JS file for functionality -->
+    <!-- Linkki ulkoiseen JS-tiedostoon toiminnallisuutta varten -->
     <script src="app.js"></script>
   </body>
 </html>
