@@ -1,5 +1,9 @@
 # Nettisivu: https://keudaope.github.io/JSProjekteja/P04_Note-Taking_App
 
+# Johdanto
+
+Muistiinpanosovellus on hyödyllinen työkalu, jonka avulla käyttäjät voivat luoda, muokata ja poistaa muistiinpanoja. Tämä projekti auttaa aloittelijoita harjoittelemaan JavaScriptiä, HTML:ää ja CSS:ää, ja se esittelee käsitteitä, kuten CRUD-toiminnot (Luo, Lue, Päivitä, Poista), paikallinen tallennus ja DOM-manipulointi.
+
 # HTML Selitys
 
 1. &lt;!DOCTYPE html>
