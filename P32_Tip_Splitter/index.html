@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tip Splitter</title>
     <link
-      href="https://fonts.googleapis.com/css2?
-family=Roboto:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -14,31 +13,28 @@ family=Roboto:wght@400;500&display=swap"
   <body>
     <div class="container">
       <h1>Tip Splitter</h1>
-      <!-- Input fields for bill amount, tip percentage, and number of people
--->
+      <!-- Syötekentät laskun summalle, tipin prosenttiosuudelle ja henkilöiden lukumäärälle -->
       <input
         type="number"
         id="bill-amount"
-        placeholder="Enter bill amount"
+        placeholder="Anna laskun summa"
         step="0.01"
       />
       <input
         type="number"
         id="tip-percentage"
-        placeholder="Enter tip
-percentage"
+        placeholder="Anna tipin prosenttiosuus"
         step="1"
       />
       <input
         type="number"
         id="number-of-people"
-        placeholder="Enter number of
-people"
+        placeholder="Anna henkilöiden lukumäärä"
         step="1"
       />
-      <!-- Button to calculate the split -->
-      <button id="calculate-button">Calculate</button>
-      <!-- Result display area -->
+      <!-- Painike laskun jaon laskemista varten -->
+      <button id="calculate-button">Laske</button>
+      <!-- Alue, johon tulos näytetään -->
       <div class="result" id="result"></div>
     </div>
     <script src="app.js"></script>

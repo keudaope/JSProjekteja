@@ -1,54 +1,55 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const getWeatherButton = document.getElementById("get-weather-button"); //Select button element
-  const weatherInfoDiv = document.getElementById("weather-info"); // Select div for displaying weather info
-  const apiKey = "6ddc93fbc7d0c4a2941a17cf6dbbba37"; // Replace with your OpenWeatherMap API key
-  // Add click event listener to the button
+  const getWeatherButton = document.getElementById("get-weather-button"); // Valitse painike-elementti
+  const weatherInfoDiv = document.getElementById("weather-info"); // Valitse div, jossa näytetään sääinfo
+  const apiKey = "6ddc93fbc7d0c4a2941a17cf6dbbba37"; // Korvaa omalla OpenWeatherMap API-avaimellasi
+  // Lisää klikkaustapahtuman kuuntelija painikkeeseen
   getWeatherButton.addEventListener("click", getWeather);
+
   /**
-   * Function to get the weather based on user's location.
+   * Funktio, joka hakee sään käyttäjän sijainnin perusteella.
    */
   function getWeather() {
-    // Check if the browser supports geolocation
+    // Tarkista, tukeeko selain geosijainnin hakua
     if (navigator.geolocation) {
-      // Use geolocation to get the user's coordinates
+      // Käytä geosijaintia saadaksesi käyttäjän koordinaatit
       navigator.geolocation.getCurrentPosition(
         (position) => {
-          const lat = position.coords.latitude; // Get latitude
-          const lon = position.coords.longitude; // Get longitude
-          // Fetch weather data from OpenWeather API using latitude and longitude
+          const lat = position.coords.latitude; // Hae leveysaste
+          const lon = position.coords.longitude; // Hae pituusaste
+          // Hae säädata OpenWeather API:sta käyttäen leveys- ja pituusastetta
           fetch(
             `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`
           )
-            .then((response) => response.json()) // Convert response to JSON
+            .then((response) => response.json()) // Muunna vastaus JSON-muotoon
             .then((data) => {
-              displayWeather(data); // Call function to display weather data
+              displayWeather(data); // Kutsu funktiota, joka näyttää säädatan
             })
             .catch((error) => {
-              console.error("Error fetching weather data:", error);
+              console.error("Virhe säädatan haussa:", error);
               weatherInfoDiv.textContent =
-                "Error fetching weather data. Please try again later.";
+                "Virhe säädatan haussa. Yritä myöhemmin uudelleen.";
             });
         },
         (error) => {
-          console.error("Geolocation error:", error); // Log any geolocation errors
+          console.error("Geosijainnin virhe:", error); // Tulosta mahdolliset geosijaintivirheet
           weatherInfoDiv.textContent =
-            "Unable to retrieve your location. Please try again."; // Display error message
+            "Sijaintiasi ei voitu hakea. Yritä uudelleen."; // Näytä virheilmoitus
         }
       );
     } else {
-      weatherInfoDiv.textContent =
-        "Geolocation is not supported by your browser."; // Handle cases where geolocation is unsupported
+      weatherInfoDiv.textContent = "Selaimesi ei tue geosijainnin hakua."; // Käsittele tapaukset, joissa geosijainnin haku ei ole tuettu
     }
   }
+
   /**
-   * Function to display the weather data in the weatherInfoDiv.
-   * @param {Object} data - Weather data from the API.
+   * Funktio, joka näyttää säädatan weatherInfoDiv:issä.
+   * @param {Object} data - API:sta saatu säädata.
    */
   function displayWeather(data) {
     weatherInfoDiv.innerHTML = `
- <h2>${data.name}</h2> <!-- Display the city name -->
- <p>Temperature: ${data.main.temp}°C</p> <!-- Display the temperature -->
- <p>Weather: ${data.weather[0].description}</p> <!-- Display the weather description -->
- `;
+    <h2>${data.name}</h2> <!-- Näytä kaupungin nimi -->
+    <p>Lämpötila: ${data.main.temp}°C</p> <!-- Näytä lämpötila -->
+    <p>Säätila: ${data.weather[0].description}</p> <!-- Näytä sääkuvaus -->
+    `;
   }
 });

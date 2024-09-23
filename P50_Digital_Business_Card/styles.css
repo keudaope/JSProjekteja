@@ -1,63 +1,65 @@
-/* Apply global styling to ensure a clean and modern appearance */
+/* Sovelletaan yleisiä tyylejä selkeän ja modernin ulkoasun varmistamiseksi */
 body {
-  font-family: Arial, sans-serif; /* Readable, modern font */
-  background-color: #f0f0f0; /* Neutral background color */
+  font-family: Arial, sans-serif; /* Luettava ja moderni fontti */
+  background-color: #f0f0f0; /* Neutraali taustaväri */
   display: flex;
-  justify-content: center; /* Horizontally center the content */
-  align-items: center; /* Vertically center the content */
-  height: 100vh; /* Full viewport height */
+  justify-content: center; /* Sisällön keskitys vaakasuunnassa */
+  align-items: center; /* Sisällön keskitys pystysuunnassa */
+  height: 100vh; /* Käytetään koko näkymän korkeutta */
   margin: 0;
 }
-/* Container that holds the entire app content */
+/* Kontti, joka sisältää koko sovelluksen sisällön */
 .container {
-  background: white; /* Clean white background for contrast */
+  background: white; /* Selkeä valkoinen tausta kontrastia varten */
   padding: 20px;
-  border-radius: 8px; /* Rounded corners for a modern look */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  width: 300px; /* Fixed width for consistency */
+  border-radius: 8px; /* Pyöristetyt kulmat modernia ilmettä varten */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Hieno varjo syvyyden lisäämiseksi */
+  width: 300px; /* Kiinteä leveys yhtenäisyyden takaamiseksi */
   text-align: center;
 }
-/* Styling for the title */
+/* Otsikon tyylittely */
 h1 {
   margin-bottom: 20px;
 }
-/* Styling for input fields */
+/* Syöttökenttien tyylittely */
 input[type="text"],
 input[type="email"],
 input[type="tel"] {
   padding: 10px;
   margin-bottom: 10px;
-  width: calc(100% - 22px); /* Ensures inputs take up most of the container */
-  border: 1px solid #ccc; /* Light border */
-  border-radius: 4px; /* Rounded corners */
+  width: calc(
+    100% - 22px
+  ); /* Varmistetaan, että syöttökentät vievät suurimman osan kontista */
+  border: 1px solid #ccc; /* Kevyt reunus */
+  border-radius: 4px; /* Pyöristetyt kulmat */
 }
-/* Styling for the "Generate Card" button */
+/* "Generate Card" -painikkeen tyylittely */
 button {
   padding: 10px 20px;
   border: none;
-  background-color: #007bff; /* Primary blue color */
+  background-color: #007bff; /* Ensisijainen sininen väri */
   color: white;
-  border-radius: 4px; /* Rounded corners for a modern button */
+  border-radius: 4px; /* Pyöristetyt kulmat modernia painiketta varten */
   cursor: pointer;
 }
-/* Hover effect for the button */
+/* Painikkeen hover-efekti */
 button:hover {
-  background-color: #0056b3; /* Darker shade on hover for interactivity */
+  background-color: #0056b3; /* Tummempi sävy hover-tilassa vuorovaikutteisuuden parantamiseksi */
 }
-/* Styling for the generated business card */
+/* Tyylit generoituvalle käyntikortille */
 .business-card {
   margin-top: 20px;
   padding: 20px;
-  border: 1px solid #ccc; /* Border to define the card */
-  border-radius: 8px; /* Rounded corners */
+  border: 1px solid #ccc; /* Reuna kortin määrittämiseksi */
+  border-radius: 8px; /* Pyöristetyt kulmat */
   text-align: left;
-  display: none; /* Initially hidden until the card is generated */
+  display: none; /* Aluksi piilotettu, kunnes kortti generoidaan */
 }
-/* Styling for the business card name (larger, bold text) */
+/* Käyntikortin nimen tyylit (isompi, lihavoitu teksti) */
 .business-card h2 {
   margin: 0;
 }
-/* General styling for text within the business card */
+/* Yleiset tyylit käyntikortin sisällä olevalle tekstille */
 .business-card p {
   margin: 5px 0;
 }

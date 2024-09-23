@@ -1,0 +1,81 @@
+/* Sovelletaan globaalisti kehon tyyliä */
+body {
+  font-family: Arial, sans-serif; /* Luettava ja moderni fontti */
+  background-color: #f0f0f0; /* Pehmeän harmaa tausta */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin: 0;
+}
+/* Sovelluksen pääsäiliön tyyli */
+.container {
+  background: white;
+  padding: 20px;
+  border-radius: 8px; /* Pyöristetyt kulmat modernin ulkoasun saavuttamiseksi */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Hieno varjo syvyyden antamiseksi */
+  text-align: center;
+  width: 400px;
+  max-width: 100%;
+}
+/* Otsikon tyyli */
+h1 {
+  margin-bottom: 20px;
+}
+/* Syötekentän tyyli */
+input[type="text"] {
+  padding: 10px;
+  margin-bottom: 10px;
+  width: calc(100% - 22px); /* Täysi leveys, jossa huomioitu padding */
+  border: 1px solid #ccc;
+  border-radius: 4px; /* Hieman pyöristetyt kulmat */
+}
+/* Nappien tyyli */
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff; /* Kirkkaan sininen nappi */
+  color: white;
+  border-radius: 4px; /* Pyöristetyt kulmat */
+  cursor: pointer; /* Osoitin muuttuu klikkauksen ilmaisemiseksi */
+}
+/* Napin hover-efekti */
+button:hover {
+  background-color: #0056b3; /* Tummempi sininen hover-tilassa */
+}
+/* Säiliö tapojen listaa varten */
+.habits {
+  margin-top: 20px;
+  text-align: left; /* Tavat vasemmalle tasattuina */
+}
+/* Yksittäisen tavan tyyli */
+.habit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+/* Tavan nimen tyyli */
+.habit-name {
+  flex-grow: 1; /* Antaa nimen täyttää saatavilla olevan tilan */
+}
+/* Päivien säiliön tyyli */
+.days {
+  display: flex;
+  gap: 5px; /* Pieni väli päivien ympyröiden välillä */
+}
+/* Jokaisen päivän ympyrän tyyli */
+.day {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%; /* Tekee päiväelementistä pyöreän */
+  background-color: #e0e0e0; /* Oletuksena harmaa väri */
+  cursor: pointer; /* Osoitin muuttuu interaktiivisuuden ilmaisemiseksi */
+}
+/* Päivän tyyli, kun se on merkitty valmiiksi */
+.day.completed {
+  background-color: #007bff; /* Sininen väri valmiille päiville */
+}

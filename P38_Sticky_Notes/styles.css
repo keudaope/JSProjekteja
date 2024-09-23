@@ -1,4 +1,4 @@
-/* Style for the body of the page */
+/* Sivun rungon tyyli */
 body {
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #74ebd5, #acb6e5);
@@ -8,18 +8,18 @@ body {
   padding: 20px;
   margin: 0;
 }
-/* Center the content */
+/* Keskitetään sisältö */
 .container {
   text-align: center;
 }
-/* Layout for the notes container */
+/* Muistiinpanokontin asettelu */
 .notes-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 20px;
 }
-/* Style for each individual sticky note */
+/* Yksittäisen muistilapun tyyli */
 .note {
   background-color: #ffeb3b;
   border: 1px solid #ccc;
@@ -30,7 +30,7 @@ body {
   margin: 10px;
   position: relative;
 }
-/* Style for the textarea inside the note */
+/* Muistilapun sisällä olevan tekstialueen tyyli */
 .note textarea {
   width: 100%;
   height: 100%;
@@ -39,7 +39,7 @@ body {
   background: transparent;
   font-family: Arial, sans-serif;
 }
-/* Style for the delete button on each note */
+/* Muistilapussa olevan poistopainikkeen tyyli */
 .note button {
   position: absolute;
   top: 5px;
@@ -50,11 +50,11 @@ body {
   border-radius: 4px;
   cursor: pointer;
 }
-/* Hover effect for the delete button */
+/* Poistopainikkeen hover-efekti */
 .note button:hover {
   background-color: #d32f2f;
 }
-/* Style for the 'Add Note' button */
+/* 'Lisää muistilappu' -painikkeen tyyli */
 button#add-note-button {
   padding: 10px 20px;
   margin-top: 20px;
@@ -64,7 +64,7 @@ button#add-note-button {
   border-radius: 4px;
   cursor: pointer;
 }
-/* Hover effect for the 'Add Note' button */
+/* 'Lisää muistilappu' -painikkeen hover-efekti */
 button#add-note-button:hover {
   background-color: #0056b3;
 }

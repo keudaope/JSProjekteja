@@ -1,40 +1,40 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Select all the images inside the slider container
+  // Valitaan kaikki kuvat slider-konteinerin sisältä
   const images = document.querySelectorAll(".slider img");
 
-  // Select the navigation buttons
+  // Valitaan navigointipainikkeet
   const prevButton = document.getElementById("prev");
   const nextButton = document.getElementById("next");
-  // Variable to keep track of the current active image index
+  // Muuttuja, joka pitää kirjaa nykyisestä aktiivisesta kuvan indeksistä
   let currentIndex = 0;
-  // Function to display the image based on the index
+  // Funktio, joka näyttää kuvan indeksin perusteella
   function showImage(index) {
-    // Loop through all images
+    // Käydään kaikki kuvat läpi
     images.forEach((img, i) => {
-      // Remove the 'active' class from all images
+      // Poistetaan 'active'-luokka kaikista kuvista
       img.classList.remove("active");
 
-      // Add the 'active' class only to the image that matches the current index
+      // Lisätään 'active'-luokka vain kuvalle, joka vastaa nykyistä indeksiä
       if (i === index) {
         img.classList.add("active");
       }
     });
   }
-  // Function to display the next image in the sequence
+  // Funktio näyttää seuraavan kuvan sarjassa
   function showNextImage() {
-    // Increment the current index and loop back to the first image if it exceeds the last index
+    // Kasvatetaan nykyistä indeksiä ja palataan ensimmäiseen kuvaan, jos indeksi ylittää viimeisen kuvan indeksin
     currentIndex = (currentIndex + 1) % images.length;
-    showImage(currentIndex); // Call the showImage function to update the display
+    showImage(currentIndex); // Kutsutaan showImage-funktiota päivittämään näkymä
   }
-  // Function to display the previous image in the sequence
+  // Funktio näyttää edellisen kuvan sarjassa
   function showPrevImage() {
-    // Decrement the current index and loop back to the last image if it goes below 0
+    // Vähennetään nykyistä indeksiä ja palataan viimeiseen kuvaan, jos indeksi menee alle nollan
     currentIndex = (currentIndex - 1 + images.length) % images.length;
-    showImage(currentIndex); // Call the showImage function to update the display
+    showImage(currentIndex); // Kutsutaan showImage-funktiota päivittämään näkymä
   }
-  // Add event listeners to the navigation buttons
-  prevButton.addEventListener("click", showPrevImage); // Show the previous image when the "Previous" button is clicked
-  nextButton.addEventListener("click", showNextImage); // Show the next image when the "Next" button is clicked
-  // Initial display of the first image
-  showImage(currentIndex); // Display the first image by default when the page loads
+  // Lisätään tapahtumakuuntelijat navigointipainikkeisiin
+  prevButton.addEventListener("click", showPrevImage); // Näytetään edellinen kuva, kun "Edellinen" painiketta klikataan
+  nextButton.addEventListener("click", showNextImage); // Näytetään seuraava kuva, kun "Seuraava" painiketta klikataan
+  // Näytetään aluksi ensimmäinen kuva
+  showImage(currentIndex); // Näytetään oletuksena ensimmäinen kuva, kun sivu latautuu
 });

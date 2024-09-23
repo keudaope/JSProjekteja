@@ -1,34 +1,34 @@
-// Wait until the DOM is fully loaded before running the script
+// Odota, kunnes DOM on täysin ladattu, ennen kuin suoritat skriptin
 document.addEventListener("DOMContentLoaded", () => {
-  // Select DOM elements for easy access
-  const form = document.getElementById("bmi-form"); // The form for submitting height and weight
-  const heightInput = document.getElementById("height"); // Input field for height
-  const weightInput = document.getElementById("weight"); // Input field for weight
-  const resultDiv = document.getElementById("result"); // Div to display the result
-  // Event listener for form submission
+  // Valitaan DOM-elementit helppoa käyttöä varten
+  const form = document.getElementById("bmi-form"); // Lomake pituuden ja painon syöttämistä varten
+  const heightInput = document.getElementById("height"); // Syöttökenttä pituudelle
+  const weightInput = document.getElementById("weight"); // Syöttökenttä painolle
+  const resultDiv = document.getElementById("result"); // Div, johon tulos näytetään
+  // Lomakkeen lähettämisen tapahtumankuuntelija
   form.addEventListener("submit", (event) => {
-    event.preventDefault(); // Prevent form from submitting and refreshing the page
-    // Get the input values and convert them into usable numbers
-    const height = parseFloat(heightInput.value) / 100; // Convert height from cm to meters
-    const weight = parseFloat(weightInput.value); // Weight is already in kilograms
-    // Validate the inputs to ensure they're positive numbers
+    event.preventDefault(); // Estetään lomakkeen lähettäminen ja sivun uudelleenlataus
+    // Haetaan syötetyt arvot ja muunnetaan ne käytettävään numeeriseen muotoon
+    const height = parseFloat(heightInput.value) / 100; // Muunnetaan pituus senttimetreistä metreiksi
+    const weight = parseFloat(weightInput.value); // Paino on jo kilogrammoissa
+    // Tarkistetaan, että syötteet ovat positiivisia lukuja
     if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
-      // Display an error message if the inputs are invalid
-      resultDiv.textContent = " Please enter valid height and weight values.";
-      return; // Stop further execution if validation fails
+      // Näytetään virheilmoitus, jos syötteet ovat virheellisiä
+      resultDiv.textContent = " Anna oikeat pituus- ja painoarvot.";
+      return; // Lopetetaan suoritus, jos syötteet eivät ole kelvollisia
     }
-    // Calculate the BMI (weight divided by the square of the height)
-    const bmi = (weight / (height * height)).toFixed(2); // Fixed to 2 decimal places for better readability
-    resultDiv.innerHTML = `Your BMI is ${bmi}. `; // Display the BMI result
-    // Provide feedback based on the BMI value
+    // Lasketaan BMI (paino jaettuna pituuden neliöllä)
+    const bmi = (weight / (height * height)).toFixed(2); // Pyöristetään kahteen desimaaliin luettavuuden parantamiseksi
+    resultDiv.innerHTML = `BMI-arvosi on ${bmi}. `; // Näytetään BMI-tulos
+    // Annetaan palaute BMI-arvon perusteella
     if (bmi < 18.5) {
-      resultDiv.innerHTML += "You are underweight. "; // Underweight category with emoji
+      resultDiv.innerHTML += "Olet alipainoinen."; // Alipaino-kategoria
     } else if (bmi < 24.9) {
-      resultDiv.innerHTML += "You have a normal weight. "; // Normal weight category with emoji
+      resultDiv.innerHTML += "Painosi on normaali."; // Normaali paino -kategoria
     } else if (bmi < 29.9) {
-      resultDiv.innerHTML += "You are overweight. "; // Overweight category with emoji
+      resultDiv.innerHTML += "Olet ylipainoinen."; // Ylipaino-kategoria
     } else {
-      resultDiv.innerHTML += "You are obese. "; // Obese category with emoji
+      resultDiv.innerHTML += "Olet lihava."; // Lihavuus-kategoria
     }
   });
 });

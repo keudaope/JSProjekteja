@@ -1,95 +1,99 @@
-/* Global reset for consistent margins, paddings, and box-sizing */
+/* Yleinen nollaus yhdenmukaisten marginaalien, täytteiden ja laatikkokoon saavuttamiseksi */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-/* Body styling for overall layout */
+/* Kehon (body) tyylit yleiseen asetteluun */
 body {
   font-family: "Arial", sans-serif;
-  background: linear-gradient(135deg, #74ebd5, #acb6e5);
+  background: linear-gradient(
+    135deg,
+    #74ebd5,
+    #acb6e5
+  ); /* Taustalle moderni gradient */
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  justify-content: center; /* Sisällön keskittäminen vaakasuunnassa */
+  align-items: center; /* Sisällön keskittäminen pystysuunnassa */
+  height: 100vh; /* Täysi näkymäkorkeus */
   margin: 0;
 }
-/* Main container for the stopwatch */
+/* Päätason container ajanottimelle */
 .container {
-  background-color: #fff;
-  padding: 40px 30px;
-  border-radius: 12px;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  background-color: #fff; /* Valkoinen tausta */
+  padding: 40px 30px; /* Mukavat täytteet */
+  border-radius: 12px; /* Pyöristetyt kulmat */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Varjo syvyyden luomiseksi */
   text-align: center;
   max-width: 350px;
   width: 100%;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease; /* Pehmeä hover-efekti */
 }
-/* Hover effect for container */
+/* Hover-efekti containerille */
 .container:hover {
-  transform: scale(1.05);
+  transform: scale(1.05); /* Pieni suurennus interaktiivisuuden lisäämiseksi */
 }
-/* Heading styling */
+/* Otsikon tyyli */
 h1 {
   font-size: 2.5em;
-  color: #333;
+  color: #333; /* Tumma väri paremman kontrastin saavuttamiseksi */
   margin-bottom: 20px;
 }
-/* Timer display styling */
+/* Ajastimen näyttö */
 .timer {
   font-size: 3em;
   font-weight: bold;
-  color: #007bff;
+  color: #007bff; /* Sininen väri ajastimelle */
   margin-bottom: 20px;
-  letter-spacing: 2px;
+  letter-spacing: 2px; /* Kirjainväli lisää selkeyttä */
 }
-/* Buttons container */
+/* Painikkeiden säiliö */
 .buttons {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Tilanjako painikkeiden välille */
   margin-top: 20px;
 }
-/* General button styling */
+/* Yleiset painikkeiden tyylit */
 .btn {
   padding: 10px 20px;
   border: none;
-  border-radius: 8px;
+  border-radius: 8px; /* Pyöristetyt kulmat painikkeille */
   font-size: 1.1em;
   cursor: pointer;
-  flex: 1;
-  margin: 0 5px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  flex: 1; /* Painikkeet vievät yhtä paljon tilaa */
+  margin: 0 5px; /* Vähän tilaa painikkeiden väliin */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Pehmeät siirtymät */
 }
-/* Start button styling */
+/* Käynnistyspainikkeen tyylit */
 .start {
-  background-color: #28a745;
+  background-color: #28a745; /* Vihreä tausta */
   color: white;
 }
 .start:hover {
-  background-color: #218838;
+  background-color: #218838; /* Tummempi vihreä hover-tilassa */
 }
 .start:active {
-  background-color: #1e7e34;
+  background-color: #1e7e34; /* Vielä tummempi vihreä painettuna */
 }
-/* Stop button styling */
+/* Pysäytyspainikkeen tyylit */
 .stop {
-  background-color: #ffc107;
+  background-color: #ffc107; /* Keltainen tausta */
   color: white;
 }
 .stop:hover {
-  background-color: #e0a800;
+  background-color: #e0a800; /* Tummempi keltainen hover-tilassa */
 }
 .stop:active {
-  background-color: #d39e00;
+  background-color: #d39e00; /* Vielä tummempi keltainen painettuna */
 }
-/* Reset button styling */
+/* Nollauspainikkeen tyylit */
 .reset {
-  background-color: #dc3545;
+  background-color: #dc3545; /* Punainen tausta */
   color: white;
 }
 .reset:hover {
-  background-color: #c82333;
+  background-color: #c82333; /* Tummempi punainen hover-tilassa */
 }
 .reset:active {
-  background-color: #bd2130;
+  background-color: #bd2130; /* Vielä tummempi punainen painettuna */
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Nollataan marginaalit ja täytteet kaikilta elementeiltä */
 * {
     box-sizing: border-box;
@@ -122,4 +123,134 @@ button:hover {
     to {
         opacity: 1;
     }
+=======
+/* Nollataan kaikkien elementtien marginaalit ja täytteet */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* Tyylitellään body Flexboxilla ja keskitetään sisältö */
+body {
+  font-family: "Poppins", sans-serif; /* Moderni, selkeä fontti */
+  background: linear-gradient(
+    135deg,
+    #74ebd5,
+    #acb6e5
+  ); /* Gradienttitausta, joka näyttää visuaalisesti houkuttelevalta */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Kohdistetaan sisällöt sivun yläreunaan */
+  height: 100vh;
+  overflow-y: auto; /* Salli pystysuuntainen vieritys, jos sisältö ylittää näkymäalueen */
+  margin: 0;
+  padding: 20px; /* Lisätään täytettä reunoille, jotta sisältö ei ole kiinni näytön reunoissa */
+}
+/* Tyylitellään pääsäilö */
+.container {
+  background-color: white; /* Valkoinen tausta kontrastia varten */
+  padding: 30px;
+  border-radius: 15px; /* Pyöristetyt kulmat modernia ulkoasua varten */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Varjo luo syvyyttä */
+  width: 100%;
+  max-width: 500px; /* Säilön maksimileveys */
+  text-align: center; /* Keskitetään teksti sisällä */
+  animation: fadeIn 1s ease-in-out; /* Pehmeä fade-in-efekti näkyviin tulemista varten */
+  margin-top: 20px;
+  margin-bottom: 20px; /* Lisää marginaalia pohjaan, jotta vieritys on sujuvampaa */
+}
+/* Tyylitellään otsikko */
+h1 {
+  font-size: 2em; /* Isompi fonttikoko pääotsikolle */
+  margin-bottom: 20px; /* Tilaa otsikon alapuolelle */
+  color: #333; /* Tummempi väri paremman kontrastin saavuttamiseksi */
+}
+/* Lomakkeen ja syötekentän tyylittely */
+form {
+  display: flex;
+  flex-direction: column; /* Lomakkeen elementit pinotaan pystysuunnassa */
+  align-items: center; /* Keskitetään lomakkeen elementit */
+  margin-bottom: 20px; /* Tilaa lomakkeen ja reseptilistan välille */
+}
+/* Syötekentän tyylittely */
+input[type="text"] {
+  width: 100%; /* Syötekenttä täyttää koko vanhemman säilön leveyden */
+  padding: 12px;
+  margin-bottom: 15px; /* Tilaa syötekentän ja painikkeen väliin */
+  border: 1px solid #ccc; /* Vaaleanharmaa reuna */
+  border-radius: 6px; /* Pyöristetyt kulmat yhtenäisyyden vuoksi */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Kevyt varjo visuaalista syvyyttä varten */
+  transition: border-color 0.3s ease; /* Pehmeä siirtymä, kun kenttä on aktiivinen */
+}
+/* Syötekentän aktiivinen tila */
+input[type="text"]:focus {
+  border-color: #28a745; /* Vihreä reuna, kun kenttä on aktiivinen */
+  outline: none; /* Poistetaan oletuksellinen outline */
+}
+/* Painikkeen tyylittely */
+button {
+  width: 100%; /* Painikkeen leveys vastaa syötekentän leveyttä */
+  padding: 12px 24px;
+  border: none; /* Poistetaan oletusreuna */
+  background-color: #28a745; /* Vihreä tausta positiiviselle toiminnalle */
+  color: white; /* Valkoinen teksti kontrastia varten */
+  border-radius: 6px; /* Pyöristetyt kulmat */
+  cursor: pointer; /* Muutetaan hiiren osoitin osoittimeksi hover-tilassa */
+  transition: background-color 0.3s ease; /* Pehmeä siirtymä hover-efekteihin */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Lisätään varjo, jotta painike erottuu paremmin */
+}
+/* Hover-efekti painikkeelle */
+button:hover {
+  background-color: #218838; /* Tummempi vihreä hover-tilassa */
+}
+/* Reseptisäilön tyylittely */
+.recipes {
+  margin-top: 20px;
+  text-align: left; /* Teksti vasemmalle kohdistettuna paremman luettavuuden vuoksi */
+}
+/* Yksittäisten reseptikorttien tyylittely */
+.recipe {
+  background-color: #fff;
+  margin: 10px 0;
+  padding: 15px; /* Täytettä reseptikortin sisällä */
+  border: 1px solid #ddd; /* Kevyt reuna jokaisen reseptin ympärille */
+  border-radius: 10px; /* Pyöristetyt kulmat modernia ulkoasua varten */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Kevyt varjo syvyyden vuoksi */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Pehmeä hover-efekti */
+}
+/* Hover-efekti reseptikorteille */
+.recipe:hover {
+  transform: translateY(-5px); /* Hieman nostoa hover-tilassa */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Syvempi varjo hover-tilassa */
+}
+/* Reseptin otsikon tyylittely */
+.recipe h3 {
+  margin: 0 0 10px;
+  color: #333;
+  font-size: 1.2em; /* Hieman suurempi fontti reseptien otsikoille */
+}
+/* Reseptin kuvan tyylittely */
+.recipe img {
+  width: 100%; /* Kuva täyttää säilön koko leveyden */
+  border-radius: 10px; /* Pyöristetyt kulmat kortin kanssa yhteneviksi */
+  transition: transform 0.3s ease; /* Pehmeä zoom-efekti hover-tilassa */
+}
+/* Zoom-efekti reseptikuville hover-tilassa */
+.recipe img:hover {
+  transform: scale(1.05); /* Hieman zoomia hover-tilassa */
+}
+/* Reseptitekstin (esim. tiivistelmä) tyylittely */
+.recipe p {
+  margin: 5px 0; /* Tilaa kappaleiden välillä */
+  color: #555; /* Vaaleampi väri toissijaiselle tekstille */
+}
+/* Fade-in animaatio */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+>>>>>>> 475e911a3c77800f46bc3691df0ebc465854a671
 }

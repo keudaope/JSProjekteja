@@ -3,63 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simple Poll</title>
+    <title>Yksinkertainen kysely</title>
     <link rel="stylesheet" href="styles.css" />
-    <!-- Link to external CSS file -->
+    <!-- Linkki ulkoiseen CSS-tiedostoon -->
   </head>
   <body>
     <div class="container">
-      <h1>Simple Poll</h1>
-      <!-- Poll question and options creation form -->
+      <h1>Yksinkertainen kysely</h1>
+      <!-- Kyselyn kysymyksen ja vaihtoehtojen luomisen lomake -->
       <div id="poll-section">
         <input
           type="text"
           id="poll-question"
-          placeholder="Enter poll question"
+          placeholder="Syötä kyselyn kysymys"
         />
         <div id="poll-options">
           <div class="poll-option">
-            <input type="text" class="option-input" placeholder="Option 1" />
+            <input
+              type="text"
+              class="option-input"
+              placeholder="Vaihtoehto 1"
+            />
             <button class="remove-option">X</button>
-            <!-- Button to
-remove option -->
+            <!-- Nappi vaihtoehdon poistamiselle -->
           </div>
           <div class="poll-option">
             <input
               type="text"
               class="option-input"
-              placeholder="Option
-2"
+              placeholder="Vaihtoehto 2"
             />
             <button class="remove-option">X</button>
           </div>
         </div>
-        <button id="add-option">Add Option</button>
-        <!-- Button to add more
-poll options -->
-        <button id="create-poll-button">Create Poll</button>
-        <!-- Button to
-create poll -->
+        <button id="add-option">Lisää vaihtoehto</button>
+        <!-- Nappi uusien vaihtoehtojen lisäämiseen -->
+        <button id="create-poll-button">Luo kysely</button>
+        <!-- Nappi kyselyn luomiseen -->
       </div>
-      <!-- Poll display section for voting -->
+      <!-- Kyselyn näyttöosio äänestämistä varten -->
       <div id="poll-display" style="display: none">
         <h2 id="poll-question-display"></h2>
-        <!-- Display the poll question
--->
+        <!-- Näytä kyselyn kysymys -->
         <div id="poll-options-display"></div>
-        <!-- Display poll options with
-radio buttons -->
-        <button id="vote-button">Vote</button>
-        <!-- Button to submit vote -->
+        <!-- Näytä kyselyn vaihtoehdot radiopainikkeilla -->
+        <button id="vote-button">Äänestä</button>
+        <!-- Nappi äänestyksen lähettämiseen -->
       </div>
-      <!-- Section for displaying poll results -->
+      <!-- Osio kyselyn tulosten näyttämiseen -->
       <div id="poll-results" style="display: none">
-        <h2>Poll Results</h2>
+        <h2>Kyselyn tulokset</h2>
         <div id="poll-results-display"></div>
-        <!-- Display poll results -->
+        <!-- Näytä kyselyn tulokset -->
       </div>
     </div>
     <script src="app.js"></script>
-    <!-- Link to external JavaScript file -->
+    <!-- Linkki ulkoiseen JavaScript-tiedostoon -->
   </body>
 </html>

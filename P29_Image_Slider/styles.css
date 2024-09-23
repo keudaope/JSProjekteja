@@ -1,70 +1,66 @@
-/* Global reset for consistent margins, paddings, and box-sizing */
+/* Yleinen asetus, jolla varmistetaan yhtenäiset marginaalit, täytteet ja laatikkokoko */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-/* Body styling */
+/* Rungon (body) tyyli */
 body {
   font-family: "Arial", sans-serif;
   background: linear-gradient(
     135deg,
     #74ebd5,
     #acb6e5
-  ); /* Gradient
-background */
+  ); /* Liukuvärjätty taustakuva */
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
 }
-/* Main container for the image slider */
+/* Kuvakarusellin pääkontti */
 .container {
   background-color: #fff;
   padding: 20px;
-  border-radius: 12px; /* Rounded corners */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+  border-radius: 12px; /* Pyöristetyt kulmat */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Varjostus syvyyden tuomiseksi */
   width: 600px;
-  position: relative; /* Enables absolute positioning inside */
-  overflow: hidden; /* Ensures only the active image is visible */
-  transition: transform 0.3s ease; /* Smooth scaling effect on hover */
+  position: relative; /* Mahdollistaa absoluuttisen sijainnin sisällä */
+  overflow: hidden; /* Varmistaa, että vain aktiivinen kuva näkyy */
+  transition: transform 0.3s ease; /* Pehmeä suurennusefekti hoverilla */
 }
-/* Hover effect for container */
+/* Hover-efekti kontin päälle */
 .container:hover {
   transform: scale(1.03);
 }
-/* Image styling */
+/* Kuvien tyyli */
 .slider img {
   width: 100%;
   height: auto;
   border-radius: 8px;
-  display: none; /* Hides all images initially */
+  display: none; /* Piilottaa kaikki kuvat aluksi */
   transition: opacity 0.5s ease;
 }
-/* Active image styling */
+/* Aktiivisen kuvan tyyli */
 .slider img.active {
-  display: block; /* Shows only the active image */
+  display: block; /* Näyttää vain aktiivisen kuvan */
   opacity: 1;
 }
-/* Navigation buttons styling */
+/* Navigointipainikkeiden tyyli */
 .navigation {
   position: absolute;
   top: 50%;
-  width: 90%; /* Restrict width of navigation to 90% so that buttons don't
-touch the edges */
+  width: 90%; /* Rajoittaa navigoinnin leveyden 90 %:iin, jotta painikkeet eivät kosketa reunoja */
   left: 50%;
   transform: translate(
     -50%,
     -50%
-  ); /* Centers the navigation both vertically
-and horizontally */
+  ); /* Keskittää navigoinnin sekä vertikaalisesti että horisontaalisesti */
   display: flex;
-  justify-content: space-between; /* Places buttons on opposite sides */
-  pointer-events: none; /* Disables clicks on the container but allows on
-buttons */
+  justify-content: space-between; /* Asettaa painikkeet vastakkaisiin päihin */
+  pointer-events: none; /* Estää klikkaukset konttiin, mutta sallii ne painikkeisiin */
 }
-/* Styling for the individual buttons */
+/* Yksittäisten painikkeiden tyyli */
 .navigation button {
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
@@ -73,22 +69,22 @@ buttons */
   height: 50px;
   border-radius: 50%;
   cursor: pointer;
-  pointer-events: auto; /* Enables click events for the buttons */
+  pointer-events: auto; /* Mahdollistaa klikkaustapahtumat painikkeissa */
   display: flex;
   justify-content: center;
   align-items: center;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  z-index: 10; /* Ensures buttons appear above the images */
+  z-index: 10; /* Varmistaa, että painikkeet näkyvät kuvien päällä */
 }
-/* Adding margins to prevent buttons from being cut off */
+/* Marginaalien lisääminen estää painikkeiden leikkaantumisen */
 .navigation button#prev {
-  margin-left: 10px; /* Moves the "Prev" button away from the left edge */
+  margin-left: 10px; /* Siirtää "Edellinen" -painiketta kauemmas vasemmasta reunasta */
 }
 .navigation button#next {
-  margin-right: 10px; /* Moves the "Next" button away from the right edge */
+  margin-right: 10px; /* Siirtää "Seuraava" -painiketta kauemmas oikeasta reunasta */
 }
-/* Hover effect for buttons */
+/* Hover-efekti painikkeille */
 .navigation button:hover {
   background-color: rgba(0, 0, 0, 0.8);
-  transform: scale(1.1); /* Slightly enlarges the button on hover */
+  transform: scale(1.1); /* Suurentaa painiketta hieman hoverilla */
 }

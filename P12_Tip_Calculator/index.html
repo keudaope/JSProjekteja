@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
 <head>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,4 +35,50 @@
  <!-- Linkki ulkoiseen JavaScript-tiedostoon -->
  <script src="app.js"></script>
 </body>
+=======
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moderni Juomarahalaskin</title>
+    <!-- Linkki ulkoiseen CSS-tiedostoon paremman tyylityksen vuoksi -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Google Font modernia typografiaa varten -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="calculator-container">
+      <!-- Pääotsikko juomarahalaskimelle -->
+      <h1>Juomarahalaskin</h1>
+      <!-- Lomake laskun summan syöttämistä ja tipin prosenttiosuuden valitsemista varten -->
+      <form id="tip-form">
+        <!-- Syöte laskun summalle -->
+        <input
+          type="number"
+          id="bill-amount"
+          placeholder="Syötä laskun summa"
+          required
+        />
+        <!-- Pudotusvalikko tipin prosenttiosuuden valitsemiseksi -->
+        <select id="tip-percentage" required>
+          <option value="" disabled selected>
+            Valitse tipin prosenttiosuus
+          </option>
+          <option value="10">10%</option>
+          <option value="15">15%</option>
+          <option value="20">20%</option>
+          <option value="25">25%</option>
+        </select>
+        <!-- Nappi lomakkeen lähettämistä ja tipin laskemista varten -->
+        <button type="submit">Laske juomaraha</button>
+      </form>
+      <!-- Div laskettavan juomarahatuloksen näyttämistä varten -->
+      <div class="result" id="result"></div>
+    </div>
+    <!-- Linkki ulkoiseen JavaScript-tiedostoon -->
+    <script src="app.js"></script>
+  </body>
+>>>>>>> 475e911a3c77800f46bc3691df0ebc465854a671
 </html>

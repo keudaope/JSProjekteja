@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Yleinen nollaus yhdenmukaisten marginaalien, reunusten ja laatikkokoon asettamiseksi */
 * {
     box-sizing: border-box;
@@ -78,11 +79,114 @@
 /* Fade-in-animaatio sujuvampaa tuloksen näyttämistä varten */
    @keyframes fadeIn {
     from {
+=======
+/* Globaali nollaus yhtenäisten marginaalien, täytteiden ja laatikon koon määrittämiseksi */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body-tyylit: keskittää sisällön ja käyttää liukuvärjättyä taustaa */
+body {
+  font-family: "Roboto", sans-serif; /* Moderni, siisti fontti Google Fontsista */
+  background: linear-gradient(
+    135deg,
+    #74ebd5,
+    #acb6e5
+  ); /* Tyylikäs liukuväritausta */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #333; /* Tumma teksti */
+}
+
+/* Juomarahalaskimen pääkontaineri */
+.calculator-container {
+  background-color: #fff; /* Valkoinen tausta kontainerille */
+  padding: 30px;
+  border-radius: 12px; /* Pyöristetyt kulmat moderniin ilmeeseen */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Pehmeä varjo syvyyttä varten */
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  transition: transform 0.3s ease; /* Sulava siirtymä hover-efektiä varten */
+}
+
+/* Zoom-efekti, kun hiiri viedään kontainerin päälle */
+.calculator-container:hover {
+  transform: scale(1.05); /* Hieno zoom-efekti */
+}
+
+/* Otsikon tyylit */
+h1 {
+  font-size: 2.2em;
+  margin-bottom: 20px;
+  color: #2d3748; /* Tummempi väri paremman kontrastin vuoksi */
+}
+
+/* Syötekenttien ja pudotusvalikon tyylit */
+input[type="number"],
+select {
+  width: 100%; /* Täysileveys parempaan kohdistukseen */
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc; /* Vaaleanharmaa reuna */
+  border-radius: 8px; /* Pyöristetyt kulmat */
+  font-size: 1.1em;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Hieno varjo syötekentissä */
+  transition: border-color 0.3s ease; /* Sulava reunan värin siirtymä */
+}
+
+/* Muuta reunan väriä, kun kenttä on aktiivinen */
+input[type="number"]:focus,
+select:focus {
+  border-color: #28a745; /* Vihreä reuna, kun kenttä on aktiivinen */
+  outline: none; /* Poista oletuskehys */
+}
+
+/* Lähetyspainikkeen tyylit */
+button {
+  padding: 12px 25px;
+  background-color: #28a745; /* Vihreä tausta toimintopainikkeelle */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover-efekti painikkeelle */
+button:hover {
+  background-color: #218838; /* Tummempi vihreä hover-tilassa */
+  transform: translateY(-2px); /* Hieno nostovaikutus hover-tilassa */
+}
+
+/* Tulosalueen tyylit */
+.result {
+  margin-top: 20px;
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #2d3748; /* Tumma väri näkyvyyden vuoksi */
+  animation: fadeIn 0.8s ease-out forwards; /* Sulava fade-in-animaatio tulokselle */
+}
+
+/* Fade-in-animaatio sujuvampaa tuloksen ilmestymistä varten */
+@keyframes fadeIn {
+  from {
+>>>>>>> 475e911a3c77800f46bc3691df0ebc465854a671
     opacity: 0;
     transform: translateY(-10px);
-    }
-    to {
+  }
+  to {
     opacity: 1;
     transform: translateY(0);
+<<<<<<< HEAD
     }
    }
+=======
+  }
+}
+>>>>>>> 475e911a3c77800f46bc3691df0ebc465854a671

@@ -1,99 +1,96 @@
-/* Global reset for consistent margins, paddings, and box-sizing */
+/* Globaali asetus marginaaleille, täytöille ja laatikon koon määrittämiselle */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-/* Styling the entire body of the page */
+/* Sivun koko sisällön tyyli */
 body {
-  font-family: "Arial", sans-serif; /* Clean, modern font for readability */
+  font-family: "Arial", sans-serif; /* Selkeä ja moderni fontti, joka parantaa luettavuutta */
   background: linear-gradient(
     135deg,
     #74ebd5,
     #acb6e5
-  ); /* Gradient
-background for aesthetic appeal */
+  ); /* Esteettisesti miellyttävä taustagradientti */
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Full screen height */
+  height: 100vh; /* Täyden näytön korkeus */
   margin: 0;
 }
-/* Styling the container that holds the todo list */
+/* Tehtävälistan sisältävän kontainerin tyyli */
 .container {
-  background-color: #fff; /* White background for contrast */
+  background-color: #fff; /* Valkoinen tausta kontrastiksi */
   padding: 30px 20px;
-  border-radius: 12px; /* Rounded corners for a smooth appearance */
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  border-radius: 12px; /* Pyöristetyt kulmat antavat pehmeän ulkonäön */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Kevyt varjo tuo syvyyttä */
   width: 400px;
-  transition: transform 0.3s ease; /* Smooth scale effect when hovered */
+  transition: transform 0.3s ease; /* Sulava skaalausefekti hoverin aikana */
 }
-/* Hover effect for container */
+/* Hover-efekti kontainerille */
 .container:hover {
   transform: scale(
     1.03
-  ); /* Slight zoom effect when hovering over the
-container */
+  ); /* Hieman suurennus hover-tilassa, joka tuo interaktiivisuuden tuntua */
 }
-/* Heading styling for the app title */
+/* Sovelluksen otsikon tyyli */
 h1 {
   text-align: center;
   color: #333;
-  margin-bottom: 20px; /* Space between the title and input field */
+  margin-bottom: 20px; /* Välit otsikon ja tekstikentän välillä */
 }
-/* Input field for task entry */
+/* Syöttökenttä tehtävän kirjoittamiselle */
 input[type="text"] {
-  width: calc(100% - 22px); /* Full width minus padding */
+  width: calc(100% - 22px); /* Koko leveys, vähennettynä täytteillä */
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
-  border-radius: 8px; /* Rounded edges */
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
-  transition: border-color 0.3s ease; /* Smooth transition on focus */
+  border-radius: 8px; /* Pyöristetyt reunat */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05); /* Kevyt varjo */
+  transition: border-color 0.3s ease; /* Sulava siirtymä focuksen aikana */
 }
-/* Focus effect for input field */
+/* Focus-efekti syöttökentälle */
 input[type="text"]:focus {
-  border-color: #007bff; /* Blue border when focused */
-  outline: none; /* Remove default outline */
+  border-color: #007bff; /* Sininen reunus, kun kenttä on valittuna */
+  outline: none; /* Poistaa oletusarvoisen kehyksen */
 }
-/* Button for adding a new task */
+/* Painike uuden tehtävän lisäämiseksi */
 button {
   padding: 10px 20px;
   border: none;
   background-color: #007bff;
   color: white;
-  border-radius: 8px; /* Rounded edges for the button */
-  cursor: pointer; /* Pointer cursor to indicate interactivity */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover
-and click effects */
+  border-radius: 8px; /* Pyöristetyt reunat painikkeelle */
+  cursor: pointer; /* Kursoriksi osoitin, joka ilmaisee, että elementti on interaktiivinen */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Sulavat hover- ja klikkaustilasiirtymät */
 }
-/* Hover effect for button */
+/* Hover-efekti painikkeelle */
 button:hover {
-  background-color: #0056b3; /* Darker blue on hover */
-  transform: translateY(-2px); /* Slight lift effect on hover */
+  background-color: #0056b3; /* Tummempi sininen hover-tilassa */
+  transform: translateY(-2px); /* Pieni nostava vaikutus hoverin aikana */
 }
-/* Unordered list containing tasks */
+/* Lista, joka sisältää tehtävät */
 ul {
-  list-style-type: none; /* Remove default bullet points */
+  list-style-type: none; /* Poistaa oletusluettelomerkit */
   padding: 0;
 }
-/* Individual list item for each task */
+/* Jokaisen tehtävän listaelementin tyyli */
 li {
   background-color: #f8f8f8;
   padding: 10px;
   margin-bottom: 10px;
-  border-radius: 8px; /* Rounded edges for task items */
+  border-radius: 8px; /* Pyöristetyt reunat tehtäväelementeille */
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Align text and buttons on the same line */
-  transition: background-color 0.3s ease; /* Smooth background transition */
+  align-items: center; /* Kohdistaa tekstin ja painikkeet samalle riville */
+  transition: background-color 0.3s ease; /* Sulava taustamuutos */
 }
-/* Styling for completed tasks */
+/* Valmiiksi merkittyjen tehtävien tyyli */
 li.completed {
   text-decoration: line-through;
-  background-color: #d4edda; /* Light green for completed tasks */
+  background-color: #d4edda; /* Vaaleanvihreä väri valmiille tehtäville */
 }
-/* Buttons for marking tasks as complete or deleting them */
+/* Painikkeet tehtävän valmisteluun tai poistamiseen */
 .complete-button,
 .delete-button {
   border: none;
@@ -103,18 +100,18 @@ li.completed {
   color: white;
   margin-left: 5px;
 }
-/* Green button for marking tasks as complete */
+/* Vihreä painike tehtävän valmisteluun */
 .complete-button {
   background-color: #28a745;
 }
-/* Red button for deleting tasks */
+/* Punainen painike tehtävän poistamiseen */
 .delete-button {
   background-color: #dc3545;
 }
-/* Hover effects for task buttons */
+/* Hover-efektit tehtäväpainikkeille */
 .complete-button:hover {
-  background-color: #218838; /* Darker green on hover */
+  background-color: #218838; /* Tummempi vihreä hover-tilassa */
 }
 .delete-button:hover {
-  background-color: #c82333; /* Darker red on hover */
+  background-color: #c82333; /* Tummempi punainen hover-tilassa */
 }

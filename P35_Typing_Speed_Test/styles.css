@@ -1,25 +1,24 @@
-/* Global styles reset for consistency */
+/* Globaali tyylien nollaus johdonmukaisuuden takaamiseksi */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-/* Body styling for overall layout */
+/* Vartalon (body) tyylittely kokonaisvaltaiseen asetteluun */
 body {
   font-family: "Roboto", sans-serif;
   background: linear-gradient(
     135deg,
     #74ebd5,
     #acb6e5
-  ); /* Modern gradient
-background */
+  ); /* Moderni gradienttitausta */
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
 }
-/* Main container styling */
+/* Pääkonteinerin tyylittely */
 .container {
   background-color: #fff;
   padding: 40px;
@@ -29,17 +28,17 @@ background */
   width: 600px;
   transition: transform 0.3s ease;
 }
-/* Add hover effect to give it a more dynamic look */
+/* Hover-efekti dynaamisemman ilmeen antamiseksi */
 .container:hover {
   transform: scale(1.03);
 }
-/* Heading styling */
+/* Otsikon (h1) tyylittely */
 h1 {
   font-size: 2.5em;
   margin-bottom: 20px;
   color: #333;
 }
-/* Test text styling */
+/* Testitekstin tyylittely */
 .test-text {
   margin-bottom: 20px;
   font-size: 1.3em;
@@ -48,7 +47,7 @@ h1 {
   padding: 15px;
   border-radius: 8px;
 }
-/* Text area styling */
+/* Tekstialueen tyylittely */
 textarea {
   width: 100%;
   height: 120px;
@@ -61,11 +60,11 @@ textarea {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   transition: border-color 0.3s ease;
 }
-/* Focus effect for textarea */
+/* Tekstialueen (textarea) focus-efekti */
 textarea:focus {
   border-color: #007bff;
 }
-/* Button styling */
+/* Painikkeen (button) tyylittely */
 button {
   padding: 12px 25px;
   background-color: #007bff;
@@ -77,17 +76,17 @@ button {
   transition: background-color 0.3s ease, transform 0.2s ease;
   margin-top: 15px;
 }
-/* Button hover effect */
+/* Hover-efekti painikkeelle */
 button:hover {
   background-color: #0056b3;
   transform: translateY(-3px);
 }
-/* Button disabled state */
+/* Painikkeen tila, kun se on pois käytöstä */
 button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
-/* Result display styling */
+/* Tulosalueen (result) tyylittely */
 .result {
   margin-top: 20px;
   font-size: 1.3em;

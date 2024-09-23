@@ -1,101 +1,99 @@
-/* Global reset for consistent margins, paddings, and box-sizing */
+/* Globaali reset: Marginaalien, täytteiden ja laatikkokoon yhdenmukaistaminen */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Ensures padding and border are included in the
-element’s total width and height */
+  box-sizing: border-box; /* Varmistaa, että täytteet ja reunat sisällytetään
+elementin kokonaisleveyteen ja -korkeuteen */
 }
-/* Body styling: Flexbox layout to center content and apply a gradient
-background */
+/* Vartalon muotoilu: Flexbox-asettelu sisällön keskittämiseen ja taustan gradientti */
 body {
-  font-family: "Roboto", sans-serif; /* Modern font from Google Fonts for a
-clean and readable look */
+  font-family: "Roboto", sans-serif; /* Moderni fontti Google Fontseista
+puhtaan ja luettavan ulkoasun takaamiseksi */
   background: linear-gradient(
     135deg,
     #74ebd5,
     #acb6e5
-  ); /* Attractive
-gradient background to enhance the visual appeal */
-  display: flex; /* Flexbox layout for centering the container */
-  justify-content: center; /* Horizontally center the container */
-  align-items: center; /* Vertically center the container */
-  height: 100vh; /* Full viewport height for centering the content */
-  margin: 0; /* Remove default margin for a clean layout */
+  ); /* Houkutteleva gradientti tausta visuaalisen ilmeen parantamiseksi */
+  display: flex; /* Flexbox-asettelu keskittää säilön */
+  justify-content: center; /* Keskittää säilön vaakasuunnassa */
+  align-items: center; /* Keskittää säilön pystysuunnassa */
+  height: 100vh; /* Koko näkymän korkeus sisällön keskittämiseksi */
+  margin: 0; /* Poistaa oletusmarginaalin siistin asettelun saavuttamiseksi */
 }
-/* Main container styling for the BMI calculator */
+/* Pääsäilön muotoilu BMI-laskurille */
 .container {
-  background-color: #fff; /* White background for contrast against the
-gradient */
-  padding: 30px; /* Padding around the content inside the container */
-  border-radius: 15px; /* Rounded corners for a modern, card-like appearance
-*/
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Shadow for depth, making the
-container stand out */
-  text-align: center; /* Center-align text inside the container */
-  width: 400px; /* Fixed width to control the size of the container */
-  max-width: 100%; /* Ensure container is responsive on smaller screens */
-  transition: transform 0.3s ease; /* Smooth transformation for hover effect
-*/
+  background-color: #fff; /* Valkoinen tausta, joka luo kontrastia
+gradienttia vasten */
+  padding: 30px; /* Täyte säilön sisällä olevan sisällön ympärille */
+  border-radius: 15px; /* Pyöristetyt kulmat nykyaikaisen, korttimaisen ilmeen
+saavuttamiseksi */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Varjo luo syvyyttä ja nostaa
+säilön esiin */
+  text-align: center; /* Tekstin keskitäminen säilön sisällä */
+  width: 400px; /* Kiinteä leveys säilölle */
+  max-width: 100%; /* Varmistaa, että säilö on responsiivinen pienemmillä
+näytöillä */
+  transition: transform 0.3s ease; /* Pehmeä muutos hover-efektiä varten */
 }
-/* Slight zoom-in effect on hover */
+/* Hieman suurennusefekti hover-tilassa */
 .container:hover {
-  transform: scale(1.05); /* Enlarge the container slightly when hovered */
+  transform: scale(1.05); /* Suurentaa säilöä hieman hover-tilassa */
 }
-/* Heading styling for the BMI Calculator title */
+/* Otsikon muotoilu BMI-laskurin nimelle */
 h1 {
-  font-size: 2.5em; /* Large, prominent font size for the title */
-  margin-bottom: 20px; /* Space below the title to separate it from the form
-*/
-  color: #2d3748; /* Darker color for contrast and readability */
+  font-size: 2.5em; /* Suuri, näkyvä fonttikoko otsikolle */
+  margin-bottom: 20px; /* Välilyönti otsikon ja lomakkeen välillä */
+  color: #2d3748; /* Tummempi väri kontrastin ja luettavuuden parantamiseksi */
 }
-/* Form layout and styling for the input fields */
+/* Lomakkeen asettelu ja kenttien muotoilu */
 form {
-  display: flex; /* Flexbox layout to stack form elements vertically */
-  flex-direction: column; /* Arrange input fields in a column */
-  gap: 10px; /* Add space between input fields and button */
-  margin-bottom: 20px; /* Space between the form and the result section */
+  display: flex; /* Flexbox-asettelu, joka asettaa lomake-elementit pystysuunnassa */
+  flex-direction: column; /* Järjestää syötekentät sarakkeeseen */
+  gap: 10px; /* Lisää tilaa syötekenttien ja painikkeen väliin */
+  margin-bottom: 20px; /* Välilyönti lomakkeen ja tulososan välillä */
 }
-/* Input field styling for height and weight */
+/* Syötekenttien muotoilu pituudelle ja painolle */
 input[type="number"] {
-  padding: 12px; /* Internal padding for comfortable input */
-  border: 1px solid #ccc; /* Light border for the input fields */
-  border-radius: 8px; /* Rounded corners for modern design */
-  font-size: 1em; /* Standard font size for readability */
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow to give depth
-to the inputs */
-  transition: border-color 0.3s ease; /* Smooth transition for focus state */
+  padding: 12px; /* Sisäinen täyte mukavaan syöttöön */
+  border: 1px solid #ccc; /* Kevyt reunus syötekentille */
+  border-radius: 8px; /* Pyöristetyt kulmat moderniin suunnitteluun */
+  font-size: 1em; /* Tavallinen fonttikoko luettavuuden takaamiseksi */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05); /* Kevyt varjo syöttökentille syvyyden antamiseksi */
+  transition: border-color 0.3s ease; /* Pehmeä siirtymä aktiiviseen tilaan */
 }
-/* Focus effect to highlight active input field */
+/* Korostusefekti, kun syötekenttä on aktiivinen */
 input[type="number"]:focus {
-  border-color: #007bff; /* Blue border when the input field is focused */
-  outline: none; /* Remove default outline for a cleaner look */
+  border-color: #007bff; /* Sininen reunus, kun syötekenttä on valittu */
+  outline: none; /* Poistaa oletusreunuksen siistin ulkoasun saavuttamiseksi */
 }
-/* Button styling for the "Calculate BMI" action */
+/* Painikkeen muotoilu "Laske BMI" -toiminnolle */
 button {
-  padding: 12px 20px; /* Padding inside the button for better clickability */
-  border: none; /* Remove default border for a cleaner design */
-  background-color: #007bff; /* Blue background for the button */
-  color: white; /* White text for contrast against the blue background */
-  border-radius: 8px; /* Rounded corners for consistency with input fields */
-  cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
-  font-size: 1em; /* Standard font size for legibility */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth
-transitions for hover and active states */
+  padding: 12px 20px; /* Täyte painikkeen sisällä paremman klikkailtavuuden takaamiseksi */
+  border: none; /* Poistaa oletusreunuksen siistin suunnittelun vuoksi */
+  background-color: #007bff; /* Sininen tausta painikkeelle */
+  color: white; /* Valkoinen teksti, joka luo kontrastia sinistä taustaa vasten */
+  border-radius: 8px; /* Pyöristetyt kulmat yhtenäisyyden takaamiseksi syötekenttien kanssa */
+  cursor: pointer; /* Muuttaa osoittimen, kun painiketta voidaan klikata */
+  font-size: 1em; /* Tavallinen fonttikoko selkeyden vuoksi */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Pehmeät siirtymät hover- ja aktiivisissa tiloissa */
 }
-/* Hover effect for the button */
+/* Hover-efekti painikkeelle */
 button:hover {
-  background-color: #0056b3; /* Darker blue when hovered */
-  transform: translateY(-2px); /* Slight lift effect to enhance interactivity
-*/
+  background-color: #0056b3; /* Tummempi sininen hover-tilassa */
+  transform: translateY(
+    -2px
+  ); /* Hieno nostoefekti, joka parantaa interaktiivisuutta */
 }
-/* Active state for the button when clicked */
+/* Painikkeen aktiivinen tila, kun sitä klikataan */
 button:active {
-  background-color: #004494; /* Even darker blue when clicked */
-  transform: translateY(1px); /* Slight push-down effect for realism */
+  background-color: #004494; /* Vielä tummempi sininen, kun sitä klikataan */
+  transform: translateY(
+    1px
+  ); /* Hieno painallusefekti realistisuuden lisäämiseksi */
 }
-/* Styling for the result display */
+/* Tulososan muotoilu */
 .result {
-  margin-top: 20px; /* Space above the result section */
-  font-size: 1.2em; /* Larger font size for readability */
-  font-weight: bold; /* Bold font to emphasize the result */
+  margin-top: 20px; /* Välilyönti tulososan yläpuolelle */
+  font-size: 1.2em; /* Suurempi fonttikoko luettavuuden parantamiseksi */
+  font-weight: bold; /* Lihavoitu fontti korostaa tulosta */
 }

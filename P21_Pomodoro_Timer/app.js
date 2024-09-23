@@ -1,56 +1,61 @@
-// Wait until the DOM is fully loaded before running the script
+// Odotetaan, että DOM on täysin ladattu ennen kuin scripti suoritetaan
 document.addEventListener("DOMContentLoaded", () => {
-  // Select DOM elements for interaction
-  const timerElement = document.getElementById("timer"); // Timer display element
-  const startButton = document.getElementById("start-button"); // Start button
-  const pauseButton = document.getElementById("pause-button"); // Pause button
-  const stopButton = document.getElementById("stop-button"); // Stop button
-  let timer; // Variable to store the interval ID
-  let isRunning = false; // Boolean to track if the timer is running
-  let timeLeft = 25 * 60; // Set default time for the Pomodoro (25 minutes in seconds)
-  // Function to update the timer display in MM:SS format
+  // Valitaan DOM-elementit vuorovaikutusta varten
+  const timerElement = document.getElementById("timer"); // Ajastimen näyttöelementti
+  const startButton = document.getElementById("start-button"); // Aloituspainike
+  const pauseButton = document.getElementById("pause-button"); // Taukopainike
+  const stopButton = document.getElementById("stop-button"); // Lopetuspainike
+  let timer; // Muuttuja ajastinvälin tallentamiseen
+  let isRunning = false; // Boolean, joka seuraa, onko ajastin käynnissä
+  let timeLeft = 25 * 60; // Asetetaan oletusaika Pomodoro-ajastimelle (25 minuuttia sekunneissa)
+
+  // Funktio päivittää ajastimen näytön MM:SS-formaattiin
   function updateTimerDisplay() {
     const minutes = Math.floor(timeLeft / 60)
       .toString()
-      .padStart(2, "0");
-    // Convert minutes
-    const seconds = (timeLeft % 60).toString().padStart(2, "0"); // Convert seconds
-    timerElement.textContent = `${minutes}:${seconds}`; // Display the time
+      .padStart(2, "0"); // Muuntaa minuutit
+    const seconds = (timeLeft % 60).toString().padStart(2, "0"); // Muuntaa sekunnit
+    timerElement.textContent = `${minutes}:${seconds}`; // Näyttää ajan näytössä
   }
-  // Function to start the timer
+
+  // Funktio aloittaa ajastimen
   function startTimer() {
-    if (isRunning) return; // Prevent multiple timers from running
-    isRunning = true; // Set the timer to running
+    if (isRunning) return; // Estetään useiden ajastinten käynnistäminen samanaikaisesti
+    isRunning = true; // Määritetään ajastimen tila käynnissä olevaksi
     timer = setInterval(() => {
       if (timeLeft > 0) {
-        timeLeft--; // Decrease the time by 1 second
-        updateTimerDisplay(); // Update the display with new time
+        timeLeft--; // Vähennetään aikaa yhdellä sekunnilla
+        updateTimerDisplay(); // Päivitetään näyttö uudella ajalla
       } else {
-        clearInterval(timer); // Stop the timer when time is up
-        isRunning = false; // Reset running state
-        timeLeft = 5 * 60; // Set break time (5 minutes)
-        alert("Time for a break!"); // Notify the user
-        startTimer(); // Automatically start the break timer
+        clearInterval(timer); // Pysäytetään ajastin, kun aika loppuu
+        isRunning = false; // Nollataan ajastimen tila
+        timeLeft = 5 * 60; // Asetetaan taukoaika (5 minuuttia)
+        alert("Aika pitää tauko!"); // Ilmoitetaan käyttäjälle
+        startTimer(); // Käynnistetään automaattisesti taukoajastin
       }
-    }, 1000); // Run the timer every second
+    }, 1000); // Ajastin päivittyy joka sekunti
   }
-  // Function to pause the timer
+
+  // Funktio pysäyttää ajastimen tilapäisesti
   function pauseTimer() {
-    if (!isRunning) return; // Do nothing if the timer isn't running
-    clearInterval(timer); // Stop the interval timer
-    isRunning = false; // Set running state to false
+    if (!isRunning) return; // Ei tehdä mitään, jos ajastin ei ole käynnissä
+    clearInterval(timer); // Pysäytetään ajastin
+    isRunning = false; // Muutetaan tila pysäytetyksi
   }
-  // Function to stop the timer and reset to 25 minutes
+
+  // Funktio pysäyttää ajastimen ja palauttaa sen 25 minuuttiin
   function stopTimer() {
-    clearInterval(timer); // Stop the interval timer
-    isRunning = false; // Set running state to false
-    timeLeft = 25 * 60; // Reset time to 25 minutes
-    updateTimerDisplay(); // Update the display with default time
+    clearInterval(timer); // Pysäytetään ajastin
+    isRunning = false; // Muutetaan tila pysäytetyksi
+    timeLeft = 25 * 60; // Palautetaan ajastin 25 minuuttiin
+    updateTimerDisplay(); // Päivitetään näyttö oletusajalla
   }
-  // Add event listeners to the buttons for interaction
-  startButton.addEventListener("click", startTimer); // Start button click event;
-  pauseButton.addEventListener("click", pauseTimer); // Pause button click event;
-  stopButton.addEventListener("click", stopTimer); // Stop button click event
-  // Initial display update when the page loads
+
+  // Lisätään tapahtumakuuntelijat painikkeille vuorovaikutusta varten
+  startButton.addEventListener("click", startTimer); // Käynnistä-painikkeen tapahtuma
+  pauseButton.addEventListener("click", pauseTimer); // Tauko-painikkeen tapahtuma
+  stopButton.addEventListener("click", stopTimer); // Lopeta-painikkeen tapahtuma
+
+  // Päivitetään näyttö, kun sivu ladataan
   updateTimerDisplay();
 });

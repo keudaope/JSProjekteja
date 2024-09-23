@@ -1,49 +1,54 @@
-// Wait for the DOM to fully load before running the script
+// Odota, että DOM latautuu kokonaan ennen kuin suoritat skriptin
 document.addEventListener("DOMContentLoaded", () => {
-  // Get references to HTML elements
+  // Haetaan viittaukset HTML-elementteihin
   const itemInput = document.getElementById("item-input");
   const addItemButton = document.getElementById("add-item-button");
   const itemList = document.getElementById("item-list");
-  // Load saved grocery items from localStorage or initialize as an empty array
+
+  // Ladataan tallennetut ruokakauppaostokset localStoragesta tai alustetaan tyhjäksi taulukoksi
   let items = JSON.parse(localStorage.getItem("groceryItems")) || [];
-  // Function to save items to localStorage
+
+  // Funktio, joka tallentaa tuotteet localStorageen
   function saveItems() {
     localStorage.setItem("groceryItems", JSON.stringify(items));
   }
-  // Function to render all grocery items in the list
+
+  // Funktio, joka renderöi kaikki ruokakauppaostokset listaan
   function renderItems() {
-    // Clear the list first before re-rendering
+    // Tyhjennetään lista ennen uudelleenrenderöintiä
     itemList.innerHTML = "";
-    // Loop through the items array and create list elements
+    // Käydään läpi items-taulukko ja luodaan listaelementit
     items.forEach((item, index) => {
-      const li = document.createElement("li"); // Create a new list item
+      const li = document.createElement("li"); // Luodaan uusi listaelementti
       li.innerHTML = `
- <span>${item}</span> <!-- Display the grocery item -->
- <button class="delete-button" data-index="${index}"> </button> ❌
-<!-- Delete button with index reference -->
- `;
-      itemList.appendChild(li); // Add the list item to the UL
+        <span>${item}</span> <!-- Näytetään ruokakauppaostos -->
+        <button class="delete-button" data-index="${index}">❌</button> <!-- Poistonappi, jossa on viittaus indeksiin -->
+      `;
+      itemList.appendChild(li); // Lisätään listaelementti UL-elementtiin
     });
   }
-  // Event listener for the Add Item button
+
+  // Tapahtumankuuntelija Lisää tuote -napille
   addItemButton.addEventListener("click", () => {
-    const newItem = itemInput.value.trim(); // Get the input value and remove extra spaces
+    const newItem = itemInput.value.trim(); // Haetaan syötteen arvo ja poistetaan ylimääräiset välilyönnit
     if (newItem) {
-      items.push(newItem); // Add the new item to the array
-      itemInput.value = ""; // Clear the input field
-      saveItems(); // Save the updated items to localStorage
-      renderItems(); // Re-render the list
+      items.push(newItem); // Lisätään uusi tuote taulukkoon
+      itemInput.value = ""; // Tyhjennetään syötekenttä
+      saveItems(); // Tallennetaan päivitetyt tuotteet localStorageen
+      renderItems(); // Renderöidään lista uudelleen
     }
   });
-  // Event listener for the delete buttons
+
+  // Tapahtumankuuntelija poistonapeille
   itemList.addEventListener("click", (e) => {
     if (e.target.classList.contains("delete-button")) {
-      const index = e.target.getAttribute("data-index"); // Get the index from the button's data attribute
-      items.splice(index, 1); // Remove the item from the array
-      saveItems(); // Save the updated items to localStorage
-      renderItems(); // Re-render the list
+      const index = e.target.getAttribute("data-index"); // Haetaan indeksi napin data-ominaisuudesta
+      items.splice(index, 1); // Poistetaan tuote taulukosta
+      saveItems(); // Tallennetaan päivitetyt tuotteet localStorageen
+      renderItems(); // Renderöidään lista uudelleen
     }
   });
-  // Initial render of the grocery list on page load
+
+  // Alustava listan renderöinti sivun latauksen yhteydessä
   renderItems();
 });

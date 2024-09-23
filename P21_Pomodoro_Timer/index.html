@@ -2,28 +2,30 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- Asetetaan sivun merkistö UTF-8:ksi, joka tukee kansainvälisiä merkkejä -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Asetetaan viewport, jotta sivu näyttää hyvältä mobiililaitteilla -->
     <title>Pomodoro Timer</title>
-    <!-- Link to external CSS for better styling -->
+    <!-- Linkki ulkoiseen CSS-tiedostoon parempaa muotoilua varten -->
     <link rel="stylesheet" href="styles.css" />
-    <!-- Google Font for modern typography -->
+    <!-- Linkki Google-fonttiin nimeltä Roboto, joka tuo modernin typografian -->
     <link
-      href="https://fonts.googleapis.com/css2?
-family=Roboto:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
+    <!-- Pomodoro-ajastimen pääkontaineri -->
     <div class="container">
       <h1>Pomodoro Timer</h1>
-      <!-- Timer display -->
+      <!-- Ajastimen näyttö -->
       <div class="timer" id="timer">25:00</div>
-      <!-- Control buttons -->
+      <!-- Kontrollipainikkeet ajastimen hallintaan -->
       <button id="start-button">Start</button>
       <button id="pause-button" class="pause">Pause</button>
       <button id="stop-button" class="stop">Stop</button>
     </div>
-    <!-- Link to external JavaScript for functionality -->
+    <!-- Linkki ulkoiseen JavaScript-tiedostoon toiminnallisuuden lisäämiseksi -->
     <script src="app.js"></script>
   </body>
 </html>

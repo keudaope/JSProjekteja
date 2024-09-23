@@ -1,45 +1,50 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Select DOM elements
+  // Valitse DOM-elementit
   const testTextElement = document.getElementById("test-text");
   const typingArea = document.getElementById("typing-area");
   const startButton = document.getElementById("start-button");
   const resultDiv = document.getElementById("result");
-  // Store the text to be typed and initialize variables
+
+  // Tallennetaan kirjoitettava teksti ja alustetaan muuttujat
   const testText = testTextElement.innerText;
   let startTime;
   let interval;
-  // Function to start the typing test
+
+  // Funktio kirjoitustestin aloittamiseen
   function startTest() {
-    typingArea.value = ""; // Clear the textarea
-    typingArea.disabled = false; // Enable typing
-    typingArea.focus(); // Set focus on textarea
-    resultDiv.textContent = ""; // Clear previous result
-    startButton.disabled = true; // Disable the start button during the test
-    startTime = new Date().getTime(); // Record start time
-    interval = setInterval(checkTyping, 100); // Start checking typing
+    typingArea.value = ""; // Tyhjennä tekstikenttä
+    typingArea.disabled = false; // Ota kirjoittaminen käyttöön
+    typingArea.focus(); // Aseta fokus tekstikenttään
+    resultDiv.textContent = ""; // Tyhjennä aiemmat tulokset
+    startButton.disabled = true; // Poista start-nappi käytöstä testin ajaksi
+    startTime = new Date().getTime(); // Tallenna aloitusaika
+    interval = setInterval(checkTyping, 100); // Aloita kirjoituksen tarkistus
   }
-  // Function to check the typing progress
+
+  // Funktio kirjoituksen etenemisen tarkistamiseen
   function checkTyping() {
     const typedText = typingArea.value;
     if (typedText === testText) {
-      clearInterval(interval); // Stop checking once text matches
+      clearInterval(interval); // Lopeta tarkistus, kun teksti vastaa
       calculateResults();
     }
   }
-  // Function to calculate typing speed and accuracy
+
+  // Funktio kirjoitusnopeuden ja tarkkuuden laskemiseen
   function calculateResults() {
-    const endTime = new Date().getTime(); // Record end time
-    const timeTaken = (endTime - startTime) / 1000; // Calculate time in seconds
+    const endTime = new Date().getTime(); // Tallenna lopetusaika
+    const timeTaken = (endTime - startTime) / 1000; // Laske aika sekunteina
     const wordsTyped = testText.split(" ").length;
-    const typingSpeed = (wordsTyped / timeTaken) * 60; // Words per minute
+    const typingSpeed = (wordsTyped / timeTaken) * 60; // Sanat per minuutti
     const accuracy = calculateAccuracy(typingArea.value, testText);
-    resultDiv.innerHTML = `Typing Speed: ${typingSpeed.toFixed(
+    resultDiv.innerHTML = `Kirjoitusnopeus: ${typingSpeed.toFixed(
       2
-    )} WPM<br>Accuracy: ${accuracy.toFixed(2)}%`; // Display results
-    typingArea.disabled = true; // Disable typing area after test
-    startButton.disabled = false; // Enable start button for next test
+    )} WPM<br>Tarkkuus: ${accuracy.toFixed(2)}%`; // Näytä tulokset
+    typingArea.disabled = true; // Poista kirjoitus käytöstä testin jälkeen
+    startButton.disabled = false; // Ota start-nappi takaisin käyttöön seuraavaa testiä varten
   }
-  // Function to calculate accuracy
+
+  // Funktio tarkkuuden laskemiseen
   function calculateAccuracy(typed, original) {
     const typedWords = typed.split(" ");
     const originalWords = original.split(" ");
@@ -49,8 +54,9 @@ document.addEventListener("DOMContentLoaded", () => {
         correctWords++;
       }
     });
-    return (correctWords / originalWords.length) * 100; // Calculate percentage accuracy
+    return (correctWords / originalWords.length) * 100; // Laske prosentuaalinen tarkkuus
   }
-  // Event listener for starting the test
+
+  // Tapahtumankuuntelija testin aloittamiselle
   startButton.addEventListener("click", startTest);
 });

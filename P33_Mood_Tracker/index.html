@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Mood Tracker</title>
- <!-- Link to Google Fonts for a modern, clean typography -->
- <link href="https://fonts.googleapis.com/css2?
-family=Poppins:wght@400;600&display=swap" rel="stylesheet">
- <!-- Link to external CSS for styling -->
- <link rel="stylesheet" href="styles.css">
-</head>
-<body>
- <!-- Main container for the app -->
- <div class="container">
- <h1>Mood Tracker</h1>
- <p>Track your mood every day!</p>
- <!-- Dropdown to select the mood -->
- <select id="mood-select">
- <option value="" disabled selected>Select your mood</option>
- <option value="happy"> Happy</ 😊 option>
- <option value="sad"> Sad</ 😢 option>
- <option value="excited"> Excited</ 😃 option>
- <option value="tired"> Tired</ 😴 option>
- <option value="angry"> Angry</ 😡 option>
- <option value="neutral"> Neutral</ 😐 option>
- </select>
- <!-- Button to submit the mood -->
- <button id="submit-button">Track Mood</button>
- <!-- Area to display the mood log -->
- <div class="mood-log" id="mood-log"></div>
- </div>
- <!-- Link to external JavaScript file -->
- <script src="app.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mood Tracker</title>
+    <!-- Linkki Google-fontteihin modernia, selkeää typografiaa varten -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Linkki ulkoiseen CSS-tiedostoon tyylittelyä varten -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Sovelluksen pääkontti -->
+    <div class="container">
+      <h1>Mood Tracker</h1>
+      <p>Seuraa mielialaasi joka päivä!</p>
+      <!-- Valikko mielialan valitsemiseen -->
+      <select id="mood-select">
+        <option value="" disabled selected>Valitse mieliala</option>
+        <option value="happy">😊 Iloinen</option>
+        <option value="sad">😢 Surullinen</option>
+        <option value="excited">😃 Innoissaan</option>
+        <option value="tired">😴 Väsynyt</option>
+        <option value="angry">😡 Vihainen</option>
+        <option value="neutral">😐 Neutraali</option>
+      </select>
+      <!-- Nappi mielialan kirjaamiseen -->
+      <button id="submit-button">Seuraa mielialaa</button>
+      <!-- Alue mielialapäiväkirjan näyttämiseen -->
+      <div class="mood-log" id="mood-log"></div>
+    </div>
+    <!-- Linkki ulkoiseen JavaScript-tiedostoon -->
+    <script src="app.js"></script>
+  </body>
 </html>

@@ -1,20 +1,18 @@
-/* Styling for the entire body to center the app and apply a background gradient
-*/
+/* Tyylit koko bodylle sovelluksen keskittämiseksi ja taustagradientin lisäämiseksi */
 body {
   font-family: "Arial", sans-serif;
   background: linear-gradient(
     135deg,
     #74ebd5,
     #acb6e5
-  ); /* Nice gradient
-background */
+  ); /* Kaunis gradienttitausta */
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
 }
-/* Main container styling to make the list look modern and centered */
+/* Pääsäilön tyylit, jotka tekevät listasta modernin ja keskitetyn */
 .container {
   background: white;
   padding: 20px;
@@ -23,20 +21,20 @@ background */
   width: 300px;
   text-align: center;
 }
-/* Style for the title */
+/* Otsikon tyylit */
 h1 {
   margin-bottom: 20px;
 }
-/* Input field styling */
+/* Syötekentän tyylit */
 input[type="text"] {
   padding: 10px;
   margin-bottom: 10px;
-  width: calc(100% - 22px); /* Full width minus padding */
+  width: calc(100% - 22px); /* Täysi leveys, vähennettynä pehmustuksella */
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 1em; /* Make the text size a bit larger for readability */
+  font-size: 1em; /* Tekstin koon suurentaminen luettavuuden parantamiseksi */
 }
-/* Button styling */
+/* Painikkeen tyylit */
 button {
   padding: 10px 20px;
   border: none;
@@ -45,18 +43,18 @@ button {
   border-radius: 4px;
   cursor: pointer;
   margin-top: 10px;
-  font-size: 1em; /* Make the button text more readable */
+  font-size: 1em; /* Painikkeen tekstin suurempi luettavuus */
 }
-/* Hover effect on button for better interactivity */
+/* Hover-efekti painikkeelle paremman vuorovaikutuksen takaamiseksi */
 button:hover {
   background-color: #0056b3;
 }
-/* Styling for the list items (grocery items) */
+/* Listaelementtien (ostoslistan kohteiden) tyylit */
 ul {
-  list-style-type: none; /* Remove default bullets */
+  list-style-type: none; /* Poista oletusarvoiset luettelomerkit */
   padding: 0;
 }
-/* Style each list item */
+/* Yksittäisten listaelementtien tyylit */
 li {
   background: #f8f8f8;
   margin-bottom: 10px;
@@ -66,7 +64,7 @@ li {
   justify-content: space-between;
   align-items: center;
 }
-/* Delete button styling */
+/* Poistonapin tyylit */
 .delete-button {
   background-color: #dc3545;
   border: none;
@@ -75,7 +73,7 @@ li {
   border-radius: 4px;
   cursor: pointer;
 }
-/* Hover effect on the delete button */
+/* Hover-efekti poistonapille */
 .delete-button:hover {
   background-color: #c82333;
 }

@@ -1,12 +1,11 @@
-/* Basic body styling */
+/* Perus tyylit keholle */
 body {
   font-family: "Arial", sans-serif;
   background: linear-gradient(
     135deg,
     #74ebd5,
     #acb6e5
-  ); /* Updated background
-with gradient */
+  ); /* Päivitetty gradientti taustalle */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,72 +13,72 @@ with gradient */
   margin: 0;
   padding: 20px;
 }
-/* Container for the app content */
+/* Säiliö sovelluksen sisällölle */
 .container {
   background: white;
   padding: 20px;
-  border-radius: 12px; /* Smoother corners */
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* More defined shadow */
+  border-radius: 12px; /* Pehmeämmät kulmat */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Selkeämpi varjo */
   text-align: center;
   width: 400px;
   max-width: 100%;
-  transition: transform 0.3s ease; /* Smooth hover effect */
+  transition: transform 0.3s ease; /* Pehmeä hover-efekti */
 }
-/* Container hover effect for interactivity */
+/* Säiliön hover-efekti interaktiivisuutta varten */
 .container:hover {
-  transform: scale(1.05); /* Slight scaling on hover */
+  transform: scale(1.05); /* Kevyt suurennus hoverilla */
 }
-/* Title styling */
+/* Otsikon tyylit */
 h1 {
   margin-bottom: 20px;
   font-size: 1.8em;
-  color: #2c3e50; /* Darker text color for contrast */
+  color: #2c3e50; /* Tummempi tekstiväri kontrastia varten */
 }
-/* Input field styling */
+/* Syötekentän tyylit */
 input[type="text"] {
   padding: 12px;
   margin-bottom: 15px;
   width: calc(100% - 24px);
   border: 1px solid #ccc;
-  border-radius: 8px; /* Smoother input corners */
+  border-radius: 8px; /* Pehmeämmät kulmat syötekentissä */
   font-size: 1em;
 }
-/* Button styling */
+/* Nappien tyylit */
 button {
   padding: 12px 24px;
   border: none;
-  background-color: #007bff; /* Bright blue button */
+  background-color: #007bff; /* Kirkkaan sininen nappi */
   color: white;
-  border-radius: 8px; /* Smoother button corners */
+  border-radius: 8px; /* Pehmeämmät kulmat napissa */
   cursor: pointer;
   font-size: 1em;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-/* Button hover effect */
+/* Nappien hover-efekti */
 button:hover {
   background-color: #0056b3;
-  transform: translateY(-2px); /* Slight button lift on hover */
+  transform: translateY(-2px); /* Kevyt napin nostaminen hoverilla */
 }
-/* Movie details container styling */
+/* Elokuvan tietojen säiliön tyylit */
 .movie {
   margin-top: 20px;
   text-align: left;
 }
-/* Image styling for the movie poster */
+/* Kuva-tyylit elokuvan julisteelle */
 .movie img {
   max-width: 100%;
   border-radius: 8px;
 }
-/* Movie details section */
+/* Elokuvan tietojen osio */
 .movie-details {
   margin-top: 10px;
 }
-/* Movie title styling */
+/* Elokuvan otsikon tyylit */
 .movie-details h2 {
   margin: 0;
   font-size: 1.5em;
 }
-/* Movie information styling */
+/* Elokuvan tiedon tyylit */
 .movie-details p {
   margin: 5px 0;
   font-size: 1.1em;

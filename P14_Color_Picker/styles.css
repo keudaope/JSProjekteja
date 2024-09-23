@@ -1,10 +1,18 @@
+<<<<<<< HEAD
 /* Nollaa oletusmarginaalit ja -täytteet yhtenäisen ulkoasun saamiseksi */
+=======
+/* Nollaa oletusmarginaalit ja -täytteet yhtenäisen asettelun takaamiseksi */
+>>>>>>> 475e911a3c77800f46bc3691df0ebc465854a671
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+<<<<<<< HEAD
 /* Määritä moderni fontti ja täysikokoinen asettelu gradientilla */
+=======
+/* Määritä moderni fontti ja koko näytön asettelu gradientilla */
+>>>>>>> 475e911a3c77800f46bc3691df0ebc465854a671
 body {
   font-family: "Poppins", sans-serif;
   background: linear-gradient(135deg, #74ebd5, #acb6e5);
@@ -14,17 +22,30 @@ body {
   height: 100vh;
   color: #333;
 }
+<<<<<<< HEAD
 /* Välinvalitsin sovelluksen säilö */
+=======
+/* Värinvalitsinsovelluksen kontti */
+>>>>>>> 475e911a3c77800f46bc3691df0ebc465854a671
 .container {
   background-color: #fff;
   padding: 30px;
   border-radius: 15px; /* Pehmeät, pyöristetyt kulmat */
+<<<<<<< HEAD
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Pehmeä varjo syvyyttä varten */
   text-align: center;
   transition: transform 0.3s ease; /* Sulava siirtymä hover-efektissä */
   width: 350px; /* Kiinteä leveys paremman asettelun takaamiseksi */
 }
 /* Zoom-efekti hoverissa, jotta sovellus tuntuisi interaktiivisemmalta */
+=======
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Pehmeä varjo syvyyden luomiseksi */
+  text-align: center;
+  transition: transform 0.3s ease; /* Sulava siirtymä hover-efektiä varten */
+  width: 350px; /* Kiinteä leveys paremman asettelun vuoksi */
+}
+/* Zoomaava hover-efekti, joka tekee sovelluksesta vuorovaikutteisen tuntuisen */
+>>>>>>> 475e911a3c77800f46bc3691df0ebc465854a671
 .container:hover {
   transform: scale(1.05);
 }
@@ -32,9 +53,15 @@ body {
 h1 {
   font-size: 2.5em;
   margin-bottom: 20px;
+<<<<<<< HEAD
   color: #2d3748; /* Tumma väri kontrastin vuoksi */
 }
 /* Väri-input-kentän tyylitys */
+=======
+  color: #2d3748; /* Tumma väri kontrastia varten */
+}
+/* Värinsyöttökentän tyylittely */
+>>>>>>> 475e911a3c77800f46bc3691df0ebc465854a671
 input[type="color"] {
   width: 100%;
   height: 50px;
@@ -42,10 +69,17 @@ input[type="color"] {
   cursor: pointer;
   margin-bottom: 20px;
   border-radius: 8px; /* Pyöristetyt kulmat yhtenäisyyden vuoksi */
+<<<<<<< HEAD
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Kevyt varjo syvyyttä varten */
   transition: box-shadow 0.3s ease; /* Sulava varjon siirtymä */
 }
 /* Lisää kevyt hohtoefekti, kun välinvalitsinta hoveroidaan */
+=======
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Kevyt varjo syvyyden luomiseksi */
+  transition: box-shadow 0.3s ease; /* Sulava varjon siirtymä */
+}
+/* Hento hehku-efekti, kun värinvalitsin on hover-tilassa */
+>>>>>>> 475e911a3c77800f46bc3691df0ebc465854a671
 input[type="color"]:hover {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
@@ -56,7 +90,11 @@ input[type="color"]:hover {
   font-weight: 500;
   color: #2d3748;
 }
+<<<<<<< HEAD
 /* Painikkeen tyylitys */
+=======
+/* Painikkeen tyylittely */
+>>>>>>> 475e911a3c77800f46bc3691df0ebc465854a671
 button {
   padding: 12px 24px;
   background-color: #28a745; /* Vihreä tausta toimintopainikkeelle */
@@ -69,10 +107,17 @@ button {
 }
 /* Hover-efekti painikkeelle */
 button:hover {
+<<<<<<< HEAD
   background-color: #218838; /* Tummempi vihreä hoverissa */
   transform: translateY(-3px); /* Nostava efekti hoverissa */
 }
 /* Responsiivinen suunnittelu: Tee säilö pienemmäksi mobiililaitteilla */
+=======
+  background-color: #218838; /* Tummempi vihreä hover-tilassa */
+  transform: translateY(-3px); /* Nostava hover-efekti */
+}
+/* Responsiivinen suunnittelu: Tee kontista pienempi mobiililaitteilla */
+>>>>>>> 475e911a3c77800f46bc3691df0ebc465854a671
 @media (max-width: 400px) {
   .container {
     width: 90%;

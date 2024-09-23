@@ -1,76 +1,75 @@
-/* Global reset for consistent margins, paddings, and box-sizing */
+/* Globaali nollaus yhtenäisten marginaalien, täytteiden ja laatikon koon määrittelyyn */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-/* Body styling to center content and apply a gradient background */
+/* Bodyn tyylittely sisällön keskittämiseksi ja gradientti taustaksi */
 body {
-  font-family: "Roboto", sans-serif; /* Modern, clean font */
+  font-family: "Roboto", sans-serif; /* Moderni, selkeä fontti */
   background: linear-gradient(
     135deg,
     #74ebd5,
     #acb6e5
-  ); /* Visually appealing
-gradient background */
+  ); /* Visuaalisesti houkutteleva
+gradienttitausta */
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
-/* Main container styling */
+/* Pääkontainerin tyylittely */
 .container {
-  background-color: #fff; /* White background for contrast */
-  padding: 30px; /* Spacing inside the container */
-  border-radius: 15px; /* Smooth, rounded corners for modern look */
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  width: 700px; /* Fixed width for a better layout */
-  max-width: 100%; /* Responsive design */
+  background-color: #fff; /* Valkoinen tausta kontrastin luomiseksi */
+  padding: 30px; /* Sisäinen tila kontainerissa */
+  border-radius: 15px; /* Sileät, pyöristetyt kulmat moderniin ilmeeseen */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Hento varjo syvyyden luomiseksi */
+  width: 700px; /* Kiinteä leveys paremman asettelun vuoksi */
+  max-width: 100%; /* Responsiivinen suunnittelu */
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Gap between elements */
-  transition: transform 0.3s ease; /* Smooth hover effect */
+  gap: 20px; /* Välit elementtien välillä */
+  transition: transform 0.3s ease; /* Sulava hover-efekti */
 }
-/* Zoom effect on hover */
+/* Zoom-efekti hoverilla */
 .container:hover {
   transform: scale(1.05);
 }
-/* Heading styling */
+/* Otsikon tyylittely */
 h1 {
-  font-size: 2.2em; /* Large heading for prominence */
-  color: #2d3748; /* Darker color for contrast */
+  font-size: 2.2em; /* Suuri otsikko näkyvyyden parantamiseksi */
+  color: #2d3748; /* Tummempi väri kontrastia varten */
   text-align: center;
 }
-/* Styling for the text area */
+/* Tekstialueen tyylittely */
 textarea {
   width: 100%;
-  height: 200px; /* Height for sufficient input area */
-  padding: 15px; /* Spacing inside the text area */
-  border: 1px solid #ccc; /* Light gray border */
-  border-radius: 8px; /* Smooth corners */
-  font-family: monospace; /* Monospace font for a coding-style input */
+  height: 200px; /* Korkeus riittävälle syöttöalueelle */
+  padding: 15px; /* Sisäinen tila tekstialueessa */
+  border: 1px solid #ccc; /* Vaalea harmaa reunus */
+  border-radius: 8px; /* Sileät kulmat */
+  font-family: monospace; /* Monospace-fontti koodaustyyliä varten */
   font-size: 1em;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Kevyt varjo syvyyden luomiseksi */
   transition: border-color 0.3s ease;
 }
-/* Focus effect on the text area */
+/* Fokus-efekti tekstialueella */
 textarea:focus {
-  border-color: #007bff; /* Blue border on focus */
-  outline: none; /* Remove default outline */
+  border-color: #007bff; /* Sininen reunus fokuksessa */
+  outline: none; /* Poista oletuskehys */
 }
-/* Preview area styling */
+/* Esikatselualueen tyylittely */
 .preview {
-  background-color: #f8f8f8; /* Light gray background for contrast */
-  padding: 20px; /* Internal padding */
-  border-radius: 8px; /* Rounded corners */
-  border: 1px solid #ccc; /* Subtle border */
-  box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.05); /* Inner shadow for depth
-*/
-  text-align: left; /* Left align the markdown content */
-  overflow-y: auto; /* Scroll if content overflows */
-  height: 300px; /* Fixed height for preview */
+  background-color: #f8f8f8; /* Vaaleanharmaa tausta kontrastin luomiseksi */
+  padding: 20px; /* Sisäinen tila */
+  border-radius: 8px; /* Pyöristetyt kulmat */
+  border: 1px solid #ccc; /* Kevyt reunus */
+  box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.05); /* Sisäinen varjo syvyyden luomiseksi */
+  text-align: left; /* Markdown-sisällön tasaaminen vasemmalle */
+  overflow-y: auto; /* Vieritys, jos sisältö ylittää alueen */
+  height: 300px; /* Kiinteä korkeus esikatselulle */
 }
-/* Scrollbar styling for the preview area */
+/* Vierityspalkin tyylittely esikatselualueella */
 .preview::-webkit-scrollbar {
   width: 8px;
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Yleiset tyylit, joilla nollataan selaimen oletuskäyttäytyminen */
 * {
     box-sizing: border-box;
@@ -94,4 +95,90 @@ button:hover {
 /* Nollauspainikkeen hover-tila */
 .clear:hover {
     background-color: #c82333; /* Tummempi punainen hover-tilassa */
+=======
+/* Yleiset tyylit selaimen oletuskäyttäytymisen nollaamiseksi */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* Body-tyylit laskimen keskittämiseksi */
+body {
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(135deg, rgb(116, 235, 213), rgb(172, 182, 229));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+/* Laskimen pääsäiliö */
+.container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+}
+/* Näyttöalueen tyylit */
+.display {
+  width: calc(100% - 24px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1.5em;
+  text-align: right; /* Kohdista teksti (numerot) oikealle */
+  background-color: #f9f9f9;
+}
+/* Ruudukkoasettelu laskimen painikkeille */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Luo 4-sarakkeinen ruudukko */
+  gap: 10px;
+}
+/* Yleiset painikkeiden tyylit */
+button {
+  padding: 20px;
+  font-size: 1.2em;
+  border: none;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease; /* Pehmeä hover-siirtymä */
+}
+/* Painikkeen hover-efekti */
+button:hover {
+  background-color: #ddd;
+}
+/* Operaattoripainikkeiden tyylit */
+.operator {
+  background-color: #28a745;
+  color: white;
+}
+/* Operaattoripainikkeiden hover-efekti */
+.operator:hover {
+  background-color: #218838;
+}
+/* Yhtäläisyyspainikkeen tyylit */
+.equal {
+  background-color: #007bff;
+  color: white;
+  grid-column: span 2; /* Vie 2 saraketta leveämmän painikkeen saamiseksi */
+}
+/* Yhtäläisyyspainikkeen hover-efekti */
+.equal:hover {
+  background-color: #0056b3;
+}
+/* Tyhjennyspainikkeen tyylit */
+.clear {
+  background-color: #dc3545;
+  color: white;
+  grid-column: span 2; /* Vie 2 saraketta leveämmän painikkeen saamiseksi */
+}
+/* Tyhjennyspainikkeen hover-efekti */
+.clear:hover {
+  background-color: #c82333;
+>>>>>>> 475e911a3c77800f46bc3691df0ebc465854a671
 }

@@ -1,41 +1,42 @@
-// Wait for the DOM to fully load before executing the script
+// Odota, että DOM latautuu täysin ennen kuin suoritat skriptin
 document.addEventListener("DOMContentLoaded", () => {
-  // Selecting DOM elements
-  const eventNameInput = document.getElementById("event-name"); // Event name input
-  const eventDateInput = document.getElementById("event-date"); // Event date input
-  const startButton = document.getElementById("start-button"); // Start button
-  const countdownDiv = document.getElementById("countdown"); // Countdown display
-  let countdownInterval; // Variable to store the interval
-  // Add event listener to the start button
+  // Valitaan DOM-elementit
+  const eventNameInput = document.getElementById("event-name"); // Tapahtuman nimen syötekenttä
+  const eventDateInput = document.getElementById("event-date"); // Tapahtuman päivämäärän syötekenttä
+  const startButton = document.getElementById("start-button"); // Käynnistyspainike
+  const countdownDiv = document.getElementById("countdown"); // Laskurin näyttö
+  let countdownInterval; // Muuttuja intervallin tallentamista varten
+  // Lisää tapahtumankuuntelija käynnistyspainikkeelle
   startButton.addEventListener("click", startCountdown);
-  // Function to start the countdown
+  // Funktio laskurin käynnistämiseen
   function startCountdown() {
-    // Retrieve the event name and event date
+    // Haetaan tapahtuman nimi ja päivämäärä
     const eventName = eventNameInput.value.trim();
     const eventDate = new Date(eventDateInput.value);
-    // Validate inputs
+    // Tarkistetaan syötteiden kelvollisuus
     if (!eventName || isNaN(eventDate)) {
-      countdownDiv.textContent = "Please enter a valid event name and date."; // Error message
-      countdownDiv.style.color = "#e74c3c"; // Red color for error
+      countdownDiv.textContent =
+        "Anna kelvollinen tapahtuman nimi ja päivämäärä."; // Virheilmoitus
+      countdownDiv.style.color = "#e74c3c"; // Punainen väri virheelle
       return;
     }
-    // Clear any previous interval
+    // Tyhjennetään mahdollinen aiempi intervalli
     if (countdownInterval) {
       clearInterval(countdownInterval);
     }
-    // Start the countdown timer
+    // Käynnistetään laskurin ajastin
     countdownInterval = setInterval(() => {
-      const now = new Date(); // Get current date and time
-      const timeDifference = eventDate - now; // Calculate time difference
-      // Check if the event has already occurred
+      const now = new Date(); // Haetaan nykyinen päivämäärä ja aika
+      const timeDifference = eventDate - now; // Lasketaan ajan ero
+      // Tarkistetaan, onko tapahtuma jo ohi
       if (timeDifference <= 0) {
-        clearInterval(countdownInterval); // Stop the countdown
-        countdownDiv.textContent = `${eventName} has already occurred.`;
-        // Display message
-        countdownDiv.style.color = "#2c3e50"; // Reset text color
+        clearInterval(countdownInterval); // Lopetetaan laskuri
+        countdownDiv.textContent = `${eventName} on jo tapahtunut.`;
+        // Näytetään viesti
+        countdownDiv.style.color = "#2c3e50"; // Palautetaan tekstin väri
         return;
       }
-      // Calculate remaining time in days, hours, minutes, and seconds
+      // Lasketaan jäljellä oleva aika päivinä, tunteina, minuutteina ja sekunteina
       const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
       const hours = Math.floor(
         (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
@@ -44,9 +45,9 @@ document.addEventListener("DOMContentLoaded", () => {
         (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
       );
       const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-      // Update the countdown display
-      countdownDiv.textContent = `Time until ${eventName}: ${days}d ${hours}h ${minutes}m ${seconds}s`;
-      countdownDiv.style.color = "#2c3e50"; // Reset text color
+      // Päivitetään laskurin näyttö
+      countdownDiv.textContent = `Aikaa ${eventName}: ${days}p ${hours}t ${minutes}m ${seconds}s`;
+      countdownDiv.style.color = "#2c3e50"; // Palautetaan tekstin väri
     }, 1000);
   }
 });

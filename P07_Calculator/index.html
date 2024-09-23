@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
 <head>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,4 +41,42 @@
  <!-- Linkki ulkoiseen JavaScript-tiedostoon toiminnallisuuksien lisäämiseksi -->
  <script src="app.js"></script>
 </body>
+=======
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <!-- Linkki ulkoiseen CSS-tiedostoon tyylitelyä varten -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Näyttöosio numeroiden ja tuloksen näyttämiseen -->
+      <div class="display" id="display">0</div>
+      <!-- Laskimen painikkeet, järjestetty ruudukkomuotoon -->
+      <div class="buttons">
+        <button data-number="7">7</button>
+        <button data-number="8">8</button>
+        <button data-number="9">9</button>
+        <button class="operator" data-operator="+">+</button>
+        <button data-number="4">4</button>
+        <button data-number="5">5</button>
+        <button data-number="6">6</button>
+        <button class="operator" data-operator="-">-</button>
+        <button data-number="1">1</button>
+        <button data-number="2">2</button>
+        <button data-number="3">3</button>
+        <button class="operator" data-operator="*">*</button>
+        <button data-number="0">0</button>
+        <!-- Tyhjennyspainike laskimen nollaamiseen -->
+        <button class="clear" id="clear">C</button>
+        <!-- Yhtäläisyyspainike laskutoimituksen suorittamiseen -->
+        <button class="equal" id="equal">=</button>
+        <button class="operator" data-operator="/">/</button>
+      </div>
+    </div>
+    <!-- Linkki ulkoiseen JavaScript-tiedostoon toiminnallisuutta varten -->
+    <script src="app.js"></script>
+  </body>
+>>>>>>> 475e911a3c77800f46bc3691df0ebc465854a671
 </html>

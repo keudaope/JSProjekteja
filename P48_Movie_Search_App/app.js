@@ -1,52 +1,54 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Select DOM elements
+  // Valitse DOM-elementit
   const movieInput = document.getElementById("movie-input");
   const searchMovieButton = document.getElementById("search-movie-button");
   const movieDiv = document.getElementById("movie");
-  // Add event listener to the search button
+  // Lisää tapahtumankuuntelija hakupainikkeelle
   searchMovieButton.addEventListener("click", fetchMovie);
+
   /**
-   * Fetches movie data from the OMDB API based on user input
+   * Hakee elokuvatietoja OMDB API:sta käyttäjän syötteen perusteella
    */
   async function fetchMovie() {
-    const movieName = movieInput.value.trim(); // Get user input and remove extra spaces
-    // Check if input is empty
+    const movieName = movieInput.value.trim(); // Hakee käyttäjän syötteen ja poistaa ylimääräiset välilyönnit
+    // Tarkista, onko syöte tyhjä
     if (movieName === "") {
-      alert("Please enter a movie name.");
+      alert("Anna elokuvan nimi.");
       return;
     }
     try {
-      // Fetch movie data from OMDB API
+      // Hakee elokuvatietoja OMDB API:sta
       const response = await fetch(
         `https://www.omdbapi.com/?t=${movieName}&apikey=af239a67`
       );
       const data = await response.json();
-      // Check if the movie was found
+      // Tarkistaa, löytyikö elokuva
       if (data.Response === "False") {
-        movieDiv.innerHTML = `<p>Movie not found!</p>`;
+        movieDiv.innerHTML = `<p>Elokuvaa ei löytynyt!</p>`;
       } else {
-        displayMovie(data); // Call function to display movie details
+        displayMovie(data); // Kutsuu funktiota näyttämään elokuvatiedot
       }
     } catch (error) {
-      // Display error message in case of network issues
-      movieDiv.innerHTML = `<p>Could not fetch movie details. Please try again later.</p>`;
+      // Näyttää virheilmoituksen verkkovirheiden tapauksessa
+      movieDiv.innerHTML = `<p>Elokuvatietoja ei voitu hakea. Yritä uudelleen myöhemmin.</p>`;
     }
   }
+
   /**
-   * Displays the fetched movie details on the page
-   * @param {Object} data - Movie data object returned from the API
+   * Näyttää haetut elokuvatiedot sivulla
+   * @param {Object} data - Elokuvatieto-objekti, joka palautetaan API:sta
    *  */
   function displayMovie(data) {
-    // Populate the movie div with movie details
+    // Täyttää elokuvadivin elokuvatiedoilla
     movieDiv.innerHTML = `
  <img src="${data.Poster !== "N/A" ? data.Poster : "default-image.jpg"}" alt="${
       data.Title
     }">
  <div class="movie-details">
  <h2>${data.Title}</h2>
- <p><strong>Release Date:</strong> ${data.Released}</p>
+ <p><strong>Julkaisupäivä:</strong> ${data.Released}</p>
  <p><strong>Genre:</strong> ${data.Genre}</p>
- <p><strong>Plot:</strong> ${data.Plot}</p>
+ <p><strong>Juoni:</strong> ${data.Plot}</p>
  </div>
  `;
   }

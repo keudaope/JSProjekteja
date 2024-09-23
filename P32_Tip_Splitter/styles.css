@@ -1,40 +1,39 @@
-/* Global reset for consistent margins, paddings, and box-sizing */
+/* Yleinen nollaus marginaaleille, täytteille ja laatikkokokoilulle */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-/* Body styling for the overall layout */
+/* Rungon tyylittely koko sivun asettelulle */
 body {
-  font-family: "Roboto", sans-serif; /* Clean, modern font */
+  font-family: "Roboto", sans-serif; /* Selkeä ja moderni fontti */
   background: linear-gradient(
     135deg,
     #74ebd5,
     #acb6e5
-  ); /* Fresh gradient
-background */
+  ); /* Raikas gradienttitausta */
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100vh; /* Täydellinen näkymäkorkeus */
 }
-/* Container styling for the main card */
+/* Pääkortin säilön tyylittely */
 .container {
-  background-color: #fff; /* Clean white background */
-  padding: 40px 30px; /* Comfortable internal spacing */
-  border-radius: 15px; /* Smooth rounded corners */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  background-color: #fff; /* Puhdas valkoinen tausta */
+  padding: 40px 30px; /* Mukavat sisäiset marginaalit */
+  border-radius: 15px; /* Pyöristetyt kulmat */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Kevyt varjo syvyyden luomiseksi */
   text-align: center;
   width: 100%;
-  max-width: 400px; /* Max width for responsive design */
+  max-width: 400px; /* Maksimileveys responsiiviseen suunnitteluun */
 }
-/* Styling for the heading */
+/* Otsikon tyylittely */
 h1 {
   font-size: 2.2em;
   color: #333;
   margin-bottom: 20px;
 }
-/* Input fields styling */
+/* Syöttökenttien tyylittely */
 input[type="number"] {
   width: 100%;
   padding: 12px;
@@ -43,18 +42,17 @@ input[type="number"] {
   border-radius: 8px;
   font-size: 1em;
   text-align: center;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Soft shadow for a modern look
-*/
-  transition: border-color 0.3s ease; /* Smooth focus transition */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Kevyt varjo modernin ilmeen saavuttamiseksi */
+  transition: border-color 0.3s ease; /* Sulava siirtymä tarkennuksen yhteydessä */
 }
-/* Focus effect for input fields */
+/* Tarkennustila syöttökentille */
 input[type="number"]:focus {
-  border-color: #007bff; /* Highlight border on focus */
-  outline: none; /* Remove default outline */
+  border-color: #007bff; /* Korostettu reunus tarkennustilassa */
+  outline: none; /* Poista oletusarvoinen reunus */
 }
-/* Button styling */
+/* Painikkeen tyylittely */
 button {
-  background-color: #007bff; /* Vibrant blue background */
+  background-color: #007bff; /* Kirkkaan sininen tausta */
   color: white;
   border: none;
   padding: 12px 30px;
@@ -63,20 +61,20 @@ button {
   font-size: 1em;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-/* Hover effect for button */
+/* Hover-efekti painikkeelle */
 button:hover {
   background-color: #0056b3;
-  transform: translateY(-2px); /* Slight lift effect on hover */
+  transform: translateY(-2px); /* Hieman kohoava efekti hover-tilassa */
 }
-/* Active effect for button */
+/* Aktiivinen tila painikkeelle */
 button:active {
   background-color: #004494;
-  transform: translateY(1px); /* Pressed effect */
+  transform: translateY(1px); /* Painaustila-efekti */
 }
-/* Result display styling */
+/* Tuloksen näyttämisen tyylittely */
 .result {
   margin-top: 20px;
   font-size: 1.5em;
   color: #2d3748;
-  min-height: 40px; /* Ensure stable layout even without result */
+  min-height: 40px; /* Varmista vakaa asettelu, vaikka tulosta ei olisi */
 }

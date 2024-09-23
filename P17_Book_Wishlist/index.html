@@ -4,45 +4,43 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book Wishlist</title>
-    <!-- Link to external CSS for styling -->
+    <!-- Linkki ulkoiseen CSS-tiedostoon tyylittelyä varten -->
     <link rel="stylesheet" href="styles.css" />
-    <!-- Google Fonts for modern typography -->
+    <!-- Google Fonts modernia typografiaa varten -->
     <link
-      href="https://fonts.googleapis.com/css2?
-family=Roboto:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
     <div class="container">
-      <h1>Book Wishlist</h1>
-      <!-- Form to add a new book with title, author, and description -->
+      <h1>Kirjatoivelista</h1>
+      <!-- Lomake uuden kirjan lisäämistä varten (otsikko, kirjoittaja ja kuvaus) -->
       <form id="book-form">
         <input
           type="text"
           id="book-title"
-          placeholder="Enter book title"
+          placeholder="Syötä kirjan nimi"
           required
         />
         <input
           type="text"
           id="book-author"
-          placeholder="Enter author's
-name"
+          placeholder="Syötä kirjoittajan nimi"
           required
         />
         <textarea
           id="book-description"
-          placeholder="Enter book description"
+          placeholder="Syötä kirjan kuvaus"
           rows="3"
           required
         ></textarea>
-        <button type="submit">Add Book</button>
+        <button type="submit">Lisää kirja</button>
       </form>
-      <!-- Wishlist display area -->
+      <!-- Näyttöalue toivelistan kirjoille -->
       <ul id="book-list" class="book-list"></ul>
     </div>
-    <!-- External JS file for functionality -->
+    <!-- Ulkoinen JS-tiedosto toiminnallisuutta varten -->
     <script src="app.js"></script>
   </body>
 </html>

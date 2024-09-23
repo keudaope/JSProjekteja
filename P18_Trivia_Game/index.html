@@ -2,35 +2,35 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- Meta-tagi, joka varmistaa oikean renderöinnin ja zoomauksen mobiililaitteilla -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trivia Game</title>
-    <!-- Link to external CSS for styling -->
+    <!-- Linkki ulkoiseen CSS-tiedostoon tyylittelyä varten -->
     <link rel="stylesheet" href="styles.css" />
-    <!-- Google Fonts for modern typography -->
+    <!-- Google Fonts modernia typografiaa varten -->
     <link
-      href="https://fonts.googleapis.com/css2?
-family=Roboto:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
     <div class="container">
       <h1>Trivia Game</h1>
-      <!-- Live area for question -->
+      <!-- Kysymyksen esityspaikka -->
       <div class="question" id="question" aria-live="polite">
-        Loading question...
+        Ladataan kysymystä...
       </div>
-      <!-- Container for answer buttons -->
+      <!-- Vastauspainikkeiden säilö -->
       <div class="answers" id="answers"></div>
-      <!-- Display area for correct/incorrect messages -->
+      <!-- Näyttöalue oikeille/väärille vastauksille -->
       <div class="feedback" id="feedback"></div>
-      <!-- Display area for correct and incorrect count -->
+      <!-- Näyttöalue oikeiden ja väärien vastausten määrille -->
       <div class="stats">
-        <p>Correct: <span id="correct-count">0</span></p>
-        <p>Incorrect: <span id="incorrect-count">0</span></p>
+        <p>Oikein: <span id="correct-count">0</span></p>
+        <p>Väärin: <span id="incorrect-count">0</span></p>
       </div>
     </div>
-    <!-- External JavaScript file for functionality -->
+    <!-- Ulkoinen JavaScript-tiedosto toiminnallisuutta varten -->
     <script src="app.js"></script>
   </body>
 </html>

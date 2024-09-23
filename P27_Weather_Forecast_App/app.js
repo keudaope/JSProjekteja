@@ -1,77 +1,82 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Select DOM elements for interaction
-  const cityInput = document.getElementById("city"); // Input field for city name
-  const getForecastButton = document.getElementById("get-forecast"); // Button to get forecast
-  const forecastDiv = document.getElementById("forecast"); // Div to display forecast
-  const apiKey = "6ddc93fbc7d0c4a2941a17cf6dbbba37"; // Replace with your OpenWeatherMap API key
-  // Add click event listener to the button
+  // Valitaan DOM-elementit vuorovaikutusta varten
+  const cityInput = document.getElementById("city"); // Syötekenttä kaupungin nimelle
+  const getForecastButton = document.getElementById("get-forecast"); // Painike, joka hakee sääennusteen
+  const forecastDiv = document.getElementById("forecast"); // Div-elementti sääennusteen näyttämiseksi
+  const apiKey = "6ddc93fbc7d0c4a2941a17cf6dbbba37"; // Korvaa tämä omalla OpenWeatherMap API-avaimellasi
+  // Lisätään klikkaustapahtuma painikkeeseen
   getForecastButton.addEventListener("click", getWeatherForecast);
-  // Function to fetch and display weather forecast
+
+  // Funktio, joka hakee ja näyttää sääennusteen
   function getWeatherForecast() {
-    const city = cityInput.value.trim(); // Get the city name from the input field
-    // Ensure the city input is not empty
+    const city = cityInput.value.trim(); // Haetaan kaupungin nimi syötekentästä
+    // Varmistetaan, että kaupunkikenttä ei ole tyhjä
     if (!city) {
-      forecastDiv.innerHTML = "<p>Please enter a city name.</p>";
+      forecastDiv.innerHTML = "<p>Syötä kaupungin nimi.</p>";
       return;
     }
-    // Fetch weather data from OpenWeatherMap API
+    // Haetaan säädataa OpenWeatherMap API:sta
     fetch(
       `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&cnt=40&appid=${apiKey}`
     )
       .then((response) => response.json())
       .then((data) => {
-        // Check if the city was found
+        // Tarkistetaan, löytyikö kaupunki
         if (data.cod !== "200") {
-          forecastDiv.innerHTML = "<p>City not found. Please try again.</p>";
+          forecastDiv.innerHTML =
+            "<p>Kaupunkia ei löytynyt. Yritä uudelleen.</p>";
           return;
         }
-        // Display the forecast data
+        // Näytetään sääennustedata
         displayForecast(data);
       })
       .catch((error) => {
-        console.error("Error fetching weather data:", error);
+        console.error("Virhe haettaessa säätietoja:", error);
         forecastDiv.innerHTML =
-          "<p>Error fetching weather data. Please try again later.</p>";
+          "<p>Virhe säätietojen haussa. Yritä myöhemmin uudelleen.</p>";
       });
   }
-  // Function to display the forecast in the UI
+
+  // Funktio, joka näyttää sääennusteen käyttöliittymässä
   function displayForecast(data) {
-    forecastDiv.innerHTML = ""; // Clear previous forecast
+    forecastDiv.innerHTML = ""; // Tyhjennetään edellinen sääennuste
     const forecastList = data.list;
     for (let i = 0; i < forecastList.length; i += 8) {
-      // Get forecast for each day (every 24 hours)
+      // Haetaan ennuste joka päivältä (joka 24 tunnin välein)
       const forecast = forecastList[i];
-      const date = new Date(forecast.dt * 1000); // Convert UNIX timestamp to Date
+      const date = new Date(forecast.dt * 1000); // Muutetaan UNIX-aikaleima päivämääräksi
       const day = date.toLocaleDateString(undefined, { weekday: "long" });
-      // Format the date as weekday
-      const temp = forecast.main.temp; // Get the temperature
-      const weather = forecast.weather[0].description; // Get weather description
-      // Determine the appropriate emoji based on the weather description
+      // Muotoillaan päivämäärä viikonpäiväksi
+      const temp = forecast.main.temp; // Haetaan lämpötila
+      const weather = forecast.weather[0].description; // Haetaan sään kuvaus
+
+      // Määritetään sopiva emoji sään kuvauksen perusteella
       let weatherEmoji = "";
       if (weather.includes("clear")) {
-        weatherEmoji = " "; // Clear weather
+        weatherEmoji = "☀️"; // Selkeä sää
       } else if (weather.includes("clouds")) {
-        weatherEmoji = " "; // Cloudy weather
+        weatherEmoji = "☁️"; // Pilvinen sää
       } else if (weather.includes("rain")) {
-        weatherEmoji = " "; // Rainy weather
+        weatherEmoji = "🌧️"; // Sateinen sää
       } else if (weather.includes("thunderstorm")) {
-        weatherEmoji = " "; // Thunderstorm
+        weatherEmoji = "⛈️"; // Ukkosmyrsky
       } else if (weather.includes("snow")) {
-        weatherEmoji = " "; // Snowy weather
+        weatherEmoji = "❄️"; // Lumisade
       } else if (weather.includes("mist") || weather.includes("fog")) {
-        weatherEmoji = " "; // Mist or fog
+        weatherEmoji = "🌫️"; // Sumu
       } else {
-        weatherEmoji = " "; // Default: general nice weather
+        weatherEmoji = "🌤️"; // Yleisesti hyvä sää
       }
-      // Create a new div for each day's forecast
+
+      // Luodaan uusi div jokaisen päivän ennusteelle
       const forecastDayDiv = document.createElement("div");
       forecastDayDiv.classList.add("forecast-day");
       forecastDayDiv.innerHTML = `
- <h2>${day}</h2>
- <p>Temperature: ${temp}°C</p>
- <p>Weather: ${weatherEmoji} ${weather}</p>
- `;
-      // Append the forecast div to the main forecast container
+        <h2>${day}</h2>
+        <p>Lämpötila: ${temp}°C</p>
+        <p>Sää: ${weatherEmoji} ${weather}</p>
+      `;
+      // Lisätään ennuste-elementti pääennustekontaineriin
       forecastDiv.appendChild(forecastDayDiv);
     }
   }

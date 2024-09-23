@@ -1,12 +1,11 @@
-/* Global body styling */
+/* Kehon (body) yleinen tyylitys */
 body {
   font-family: Arial, sans-serif;
   background: linear-gradient(
     135deg,
     #74ebd5,
     #acb6e5
-  ); /* Modern gradient
-background */
+  ); /* Moderni gradientti taustavärinä */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,34 +14,34 @@ background */
   color: #333;
   transition: background-color 0.3s ease-in-out;
 }
-/* Main container styling */
+/* Pääkontainerin tyylitys */
 .container {
   background: white;
   padding: 30px;
-  border-radius: 12px; /* Smooth rounded corners */
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-radius: 12px; /* Pyöristetyt kulmat */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Kevyt varjo syvyyttä varten */
   text-align: center;
   width: 320px;
   transition: transform 0.3s ease;
 }
-/* Zoom effect on hover */
+/* Zoom-efekti hoverissa */
 .container:hover {
-  transform: scale(1.05); /* Slight zoom effect for interactivity */
+  transform: scale(1.05); /* Hieman suurentava efekti vuorovaikutukselle */
 }
-/* Title styling */
+/* Otsikon tyylitys */
 h1 {
   margin-bottom: 20px;
   font-size: 1.8em;
-  color: #2c3e50; /* Darker text color for contrast */
+  color: #2c3e50; /* Tummempi tekstiväri kontrastia varten */
 }
-/* Choices button layout */
+/* Valintanappien asettelu */
 .choices {
   display: flex;
   justify-content: center;
   gap: 15px;
   margin-bottom: 20px;
 }
-/* Each choice button styling */
+/* Yksittäisen valintanapin tyylitys */
 .choice {
   padding: 15px 25px;
   border: 2px solid #007bff;
@@ -53,12 +52,12 @@ h1 {
   font-size: 1.1em;
   transition: background-color 0.3s, color 0.3s;
 }
-/* Hover effect for choices */
+/* Hover-efekti valintanapeille */
 .choice:hover {
   background-color: #007bff;
   color: white;
 }
-/* Result text styling */
+/* Tulostekstin tyylitys */
 .result {
   font-size: 1.4em;
   margin-top: 20px;

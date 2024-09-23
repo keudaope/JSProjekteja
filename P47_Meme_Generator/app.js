@@ -1,39 +1,40 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const imageInput = document.getElementById("image-input"); // Input for image upload
-  const topTextInput = document.getElementById("top-text"); // Input for top meme text
-  const bottomTextInput = document.getElementById("bottom-text"); // Input for bottom meme text
+  const imageInput = document.getElementById("image-input"); // Syötekenttä kuvan lataamista varten
+  const topTextInput = document.getElementById("top-text"); // Syötekenttä meemin ylätekstille
+  const bottomTextInput = document.getElementById("bottom-text"); // Syötekenttä meemin alatekstille
   const generateMemeButton = document.getElementById("generate-meme-button");
-  // Button to generate meme
+  // Painike meemin luomista varten
   const downloadMemeButton = document.getElementById("download-meme-button");
-  // Button to download meme
-  const canvas = document.getElementById("meme-canvas"); // Canvas to render meme
-  const ctx = canvas.getContext("2d"); // Get 2D rendering context
-  // Event listener to generate meme when the button is clicked
+  // Painike meemin lataamista varten
+  const canvas = document.getElementById("meme-canvas"); // Canvas, johon meemi piirretään
+  const ctx = canvas.getContext("2d"); // Haetaan 2D-piirtoympäristö
+
+  // Tapahtumankuuntelija meemin luomiseen, kun painiketta painetaan
   generateMemeButton.addEventListener("click", () => {
-    const imageFile = imageInput.files[0]; // Get the uploaded image file
+    const imageFile = imageInput.files[0]; // Haetaan ladattu kuvatiedosto
     if (imageFile) {
-      const reader = new FileReader(); // FileReader to read the image file
+      const reader = new FileReader(); // FileReader kuvatiedoston lukemiseen
       reader.onload = () => {
-        const img = new Image(); // Create a new image element
+        const img = new Image(); // Luodaan uusi kuvaelementti
         img.onload = () => {
-          canvas.width = img.width; // Set canvas width to image width
-          canvas.height = img.height; // Set canvas height to image height
-          // Draw the image on the canvas
+          canvas.width = img.width; // Asetetaan kankaan leveys kuvan leveydeksi
+          canvas.height = img.height; // Asetetaan kankaan korkeus kuvan korkeudeksi
+          // Piirretään kuva kankaalle
           ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-          // Set text properties for the meme
+          // Asetetaan meemin tekstin ominaisuudet
           ctx.font = "30px Impact";
-          ctx.fillStyle = "white"; // White text
-          ctx.strokeStyle = "black"; // Black border around the text
-          ctx.lineWidth = 2; // Width of the stroke
-          ctx.textAlign = "center"; // Center-align the text
-          // Add top text on the meme
+          ctx.fillStyle = "valkoinen"; // Valkoinen teksti
+          ctx.strokeStyle = "musta"; // Musta reunus tekstille
+          ctx.lineWidth = 2; // Reunaviivan leveys
+          ctx.textAlign = "center"; // Keskitetään teksti
+          // Lisätään yläteksti meemiin
           ctx.fillText(topTextInput.value.toUpperCase(), canvas.width / 2, 40);
           ctx.strokeText(
             topTextInput.value.toUpperCase(),
             canvas.width / 2,
             40
           );
-          // Add bottom text on the meme
+          // Lisätään alateksti meemiin
           ctx.fillText(
             bottomTextInput.value.toUpperCase(),
             canvas.width / 2,
@@ -44,22 +45,23 @@ document.addEventListener("DOMContentLoaded", () => {
             canvas.width / 2,
             canvas.height - 20
           );
-          // Display the canvas and download button after generating the meme
+          // Näytetään canvas ja latauspainike meemin luomisen jälkeen
           canvas.style.display = "block";
           downloadMemeButton.style.display = "block";
         };
-        img.src = reader.result; // Set the image source to the file read result
+        img.src = reader.result; // Asetetaan kuvan lähde tiedoston lukutulokselle
       };
-      reader.readAsDataURL(imageFile); // Read the image file as a Data URL
+      reader.readAsDataURL(imageFile); // Luetaan kuvatiedosto Data URL -muodossa
     } else {
-      alert("Please upload an image to generate a meme."); // Error handling if no image is uploaded
+      alert("Lataa kuva luodaksesi meemin."); // Virheilmoitus, jos kuvaa ei ole ladattu
     }
   });
-  // Event listener to download the generated meme
+
+  // Tapahtumankuuntelija luodun meemin lataamista varten
   downloadMemeButton.addEventListener("click", () => {
-    const link = document.createElement("a"); // Create an anchor element for download
-    link.download = "meme.png"; // Set the filename for download
-    link.href = canvas.toDataURL("image/png"); // Convert canvas content to a data URL
-    link.click(); // Simulate a click to download the image
+    const link = document.createElement("a"); // Luodaan linkkielementti latausta varten
+    link.download = "meme.png"; // Asetetaan ladattavan tiedoston nimi
+    link.href = canvas.toDataURL("image/png"); // Muunnetaan canvas sisältö Data URL -muotoon
+    link.click(); // Simuloidaan klikkausta ladataksemme kuvan
   });
 });

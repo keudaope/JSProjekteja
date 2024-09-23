@@ -1,4 +1,4 @@
-/* Applying a background gradient to the body */
+/* Sovelletaan taustagradienttiä kehoon */
 body {
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #74ebd5, #acb6e5);
@@ -8,7 +8,7 @@ body {
   height: 100vh;
   margin: 0;
 }
-/* Styling the main container */
+/* Pääkontin tyylittely */
 .container {
   background-color: white;
   padding: 20px;
@@ -17,12 +17,12 @@ body {
   text-align: center;
   width: 320px;
 }
-/* Heading style */
+/* Otsikon tyyli */
 h1 {
   margin-bottom: 20px;
   font-size: 1.8em;
 }
-/* Style for the input field */
+/* Syötekentän tyyli */
 input[type="number"] {
   padding: 10px;
   margin-bottom: 10px;
@@ -31,7 +31,7 @@ input[type="number"] {
   border-radius: 4px;
   text-align: center;
 }
-/* Dropdown (select) styling */
+/* Pudotusvalikon (select) tyylittely */
 select {
   padding: 10px;
   margin-bottom: 10px;
@@ -40,7 +40,7 @@ select {
   border-radius: 4px;
   text-align: center;
 }
-/* Styling for the Convert button */
+/* Muunna-painikkeen tyylittely */
 button {
   padding: 10px 20px;
   border: none;
@@ -49,11 +49,11 @@ button {
   border-radius: 4px;
   cursor: pointer;
 }
-/* Hover effect for the button */
+/* Hover-efekti painikkeelle */
 button:hover {
   background-color: #0056b3;
 }
-/* Styling for the result display */
+/* Tulosalueen tyylittely */
 .result {
   margin-top: 20px;
   font-size: 1.2em;

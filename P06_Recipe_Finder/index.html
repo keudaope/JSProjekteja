@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
 <head>
  <meta charset="UTF-8">
  <!-- Asettaa merkistöksi UTF-8 tukemaan kansainvälisiä merkkejä -->
@@ -26,4 +27,40 @@
  <!-- Linkki ulkoiseen JavaScript-tiedostoon -->
  <script src="app.js"></script>
 </body>
+=======
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Asettaa merkistökoodauksen UTF-8:ksi, jotta kansainväliset merkit ovat tuettuja -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Varmistaa, että verkkosivu on responsiivinen ja skaalautuu oikein kaikilla laitteilla -->
+    <title>Recipe Finder</title>
+    <!-- Linkki ulkoiseen CSS-tiedostoon -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Pääsäilö, joka sisältää koko sovelluksen sisällön -->
+    <div class="container">
+      <h1>Recipe Finder</h1>
+      <!-- Lomake, jolla syötetään ainesosia ja etsitään reseptejä -->
+      <form id="recipe-form" aria-label="Reseptilomake">
+        <!-- Syötekenttä ainesosien syöttämiseksi, pakollinen lomakkeen lähettämiseksi -->
+        <input
+          type="text"
+          id="ingredients"
+          placeholder="Syötä ainesosat pilkuilla erotettuna"
+          required
+          aria-label="Ainesosien syötekenttä"
+        />
+        <!-- Lähetä-painike reseptien etsimiseksi -->
+        <button type="submit" aria-label="Etsi reseptejä">
+          Etsi reseptejä
+        </button>
+      </form>
+      <!-- Osio, johon reseptit näytetään -->
+      <div class="recipes" id="recipes"></div>
+    </div>
+    <!-- Linkki ulkoiseen JavaScript-tiedostoon -->
+    <script src="app.js"></script>
+  </body>
+>>>>>>> 475e911a3c77800f46bc3691df0ebc465854a671
 </html>
