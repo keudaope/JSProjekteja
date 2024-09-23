@@ -1,86 +1,3 @@
-<<<<<<< HEAD
-/* Globaalit nollaukset, jotta marginaalit, täytteet ja laatikon koko ovat yhtenäisiä */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-   }
-/* Kehon tyyli: Flexbox-asettelu pelin keskittämiseksi sekä pystysuunnassa että vaakasuunnassa */
-   body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #74ebd5, #acb6e5); /* Moderni gradienttitausta */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Koko näkymän korkeus */
-   }
-/* Pääsäiliön tyyli pelille */
-   .container {
-    background-color: #fff; /* Puhdas valkoinen tausta */
-    padding: 20px; /* Sisäiset täytteet sisällön ympärille */
-    border-radius: 15px; /* Pyöristetyt kulmat korttimaiselle ulkoasulle */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Varjo tuomaan syvyyttä */
-    text-align: center; /* Sisällön keskitys */
-    width: 400px; /* Kiinteä leveys säiliölle */
-    max-width: 100%; /* Varmista, ettei ylitä näytön kokoa */
-    transition: transform 0.3s ease; /* Sulava muunnostehoste hoverille */
-   }
-/* Zoomaus hoverissa, jotta säiliöstä tulee interaktiivinen */
-   .container:hover {
-    transform: scale(1.05); /* Hieman suurentaminen interaktiivisuuden lisäämiseksi */
-   }
-/* Pääotsikon tyyli */
-   h1 {
-    font-size: 2.5em; /* Iso fonttikoko otsikolle */
-    margin-bottom: 20px; /* Tilaa otsikon alapuolelle */
-    color: #2d3748; /* Tumma väri kontrastin vuoksi */
-   }
-/* Pelilaudan tyyli: ruudukkoasettelu, jossa kortit 4 sarakkeessa */
-   .game-board {
-    display: grid;
-    grid-template-columns: repeat(4, 90px); /* 4 saraketta, joissa kiinteä kortin leveys */
-    grid-gap: 10px; /* Välit korttien välillä */
-    justify-content: center; /* Keskitä pelilauta */
-   }
-/* Korttien tyyli */
-   .card {
-    width: 90px; /* Kortin leveys */
-    height: 90px; /* Kortin korkeus */
-    background-color: #007bff; /* Alkuperäinen sininen tausta */
-    color: white; /* Valkoinen tekstiväri */
-    display: flex; /* Flexbox tekstin keskittämiseksi */
-    justify-content: center; /* Keskitä teksti vaakasuunnassa */
-    align-items: center; /* Keskitä teksti pystysuunnassa */
-    font-size: 1.8em; /* Hieman pienempi fonttikoko */
-    border-radius: 10px; /* Pyöristetyt kulmat */
-    cursor: pointer; /* Muuta kursori osoittamaan klikkausmahdollisuutta */
-    user-select: none; /* Estä tekstin valitseminen */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Sulavat siirtymät */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Kevyt varjo tuomaan syvyyttä */
-   }
-/* Käännettyjen korttien tyyli */
-   .card.flipped {
-    background-color: #fff; /* Valkoinen tausta, kun kortti on käännetty */
-    color: #007bff; /* Sininen teksti käännettynä */
-    cursor: default; /* Ei osoittimen kursoria, kun kortti on käännetty */
-   }
-/* Yhdistettyjen korttien tyyli */
-   .card.matched {
-    background-color: #28a745; /* Vihreä tausta yhdistetyille korteille */
-    color: white; /* Valkoinen teksti yhdistetyille korteille */
-    cursor: default; /* Poista klikkausmahdollisuus yhdistetyille korteille */
-   }
-/* Lisää hover-tehoste kortteihin pienellä kohotuksella */
-   .card:hover {
-    transform: translateY(-5px); /* Siirrä korttia hieman ylöspäin hoverilla */
-   }
-/* Responsiivinen muotoilu: säädä korttien koko ja pelilaudan asettelu pienemmille näytöille */
-   @media (max-width: 500px) {
-    .game-board {
-    grid-template-columns: repeat(4, 80px); /* Pienemmät kortit mobiilissa */
-    }
-    .card {
-=======
 /* Globaali nollaus varmistamaan yhtenäiset marginaalit, täytteet ja box-sizing */
 * {
   margin: 0;
@@ -169,7 +86,6 @@ h1 {
     grid-template-columns: repeat(4, 80px); /* Pienempi korttikoko mobiilissa */
   }
   .card {
->>>>>>> 475e911a3c77800f46bc3691df0ebc465854a671
     width: 80px;
     height: 80px;
   }

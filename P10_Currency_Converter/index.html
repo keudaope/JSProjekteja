@@ -1,50 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Currency Converter</title>
- <!-- Linkki ulkoiseen CSS-tiedostoon tyylittelyä varten -->
- <link rel="stylesheet" href="styles.css">
- <!-- Google Fonts modernia typografiaa varten -->
- <link href="https://fonts.googleapis.com/css2?
-family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-</head>
-<body>
- <div class="container">
- <!-- Sovelluksen pääotsikko: Valuuttamuunnin -->
- <h1>Valuuttamuunnin</h1>
-
- <!-- Lomake summan syöttämistä ja valuuttojen valitsemista varten -->
- <form id="converter-form" aria-label="Valuuttamuunninlomake">
- <!-- Syötekenttä muunnettavan summan syöttämistä varten -->
- <input type="number" id="amount" placeholder="Syötä summa" min="0"
-step="0.01" required aria-label="Muunnettava summa">
-
- <!-- Valintapudotus valitaksesi muunnettava valuutta -->
- <select id="from-currency" required aria-label="Muunnos lähdevaluutasta">
- <option value="" disabled selected>Valitse lähdevaluutta</option>
- <!-- Valinnat lisätään dynaamisesti JavaScriptillä -->
- </select>
-
- <!-- Valintapudotus valitaksesi muunnoksen kohdevaluutta -->
- <select id="to-currency" required aria-label="Muunnos kohdevaluuttaan">
- <option value="" disabled selected>Valitse kohdevaluutta</option>
- <!-- Valinnat lisätään dynaamisesti JavaScriptillä -->
- </select>
-
- <!-- Painike lomakkeen lähettämiseen ja valuutan muuntamiseen -->
- <button type="submit" aria-label="Muunna valuutta">Muunna</button>
- </form>
-
- <!-- Tulosten näyttöalue muunnetulle summalle -->
- <div class="result" id="result" aria-live="polite"></div>
- </div>
-  <!-- Linkki ulkoiseen JavaScript-tiedostoon -->
-  <script src="app.js"></script>
-</body>
-=======
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -98,5 +53,4 @@ step="0.01" required aria-label="Muunnettava summa">
     <!-- Link to external JavaScript file -->
     <script src="app.js"></script>
   </body>
->>>>>>> 475e911a3c77800f46bc3691df0ebc465854a671
 </html>
