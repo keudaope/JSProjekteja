@@ -1,43 +1,29 @@
 <!DOCTYPE html>
-<html lang="fi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chat App</title>
-  <link rel="stylesheet" href="styles.css"> <!-- Liitetään ulkoinen CSS -->
-</head>
-<body>
-  <div class="chat-container">
-    <h1>Chat</h1>
-    <textarea id="messages" readonly></textarea> <!-- Alue viesteille -->
-    
-    <form id="message-form">
-      <input type="text" id="message-input" placeholder="Kirjoita viesti..." autocomplete="off" />
-      <button type="submit">Lähetä</button>
-    </form>
-  </div>
-
-  <script>
-    // Haetaan tarvittavat elementit
-    const messageForm = document.getElementById('message-form');
-    const messageInput = document.getElementById('message-input');
-    const messagesTextarea = document.getElementById('messages');
-
-    // Tallenna viestit taulukkoon
-    let messages = [];
-
-    // Lomakkeen käsittely
-    messageForm.addEventListener('submit', function(event) {
-      event.preventDefault(); // Estä sivun uudelleenlataus
-
-      // Hae syötetty viesti ja lisää se viesteihin
-      const newMessage = messageInput.value.trim();
-      if (newMessage) {
-        messages.push(newMessage); // Lisää uusi viesti taulukkoon
-        messagesTextarea.value = messages.join('\n'); // Näytä viestit textarea:ssa
-        messageInput.value = ''; // Tyhjennä syötekenttä viestin jälkeen
-      }
-    });
-  </script>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Modern Chat App</title>
+  </head>
+  <body>
+    <div class="chat-container">
+      <!-- Chat-sovelluksen otsikko -->
+      <h1>Chat-sovellus</h1>
+      <!-- Säiliö chat-viestien näyttämistä varten -->
+      <div id="messages"></div>
+      <!-- Lomake viestien lähettämistä varten -->
+      <form id="message-form">
+        <input
+          type="text"
+          id="message-input"
+          placeholder="Kirjoita viesti..."
+          required
+        />
+        <button type="submit">Lähetä</button>
+      </form>
+    </div>
+    <!-- Linkki ulkoiseen JavaScript-tiedostoon -->
+    <script src="app.js"></script>
+  </body>
 </html>
