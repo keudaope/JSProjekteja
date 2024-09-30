@@ -1,6 +1,8 @@
 # Nettisivu: https://keudaope.github.io/JSProjekteja/P40_Form_Validator
 
-#
+# Johdanto
+
+Lomakkeen validoija on käytännöllinen sovellus, joka varmistaa, että käyttäjän syötteet lomakkeissa täyttävät tietyt kriteerit ennen lomakkeen lähettämistä. Tämä projekti auttaa aloittelijoita harjoittelemaan JavaScriptiä, HTML:ää ja CSS:ää samalla, kun opitaan käsittelemään käyttäjän syötteitä, validoimaan tietoja ja tarjoamaan reaaliaikaista palautetta. Käyttäjät näkevät virheilmoituksia, jos heidän syöttönsä on virheellinen, mikä parantaa datan laatua ja käyttäjäkokemusta.
 
 # HTML selitys
 
