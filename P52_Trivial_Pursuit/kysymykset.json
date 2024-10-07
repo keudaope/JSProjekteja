@@ -1,0 +1,357 @@
+[
+    {
+        "question": "Mikä on suosittu lautapeli, jossa pelaajat ostavat ja myyvät kiinteistöjä?",
+        "options": ["Monopoly", "Cluedo", "Risk", "Scrabble"],
+        "answer": "Monopoly"
+    },
+    {
+        "question": "Mikä on maailman suurin huvipuisto?",
+        "options": ["Disneyland Pariisi", "Walt Disney World", "Europa-Park", "Universal Studios"],
+        "answer": "Walt Disney World"
+    },
+    {
+        "question": "Mikä klassinen korttipeli tunnetaan nimellä '21'?",
+        "options": ["Pokeri", "Blackjack", "Bridge", "Gin rummy"],
+        "answer": "Blackjack"
+    },
+    {
+        "question": "Missä maassa sijaitsee kuuluisat Oktoberfest-juhlat?",
+        "options": ["Saksa", "Itävalta", "Sveitsi", "Belgia"],
+        "answer": "Saksa"
+    },
+    {
+        "question": "Mikä on suosittu videopelisarja, jossa seikkaillaan fiktiivisessä Hyrulen valtakunnassa?",
+        "options": ["Super Mario", "Final Fantasy", "The Legend of Zelda", "Metroid"],
+        "answer": "The Legend of Zelda"
+    },
+    {
+        "question": "Mikä on yleinen pituus maratonjuoksulle?",
+        "options": ["20 km", "30 km", "42 km", "50 km"],
+        "answer": "42 km"
+    },
+    {
+        "question": "Mikä on suomalaisten suosikki mökkisaunajuoma?",
+        "options": ["Maito", "Mehu", "Olut", "Siideri"],
+        "answer": "Olut"
+    },
+    {
+        "question": "Mikä lautapeli tunnetaan siitä, että siinä muodostetaan sanoja kirjaimilla?",
+        "options": ["Scrabble", "Monopoly", "Risk", "Cluedo"],
+        "answer": "Scrabble"
+    },
+    {
+        "question": "Mikä maa tunnetaan kuubalaisista sikareista?",
+        "options": ["Brasilia", "Kuuba", "Argentiina", "Meksiko"],
+        "answer": "Kuuba"
+    },
+    {
+        "question": "Mikä tanssilaji on peräisin Argentiinasta?",
+        "options": ["Salsa", "Tango", "Flamenco", "Samba"],
+        "answer": "Tango"
+    },
+    {
+        "question": "Mikä on suosittu videopelialusta, jonka konsolit tunnetaan nimillä PlayStation?",
+        "options": ["Microsoft", "Sony", "Nintendo", "Sega"],
+        "answer": "Sony"
+    },
+    {
+        "question": "Mikä on suosittu vapaa-ajan aktiviteetti, jossa kuljetaan metsissä ja kerätään marjoja tai sieniä?",
+        "options": ["Geokätköily", "Kalastus", "Retkeily", "Marjastus"],
+        "answer": "Marjastus"
+    },
+    {
+        "question": "Mikä on suosittu pöytäpeli, jossa yritetään kaataa keiloja pallolla?",
+        "options": ["Keilaus", "Snooker", "Darts", "Biljardi"],
+        "answer": "Keilaus"
+    },
+    {
+        "question": "Mikä on perinteinen suomalainen juhannustapahtuma?",
+        "options": ["Hiihto", "Juhannuskokko", "Laskiaispulla", "Talvisoutu"],
+        "answer": "Juhannuskokko"
+    },
+    {
+        "question": "Mikä on suosittu käsityöharrastus, jossa neulalla ja langalla tehdään kuvioita kankaalle?",
+        "options": ["Virkkaus", "Kudonta", "Kirjonta", "Askartelu"],
+        "answer": "Kirjonta"
+    },
+    {
+        "question": "Mikä on lautapeli, jossa strategisesti sijoitetaan armeijoita ja vallataan alueita?",
+        "options": ["Risk", "Monopoly", "Settlers of Catan", "Cluedo"],
+        "answer": "Risk"
+    },
+    {
+        "question": "Mikä on suosittu videopeligenre, jossa pelaaja ohjaa hahmoa läpi tasojen ja kerää esineitä?",
+        "options": ["Roolipeli", "Tasohyppely", "Simulaatio", "Puzzle"],
+        "answer": "Tasohyppely"
+    },
+    {
+        "question": "Mikä on kansainvälisesti suosittu ruokafestivaali, jossa keskitytään BBQ-grillaukseen?",
+        "options": ["Taste of London", "Meatopia", "BBQ Fest", "Street Food Festival"],
+        "answer": "Meatopia"
+    },
+    {
+        "question": "Mikä on maailman tunnetuin geokätköilyn verkkosivusto?",
+        "options": ["Geocaching.com", "Cachebase", "Geosearch", "CacheFinder"],
+        "answer": "Geocaching.com"
+    },
+    {
+        "question": "Mikä on Suomessa suosittu peli, jota pelataan pienellä puisella mailalla ja pallolla?",
+        "options": ["Golf", "Pesäpallo", "Mölkky", "Kubb"],
+        "answer": "Pesäpallo"
+    },
+    {
+        "question": "Mikä on japanilainen perinteinen taistelulaji, joka tarkoittaa 'pehmeän tien tietä'?",
+        "options": ["Judo", "Karate", "Kendo", "Aikido"],
+        "answer": "Judo"
+    },
+    {
+        "question": "Mikä on suosittu suomalainen ulkoilma-aktiviteetti, joka sisältää hiihtämistä, vaeltamista tai retkeilyä talvella?",
+        "options": ["Retkeily", "Vaellus", "Lumikenkäily", "Murtomaahiihto"],
+        "answer": "Murtomaahiihto"
+    },
+    {
+        "question": "Mikä on suosittu urheilulaji, jossa ratsastetaan ja hypitään esteiden yli hevosen selässä?",
+        "options": ["Ratsastus", "Paini", "Estejuoksu", "Triathlon"],
+        "answer": "Ratsastus"
+    },
+    {
+        "question": "Mikä on suosittu seurapeli, jossa pelaajat yrittävät saada kolme samaa symbolia peräkkäin?",
+        "options": ["Bingo", "Ristinolla", "Sudoku", "Uno"],
+        "answer": "Ristinolla"
+    },
+    {
+        "question": "Mikä on maailman suosituin elektroninen urheilulaji (eSports)?",
+        "options": ["League of Legends", "Fortnite", "Dota 2", "Overwatch"],
+        "answer": "League of Legends"
+    },
+    {
+        "question": "Mikä on suosittu lomakohde, joka tunnetaan aurinkoisista rannoista ja surffauksesta Havaijilla?",
+        "options": ["Oahu", "Bali", "Malediivit", "Bahama"],
+        "answer": "Oahu"
+    },
+    {
+        "question": "Mikä on suosittu käsityötekniikka, jossa käytetään puikkoja ja lankaa?",
+        "options": ["Neulonta", "Virkkaus", "Kirjonta", "Makramee"],
+        "answer": "Neulonta"
+    },
+    {
+        "question": "Mikä on suosittu aktiviteetti, jossa lapset etsivät pääsiäismunia?",
+        "options": ["Aarrejahti", "Munien maalaus", "Pääsiäismunien etsintä", "Joulukalenteri"],
+        "answer": "Pääsiäismunien etsintä"
+    },
+    {
+        "question": "Mikä on suosittu ulkoilma-aktiviteetti, jossa käytetään talvella moottorikelkkaa?",
+        "options": ["Hiihto", "Lumikenkäily", "Kelkkailu", "Moottorikelkkailu"],
+        "answer": "Moottorikelkkailu"
+    },
+    {
+        "question": "Mikä on suosittu lautapeli, jossa rakennetaan tietä ja kaupunkeja kuusikulmion muotoisille laatoille?",
+        "options": ["Catan", "Carcassonne", "Ticket to Ride", "Dominion"],
+        "answer": "Catan"
+    },
+    {
+        "question": "Mikä on suosittu videopeli, jossa selviydytään ja rakennetaan kuutiomaailmassa?",
+        "options": ["Terraria", "Minecraft", "Roblox", "Fortnite"],
+        "answer": "Minecraft"
+    },
+    {
+        "question": "Mikä on suosittu espanjalainen korttipeli, joka muistuttaa pokeria?",
+        "options": ["Mus", "Truco", "Brisca", "Tute"],
+        "answer": "Mus"
+    },
+    {
+        "question": "Mikä on suosittu vapaa-ajan aktiviteetti, jossa matkustetaan matkailuautolla ympäriinsä?",
+        "options": ["Camping", "Karavaanari", "Tähtiretki", "Retkiluistelu"],
+        "answer": "Karavaanari"
+    },
+    {
+        "question": "Mikä on suosittu pöytäpeli, jossa pyritään asettamaan neljä kiekkoa peräkkäin?",
+        "options": ["Uno", "Ristinolla", "Connect 4", "Yatzy"],
+        "answer": "Connect 4"
+    },
+    {
+        "question": "Mikä on suosittu vapaa-ajan aktiviteetti, jossa lasketaan mäkeä lumilaudalla?",
+        "options": ["Hiihto", "Kelkkailu", "Lumilautailu", "Lumikenkäily"],
+        "answer": "Lumilautailu"
+    },
+    {
+        "question": "Mikä on suosittu tapa viettää juhannusta Suomessa?",
+        "options": ["Ulkona grillaaminen", "Vappumarssi", "Talviuinti", "Laskiaispulla"],
+        "answer": "Ulkona grillaaminen"
+    },
+    {
+        "question": "Mikä on maailman suosituin musiikkifestivaali?",
+        "options": ["Coachella", "Glastonbury", "Rock am Ring", "Tomorrowland"],
+        "answer": "Coachella"
+    },
+    {
+        "question": "Mikä on suosittu laji, jossa rakennetaan monimutkaisia palapelejä?",
+        "options": ["Sudoku", "Ristisanatehtävä", "Palapeli", "Ristinolla"],
+        "answer": "Palapeli"
+    },
+    {
+        "question": "Mikä on maailman tunnetuin autokilpailu?",
+        "options": ["Indy 500", "Monacon Grand Prix", "Le Mans 24 tuntia", "Daytona 500"],
+        "answer": "Le Mans 24 tuntia"
+    },
+    {
+        "question": "Mikä on suosittu joogamuoto, joka keskittyy tasapainoon ja venyttelyyn?",
+        "options": ["Vinyasa", "Ashtanga", "Hatha", "Bikram"],
+        "answer": "Hatha"
+    },
+    {
+        "question": "Mikä on suosittu laji, jossa yritetään ampua tarkasti jousella tauluun?",
+        "options": ["Jousiammunta", "Heittopeli", "Laukkaus", "Metästys"],
+        "answer": "Jousiammunta"
+    },
+    {
+        "question": "Mikä on suosittu veneilytapahtuma, joka pidetään vuosittain Itämerellä?",
+        "options": ["Itämeren Regatta", "Baltic Classic", "Tall Ships Races", "Suur-Saaristo purjehdus"],
+        "answer": "Tall Ships Races"
+    },
+    {
+        "question": "Mikä on suosittu joulukauteen liittyvä vapaa-ajan aktiviteetti?",
+        "options": ["Joululaulut", "Laskiaispulla", "Pääsiäismunat", "Laskiaiskelkka"],
+        "answer": "Joululaulut"
+    },
+    {
+        "question": "Mikä on suosittu kesäharrastus, jossa liikutaan veden päällä purjeen avulla?",
+        "options": ["Purjehdus", "Vesihiihto", "Wakeboarding", "Surffaus"],
+        "answer": "Purjehdus"
+    },
+    {
+        "question": "Mikä on perinteinen italialainen korttipeli, joka tunnetaan nimellä 'Scopa'?",
+        "options": ["Briscola", "Tresette", "Scopone", "Scopa"],
+        "answer": "Scopa"
+    },
+    {
+        "question": "Mikä on suosittu talviharrastus, jossa liikutaan jäällä jaloin erikoiskenkien avulla?",
+        "options": ["Luistelu", "Hiihto", "Jääkiipeily", "Lumikenkäily"],
+        "answer": "Lumikenkäily"
+    },
+    {
+        "question": "Mikä on suosittu lautapeli, jossa rakennetaan junareittejä ympäri maailmaa?",
+        "options": ["Ticket to Ride", "Risk", "Monopoly", "Catan"],
+        "answer": "Ticket to Ride"
+    },
+    {
+        "question": "Mikä on suosittu käsityöharrastus, jossa solmitaan lankoja kuvioiksi?",
+        "options": ["Neulonta", "Virkkaus", "Kirjonta", "Makramee"],
+        "answer": "Makramee"
+    },
+    {
+        "question": "Mikä on suosittu vapaa-ajan aktiviteetti, jossa käytetään perinteisiä venäläisiä Babushka-nukkeja?",
+        "options": ["Kokoelmat", "Askartelu", "Maalaaminen", "Matrioshkat"],
+        "answer": "Matrioshkat"
+    },
+    {
+        "question": "Mikä on suosittu tanssimuoto, joka on kotoisin Brasiliasta ja yhdistää tanssin ja taistelulajin?",
+        "options": ["Capoeira", "Samba", "Rumba", "Salsa"],
+        "answer": "Capoeira"
+    },
+    {
+        "question": "Mikä on suosittu kansainvälinen lautapelitapahtuma, joka pidetään Saksassa?",
+        "options": ["Gen Con", "Spiel Essen", "PAX Unplugged", "UK Games Expo"],
+        "answer": "Spiel Essen"
+    },
+    {
+        "question": "Mikä on suosittu suomalainen vapaa-ajan aktiviteetti, joka liittyy saunaan ja avantouintiin?",
+        "options": ["Saunamaraton", "Saunajooga", "Talviuinti", "Savusauna"],
+        "answer": "Talviuinti"
+    },
+    {
+        "question": "Mikä on suosittu aktiviteetti, jossa käytetään metallinpaljastinta aarteiden etsimiseen?",
+        "options": ["Geokätköily", "Aarteenetsintä", "Kallionkiipeily", "Kalastus"],
+        "answer": "Aarteenetsintä"
+    },
+    {
+        "question": "Mikä on suosittu musiikkifestivaali, joka järjestetään Lontoossa vuosittain?",
+        "options": ["Glastonbury", "Wireless Festival", "Tomorrowland", "Lollapalooza"],
+        "answer": "Wireless Festival"
+    },
+    {
+        "question": "Mikä on suosittu vapaa-ajan aktiviteetti, jossa käytetään frisbeetä ja pyritään maaliin mahdollisimman vähillä heitoilla?",
+        "options": ["Frisbee Golf", "Ultimate Frisbee", "Heittopeli", "Disc Racing"],
+        "answer": "Frisbee Golf"
+    },
+    {
+        "question": "Mikä on suosittu lautapeli, jossa seurataan salapoliisitutkimusta ratkaisemalla murha?",
+        "options": ["Cluedo", "Monopoly", "Risk", "Scrabble"],
+        "answer": "Cluedo"
+    },
+    {
+        "question": "Mikä on suosittu laji, jossa lasketaan nopeasti mäkeä suksilla tai lumilaudalla talviurheilussa?",
+        "options": ["Hiihto", "Lumilautailu", "Laskettelu", "Jääkiipeily"],
+        "answer": "Laskettelu"
+    },
+    {
+        "question": "Mikä on suosittu videopelisarja, jossa pelataan jalkapalloa?",
+        "options": ["NBA 2K", "Madden NFL", "FIFA", "Pro Evolution Soccer"],
+        "answer": "FIFA"
+    },
+    {
+        "question": "Mikä on suosittu kansainvälinen tapahtuma, jossa kalastetaan suuria merikaloja?",
+        "options": ["Big Game Fishing", "Marlin Open", "Deep Sea Adventure", "Tuna Tournament"],
+        "answer": "Big Game Fishing"
+    },
+    {
+        "question": "Mikä on suosittu italialainen ruokafestivaali, jossa nautitaan erilaisia pastaruokia?",
+        "options": ["La Festa della Pasta", "Sagra di Salsiccia", "Festa del Vino", "Sagra della Polenta"],
+        "answer": "La Festa della Pasta"
+    },
+    {
+        "question": "Mikä on suosittu videoalustapalvelu, jossa voi katsella suoratoistovideoita pelaamisesta?",
+        "options": ["YouTube", "Twitch", "Vimeo", "Mixer"],
+        "answer": "Twitch"
+    },
+    {
+        "question": "Mikä on suosittu lautapeli, jossa pelaajat yrittävät ratkaista rikoksia Lontoossa?",
+        "options": ["Sherlock Holmes: Consulting Detective", "Cluedo", "Scotland Yard", "Murder Mystery"],
+        "answer": "Sherlock Holmes: Consulting Detective"
+    },
+    {
+        "question": "Mikä on suosittu vapaa-ajan aktiviteetti, jossa rakennetaan monimutkaisia rakennelmia pienistä palikoista?",
+        "options": ["Palapeli", "Lego-rakennus", "Scrabble", "Minirakentaminen"],
+        "answer": "Lego-rakennus"
+    },
+    {
+        "question": "Mikä on suosittu ruokafestivaali, joka keskittyy suklaaseen ja makeisiin herkkuihin?",
+        "options": ["Chocolate Fest", "Taste of Sweet", "Choco-Latte", "Candyland"],
+        "answer": "Chocolate Fest"
+    },
+    {
+        "question": "Mikä on suosittu seurapeli, jossa pelaajat vaihtavat kortteja muodostaakseen pareja?",
+        "options": ["Uno", "Pokeri", "Pasianssi", "Rami"],
+        "answer": "Rami"
+    },
+    {
+        "question": "Mikä on suosittu musiikkifestivaali, joka pidetään vuosittain Ruotsissa?",
+        "options": ["Way Out West", "Roskilde", "Flow Festival", "Exit Festival"],
+        "answer": "Way Out West"
+    },
+    {
+        "question": "Mikä on suosittu japanilainen harrastus, jossa kootaan pienoismalleja?",
+        "options": ["Gunpla", "Papercraft", "Bonsai", "Origami"],
+        "answer": "Gunpla"
+    },
+    {
+        "question": "Mikä on suosittu tanssilaji, joka on peräisin Karibian alueelta?",
+        "options": ["Salsa", "Mambo", "Rumba", "Bachata"],
+        "answer": "Salsa"
+    },
+    {
+        "question": "Mikä on suosittu urheilu, jossa ratsastetaan pyörällä ja hypitään esteiden yli?",
+        "options": ["BMX", "Skateboarding", "Pyöräily", "Mopokrossi"],
+        "answer": "BMX"
+    },
+    {
+        "question": "Mikä on suosittu lautapeli, jossa rakennetaan linnoja ja laajennetaan alueita?",
+        "options": ["Carcassonne", "Catan", "Risk", "Ticket to Ride"],
+        "answer": "Carcassonne"
+    },
+    {
+        "question": "Mikä on suosittu aktiviteetti, jossa lennätetään lennokkeja ja droneja?",
+        "options": ["Lennokkitoiminta", "Kopteriharrastus", "Lentotoiminta", "Aerial Racing"],
+        "answer": "Lennokkitoiminta"
+    }
+]
