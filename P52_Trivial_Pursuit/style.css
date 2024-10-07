@@ -1,3 +1,4 @@
+/* Perustyylit kehoa varten */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -9,6 +10,7 @@ body {
     height: 100vh;
 }
 
+/* Yleinen kontti, joka käytetään pelissä ja tulostaulussa */
 .container {
     background-color: white;
     padding: 20px;
@@ -18,6 +20,7 @@ body {
     text-align: center;
 }
 
+/* Pelin kysymykset ja vastausvaihtoehdot */
 #question-container h2 {
     margin-bottom: 20px;
 }
@@ -26,6 +29,7 @@ body {
     margin-bottom: 20px;
 }
 
+/* Vastausvaihtoehtojen painikkeet */
 .option-btn {
     display: block;
     background-color: #e0e0e0;
@@ -50,10 +54,12 @@ body {
     background-color: red;
 }
 
+/* Piilotetaan elementit tarvittaessa */
 .hide {
     display: none;
 }
 
+/* Yleiset painikkeet, joita käytetään esim. Seuraava kysymys ja Takaisin peliin */
 .btn {
     background-color: #007bff;
     color: white;
@@ -61,8 +67,34 @@ body {
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 20px;
 }
 
 .btn:hover {
     background-color: #0056b3;
+}
+
+/* Taulukon tyylit tulostaululle */
+table {
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Lisätään tilaa "Takaisin peliin" painikkeen ympärille */
+#back-btn {
+    margin-top: 20px;
 }
