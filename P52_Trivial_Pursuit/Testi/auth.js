@@ -22,7 +22,7 @@ function login() {
 
     if (user) {
         localStorage.setItem('currentUser', username);  // Tallennetaan kirjautunut käyttäjä
-        localStorage.setItem('loggedIn', true);  // Tallennetaan kirjautumistila
+        localStorage.setItem('loggedIn', true);  // Kirjautumistila
         window.location.href = 'game.html';  // Ohjataan pelisivulle
     } else {
         document.getElementById('message').innerText = 'Virheellinen käyttäjänimi tai salasana.';
@@ -37,7 +37,7 @@ function register() {
         document.getElementById('message').innerText = 'Käyttäjänimi on jo olemassa.';
     } else {
         users.push({ username, password });
-        localStorage.setItem('users', JSON.stringify(users));  // Tallennetaan uusi käyttäjä
+        localStorage.setItem('users', JSON.stringify(users));  // Tallennetaan uudet käyttäjät
         document.getElementById('message').innerText = 'Rekisteröityminen onnistui! Voit nyt kirjautua sisään.';
     }
 }
