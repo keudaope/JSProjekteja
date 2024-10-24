@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kirjaudu / Rekisteröidy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-form">
+            <h1>Kirjaudu sisään</h1>
+            <input type="text" id="login-username" placeholder="Käyttäjänimi" class="input-field">
+            <input type="password" id="login-password" placeholder="Salasana" class="input-field">
+            <button id="login-btn" class="auth-btn">Kirjaudu sisään</button>
+            <p id="message"></p>
+        </div>
+
+        <div class="auth-form">
+            <h1>Rekisteröidy</h1>
+            <input type="text" id="register-username" placeholder="Käyttäjänimi" class="input-field">
+            <input type="password" id="register-password" placeholder="Salasana" class="input-field">
+            <button id="register-btn" class="auth-btn">Rekisteröidy</button>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html>
