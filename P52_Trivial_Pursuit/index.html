@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trivia Peli</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="quiz-container" id="quiz-container">
+        <h1>Trivia Peli</h1>
+        <div id="question-container">
+          <h2 id="question"></h2>
+          <div id="options">
+            <!-- Vastausvaihtoehdot tulevat tänne -->
+          </div>
+        </div>
+        <button id="next-btn" class="btn hide">Seuraava kysymys</button>
+      </div>
+      <div id="result-container" class="hide">
+        <h2>Peli ohi!</h2>
+        <p>Oikein vastatut kysymykset: <span id="score"></span> / 10</p>
+        <button id="restart-btn" class="btn">Aloita uudelleen</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

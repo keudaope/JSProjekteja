@@ -1,0 +1,80 @@
+/* Sivun tyylit, varmistetaan selkeä asettelu ja sisällön keskittäminen */
+body {
+  font-family: Arial, sans-serif; /* Käytetään selkeää ja luettavaa fonttia */
+  background: linear-gradient(135deg, rgb(116, 235, 213), rgb(172, 182, 229));
+  display: flex; /* Flexbox sisällön keskittämiseen vaaka- ja pystysuunnassa */
+  justify-content: center; /* Keskittää sisällön vaakasuunnassa */
+  align-items: center; /* Keskittää sisällön pystysuunnassa */
+  height: 100vh; /* Koko näkymäkorkeus */
+  margin: 0; /* Poistaa oletusmarginaalin */
+}
+/* Pääkonteinerin tyylit visailulle */
+.container {
+  background-color: white; /* Valkoinen tausta kontrastiksi bodylle */
+  padding: 20px; /* Lisää tilaa kontainerin sisälle */
+  border-radius: 8px; /* Hieman pyöristetyt kulmat modernia ulkoasua varten */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Kevyt varjo syvyyden luomiseksi */
+  width: 400px; /* Kiinteä leveys sisällön yhtenäisyyden takaamiseksi */
+  text-align: center; /* Keskittää kaiken tekstin kontainerin sisällä */
+}
+/* Visailun otsikon tyylit */
+h1 {
+  margin-bottom: 20px; /* Lisää tilaa otsikon alle */
+}
+/* Kysymystekstin tyylit */
+.question {
+  margin-bottom: 20px; /* Lisää tilaa kysymyksen ja vaihtoehtojen väliin */
+}
+/* Vastausvaihtoehtojen listan tyylit */
+.options {
+  list-style: none; /* Poistaa oletuslistaustyylin */
+  padding: 0; /* Poistaa täytteen listan ympäriltä */
+  margin-bottom: 20px; /* Tilaa vaihtoehtojen ja painikkeen väliin */
+}
+/* Yksittäisen vastausvaihtoehdon tyylit */
+.options li {
+  background-color: #f4f4f4; /* Vaaleanharmaa tausta vaihtoehdoille */
+  margin: 5px 0; /* Tilaa vaihtoehtojen väliin */
+  padding: 10px; /* Lisää täytettä jokaisen vaihtoehdon sisälle */
+  border: 1px solid #ddd; /* Kevyt reunus vaihtoehdon alueen korostamiseksi */
+  border-radius: 4px; /* Hieman pyöristetyt kulmat */
+  cursor: pointer; /* Muuttaa kursorin osoittimeksi osoittamaan, että se on klikattavissa */
+  transition: background-color 0.3s ease; /* Sujuva siirtymä hover-tilassa */
+}
+/* Hover-efekti vastausvaihtoehdoille */
+.options li:hover {
+  background-color: #e4e4e4; /* Tummempi harmaa hover-tilassa visuaalisen palautteen antamiseksi */
+}
+/* Painikkeen tyylit siirtymiseen seuraavaan kysymykseen */
+button {
+  padding: 10px 20px; /* Lisää täytettä painikkeen sisälle */
+  border: none; /* Poistaa oletusreunuksen */
+  background-color: #28a745; /* Vihreä taustaväri toiminnalliselle painikkeelle */
+  color: white; /* Valkoinen teksti hyvän kontrastin saavuttamiseksi */
+  border-radius: 4px; /* Pyöristetyt kulmat siistimmän ulkoasun luomiseksi */
+  cursor: pointer; /* Osoittaa, että painike on klikattavissa */
+  transition: background-color 0.3s ease; /* Sujuva taustavärin siirtymä */
+}
+/* Painikkeen hover-efekti */
+button:hover {
+  background-color: #218838; /* Tummempi vihreä hover-tilassa */
+}
+/* Piilotettujen elementtien tyylit (esim. Seuraava-painike, tulosteksti, nollauspainike) */
+.hidden {
+  display: none; /* Aluksi piilottaa elementit */
+}
+/* Lopputuloksen tekstin tyylit */
+.result {
+  font-weight: bold; /* Lihavoitu teksti korostamaan pistemäärää */
+  margin-top: 20px; /* Lisää tilaa tulostekstin yläpuolelle */
+}
+/* Oikean vastauksen tyylit */
+.correct {
+  background-color: #28a745; /* Vihreä tausta oikealle vastaukselle */
+  color: white; /* Valkoinen teksti näkyvyyden takaamiseksi */
+}
+/* Väärän vastauksen tyylit */
+.incorrect {
+  background-color: #dc3545; /* Punainen tausta väärälle vastaukselle */
+  color: white; /* Valkoinen teksti kontrastin luomiseksi */
+}
